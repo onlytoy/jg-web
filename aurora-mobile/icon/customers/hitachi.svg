@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" fill="none">
+  <circle cx="18" cy="20" r="12" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M18 10v20M10 20h16" stroke="#94a3b8" stroke-width="2"/>
+  <text x="38" y="26" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#94a3b8" letter-spacing="1">HITACHI</text>
+</svg>

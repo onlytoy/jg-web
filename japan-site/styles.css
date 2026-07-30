@@ -1,0 +1,970 @@
+@charset "UTF-8";
+
+/* =========================================================
+   Aurora Mobile Japan — home
+   Implemented from Figma node 530:18065 (design canvas 1680px)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Type rule: text is Zen Kaku Gothic New, numerals are Poppins.
+
+   These faces carry ONLY U+0030–0039, so listing "Poppins Num"
+   ahead of Zen Kaku in the stack makes the browser pull 0–9 from
+   Poppins and everything else from Zen Kaku — digits inside a
+   Japanese sentence switch automatically, no markup needed.
+   Subset from Google's Poppins latin slice, ~1.1 KB per weight.
+   --------------------------------------------------------- */
+@font-face {
+  font-family: "Poppins Num";
+  src: url("assets/fonts/poppins-num-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: "Poppins Num";
+  src: url("assets/fonts/poppins-num-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: "Poppins Num";
+  src: url("assets/fonts/poppins-num-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: "Poppins Num";
+  src: url("assets/fonts/poppins-num-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0030-0039;
+}
+
+/* ---------- tokens ---------- */
+:root {
+  /* figma variables */
+  --bg-page: #ffffff;
+  --text-white: #ffffff;
+
+  /* palette */
+  --ink: #0a1324;
+  --ink-soft: #2a3142;
+  --body: #5b6172;
+  --muted: #8a909e;
+  --accent: #2847fc;
+  --navy: #02387e;
+  --navy-mid: #103d80;
+  --navy-card: #153b6c;
+  --hairline: rgba(10, 19, 36, 0.1);
+  --hairline-faint: rgba(10, 19, 36, 0.12);
+
+  /* type — "Poppins Num" leads every stack so 0–9 render in Poppins */
+  --font-jp: "Poppins Num", "Zen Kaku Gothic New", "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  --font-en: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-noto: "Poppins Num", "Noto Sans JP", "Zen Kaku Gothic New",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+
+  /* shared left edge for the logo and every hero element */
+  --hero-inset: 150px;
+  --header-gutter: 53px;
+
+  /* motion */
+  --ease: cubic-bezier(.22, 1, .36, 1);   /* easeOutQuint — decelerating, calm */
+  --dur-fast: 240ms;
+  --dur-mid: 420ms;
+  --dur-slow: 640ms;
+
+  /* total scroll distance the ecosystem block stays pinned for.
+     Split evenly across the 4 slides — 240vh = 60vh of scroll per slide.
+     Raise it for a slower, more deliberate sequence; lower it to move on faster. */
+  --eco-scroll: 240vh;
+}
+
+/* ---------- reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--ink);
+  font-family: var(--font-jp);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* `clip`, not `hidden`: `hidden` would make body a scroll container and
+     break `position: sticky` on the pinned carousel below */
+  overflow-x: clip;
+}
+
+h1, h2, h3, p, dl, dd, figure { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- shared ---------- */
+.container {
+  width: min(1280px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* pill buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 40px;
+  font-family: var(--font-jp);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn__arrow {
+  font-family: var(--font-noto);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.btn--white { background: var(--bg-page); color: var(--navy); }
+.btn--white:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, .22); }
+.btn--navy { background: var(--navy); color: var(--text-white); }
+.btn--navy:hover { box-shadow: 0 10px 26px rgba(2, 56, 126, .3); }
+
+.btn--sm { height: 44px; padding-inline: 26px; gap: 8px; font-size: 15px; }
+.btn--sm .btn__arrow { font-size: 16px; }
+.btn--lg { height: 56px; padding-inline: 34px; font-size: 16px; }
+.btn--lg .btn__arrow { font-size: 18px; }
+.btn--navy.btn--lg { padding-inline: 36px; }
+
+/* =========================================================
+   Header
+   ========================================================= */
+.site-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 20;
+  height: 88px;
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-inline: var(--header-gutter);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  /* park the mark on the hero's left edge */
+  padding-left: calc(var(--hero-inset) - var(--header-gutter));
+}
+/* Trimmed to the mark's own ink box, so the image edge IS the optical edge and
+   the logo sits flush on --hero-inset. Sized to keep the mark's drawn size
+   identical to the design (49px-wide artboard × the 75.3% the ink occupied). */
+.brand__logo img { width: 36.88px; height: 29.03px; }
+
+.nav { display: flex; gap: 38px; }
+.nav__link {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .6px;
+  color: rgba(255, 255, 255, .85);
+  transition: color .2s ease;
+}
+.nav__link.is-current,
+.nav__link:hover { color: var(--text-white); }
+
+.header-actions { display: flex; align-items: center; gap: 28px; }
+.lang {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.04px;
+  color: rgba(255, 255, 255, .85);
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+.hero {
+  position: relative;
+  height: 963px;
+  overflow: hidden;
+  color: var(--text-white);
+  background:
+    radial-gradient(218.4px 115.56px at 252px 0,
+      rgba(11, 58, 168, 1) 0%,
+      rgba(7, 46, 146, 1) 24%,
+      rgba(5, 34, 109, 1) 41%,
+      rgba(3, 22, 72, 1) 58%,
+      rgba(2, 14, 45, 1) 79%,
+      rgba(1, 6, 18, 1) 100%);
+}
+
+.hero__media { position: absolute; inset: 0; }
+/* The supplied photo is already cropped to the 1680x963 hero frame, so it fills
+   the section directly. (Figma placed an uncropped photo at 128.286% width with
+   a negative offset — that framing is baked into this asset.) */
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(21, 21, 21, .5) 0%, rgba(0, 0, 0, .56) 100%);
+}
+
+/* vertical rail, left edge — glyph run rotated 90° cw */
+.hero__rail {
+  position: absolute;
+  left: 82.97px;
+  top: 230.59px;
+  z-index: 2;
+  width: 18px;
+  height: 379px;
+  writing-mode: vertical-rl;
+  font-family: var(--font-en);
+  font-size: 12px;
+  letter-spacing: 5.04px;
+  color: rgba(255, 255, 255, .55);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 141.62px 72px 0 var(--hero-inset);
+  max-width: 1322px;
+}
+
+.hero__eyebrow {
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 4.42px;
+  color: var(--text-white);
+}
+
+.hero__title {
+  margin-top: 29px;
+  font-size: 92px;
+  font-weight: 400;
+  letter-spacing: .92px;
+  line-height: 112.24px;
+}
+/* Optical alignment. Box-aligning these lines still leaves them looking indented,
+   because kana carry a lot of side bearing inside the full-width em box while a
+   Latin "A" carries almost none — measured 1.75px / 14.54px / 11.68px of ink
+   padding at 92px. Pulling each line back by its own bearing puts the INK on
+   --hero-inset, same as the trimmed logo and the button edge.
+   Expressed in em so the correction rescales with the responsive font sizes. */
+.hero__title-a { display: block; margin-left: -0.019em; }
+.hero__title-b {
+  display: block;
+  margin-left: -0.158em;
+  margin-top: -16.76px;
+  font-weight: 300;
+  background-image: linear-gradient(135.4deg,
+    #87b9fb 6.17%, #85baff 45.62%, #1a77f0 93.83%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  width: max-content;
+}
+.hero__title-c { display: block; margin-left: -0.127em; margin-top: -3.24px; }
+
+.hero__lead {
+  margin-top: 29px;
+  max-width: 640px;
+  font-size: 18px;
+  line-height: 32px;
+  color: rgba(255, 255, 255, .82);
+}
+
+.hero__cta { margin-top: 29px; }
+.hero__cta .btn { font-family: var(--font-noto); }
+
+/* scroll indicator, right edge */
+.hero__scroll {
+  position: absolute;
+  right: 88.5px; /* 1680 − 1591.5 on the design canvas */
+  top: 783.41px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.hero__scroll-label {
+  width: 17px;
+  height: 57px;
+  writing-mode: vertical-rl;
+  font-family: var(--font-en);
+  font-size: 11px;
+  letter-spacing: 3.3px;
+  color: rgba(255, 255, 255, .6);
+  white-space: nowrap;
+}
+.hero__scroll-line {
+  width: 1px;
+  height: 56px;
+  background: rgba(255, 255, 255, .25);
+}
+
+/* =========================================================
+   01 / OUR SCALE
+   ========================================================= */
+.scale { padding-block: 115.56px; background: var(--bg-page); }
+
+.rule {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 19.5px;
+  font-size: 13px;
+}
+.rule__num { font-weight: 500; letter-spacing: 3.64px; color: var(--accent); }
+.rule__line {
+  flex: 1;
+  height: 1px;
+  margin: 0 20px 0 24px;
+  background: var(--hairline-faint);
+}
+.rule__label { letter-spacing: 3.12px; color: var(--muted); }
+
+.scale__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 64px;
+  padding-top: 64px;
+}
+.scale__title {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 70px;
+  color: var(--ink);
+}
+.scale__desc {
+  flex: 0 0 420px;
+  max-width: 420px;
+  font-size: 16px;
+  line-height: 31.2px;
+  color: var(--body);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 80px;
+  padding-block: 1px;
+  background: var(--hairline);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 44px 8px 40px 44px;
+  background: var(--bg-page);
+}
+.stat:first-child { padding-left: 8px; }
+.stat__value {
+  font-family: var(--font-en);
+  font-weight: 300;
+  font-size: 88px;
+  line-height: 83.6px;
+  color: var(--ink);
+}
+.stat__label {
+  margin: 0;
+  font-size: 15px;
+  color: var(--body);
+}
+
+/* =========================================================
+   Business ecosystem
+   ========================================================= */
+.eco { background: var(--bg-page); }
+
+/* Pinned mode. JS adds `is-pinned` (and measures --eco-stage-h / --eco-top)
+   only when the stage actually fits the viewport, so short windows and the
+   stacked mobile layout fall back to plain document flow. The section becomes
+   a tall scroll track; the stage sticks inside it, so the reader must scroll
+   through all four slides before the page moves on. */
+.eco.is-pinned {
+  height: calc(var(--eco-stage-h) + var(--eco-scroll));
+}
+.eco.is-pinned .eco__stage {
+  position: sticky;
+  top: var(--eco-top, 0px);
+}
+
+.eco__stage {
+  position: relative;
+  width: min(1660px, 100%);
+  height: 876.594px;
+  /* the block bleeds to the left edge of the 1680 design canvas; past that
+     width, keep the canvas centred instead of pinning it to the viewport */
+  margin-left: max(0px, calc((100% - 1680px) / 2));
+}
+
+/* -- left copy -- */
+.eco__intro { position: absolute; left: 196px; top: 155px; width: 513px; }
+.eco__kicker {
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--navy-mid);
+}
+.eco__title {
+  margin-top: 40px;
+  max-width: 426px;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 70px;
+  color: var(--ink);
+}
+.eco__desc {
+  margin-top: 32px;
+  max-width: 375px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 31.2px;
+  color: var(--body);
+}
+
+.btn-outline {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 182px;
+  height: 62px;
+  margin-top: 43px;
+  padding: 17px 44px 18px 26px;
+  border: 2px solid #d5d5d5;
+  border-radius: 999999px;
+  background: var(--bg-page);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #000;
+  transition: border-color .2s ease;
+}
+.btn-outline:hover { border-color: var(--navy-mid); }
+.btn-outline__dot {
+  position: absolute;
+  left: 140px;
+  top: 19px;
+  width: 20px;
+  height: 20px;
+  border-radius: 1000px;
+  background: var(--navy-mid);
+}
+
+/* -- thumbnail strip (carousel tabs) -- */
+.eco__thumbs { position: absolute; inset: 0; }
+.thumb {
+  position: absolute;
+  top: 658.75px;
+  width: 161.45px;
+  height: 122.03px;
+}
+.thumb__btn {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 6.46px;
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: transform var(--dur-slow) var(--ease);
+}
+.thumb__btn:focus-visible {
+  outline: 2px solid #7fb0ff;
+  outline-offset: 3px;
+}
+.thumb__btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  transition: transform var(--dur-slow) var(--ease);
+}
+/* the veil marks an INACTIVE card; it lifts on the selected one */
+.thumb__veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 26, 39, .52);
+  transition: opacity var(--dur-mid) var(--ease);
+}
+/* labels are anchored to the card's bottom edge so they survive a shrunk card */
+.thumb__label {
+  position: absolute;
+  z-index: 2;
+  max-width: calc(100% - 16px);
+  text-align: left;
+  font-family: var(--font-jp);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 14px;
+  color: var(--text-white);
+  transition: opacity var(--dur-mid) var(--ease),
+              transform var(--dur-mid) var(--ease);
+}
+
+/* selected: veil + label clear away and the image settles to 1:1 */
+.thumb__btn[aria-selected="true"] .thumb__veil { opacity: 0; }
+.thumb__btn[aria-selected="true"] .thumb__label {
+  opacity: 0;
+  transform: translateY(4px);
+}
+.thumb__btn[aria-selected="true"] img { transform: scale(1); }
+
+/* hover on an unselected card previews the reveal */
+.thumb__btn[aria-selected="false"]:hover .thumb__veil { opacity: .72; }
+.thumb__btn[aria-selected="false"]:hover img { transform: scale(1.1); }
+
+.thumb--1 { left: 196px; }
+.thumb--2 { left: 369px; }
+.thumb--3 { left: 543px; }
+.thumb--4 { left: 717px; }
+.thumb--1 .thumb__label { left: 8px; bottom: 14px; }
+.thumb--2 .thumb__label { left: 15px; bottom: 13.5px; width: 106px; }
+.thumb--3 .thumb__label { left: 8px; bottom: 14px; }
+.thumb--4 .thumb__label { left: 11px; bottom: 15px; }
+
+/* -- navy feature card -- */
+.eco__card {
+  --card-pad: 96px;
+  position: absolute;
+  left: 858px;
+  top: .79px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 802px;
+  height: 870px;
+  padding-block: 110px 80px;
+  overflow: hidden;
+  background: var(--navy-card);
+  color: var(--text-white);
+}
+.eco__card-body { padding-inline: var(--card-pad); }
+
+/* image stack — every slide is present, only the active one is opaque */
+.eco__media {
+  position: relative;
+  width: 606px;
+  max-width: 100%;
+  aspect-ratio: 606 / 330;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.eco__media-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.045);
+  transition: opacity var(--dur-slow) var(--ease),
+              transform 900ms var(--ease);
+  will-change: opacity, transform;
+}
+.eco__media-img.is-active { opacity: 1; transform: scale(1); }
+
+/* copy stack — every slide occupies the same grid cell, so the cell is as tall
+   as the longest copy and the card never resizes mid-transition */
+.eco__copy { display: grid; }
+.eco__slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity var(--dur-mid) var(--ease),
+              transform var(--dur-mid) var(--ease),
+              visibility 0s linear var(--dur-mid);
+  pointer-events: none;
+}
+.eco__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  transition: opacity var(--dur-mid) var(--ease),
+              transform var(--dur-mid) var(--ease),
+              visibility 0s;
+}
+/* stagger the three lines so the copy reads in rather than popping */
+.eco__slide > * { transition-delay: 0ms; }
+.eco__slide.is-active .eco__badge { transition-delay: 90ms; }
+.eco__slide.is-active .eco__card-title { transition-delay: 150ms; }
+.eco__slide.is-active .eco__card-desc { transition-delay: 210ms; }
+.eco__slide > * {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--dur-mid) var(--ease),
+              transform var(--dur-mid) var(--ease);
+}
+.eco__slide.is-active > * { opacity: 1; transform: none; }
+
+.eco__badge {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 8px 13px 9px;
+  border: 1px solid var(--bg-page);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 22.1px;
+  letter-spacing: .52px;
+}
+.eco__card-title {
+  margin-top: 16px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+  letter-spacing: -1.4px;
+}
+.eco__card-desc {
+  margin-top: 24px;
+  max-width: 605px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: .48px;
+  opacity: .68;
+}
+
+.eco__card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin, not padding — the rule above it has to inset with the content */
+  margin-inline: var(--card-pad);
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 131px;
+  height: 37px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 18px;
+  transition: background .2s ease;
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, .1); }
+.eco__count {
+  display: flex;
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 21.6px;
+}
+.eco__count-now {
+  display: inline-block;
+  min-width: 7px;
+  transition: opacity var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+.eco__count-now.is-swapping { opacity: 0; transform: translateY(-6px); }
+
+/* =========================================================
+   CTA
+   ========================================================= */
+.cta { padding-block: 86.67px; background: var(--bg-page); }
+.cta__inner { display: flex; justify-content: center; }
+.cta__panel {
+  position: relative;
+  width: min(1472px, calc(100% - 48px));
+  min-height: 494.742px;
+  padding: 96px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-image: linear-gradient(128.56deg,
+    #ffffff 7.735%, #eef4ff 54.226%, #e9f5ff 92.265%);
+  box-shadow: 0 20px 40px rgba(38, 38, 49, .08);
+}
+.cta__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 34px;
+  max-width: 760px;
+}
+.cta__title {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 72.8px;
+  color: var(--ink);
+}
+.cta__desc {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 33.15px;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.site-footer {
+  padding-block: 88px 40px;
+  background: var(--ink);
+  color: var(--text-white);
+}
+.site-footer__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 64px;
+  padding-bottom: 49px;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+}
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 320px;
+}
+/* mark only — the source lockup's wordmark is dark indigo and disappears on
+   #0a1324. Same trimmed asset, so it also sits flush with the address below. */
+.site-footer__logo { width: 32.22px; height: 25.36px; }
+.site-footer__address {
+  font-size: 13px;
+  line-height: 24.05px;
+  color: rgba(255, 255, 255, .55);
+}
+
+.site-footer__cols { display: flex; gap: 96px; }
+.fcol { display: flex; flex-direction: column; gap: 16px; }
+.fcol__head {
+  font-size: 12px;
+  /* the design's 1.92px was tracking for uppercase Latin; katakana already
+     carries its own sidebearings, so it needs about half that */
+  letter-spacing: .08em;
+  color: rgba(255, 255, 255, .45);
+}
+.fcol__link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, .8);
+  transition: color .2s ease;
+}
+.fcol__link:hover { color: var(--text-white); }
+
+.site-footer__bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 28px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .4);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+/* the ecosystem block is absolutely composed at the 1660px design width */
+@media (max-width: 1660px) {
+  .eco__stage {
+    margin-left: 0;
+    height: auto;
+    display: grid;
+    /* 858 : 802 — the same left-area / card split as the 1680px design,
+       so the proportion holds instead of the card claiming a fixed 802px */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.935fr);
+    grid-template-areas:
+      "intro card"
+      "thumbs card";
+    /* 1fr on the intro row pins the thumbnail row to the bottom of the grid,
+       which is also the card's bottom edge — see .eco__thumbs margin below */
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    gap: 40px;
+    /* keep the block wide like the 1660px design rather than snapping to the
+       narrower 1280px content grid — that jump is what made it read differently */
+    padding: 24px clamp(24px, 4vw, 86px) 52px;
+  }
+  .eco__intro { grid-area: intro; position: static; width: auto; padding-top: 96px; }
+  .eco__thumbs {
+    grid-area: thumbs;
+    position: static;
+    display: flex;
+    gap: 12px;
+    /* -40px cancels the grid gap so the strip runs flush into the card's edge;
+       90px reproduces the design's drop between the strip and the card bottom */
+    margin: 56px -40px 90px 0;
+  }
+  /* share the strip evenly across to the card edge — no trailing gap */
+  .thumb {
+    position: relative;
+    top: auto;
+    left: auto !important;
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    height: auto;
+    aspect-ratio: 161.45 / 122.03;
+  }
+  .eco__card {
+    grid-area: card;
+    /* relative (not static) so z-index applies and the card covers any strip
+       overhang — the desktop left/top offsets must be cleared or they'd shift it */
+    position: relative;
+    left: auto;
+    top: auto;
+    z-index: 2;
+    height: auto;
+    width: 100%;
+    /* stretch so the card bottom IS the grid bottom — that's what makes the
+       strip's 90px margin-bottom land as a true 90px drop. Also puts the card
+       footer against the bottom edge, like the fixed 870px desktop card. */
+    align-self: stretch;
+    --card-pad: 64px;
+  }
+  .eco__media { width: 100%; }
+}
+
+@media (max-width: 1440px) {
+  :root { --hero-inset: 96px; --header-gutter: 32px; }
+  .hero__rail { left: 40px; }
+  .hero__title { font-size: 76px; line-height: 94px; }
+  .hero__title-b { margin-top: -14px; }
+  .brand { gap: 40px; }
+}
+
+@media (max-width: 1200px) {
+  .eco__stage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "intro" "card" "thumbs";
+    grid-template-rows: auto;
+  }
+  /* single column: the strip is below the card, so neither offset applies */
+  .eco__thumbs { margin: 56px 0 0; }
+  .eco__card { padding-block: 64px 56px; --card-pad: 56px; }
+  .eco__intro { padding-top: 64px; }
+  .stat { padding: 36px 8px 32px 32px; }
+  .stat__value { font-size: 68px; line-height: 68px; }
+  .cta__panel { padding: 64px; }
+  .cta__title { font-size: 42px; line-height: 60px; }
+}
+
+@media (max-width: 900px) {
+  :root { --hero-inset: 24px; --header-gutter: 24px; }
+  .site-header { position: static; height: auto; }
+  .site-header__inner {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-block: 16px;
+    background: var(--ink);
+  }
+  .nav { gap: 24px; flex-wrap: wrap; }
+  .nav__link { font-size: 14px; white-space: nowrap; }
+
+  .hero { height: auto; padding-bottom: 96px; }
+  /* Cover-cropping the landscape photo into a tall box leaves a window only ~39%
+     of its width — too narrow for both faces (~45% and ~72%), so it keeps the
+     smiling subject on the right whole. A dedicated portrait crop would fix this. */
+  .hero__photo { object-position: 66% 50%; }
+  .hero__content { padding: 88px 24px 0 var(--hero-inset); max-width: none; }
+  .hero__rail, .hero__scroll { display: none; }
+  .hero__title { font-size: clamp(38px, 9vw, 62px); line-height: 1.28; }
+  .hero__title-a { margin-left: 0; }
+  .hero__title-b, .hero__title-c { margin-top: 0; margin-left: 0; }
+  .hero__lead { font-size: 16px; line-height: 30px; }
+
+  .scale { padding-block: 72px; }
+  .scale__head { flex-direction: column; align-items: flex-start; gap: 32px; padding-top: 40px; }
+  .scale__title { font-size: 34px; line-height: 50px; }
+  .scale__desc { flex: 1 1 auto; max-width: none; }
+  .stats { grid-template-columns: 1fr; margin-top: 48px; }
+  .stat { padding: 28px 8px !important; }
+  .stat__value { font-size: 56px; line-height: 56px; }
+
+  .eco__title { font-size: 36px; line-height: 52px; }
+  /* keep the cards at their designed size and scroll instead of crushing them */
+  .eco__thumbs {
+    margin-top: 40px;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .thumb {
+    flex: 0 0 161.45px;
+    width: 161.45px;
+    height: 122.03px;
+    aspect-ratio: auto;
+  }
+  .eco__card { --card-pad: 24px; }
+  .eco__card-title { font-size: 24px; line-height: 34px; letter-spacing: -.6px; }
+
+  .cta { padding-block: 56px; }
+  .cta__panel { padding: 40px 24px; }
+  .cta__title { font-size: 30px; line-height: 46px; }
+  .cta__desc { font-size: 15px; line-height: 28px; }
+
+  .site-footer { padding-block: 56px 32px; }
+  .site-footer__top { flex-direction: column; gap: 40px; }
+  .site-footer__cols { flex-wrap: wrap; gap: 32px 48px; }
+  .site-footer__bottom { flex-direction: column; gap: 12px; }
+}
+
+/* =========================================================
+   Reduced motion — keep the carousel usable, drop the movement
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .eco__media-img,
+  .eco__slide,
+  .eco__slide > *,
+  .thumb__btn,
+  .thumb__btn img,
+  .thumb__veil,
+  .thumb__label,
+  .eco__count-now,
+  .btn {
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+  .eco__media-img,
+  .eco__media-img.is-active,
+  .thumb__btn img,
+  .eco__slide,
+  .eco__slide > * { transform: none !important; }
+  .btn:hover { transform: none; }
+}

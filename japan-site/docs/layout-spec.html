@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Aurora Mobile Japan — 布局说明与设计特点</title>
+<style>
+  body {
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+    max-width: 1240px;
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #1f2329;
+  }
+  h2 { margin: 0; font-size: 22px; font-weight: 600; }
+  h3 {
+    margin: 4px 0 20px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #646a73;
+  }
+  section { margin-bottom: 60px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td {
+    border: 1px solid #dee0e3;
+    padding: 10px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #f5f6f7; font-weight: 600; }
+  /* only the label columns stay on one line */
+  .spec-layout td:first-child,
+  .spec-highlights td:first-child { white-space: nowrap; font-weight: 600; }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    background: #f5f6f7;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+  .hint {
+    margin: 0 0 40px;
+    padding: 12px 16px;
+    background: #f0f4ff;
+    border-left: 3px solid #3370ff;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hint">
+  <strong>粘贴到飞书文档：</strong>本页 <code>⌘A</code> 全选 → <code>⌘C</code> 复制 → 飞书文档 <code>⌘V</code> 粘贴，两个表格会转成飞书原生表格。粘贴后删掉这一段提示即可。
+</div>
+
+<section>
+  <h2>布局说明</h2>
+  <h3>Layout Description</h3>
+
+  <table class="spec-layout">
+    <thead>
+      <tr>
+        <th style="width:200px">模块 Section</th>
+        <th style="width:34%">中文说明</th>
+        <th>English Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Header / 页头</td>
+        <td>Logo、三项主导航、语言切换与咨询按钮。透明叠加在主视觉之上，不占据版面高度。</td>
+        <td>Logo, three primary nav links, language switch, and an inquiry CTA — overlaid transparently on the hero without consuming layout height.</td>
+      </tr>
+      <tr>
+        <td>Hero Banner / 主视觉</td>
+        <td>全屏商务场景照片配双层暗化蒙层，承载四行日文主标题（第三行以蓝色渐变强调「グローバル成長」）、定位文案与主 CTA。左右竖排铭牌与 SCROLL 提示强化纵深。</td>
+        <td>A full-bleed business photo under a layered scrim carries a four-line Japanese headline (its third line gradient-highlighted), positioning copy, and the primary CTA. Vertical side rails and a SCROLL cue add depth.</td>
+      </tr>
+      <tr>
+        <td>Data Section / 规模数据</td>
+        <td>编号与细线构成章节标题，左标题右说明的双列结构；下方三栏关键数据（月活设备、SDK 安装量、开发者数）以分隔线切分，建立规模可信度。</td>
+        <td>A numbered rule opens the section above a two-column headline/description pair. Three divider-separated metrics — active devices, SDK installs, developers — establish scale and credibility.</td>
+      </tr>
+      <tr>
+        <td>Business Ecosystem / 产品生态</td>
+        <td>左侧章节文案与入口按钮，下方四张产品缩略图充当切换标签；右侧深蓝大卡展示当前产品的图片、标签、标题、说明与页码。滚动时整块固定，依次浏览四个产品后才继续下滑。</td>
+        <td>Section copy and a link sit left, above four product thumbnails acting as tabs. A deep-navy card at right shows the active product's image, badge, title, copy, and index. The block pins on scroll until all four have been stepped through.</td>
+      </tr>
+      <tr>
+        <td>CTA Section / 转化区</td>
+        <td>浅蓝渐变圆角面板配柔和投影，双行标题与说明后接深蓝主按钮，二次引导咨询。</td>
+        <td>A rounded panel with a light-blue gradient and soft shadow holds a two-line headline, supporting copy, and a navy button for secondary conversion.</td>
+      </tr>
+      <tr>
+        <td>Footer / 页脚</td>
+        <td>深色底，左侧品牌标识与公司地址，右侧三列导航（解决方案、企业、社交媒体），细线下方为版权、上市代码与法务链接。</td>
+        <td>A dark footer pairs the brand mark and corporate address at left with three nav columns — solutions, enterprise, social — above copyright, ticker, and legal links.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>设计特点</h2>
+  <h3>Design Highlights</h3>
+
+  <table class="spec-highlights">
+    <thead>
+      <tr>
+        <th style="width:130px">设计方向</th>
+        <th style="width:38%">中文</th>
+        <th>English</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>日式极简</td>
+        <td>大面积留白与克制装饰，建立稳定可信的日本 B2B 气质。主视觉上边距 141.62px，各区块纵向留白 86–116px。</td>
+        <td>Generous white space and restrained decoration create a credible Japanese B2B tone, with a 141.62px hero inset and 86–116px section rhythm.</td>
+      </tr>
+      <tr>
+        <td>品牌色系统</td>
+        <td>以 <code>#0a1324</code> 承担文本与页脚基色，<code>#02387e</code> 与 <code>#153b6c</code> 分担主按钮与产品卡，<code>#2847fc</code> 仅用于章节编号点睛。</td>
+        <td><code>#0a1324</code> anchors text and the footer, <code>#02387e</code> and <code>#153b6c</code> carry actions and product cards, and <code>#2847fc</code> appears only as a section-number accent.</td>
+      </tr>
+      <tr>
+        <td>双字体系统</td>
+        <td>正文用 Zen Kaku Gothic New，数字用 Poppins。以 <code>unicode-range</code> 仅将 0–9 映射到 Poppins，日文句子内的数字自动切换字体，无需额外标记。</td>
+        <td>Zen Kaku Gothic New for text, Poppins for numerals. A <code>unicode-range</code> subset maps only 0–9 to Poppins, so digits inside Japanese sentences switch automatically with no markup.</td>
+      </tr>
+      <tr>
+        <td>光学对齐</td>
+        <td>Logo、标题、正文与按钮共用同一基准轴，并补偿假名字形边距与图片透明留白，做到视觉边缘（而非盒子边缘）严格对齐。</td>
+        <td>Logo, headline, copy, and button share one alignment axis, with kana side bearings and image padding compensated so the ink edges line up — not just the boxes.</td>
+      </tr>
+      <tr>
+        <td>模块化卡片</td>
+        <td>缩略图与主卡构成「索引—详情」关系，统一圆角语言便于快速扫描，页码 1/4 提供进度反馈。</td>
+        <td>Thumbnails index into a detail card with a shared rounded-card language for fast scanning, and a 1/4 counter gives progress feedback.</td>
+      </tr>
+      <tr>
+        <td>圆角与投影</td>
+        <td>按钮采用 40px 全圆角，转化面板 20px 圆角配 <code>0 20px 40px</code> 低透明度投影，提升现代感而不过度装饰。</td>
+        <td>40px pill buttons and a 20px-radius conversion panel with a low-opacity <code>0 20px 40px</code> shadow modernise the look without over-decorating.</td>
+      </tr>
+      <tr>
+        <td>滚动叙事</td>
+        <td>产品生态区采用原生 <code>sticky</code> 固定推进四屏，而非劫持滚轮事件，完整保留触控板惯性与滚动条拖拽体验。</td>
+        <td>The ecosystem block advances four slides using native <code>sticky</code> pinning rather than hijacking wheel events, preserving trackpad inertia and scrollbar dragging.</td>
+      </tr>
+      <tr>
+        <td>动效语言</td>
+        <td>全站共用 easeOutQuint 缓动与 240 / 420 / 640ms 三档时长；图片交叉淡入伴随轻微缩放，文案按 90 / 150 / 210ms 阶梯入场。</td>
+        <td>One motion language: easeOutQuint easing across 240/420/640ms tiers, images cross-fading with a slight scale, and copy staggering in at 90/150/210ms.</td>
+      </tr>
+      <tr>
+        <td>响应式体验</td>
+        <td>四档断点（1660 / 1440 / 1200 / 900px）。绝对定位的复合区块在窄屏转为网格与横向滚动；画面高度不足时自动放弃固定滚动。</td>
+        <td>Four breakpoints (1660/1440/1200/900px). Absolutely composed blocks reflow to grid and horizontal scroll on narrow screens, and pinning is dropped automatically when the viewport is too short.</td>
+      </tr>
+      <tr>
+        <td>性能优化</td>
+        <td>主视觉图输出多档 WebP 并以 <code>srcset</code> 按需取用（135KB 即可在 Retina 达到 1:1），数字字体按字重子集化至每档 1.1KB。</td>
+        <td>The hero ships as multi-step WebP served through <code>srcset</code> (135KB achieves 1:1 on Retina), and the numeral font is subset to 1.1KB per weight.</td>
+      </tr>
+      <tr>
+        <td>无障碍</td>
+        <td>轮播具备 tablist 语义与键盘方向键操作，并在 <code>prefers-reduced-motion</code> 下降级为无位移的即时切换。</td>
+        <td>The carousel exposes tablist semantics with arrow-key control and degrades to instant, motion-free switching under <code>prefers-reduced-motion</code>.</td>
+      </tr>
+      <tr>
+        <td>信息流</td>
+        <td>遵循「品牌定位 → 规模数据 → 产品生态 → 转化」的叙事顺序。</td>
+        <td>The narrative follows Brand → Scale → Solutions → Conversion.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>

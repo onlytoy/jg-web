@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aurora Mobile ｜ AIと高精度なエンゲージメントで、グローバル成長を加速する。</title>
+<meta name="description" content="Aurora Mobile（NASDAQ: JG）は、企業のグローバルなユーザー獲得・エンゲージメント強化・収益化を支援する、最先端のインフラとAI駆動型ソリューションを提供します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Poppins:wght@300;400;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="brand">
+      <a class="brand__logo" href="#">
+        <img src="assets/logo-mark.png" alt="Aurora Mobile" width="49" height="31">
+      </a>
+      <nav class="nav" aria-label="メインナビゲーション">
+        <a class="nav__link is-current" href="#">ホーム</a>
+        <a class="nav__link" href="#solutions">ソリューション</a>
+        <a class="nav__link" href="#enterprise">エンタープライズ</a>
+      </nav>
+    </div>
+
+    <div class="header-actions">
+      <span class="lang">日本語</span>
+      <a class="btn btn--white btn--sm" href="#contact">
+        お問い合わせ<span class="btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ Hero ============ -->
+  <section class="hero">
+    <div class="hero__media" aria-hidden="true">
+      <picture>
+        <!-- On narrow screens the landscape photo is cover-cropped to a tall box,
+             so it renders ~3x wider than the viewport — sizes has to say so or the
+             browser picks a variant that's too small and the hero looks soft. -->
+        <source type="image/webp" sizes="(max-width: 900px) 300vw, 100vw"
+                srcset="assets/hero-1200.webp 1200w,
+                        assets/hero-1800.webp 1800w,
+                        assets/hero-2400.webp 2400w,
+                        assets/hero-3360.webp 3360w">
+        <img class="hero__photo" src="assets/hero-2400.jpg" alt=""
+             width="3360" height="1926" fetchpriority="high" decoding="async">
+      </picture>
+      <span class="hero__scrim"></span>
+    </div>
+
+    <p class="hero__rail" aria-hidden="true">AURORA MOBILE JAPAN — NASDAQ: JG</p>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">GLOBAL AI ENGAGEMENT</p>
+
+      <h1 class="hero__title">
+        <span class="hero__title-a">AIと高精度な<br>エンゲージメントで、</span>
+        <span class="hero__title-b">グローバル成長</span>
+        <span class="hero__title-c">を加速する。</span>
+      </h1>
+
+      <p class="hero__lead">Aurora Mobile（NASDAQ: JG）は、企業のグローバルなユーザー獲得・エンゲージメント強化・収益化を支援する、最先端のインフラとAI駆動型ソリューションを提供します。</p>
+
+      <div class="hero__cta">
+        <a class="btn btn--white btn--lg" href="#solutions">
+          ソリューションを見る<span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="hero__scroll-label">SCROLL</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ============ 01 / OUR SCALE ============ -->
+  <section class="scale" id="scale">
+    <div class="container">
+      <div class="rule">
+        <span class="rule__num">01</span>
+        <span class="rule__line"></span>
+        <span class="rule__label">OUR SCALE</span>
+      </div>
+
+      <div class="scale__head">
+        <h2 class="scale__title">世界規模の<br>データ基盤とリーチ。</h2>
+        <p class="scale__desc">2011年の設立以来、Aurora Mobileは膨大なデータインサイトとAI機能を活用し、世界中の企業がより賢明なエンゲージメントと持続可能な成長を実現できるよう支援しています。</p>
+      </div>
+
+      <dl class="stats">
+        <div class="stat">
+          <dt class="stat__value">1.86B+</dt>
+          <dd class="stat__label">月間アクティブデバイス数</dd>
+        </div>
+        <div class="stat">
+          <dt class="stat__value">82.4B</dt>
+          <dd class="stat__label">累計SDKインストール数</dd>
+        </div>
+        <div class="stat">
+          <dt class="stat__value">780K+</dt>
+          <dd class="stat__label">サポートするモバイル開発者数</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ Business ecosystem ============ -->
+  <section class="eco" id="solutions">
+    <div class="eco__stage">
+
+      <div class="eco__intro">
+        <p class="eco__kicker">Works&amp;People</p>
+        <h2 class="eco__title">ビジネスエコシステム</h2>
+        <p class="eco__desc">AIとメッセージングでグローバル成長を支える中核ソリューション</p>
+        <a class="btn-outline" href="#">詳しく見る<span class="btn-outline__dot" aria-hidden="true"></span></a>
+      </div>
+
+      <ul class="eco__thumbs" role="tablist" aria-label="ソリューション">
+        <li class="thumb thumb--1">
+          <button type="button" class="thumb__btn" role="tab" id="eco-tab-0"
+                  aria-controls="eco-panel-0" aria-selected="true">
+            <img src="assets/eco-1.png" alt="">
+            <span class="thumb__veil" aria-hidden="true"></span>
+            <span class="thumb__label">EngageLab</span>
+          </button>
+        </li>
+        <li class="thumb thumb--2">
+          <button type="button" class="thumb__btn" role="tab" id="eco-tab-1"
+                  aria-controls="eco-panel-1" aria-selected="false" tabindex="-1">
+            <img src="assets/eco-2.png" alt="">
+            <span class="thumb__veil" aria-hidden="true"></span>
+            <span class="thumb__label">プログラマティック広告</span>
+          </button>
+        </li>
+        <li class="thumb thumb--3">
+          <button type="button" class="thumb__btn" role="tab" id="eco-tab-2"
+                  aria-controls="eco-panel-2" aria-selected="false" tabindex="-1">
+            <img src="assets/eco-3.png" alt="">
+            <span class="thumb__veil" aria-hidden="true"></span>
+            <span class="thumb__label">フィンテック</span>
+          </button>
+        </li>
+        <li class="thumb thumb--4">
+          <button type="button" class="thumb__btn" role="tab" id="eco-tab-3"
+                  aria-controls="eco-panel-3" aria-selected="false" tabindex="-1">
+            <img src="assets/eco-4.png" alt="">
+            <span class="thumb__veil" aria-hidden="true"></span>
+            <span class="thumb__label">GPTBots.ai</span>
+          </button>
+        </li>
+      </ul>
+
+      <article class="eco__card">
+        <div class="eco__card-body">
+          <!-- 画像スタック：全スライドを重ねてクロスフェード -->
+          <div class="eco__media">
+            <img class="eco__media-img is-active" src="assets/slide-1.png" alt="EngageLab">
+            <img class="eco__media-img" src="assets/slide-2.png" alt="プログラマティック広告" loading="lazy">
+            <img class="eco__media-img" src="assets/slide-3.png" alt="フィンテック" loading="lazy">
+            <img class="eco__media-img" src="assets/slide-4.png" alt="GPTBots.ai" loading="lazy">
+          </div>
+
+          <!-- TODO: 2〜4枚目の見出し・本文は仮コピー。実コピーに差し替えてください -->
+          <div class="eco__copy">
+            <div class="eco__slide is-active" id="eco-panel-0" role="tabpanel" aria-labelledby="eco-tab-0">
+              <span class="eco__badge">EngageLab</span>
+              <h3 class="eco__card-title">AI時代の顧客関係を再定義</h3>
+              <p class="eco__card-desc">EngageLabは、AIエージェント、統合顧客データ、信頼性の高いマルチチャネル配信を通じて、より強い顧客関係の構築を支援するAIファーストの顧客エンゲージメントプラットフォームです。</p>
+            </div>
+            <div class="eco__slide" id="eco-panel-1" role="tabpanel" aria-labelledby="eco-tab-1" aria-hidden="true">
+              <span class="eco__badge">プログラマティック広告</span>
+              <h3 class="eco__card-title">データで導く広告運用</h3>
+              <p class="eco__card-desc">膨大なモバイルデータインサイトとAI入札最適化により、獲得単価を抑えながら質の高いユーザーへ的確にリーチする、グローバル対応のプログラマティック広告プラットフォームです。</p>
+            </div>
+            <div class="eco__slide" id="eco-panel-2" role="tabpanel" aria-labelledby="eco-tab-2" aria-hidden="true">
+              <span class="eco__badge">フィンテック</span>
+              <h3 class="eco__card-title">信用リスクをAIで可視化</h3>
+              <p class="eco__card-desc">オルタナティブデータとAIモデリングを組み合わせ、与信判断・不正検知・リスク管理を高度化。金融機関のデジタル変革を安全かつ確実に支援します。</p>
+            </div>
+            <div class="eco__slide" id="eco-panel-3" role="tabpanel" aria-labelledby="eco-tab-3" aria-hidden="true">
+              <span class="eco__badge">GPTBots.ai</span>
+              <h3 class="eco__card-title">業務を担うAIエージェント</h3>
+              <p class="eco__card-desc">社内ナレッジと外部システムを接続し、カスタマーサポートから営業支援まで自律的に遂行するエンタープライズ向けAIエージェント構築プラットフォームです。</p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="eco__card-foot">
+          <a class="btn-ghost" href="#">詳しく見る</a>
+          <p class="eco__count"><span class="eco__count-now">1</span><span>/&nbsp;</span><span>4</span></p>
+        </footer>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta" id="contact">
+    <div class="cta__inner">
+      <div class="cta__panel">
+        <div class="cta__body">
+          <h2 class="cta__title">さらに、グローバル成長を<br>加速しませんか。</h2>
+          <p class="cta__desc">Aurora MobileのAI駆動型インフラを活用する78万を超える開発者・企業の仲間入りをしましょう。</p>
+          <div>
+            <a class="btn btn--navy btn--lg" href="#">
+              お問い合わせ<span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer" id="enterprise">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <img class="site-footer__logo" src="assets/logo-mark.png" alt="Aurora Mobile" width="43" height="27">
+        <p class="site-footer__address">Aurora Mobile株式会社<br>東京都港区虎ノ門1丁目10番5号<br>KDX虎ノ門一丁目ビル11F</p>
+      </div>
+
+      <div class="site-footer__cols">
+        <nav class="fcol" aria-label="ソリューション">
+          <p class="fcol__head">ソリューション</p>
+          <a class="fcol__link" href="#">EngageLab</a>
+          <a class="fcol__link" href="#">プログラマティック広告</a>
+          <a class="fcol__link" href="#">GPTBots.ai</a>
+          <a class="fcol__link" href="#">フィンテック</a>
+        </nav>
+        <nav class="fcol" aria-label="企業情報">
+          <p class="fcol__head">企業情報</p>
+          <a class="fcol__link" href="#">私たちについて</a>
+          <a class="fcol__link" href="#">投資家情報</a>
+          <a class="fcol__link" href="#">採用情報</a>
+        </nav>
+        <nav class="fcol" aria-label="ソーシャルメディア">
+          <p class="fcol__head">ソーシャルメディア</p>
+          <a class="fcol__link" href="#">LinkedIn</a>
+          <a class="fcol__link" href="#">X</a>
+          <a class="fcol__link" href="#">YouTube</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© 2026 Aurora Mobile Limited. All Rights Reserved. NASDAQ: JG.</p>
+      <p>プライバシーポリシー / 利用規約</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
