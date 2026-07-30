@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora Mobile — AIと高精度エンゲージメントでグローバル成長を加速</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text: #0a1324;
+      --text-2: rgba(10, 19, 36, 0.68);
+      --muted: #727272;
+      --white: #ffffff;
+      --cta-blue: #2847fc;
+      --cta-blue-hover: #1e3ae0;
+      --ink: #0a1324;
+      --footer: #0e2041;
+      --container: 1376px;
+      --page: 1920px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; border: 0; background: none; cursor: pointer; color: inherit; }
+
+    .wrap {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ========== Header ========== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid rgba(10, 19, 36, 0.06);
+    }
+    .header-inner {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 69px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .header-left { display: flex; align-items: center; min-width: 0; }
+    .logo-link {
+      height: 36px; flex-shrink: 0; overflow: hidden; display: flex; align-items: center;
+    }
+    .logo-link img { height: 36px; width: auto; object-fit: contain; }
+    .nav { display: flex; align-items: center; margin-left: 40px; }
+    .nav-item {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 24px 20px; font-size: 16px; line-height: 1.3;
+      white-space: nowrap; transition: opacity .2s;
+    }
+    .nav-item:hover { opacity: .72; }
+    .nav-item .chevron { width: 12px; height: 12px; transition: transform .2s; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown.is-open .chevron { transform: rotate(180deg); }
+    .dropdown-panel {
+      position: absolute; top: calc(100% - 8px); left: 12px; min-width: 220px;
+      padding: 8px; background: #fff; border: 1px solid rgba(10,19,36,.08);
+      border-radius: 12px; box-shadow: 0 12px 32px rgba(10,19,36,.1);
+      opacity: 0; visibility: hidden; transform: translateY(6px);
+      transition: .18s; z-index: 20;
+    }
+    .nav-dropdown.is-open .dropdown-panel { opacity: 1; visibility: visible; transform: none; }
+    .dropdown-panel a { display: block; padding: 10px 12px; border-radius: 8px; font-size: 14px; }
+    .dropdown-panel a:hover { background: #f3f5f9; }
+    .cta-wrap { padding: 4px; border-radius: 64px; }
+    .cta-header {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 156px; height: 51px; padding: 10px 32px; border-radius: 64px;
+      background: var(--cta-blue); color: #fff; font-size: 18px; line-height: 1.6;
+      transition: background .2s, transform .15s;
+    }
+    .cta-header:hover { background: var(--cta-blue-hover); }
+    .cta-header:active { transform: scale(.98); }
+
+    /* ========== Hero ========== */
+    .hero {
+      padding: 56px 0 96px;
+    }
+    .hero-copy {
+      max-width: 976px;
+      margin: 0 auto 56px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 0 24px;
+    }
+    .hero-copy h1 {
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 0.96;
+      letter-spacing: -2.4px;
+      max-width: 976px;
+    }
+    .hero-copy p {
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: -0.96px;
+      color: var(--muted);
+      max-width: 889px;
+    }
+    .btn-dark {
+      display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+      height: 44px; padding: 10px 24px; border-radius: 64px;
+      background: var(--ink); color: #fefefe; font-size: 16px;
+      transition: opacity .2s, transform .15s;
+    }
+    .btn-dark:hover { opacity: .88; }
+    .btn-dark.lg {
+      height: 44px; padding: 10px 28px; border-radius: 40px; font-size: 18px; font-weight: 400; gap: 6px;
+    }
+    .btn-dark .arrow { width: 20px; height: 20px; }
+
+    .hero-visual {
+      position: relative;
+      width: min(100%, 1376px);
+      margin: 0 auto;
+      height: clamp(280px, 35vw, 498px);
+      border-radius: 58px;
+      overflow: hidden;
+    }
+    .hero-visual > img.bg {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .stats-card {
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: min(952px, calc(100% - 48px));
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 36px;
+      padding: 48px 40px 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      box-shadow: 0 0 0 15px rgba(255,255,255,.5);
+    }
+    .stat-item { text-align: left; padding: 0 12px; }
+    .stat-item .label {
+      font-size: 16px; line-height: 16px; letter-spacing: -0.96px;
+      color: var(--text-2); margin-bottom: 18px;
+    }
+    .stat-item .value {
+      font-family: Poppins, sans-serif;
+      font-weight: 500;
+      font-size: clamp(28px, 3.2vw, 48px);
+      line-height: 1;
+      color: var(--text);
+    }
+
+    /* ========== Trust ========== */
+    .trust {
+      padding: 76px 0 64px;
+      text-align: center;
+    }
+    .trust h2 {
+      font-size: 24px; font-weight: 500; line-height: 28px;
+      max-width: 1000px; margin: 0 auto 32px;
+    }
+    .logos {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 28px 48px;
+      max-width: 1376px; margin: 0 auto 28px; padding: 0 24px;
+    }
+    .logos .logo-slot {
+      height: 48px; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: #fff;
+    }
+    .logos .logo-slot img {
+      height: 40px; width: auto; max-width: 140px; object-fit: contain;
+    }
+    .pager {
+      display: flex; gap: 8px; justify-content: center; align-items: center;
+    }
+    .pager span {
+      display: block; width: 40px; height: 3px; border-radius: 2px; background: #d7dbe3;
+    }
+    .pager span.active { background: var(--cta-blue); width: 48px; }
+
+    /* ========== Feature media ========== */
+    .feature-media {
+      padding: 0 0 80px;
+    }
+    .feature-media .media {
+      width: min(1264px, calc(100% - 48px));
+      margin: 0 auto;
+      height: clamp(220px, 28vw, 382px);
+      border-radius: 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .feature-media .media img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+
+    /* ========== Ecosystem ========== */
+    .eco {
+      padding: 80px 0 120px;
+    }
+    .eco-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 360px) 1fr;
+      gap: 48px;
+      align-items: start;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 140px);
+    }
+    .eco-intro h2 {
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -5px;
+      margin-bottom: 24px;
+      max-width: 339px;
+    }
+    .eco-intro p {
+      font-size: 16px; line-height: 1.6; max-width: 360px;
+    }
+    .eco-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 420px));
+      gap: 32px;
+      justify-content: end;
+    }
+    .eco-card {
+      border-radius: 42px;
+      padding: 30px 30px 28px;
+      min-height: 690px;
+      display: flex;
+      flex-direction: column;
+    }
+    .eco-card.purple { background: #eef0ff; }
+    .eco-card.peach { background: #fff3da; }
+    .eco-card.green { background: #e5ffe1; }
+    .eco-card.cyan { background: #e0fffd; }
+    .eco-card h3 {
+      font-size: 36px; font-weight: 500; line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .eco-card p {
+      font-size: 16px; line-height: 1.4; margin-bottom: 28px;
+      flex: 1 0 auto;
+    }
+    .eco-card .btn-dark { align-self: flex-start; margin-top: auto; margin-bottom: 68px; }
+    .eco-card .thumb {
+      margin-top: 0;
+      height: 262px;
+      border-radius: 36px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+    }
+    .eco-card .thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+
+    /* ========== Bottom CTA ========== */
+    .bottom-cta {
+      position: relative;
+      background: url('./assets/imgCtaBg.png') center center / cover no-repeat;
+      height: 820px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ========== Footer ========== */
+    .site-footer {
+      background: var(--footer);
+      color: rgba(255,255,255,.7);
+      padding: 100px 140px;
+    }
+    .footer-brand {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 60px;
+    }
+    .footer-brand img.wordmark { height: 26px; width: auto; }
+    .footer-brand img.corp { height: 26px; width: auto; }
+    .footer-rule {
+      height: 1px; background: rgba(255,255,255,.18); margin-bottom: 60px; border: 0;
+    }
+    .footer-main {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 40px; margin-bottom: 60px;
+    }
+    .footer-cols {
+      display: flex; gap: 80px; flex-wrap: wrap;
+    }
+    .footer-col {
+      width: 200px;
+      display: flex; flex-direction: column; gap: 32px;
+    }
+    .footer-col h4 {
+      font-size: 20px; font-weight: 500; color: rgba(255,255,255,.8);
+    }
+    .footer-col a {
+      font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.7);
+      transition: color .2s;
+    }
+    .footer-col a:hover { color: #fff; }
+    .socials { display: flex; gap: 32px; align-items: center; }
+    .socials a {
+      width: 40px; height: 40px; border-radius: 50%; overflow: hidden;
+      transition: opacity .2s;
+    }
+    .socials a:hover { opacity: .8; }
+    .socials img { width: 100%; height: 100%; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 24px; flex-wrap: wrap;
+      font-size: 16px; color: rgba(255,255,255,.6);
+    }
+    .footer-bottom .legal { display: flex; gap: 80px; }
+
+    @media (max-width: 1200px) {
+      .eco-grid { grid-template-columns: 1fr; }
+      .eco-cards { justify-content: center; }
+      .eco-intro h2 { letter-spacing: -2px; max-width: none; }
+      .site-footer { padding: 72px 40px; }
+    }
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .stats-card { grid-template-columns: 1fr; padding: 28px 24px; gap: 20px; box-shadow: 0 0 0 10px rgba(255,255,255,.45); }
+      .eco-cards { grid-template-columns: 1fr; }
+      .eco-card { min-height: 0; }
+      .footer-main { flex-direction: column; }
+      .footer-bottom .legal { gap: 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header · Figma 3470:20109 / page 3423:2 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="logo-link" href="#" aria-label="Aurora Mobile">
+          <img src="./assets/imgLogoIcon.png" height="36" alt="Aurora Mobile" style="width:auto;" />
+        </a>
+        <nav class="nav" aria-label="メインナビゲーション">
+          <a class="nav-item" href="#">ホーム</a>
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-item" type="button" aria-expanded="false" data-dropdown-trigger>
+              ソリューション
+              <img class="chevron" src="./assets/imgChevron.svg" width="12" height="12" alt="" />
+            </button>
+            <div class="dropdown-panel" role="menu">
+              <a href="#ecosystem">EngageLab</a>
+              <a href="#ecosystem">プログラマティック広告</a>
+              <a href="#ecosystem">GPTBots.ai</a>
+              <a href="#ecosystem">フィンテック</a>
+            </div>
+          </div>
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-item" type="button" aria-expanded="false" data-dropdown-trigger>
+              エンタープライズ
+              <img class="chevron" src="./assets/imgChevron.svg" width="12" height="12" alt="" />
+            </button>
+            <div class="dropdown-panel" role="menu">
+              <a href="#">私たちについて</a>
+              <a href="#">投資家情報</a>
+              <a href="#">採用情報</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="cta-wrap">
+        <a class="cta-header" href="#contact">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>AIと高精度エンゲージメントでグローバル成長を加速</h1>
+        <p>Aurora Mobile（NASDAQ: JG）は、最先端のインフラとAI主導のソリューションを提供し、企業のグローバルなユーザー獲得、エンゲージメント強化、収益化を支援します。</p>
+        <a class="btn-dark" href="#ecosystem">ソリューションを見る</a>
+      </div>
+      <div class="hero-visual">
+        <img class="bg" src="./assets/imgImage1355.png" alt="" />
+        <div class="stats-card">
+          <div class="stat-item">
+            <div class="label">月間アクティブデバイス数</div>
+            <div class="value">1.86B+</div>
+          </div>
+          <div class="stat-item">
+            <div class="label">SDK累計インストール数</div>
+            <div class="value">82.4B</div>
+          </div>
+          <div class="stat-item">
+            <div class="label">支援してきたモバイル開発者数</div>
+            <div class="value">780K+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="trust">
+      <h2>Aurora Mobileは世界中の60万社以上の企業および開発者に信頼されています</h2>
+      <div class="logos">
+        <div class="logo-slot" style="width:137px"><img src="./assets/img1.png" alt="J&amp;T Express" /></div>
+        <div class="logo-slot" style="width:134px"><img src="./assets/img2.png" alt="" /></div>
+        <div class="logo-slot" style="width:49px"><img src="./assets/imgWeQueer.png" alt="" /></div>
+        <div class="logo-slot" style="width:74px"><img src="./assets/img5.jpg" alt="" /></div>
+        <div class="logo-slot" style="width:120px"><img src="./assets/img3.png" alt="Dahua" /></div>
+        <div class="logo-slot" style="width:125px"><img src="./assets/imgUu.png" alt="UU" /></div>
+        <div class="logo-slot" style="width:133px"><img src="./assets/img4.png" alt="" /></div>
+        <div class="logo-slot" style="width:49px"><img src="./assets/imgYippi.png" alt="Yippi" /></div>
+      </div>
+      <div class="pager" aria-hidden="true">
+        <span class="active"></span>
+        <span></span>
+      </div>
+    </section>
+
+    <!-- Feature media -->
+    <section class="feature-media">
+      <div class="media">
+        <img src="./assets/imgImage1350new.png" alt="Aurora Mobile highlight" />
+      </div>
+    </section>
+
+    <!-- Business Ecosystem -->
+    <section class="eco" id="ecosystem">
+      <div class="eco-grid">
+        <div class="eco-intro">
+          <h2>ビジネスエコシステム</h2>
+          <p>AIとメッセージングでグローバル成長を支える中核ソリューション</p>
+        </div>
+        <div class="eco-cards">
+          <article class="eco-card purple">
+            <h3>AI時代の顧客関係を再定義</h3>
+            <p>EngageLabは、AIエージェント、統合顧客データ、信頼性の高いマルチチャネル配信を通じて、より強い顧客関係の構築を支援するAIファーストの顧客エンゲージメントプラットフォームです。</p>
+            <a class="btn-dark" href="#">詳しく見る <img class="arrow" src="./assets/imgIcons.svg" alt="" /></a>
+            <div class="thumb"><img src="./assets/imgImage760.png" alt="EngageLab" /></div>
+          </article>
+          <article class="eco-card peach">
+            <h3>高成長市場の成長機会を捉える</h3>
+            <p>Aurora Adsは、モバイルアプリ開発者向けに効率的な収益化ツールを提供する、世界有数の広告メディエーションおよびマネタイズプラットフォームです。広告収益の最大化とグローバルな収益化パフォーマンス向上を支援します。</p>
+            <a class="btn-dark" href="#">詳しく見る <img class="arrow" src="./assets/imgIcons.svg" alt="" /></a>
+            <div class="thumb"><img src="./assets/imgImage1358.png" alt="Aurora Ads" /></div>
+          </article>
+          <article class="eco-card green">
+            <h3>スマートリスク管理とデジタルファイナンス</h3>
+            <p>Aurora Mobileは、金融機関向けに高精度なリスク管理とライフサイクル全体のマーケティングソリューションを提供し、顧客獲得から貸付後モニタリングまでを支援します。</p>
+            <a class="btn-dark" href="#">詳しく見る <img class="arrow" src="./assets/imgIcons.svg" alt="" /></a>
+            <div class="thumb"><img src="./assets/imgImage761.png" alt="Fintech" /></div>
+          </article>
+          <article class="eco-card cyan">
+            <h3>効率を高め、コストを削減</h3>
+            <p>GPTBots.aiは、エンタープライズ向けのAIエージェント構築プラットフォームです。カスタマーサービス、ナレッジ検索、データ分析、リード獲得などに対応するエンドツーエンドのAIソリューションを提供し、企業のAI時代での競争力を高めます。</p>
+            <a class="btn-dark" href="#">詳しく見る <img class="arrow" src="./assets/imgIcons.svg" alt="" /></a>
+            <div class="thumb"><img src="./assets/imgImage1359.png" alt="GPTBots.ai" /></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bottom-cta" id="contact"></section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img class="wordmark" src="./assets/imgGroup1.svg" alt="Aurora Mobile" />
+      <img class="corp" src="./assets/imgKabushiki.svg" alt="株式会社" />
+    </div>
+    <hr class="footer-rule" />
+    <div class="footer-main">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>ソリューション</h4>
+          <a href="#">EngageLab</a>
+          <a href="#">プログラマティック広告</a>
+          <a href="#">GPTBots.ai</a>
+          <a href="#">フィンテック</a>
+        </div>
+        <div class="footer-col">
+          <h4>エンタープライズ</h4>
+          <a href="#">私たちについて</a>
+          <a href="#">投資家情報</a>
+          <a href="#">採用情報</a>
+        </div>
+        <div class="footer-col">
+          <h4>ソーシャルメディア</h4>
+          <a href="#">LinkedIn</a>
+          <a href="#">X</a>
+          <a href="#">Facebook</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><img src="./assets/imgFrame1.svg" alt="" /></a>
+        <a href="#" aria-label="X"><img src="./assets/imgFrame2.svg" alt="" /></a>
+        <a href="#" aria-label="YouTube"><img src="./assets/imgFrame3.svg" alt="" /></a>
+        <a href="#" aria-label="Facebook"><img src="./assets/imgFrame4.svg" alt="" /></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Aurora Mobile株式会社</p>
+      <div class="legal">
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">サービス利用規約</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const dropdowns = document.querySelectorAll("[data-dropdown]");
+    function closeAll(except) {
+      dropdowns.forEach((el) => {
+        if (el === except) return;
+        el.classList.remove("is-open");
+        const t = el.querySelector("[data-dropdown-trigger]");
+        if (t) t.setAttribute("aria-expanded", "false");
+      });
+    }
+    dropdowns.forEach((el) => {
+      const trigger = el.querySelector("[data-dropdown-trigger]");
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = !el.classList.contains("is-open");
+        closeAll();
+        el.classList.toggle("is-open", open);
+        trigger.setAttribute("aria-expanded", String(open));
+      });
+    });
+    document.addEventListener("click", () => closeAll());
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAll(); });
+  </script>
+</body>
+</html>
