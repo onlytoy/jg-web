@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google" content="notranslate" />
+<title>Aurora Japan — 全ページ ワイヤーフレーム</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+/* =========================================================
+   Aurora Japan — Greybox Wireframe
+   4色のみ: #ffffff / #d9d9d9 / #a5a5a5 / #0b1524
+   視覚要素はすべてグレーブロックで代替。文言は実案。
+   ========================================================= */
+
+:root{
+  --white:#ffffff;
+  --grey-light:#d9d9d9;
+  --grey:#a5a5a5;
+  --ink:#0b1524;
+  --maxw:1160px;
+  --pad-y:120px;
+  --font:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:#efefef;
+  line-height:1.8;
+  letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;
+  line-break:strict;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,p,li{word-break:auto-phrase;}
+img{max-width:100%;display:block;}
+ul{margin:0;padding:0;list-style:none;}
+a{color:inherit;text-decoration:none;}
+
+/* ---------- 上部：プロトタイプ・ツールバー ---------- */
+.bar{
+  position:sticky;top:0;z-index:120;
+  background:var(--ink);color:#fff;
+  padding:9px 18px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  font-size:12px;
+}
+.bar b{font-weight:700;letter-spacing:.06em;opacity:.72;}
+.bar .now{opacity:.9;}
+.bar .sp{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.bar select{
+  font-family:inherit;font-size:12px;padding:5px 10px;border-radius:6px;
+  border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer;
+}
+.bar select option{color:#111;}
+.bar .tgl{
+  padding:5px 13px;border:1px solid rgba(255,255,255,.3);border-radius:999px;cursor:pointer;
+  user-select:none;white-space:nowrap;
+}
+.bar .tgl:hover{background:rgba(255,255,255,.14);}
+.bar .tgl.on{background:#fff;color:var(--ink);border-color:#fff;}
+.bar .hint{opacity:.4;}
+
+/* ---------- ページ枠 ---------- */
+.page{max-width:1440px;margin:0 auto 64px;padding:0 20px;}
+.page-tag{
+  display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+  padding:34px 4px 12px;font-size:13px;color:#6b7480;letter-spacing:.08em;
+}
+.page-tag strong{font-size:22px;color:var(--ink);letter-spacing:0;}
+.page-tag span{font-size:12px;}
+.frame{background:var(--white);box-shadow:0 2px 20px rgba(0,0,0,.08);}
+
+/* ---------- 表示モード ---------- */
+/* proto = クリックで遷移する試作。list = 全ページを縦に並べたレビュー用 */
+body[data-mode="proto"]{background:var(--white);}
+body[data-mode="proto"] .page{display:none;max-width:none;margin:0;padding:0;}
+body[data-mode="proto"] .page.active{display:block;}
+body[data-mode="proto"] .page-tag{display:none;}
+body[data-mode="proto"] .frame{box-shadow:none;}
+
+/* ---------- 遷移できる要素 ---------- */
+[data-go],[data-href]{cursor:pointer;}
+
+/* ---------- 画面（1スクリーン＝1 section） ---------- */
+.s{padding:var(--pad-y) 0;position:relative;}
+.s.grey{background:var(--grey);}
+.s.tight{padding:64px 0;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+
+/* 中文レビュー用ラベル */
+.cn{
+  position:absolute;top:16px;left:24px;
+  font-size:11px;color:rgba(11,21,36,.34);letter-spacing:.1em;
+}
+.s.grey .cn{color:rgba(11,21,36,.42);}
+
+/* ---------- タイポ ---------- */
+.h2{font-size:38px;line-height:1.4;font-weight:700;margin:0 0 18px;text-align:center;}
+.h2.left{text-align:left;}
+.h3{font-size:24px;line-height:1.5;font-weight:700;margin:0 0 12px;}
+.lead{font-size:15px;line-height:2;margin:0 0 28px;max-width:620px;}
+.lead.center{margin-left:auto;margin-right:auto;text-align:center;}
+.eyebrow{font-size:12px;letter-spacing:.16em;margin:0 0 14px;opacity:.55;}
+.crumb{font-size:12px;opacity:.5;margin:0 0 26px;}
+.small{font-size:13px;line-height:1.9;}
+.muted{opacity:.7;}
+
+/* ---------- グレーブロック ---------- */
+.box{background:var(--grey);width:100%;}
+.s.grey .box{background:var(--white);}
+.box.h100{height:100px;} .box.h120{height:120px;} .box.h160{height:160px;}
+.box.h180{height:180px;} .box.h200{height:200px;} .box.h240{height:240px;}
+.box.h300{height:300px;} .box.h320{height:320px;} .box.h400{height:400px;} .box.h480{height:480px;}
+.box-note{font-size:12px;opacity:.5;margin-top:10px;}
+
+/* ---------- ボタン ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--ink);color:#fff;
+  padding:13px 26px;border-radius:999px;
+  font-size:13px;font-weight:700;letter-spacing:.02em;
+}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.textlink{font-size:13px;text-decoration:underline;text-underline-offset:4px;}
+
+/* ---------- レイアウト部品 ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.split.narrow-left{grid-template-columns:0.85fr 1.15fr;}
+.split.wide-left{grid-template-columns:1.35fr 0.65fr;align-items:start;}
+.split.reverse .split-media{order:-1;}
+.rowset{display:flex;flex-direction:column;gap:110px;}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:48px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+
+/* ---------- ナビ ---------- */
+.wf-nav{background:var(--grey-light);height:72px;display:flex;align-items:center;position:relative;z-index:60;}
+.wf-nav .wrap{display:flex;align-items:center;gap:40px;width:100%;}
+.wf-nav ul{display:flex;gap:26px;font-size:13px;font-weight:500;}
+.wf-nav ul > li{position:relative;cursor:pointer;padding:24px 0;}
+/* hoverの減光はラベルだけに限定する。
+   li 全体に opacity をかけると、子要素のドロップダウンまで半透明になる。 */
+.wf-nav ul > li:hover > .lbl{opacity:.6;}
+.wf-nav .nav-right{margin-left:auto;display:flex;gap:10px;align-items:center;}
+.wf-nav .btn{padding:9px 18px;font-size:12px;}
+.wf-nav .lang{font-size:12px;opacity:.6;white-space:nowrap;}
+.wf-nav .caret{font-size:9px;opacity:.5;margin-left:5px;}
+
+/* ドロップダウン */
+.wf-nav .menu{
+  position:absolute;top:100%;left:-20px;min-width:300px;
+  background:var(--white);border:1px solid rgba(11,21,36,.16);
+  padding:8px 0;display:none;
+}
+.wf-nav li:hover > .menu{display:block;}
+.wf-nav .menu a{display:block;padding:11px 20px;line-height:1.5;}
+.wf-nav .menu a strong{display:block;font-size:13px;font-weight:700;}
+.wf-nav .menu a em{display:block;font-style:normal;font-size:11px;opacity:.55;letter-spacing:.06em;}
+.wf-nav .menu a:hover{background:rgba(11,21,36,.06);opacity:1;}
+.wf-nav .menu .sep{height:1px;background:rgba(11,21,36,.12);margin:8px 0;}
+
+/* ---------- フッター ---------- */
+.wf-footer{background:var(--ink);color:#fff;padding:70px 0 30px;}
+.wf-footer .cols{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:40px;}
+.wf-footer h4{font-size:12px;letter-spacing:.12em;margin:0 0 16px;opacity:.55;font-weight:700;}
+.wf-footer li{font-size:13px;margin-bottom:9px;opacity:.85;}
+.wf-footer .fdesc{font-size:12px;opacity:.5;line-height:1.9;max-width:260px;}
+.wf-footer .fbottom{
+  margin-top:52px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);
+  display:flex;flex-wrap:wrap;gap:18px;font-size:12px;opacity:.5;
+}
+.wf-footer .fbottom .lang-row{margin-left:auto;display:flex;gap:16px;}
+
+/* =========================================================
+   個別レイアウト
+   ========================================================= */
+
+/* 細い数字バー */
+.statbar{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;}
+.statbar div{padding:0 20px;border-left:1px solid rgba(11,21,36,.14);}
+.statbar div:first-child{border-left:none;}
+.statbar .num{font-size:34px;font-weight:700;line-height:1.3;margin:0;}
+.statbar .cap{font-size:12px;opacity:.6;margin:0;}
+
+/* 課題：縦の矢印タイムライン */
+.timeline{max-width:720px;margin:0 auto;}
+.tl-item{
+  display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:start;
+  padding:26px 0;border-bottom:1px solid rgba(11,21,36,.16);
+}
+.tl-item:last-of-type{border-bottom:none;}
+.tl-num{font-size:30px;font-weight:700;opacity:.28;line-height:1.2;}
+.tl-arrow{text-align:center;font-size:22px;opacity:.35;padding:6px 0;}
+.tl-answer{text-align:center;margin-top:44px;}
+.tl-answer .h3{margin-bottom:6px;}
+
+/* アーキテクチャ図 */
+.arch{background:var(--white);padding:34px;}
+.arch-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.arch-cell{
+  flex:1;min-width:96px;background:var(--grey);color:var(--ink);
+  text-align:center;padding:16px 8px;font-size:12px;font-weight:500;
+}
+.arch-cell.core{background:var(--ink);color:#fff;font-size:15px;font-weight:700;padding:24px 8px;}
+.arch-arrow{text-align:center;font-size:20px;opacity:.4;padding:10px 0;}
+.arch-label{font-size:11px;letter-spacing:.1em;opacity:.45;margin:0 0 8px;}
+
+/* 横スクロールの大画像 */
+.scroller{display:flex;gap:24px;overflow-x:auto;padding-bottom:14px;}
+.scroller::-webkit-scrollbar{height:6px;}
+.scroller::-webkit-scrollbar-thumb{background:rgba(11,21,36,.2);}
+.uc{flex:0 0 380px;}
+.uc .box{height:260px;margin-bottom:16px;}
+.uc h4{font-size:17px;margin:0 0 6px;font-weight:700;}
+.uc p{font-size:13px;margin:0;opacity:.7;line-height:1.8;}
+
+/* 事例：大1件＋業種3件 */
+.story-metric{font-size:64px;font-weight:700;line-height:1.1;margin:6px 0 2px;}
+.story-logo{width:130px;height:34px;background:var(--grey);margin-bottom:26px;}
+.s.grey .story-logo{background:var(--white);}
+.story-more{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:88px;padding-top:44px;border-top:1px solid rgba(11,21,36,.18);}
+.story-more .lg{width:96px;height:26px;background:var(--grey);margin-bottom:14px;}
+.s.grey .story-more .lg{background:var(--white);}
+.tag{display:inline-block;font-size:11px;border:1px solid rgba(11,21,36,.3);padding:2px 10px;border-radius:999px;margin-bottom:10px;}
+
+/* 副CTAバー */
+.subcta{display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
+.subcta .box{width:150px;height:100px;flex:0 0 auto;}
+.subcta .t{flex:1;min-width:240px;}
+.subcta .t p{margin:0;font-size:13px;opacity:.7;}
+.subcta .t h4{margin:0 0 4px;font-size:19px;font-weight:700;}
+
+/* トップページ用 */
+.statbar.four{grid-template-columns:repeat(4,1fr);}
+.logorow.seven{grid-template-columns:repeat(7,1fr);}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;}
+.chips li{font-size:11px;border:1px solid rgba(11,21,36,.3);padding:2px 10px;border-radius:999px;}
+.s.grey .chips li{border-color:rgba(11,21,36,.4);}
+.kpi{background:var(--grey);height:150px;display:flex;flex-direction:column;
+     align-items:center;justify-content:center;margin-bottom:16px;}
+.s.grey .kpi{background:var(--white);}
+.kpi b{font-size:36px;line-height:1.2;}
+.kpi span{font-size:12px;opacity:.6;}
+.techrow{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.techrow .t-cap{font-size:11px;letter-spacing:.1em;opacity:.5;}
+.techrow b{display:block;font-size:30px;line-height:1.3;}
+.techrow span{font-size:12px;opacity:.6;}
+
+/* 横ステップ */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;text-align:center;}
+.steps.four{grid-template-columns:repeat(4,1fr);gap:32px;}
+.steps .n{font-size:13px;letter-spacing:.14em;opacity:.5;margin-bottom:10px;}
+.steps .box{height:110px;margin-bottom:18px;}
+.steps h4{font-size:17px;margin:0 0 6px;font-weight:700;}
+.steps p{font-size:13px;margin:0;opacity:.7;}
+
+.finalcta{text-align:center;}
+.finalcta .btn-row{justify-content:center;margin-top:30px;}
+
+/* 一覧カード（リストページのみ許容） */
+.item .box{height:200px;margin-bottom:16px;}
+.item h4{font-size:18px;margin:0 0 8px;font-weight:700;line-height:1.6;}
+.item p{font-size:13px;margin:0;opacity:.7;}
+.item .metric{font-size:30px;font-weight:700;margin:0 0 4px;}
+.taglist{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:8px;}
+
+/* 記事・ニュース行 */
+.rowlist li{
+  display:grid;grid-template-columns:110px 110px 1fr 24px;gap:20px;align-items:center;
+  padding:22px 0;border-bottom:1px solid rgba(11,21,36,.16);font-size:14px;
+}
+.rowlist .date{opacity:.55;font-size:13px;}
+.rowlist .cat{font-size:11px;border:1px solid rgba(11,21,36,.3);padding:2px 10px;border-radius:999px;text-align:center;}
+.rowlist .arrow{opacity:.4;text-align:right;}
+
+/* 定義テーブル（会社概要など） */
+.dl{border-top:1px solid rgba(11,21,36,.18);}
+.dl .row{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid rgba(11,21,36,.18);font-size:14px;}
+.dl .row dt{font-weight:700;margin:0;opacity:.75;}
+.dl .row dd{margin:0;}
+.dl.compact{border-top:none;}
+.dl.compact .row{grid-template-columns:110px 1fr;padding:12px 0;font-size:13px;}
+.dl.compact .row:last-child{border-bottom:none;}
+
+/* 拠点カード */
+.panel{background:var(--white);border:1px solid rgba(11,21,36,.2);padding:40px;}
+.s.grey .panel{border-color:transparent;}
+.panel h3{font-size:22px;font-weight:700;margin:0 0 14px;}
+.panel .addr{font-size:15px;line-height:1.9;margin:0 0 24px;}
+
+/* 沿革 */
+.history li{display:grid;grid-template-columns:130px 1fr;gap:24px;padding:16px 0;border-bottom:1px solid rgba(11,21,36,.14);font-size:14px;}
+.history .y{font-weight:700;opacity:.6;}
+
+/* フォーム */
+.form{max-width:680px;margin:0 auto;}
+.field{margin-bottom:22px;}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:8px;}
+.field label i{font-style:normal;font-size:11px;border:1px solid rgba(11,21,36,.4);padding:1px 7px;border-radius:3px;margin-left:8px;opacity:.7;}
+.field .input{height:48px;background:var(--grey);}
+.s.grey .field .input{background:var(--white);}
+.field .input.area{height:130px;}
+.form .note{font-size:12px;opacity:.6;margin:22px 0 26px;}
+.form .btn-row{justify-content:center;}
+
+/* 職種リスト */
+.joblist li{display:grid;grid-template-columns:1fr 160px 120px 24px;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid rgba(11,21,36,.16);font-size:14px;}
+.joblist .meta{font-size:13px;opacity:.6;}
+
+/* 認証・ロゴ列 */
+.logorow{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;align-items:center;}
+.logorow .lg{height:56px;background:var(--grey);}
+.s.grey .logorow .lg{background:var(--white);}
+
+/* Legal：サイドナビ＋本文 */
+.legal{display:grid;grid-template-columns:240px 1fr;gap:64px;align-items:start;}
+.legal .side li{font-size:13px;padding:10px 0;border-bottom:1px solid rgba(11,21,36,.14);}
+.legal .body .line{height:12px;background:var(--grey);margin-bottom:12px;}
+.legal .body .line.w80{width:80%;} .legal .body .line.w60{width:60%;} .legal .body .line.w90{width:90%;}
+.legal .body h4{font-size:17px;margin:34px 0 14px;}
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width:900px){
+  :root{--pad-y:72px;}
+  .wrap{padding:0 24px;}
+  .h2{font-size:27px;}
+  .split,.split.narrow-left,.split.wide-left{grid-template-columns:1fr;gap:36px;}
+  .split.reverse .split-media{order:0;}
+  .rowset{gap:64px;}
+  .grid2,.grid3,.grid4,.steps,.steps.four,.story-more,.legal,.logorow,
+  .logorow.seven,.statbar.four,.techrow{grid-template-columns:1fr;gap:36px;}
+  .wf-nav ul,.wf-nav .lang{display:none;}
+  .wf-footer .cols{grid-template-columns:1fr 1fr;gap:32px;}
+  .statbar{grid-template-columns:1fr;}
+  .statbar div{border-left:none;border-top:1px solid rgba(11,21,36,.14);padding:16px 0;}
+  .statbar div:first-child{border-top:none;}
+  .uc{flex:0 0 78vw;}
+  .arch-row{flex-direction:column;}
+  .rowlist li{grid-template-columns:1fr;gap:8px;}
+  .rowlist .cat{justify-self:start;}
+  .rowlist .arrow{display:none;}
+  .dl .row{grid-template-columns:1fr;gap:6px;}
+  .history li{grid-template-columns:1fr;gap:4px;}
+  .joblist li{grid-template-columns:1fr;gap:6px;}
+  .wf-footer .fbottom .lang-row{margin-left:0;}
+  .logorow .lg{height:44px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     ページジャンプバー
+     ============================================================ -->
+<nav class="bar">
+  <b>Aurora Japan ／ ワイヤーフレーム</b>
+  <span class="now" id="nowPage"></span>
+  <span class="sp">
+    <span class="hint">ナビ・ボタン・パンくずはクリックで遷移します</span>
+    <select id="pageSelect"></select>
+    <span class="tgl on" id="modeToggle">試作表示</span>
+  </span>
+</nav>
+
+
+<!-- ============================================================
+     01 ／ トップページ（既存 index.html の内容をグレーモックに）
+     ============================================================ -->
+<section class="page" id="p01">
+  <div class="page-tag">
+    <strong>01</strong> トップページ ／ Home
+    <span>10スクリーン ・ 内容は既存 index.html のまま。ナビだけ新IAに合わせている</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="ホーム"></div>
+
+    <!-- ① Hero -->
+    <div class="s">
+      <span class="cn">① Hero · 左文右视觉（エコシステム図）</span>
+      <div class="wrap">
+        <div class="split narrow-left">
+          <div>
+            <span class="tag">● グローバル・テクノロジー・グループ ｜ NASDAQ: JG</span>
+            <h1 class="h2 left" style="font-size:46px;margin-top:18px;">
+              日本企業の顧客体験を、<br />AIでよりスマートに。
+            </h1>
+            <p class="lead">
+              Aurora Mobileは、AI・カスタマーエンゲージメント・メッセージング・デベロッパーサービスを
+              ひとつのプラットフォームで提供するグローバル・テクノロジーグループです。
+              東京リージョンと国内チームで、日本企業のデジタル成長を支援します。
+            </p>
+            <div class="btn-row">
+              <span class="btn">ソリューションを見る</span>
+              <span class="btn ghost">資料をダウンロード</span>
+            </div>
+            <ul class="small muted" style="margin-top:26px;">
+              <li>✓　東京リージョン対応　　✓　日本語サポート体制　　✓　エンタープライズセキュリティ</li>
+            </ul>
+          </div>
+          <div class="split-media">
+            <div class="box h480"></div>
+            <p class="box-note">Auroraテクノロジー・エコシステム図（中心にAurora、周囲に4事業）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 実績数値 -->
+    <div class="s grey tight">
+      <span class="cn">② 集团数据 · 4项</span>
+      <div class="wrap">
+        <div class="statbar four">
+          <div><p class="num">780K+</p><p class="cap">グローバル開発者数</p></div>
+          <div><p class="num">1.86B+</p><p class="cap">月間アクティブデバイス数</p></div>
+          <div><p class="num">82.4B</p><p class="cap">SDK累計インストール数</p></div>
+          <div><p class="num">99.99%</p><p class="cap">サービス稼働率 SLA</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ③ ロゴウォール -->
+    <div class="s tight">
+      <span class="cn">③ 客户Logo墙</span>
+      <div class="wrap">
+        <p class="small muted" style="text-align:center;margin-bottom:32px;">世界中の企業に信頼されています</p>
+        <div class="logorow seven">
+          <div class="lg"></div><div class="lg"></div><div class="lg"></div><div class="lg"></div>
+          <div class="lg"></div><div class="lg"></div><div class="lg"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ④ 選ばれる理由 -->
+    <div class="s">
+      <span class="cn">④ 選ばれる理由 · 4项</span>
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center;">Aurora Mobile Japanが選ばれる理由</p>
+        <h2 class="h2">グローバルの技術力と、<br />日本品質のサポートを両立</h2>
+        <p class="lead center">先進テクノロジーだけでなく、日本市場に根ざした信頼できるパートナーとして企業のDXを支えます。</p>
+        <div class="grid4" style="margin-top:56px;">
+          <div class="item"><div class="box h120"></div><h4>グローバルインフラ</h4>
+            <p>60以上の国と地域をカバーする配信基盤。世界規模のトラフィックを安定処理します。</p></div>
+          <div class="item"><div class="box h120"></div><h4>日本ローカルチーム</h4>
+            <p>東京リージョンと国内サポート体制。日本語での導入支援と運用サポートを提供します。</p></div>
+          <div class="item"><div class="box h120"></div><h4>エンタープライズセキュリティ</h4>
+            <p>国際基準に準拠したデータ保護とコンプライアンス。安心してご利用いただけます。</p></div>
+          <div class="item"><div class="box h120"></div><h4>AI ドリブンな体験</h4>
+            <p>生成AIとエージェント技術で、顧客接点の自動化とパーソナライズを実現します。</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑤ プロダクト・ポートフォリオ -->
+    <div class="s grey">
+      <span class="cn">⑤ 四大产品 · 各自跳转到对应事業页</span>
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center;">グローバル・プロダクト・ポートフォリオ</p>
+        <h2 class="h2">Auroraのプロダクト・エコシステム</h2>
+        <p class="lead center">単一のプロダクトではなく、企業の成長を支える統合されたテクノロジー群を提供します。</p>
+        <div class="grid2" style="margin-top:56px;">
+
+          <div class="item" data-go="p02">
+            <div class="box h160"></div>
+            <span class="tag">顧客エンゲージメント</span>
+            <h4>EngageLab</h4>
+            <p class="small" style="opacity:.9;">AI時代の顧客関係を再定義</p>
+            <p>EngageLabは、AIエージェント、統合顧客データ、信頼性の高いマルチチャネル配信を通じて、より強い顧客関係の構築を支援するAIファーストの顧客エンゲージメントプラットフォームです。</p>
+            <ul class="chips"><li>AIエージェント</li><li>統合顧客データ</li><li>マルチチャネル配信</li><li>顧客エンゲージメント</li></ul>
+            <p style="margin-top:16px;"><span class="textlink">詳しく見る →</span></p>
+          </div>
+
+          <div class="item" data-go="p04">
+            <div class="box h160"></div>
+            <span class="tag">広告</span>
+            <h4>プログラマティック広告</h4>
+            <p class="small" style="opacity:.9;">高成長市場の成長機会を捉える</p>
+            <p>Aurora Adsは、モバイルアプリ開発者向けに効率的な収益化ツールを提供する、世界有数の広告メディエーションおよびマネタイズプラットフォームです。広告収益の最大化とグローバルな収益化パフォーマンス向上を支援します。</p>
+            <ul class="chips"><li>広告メディエーション</li><li>アプリ収益化</li><li>広告最適化</li><li>グローバル配信</li></ul>
+            <p style="margin-top:16px;"><span class="textlink">詳しく見る →</span></p>
+          </div>
+
+          <div class="item" data-go="p05">
+            <div class="box h160"></div>
+            <span class="tag">フィンテック</span>
+            <h4>フィンテック</h4>
+            <p class="small" style="opacity:.9;">スマートリスク管理とデジタルファイナンス</p>
+            <p>Aurora Mobileは、金融機関向けに高精度なリスク管理とライフサイクル全体のマーケティングソリューションを提供し、顧客獲得から貸付後モニタリングまでを支援します。</p>
+            <ul class="chips"><li>リスク管理</li><li>顧客獲得</li><li>与信分析</li><li>貸付後モニタリング</li></ul>
+            <p style="margin-top:16px;"><span class="textlink">詳しく見る →</span></p>
+          </div>
+
+          <div class="item" data-go="p03">
+            <div class="box h160"></div>
+            <span class="tag">AIプラットフォーム</span>
+            <h4>GPTBots.ai</h4>
+            <p class="small" style="opacity:.9;">効率を高め、コストを削減</p>
+            <p>GPTBots.aiは、エンタープライズ向けのAIエージェント構築プラットフォームです。カスタマーサービス、ナレッジ検索、データ分析、リード獲得などに対応するエンドツーエンドのAIソリューションを提供し、企業のAI時代での競争力を高めます。</p>
+            <ul class="chips"><li>AIエージェント</li><li>ナレッジ検索</li><li>データ分析</li><li>リード獲得</li></ul>
+            <p style="margin-top:16px;"><span class="textlink">詳しく見る →</span></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑥ 業界別ソリューション -->
+    <div class="s">
+      <span class="cn">⑥ 行业方案 · 6项</span>
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center;">業界別ソリューション</p>
+        <h2 class="h2">業界ごとの課題に、<br />最適なソリューションを</h2>
+        <p class="lead center">それぞれの業界特性に合わせて、Auroraのプロダクトを組み合わせた導入をご提案します。</p>
+        <div class="grid3" style="margin-top:56px;">
+          <div class="item"><div class="box h180"></div><span class="tag">小売</span><h4>小売・EC</h4><p>購買データに基づくパーソナライズ配信でCVRを向上。</p></div>
+          <div class="item"><div class="box h180"></div><span class="tag">ゲーム</span><h4>ゲーム</h4><p>プッシュとイベント配信でユーザー継続率を最大化。</p></div>
+          <div class="item"><div class="box h180"></div><span class="tag">金融</span><h4>金融</h4><p>SMS認証・OTPでセキュアな取引体験を実現。</p></div>
+          <div class="item"><div class="box h180"></div><span class="tag">旅行・交通</span><h4>旅行・交通</h4><p>マルチチャネルで予約からアフターまで一貫連携。</p></div>
+          <div class="item"><div class="box h180"></div><span class="tag">製造</span><h4>製造</h4><p>顧客サポートをAIで自動化し、対応品質を向上。</p></div>
+          <div class="item"><div class="box h180"></div><span class="tag">AI・SaaS</span><h4>AI・SaaS</h4><p>AIエージェントで社内業務とCXを高度化。</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑦ 導入事例 -->
+    <div class="s grey">
+      <span class="cn">⑦ 客户案例 · 3件，点进事例详情</span>
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center;">導入事例</p>
+        <h2 class="h2">導入企業の成功事例</h2>
+        <p class="lead center">Auroraのプロダクトが、実際のビジネス成果にどう貢献しているかをご紹介します。</p>
+        <div class="grid3" style="margin-top:56px;">
+          <div class="item" data-go="p07">
+            <div class="kpi"><b>+15%</b><span>CVR 改善</span></div>
+            <span class="tag">小売・EC</span>
+            <h4>MAとWeb接客の統合で、購買転換率を約15%改善</h4>
+            <p>EngageLabによるパーソナライズ配信で、顧客一人ひとりに最適な体験を提供。</p>
+            <p class="small muted" style="margin-top:10px;">大手小売グループ</p>
+          </div>
+          <div class="item" data-go="p07">
+            <div class="kpi"><b>-75%</b><span>ツール費用</span></div>
+            <span class="tag">SaaS・テクノロジー</span>
+            <h4>オールインワン化により、運用コストを最大75%削減</h4>
+            <p>複数ツールをAuroraに統合し、運用工数とライセンス費用を大幅に圧縮。</p>
+            <p class="small muted" style="margin-top:10px;">SaaSプロバイダー</p>
+          </div>
+          <div class="item" data-go="p07">
+            <div class="kpi"><b>3.2x</b><span>継続率向上</span></div>
+            <span class="tag">ゲーム</span>
+            <h4>プッシュ最適化でユーザー継続率を3.2倍に</h4>
+            <p>EngageLabのリアルタイム配信とセグメントで、休眠ユーザーの再活性化を実現。</p>
+            <p class="small muted" style="margin-top:10px;">モバイルゲーム開発会社</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑧ 技術と信頼性 -->
+    <div class="s">
+      <span class="cn">⑧ 技术与信任 · 左文右数字</span>
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="eyebrow">技術と信頼性</p>
+            <h2 class="h2 left">なぜグローバル企業が<br />Auroraを選ぶのか</h2>
+            <p class="lead">
+              ミッションクリティカルな通信基盤に求められる、可用性・セキュリティ・グローバル対応。
+              Auroraはそのすべてをエンタープライズ品質で提供します。
+            </p>
+            <span class="btn">技術資料をリクエスト</span>
+          </div>
+          <div class="split-media">
+            <div class="techrow" style="grid-template-columns:repeat(2,1fr);gap:32px;">
+              <div><p class="t-cap">可用性</p><b>99.99%</b><span>稼働率 SLA</span></div>
+              <div><p class="t-cap">リージョン</p><b>東京</b><span>国内リージョン対応</span></div>
+              <div><p class="t-cap">セキュリティ</p><b>ISO</b><span>国際基準の準拠体制</span></div>
+              <div><p class="t-cap">サポート</p><b>24/7</b><span>グローバル運用監視</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑨ ニュース＋お役立ち資料 -->
+    <div class="s grey">
+      <span class="cn">⑨ 新闻＋资料 · 左右分栏</span>
+      <div class="wrap">
+        <div class="split wide-left">
+          <div>
+            <p class="eyebrow">ニュース・プレスリリース</p>
+            <h2 class="h2 left" style="font-size:30px;">ニュース・プレスリリース</h2>
+            <ul class="rowlist" style="margin-top:20px;">
+              <li data-go="p11"><span class="date">2026.06.11</span><span class="cat">プレスリリース</span><span>Aurora Mobile、日本法人「Aurora Mobile株式会社」を設立</span><span class="arrow">→</span></li>
+              <li data-go="p11"><span class="date">2026.05.20</span><span class="cat">プロダクト</span><span>GPTBots.ai、エンタープライズ向けAIエージェント機能を強化</span><span class="arrow">→</span></li>
+              <li data-go="p11"><span class="date">2026.04.17</span><span class="cat">導入事例</span><span>大手ECにてEngageLab導入、CVR15%改善を達成</span><span class="arrow">→</span></li>
+              <li data-go="p11"><span class="date">2026.03.05</span><span class="cat">お知らせ</span><span>東京リージョンでのデータ処理提供を開始</span><span class="arrow">→</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="h3" style="font-size:20px;">お役立ち資料</h3>
+            <p class="small muted">導入検討に役立つホワイトペーパーや製品ガイドを無料でダウンロードいただけます。</p>
+            <ul class="small" style="margin:20px 0;">
+              <li style="padding:10px 0;border-bottom:1px solid rgba(11,21,36,.18);">↓　顧客エンゲージメント白書 2026</li>
+              <li style="padding:10px 0;border-bottom:1px solid rgba(11,21,36,.18);">↓　エンタープライズAI導入ガイド</li>
+              <li style="padding:10px 0;border-bottom:1px solid rgba(11,21,36,.18);">↓　EngageLab 製品カタログ</li>
+            </ul>
+            <span class="btn" data-go="p08">資料をダウンロード</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑩ CTA -->
+    <div class="s finalcta">
+      <span class="cn">⑩ 转化屏</span>
+      <div class="wrap">
+        <h2 class="h2">日本市場での成長を、<br />Auroraと共に。</h2>
+        <p class="lead center">製品デモ、資料ダウンロード、導入のご相談まで。まずはお気軽にお問い合わせください。</p>
+        <div class="btn-row">
+          <span class="btn ghost">ソリューションを見る</span>
+          <span class="btn" data-go="p08">資料ダウンロード</span>
+          <span class="btn ghost" data-go="p13">お問い合わせ</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     02 ／ EngageLab（主テンプレート・SaaS型）
+     ============================================================ -->
+<section class="page" id="p02">
+  <div class="page-tag">
+    <strong>02</strong> EngageLab ／ Service Detail
+    <span>8スクリーン ・ SaaS型の主テンプレート。1画面ごとにレイアウトを変える（カード連発を禁止）</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="事業"></div>
+
+    <div class="s">
+      <span class="cn">① Hero · 左文右视觉</span>
+      <div class="wrap">
+        <div class="split narrow-left">
+          <div>
+            <p class="crumb">ホーム ／ 事業 ／ EngageLab</p>
+            <h1 class="h2 left" style="font-size:44px;">EngageLab</h1>
+            <p class="lead" style="font-size:19px;margin-bottom:20px;">グローバル顧客エンゲージメント・プラットフォーム</p>
+            <p class="lead">
+              App Push・Web Push・Email・SMS・WhatsAppを一つのプラットフォームで管理。
+              海外ユーザーにも確実に届く、企業向けメッセージング基盤です。
+            </p>
+            <ul class="small muted" style="margin-bottom:30px;">
+              <li>✓　グローバル配信・高到達率</li>
+              <li>✓　マルチチャネルを一元管理</li>
+              <li>✓　API / SDKで既存システムと連携</li>
+            </ul>
+            <div class="btn-row"><span class="btn">資料ダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+          </div>
+          <div class="split-media">
+            <div class="box h480"></div>
+            <p class="box-note">プロダクトビジュアル（ダッシュボード／配信フロー）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey tight">
+      <span class="cn">② 窄数据带 · 直接落地也能建立信任，仅一行</span>
+      <div class="wrap">
+        <div class="statbar">
+          <div><p class="num">230+</p><p class="cap">サービス提供国・地域</p></div>
+          <div><p class="num">20B+</p><p class="cap">1日あたりのメッセージ配信数</p></div>
+          <div><p class="num">99.9%</p><p class="cap">プラットフォーム稼働率</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">③ 課題 · 纵向箭头，不用卡片</span>
+      <div class="wrap">
+        <h2 class="h2">このような課題はありませんか？</h2>
+        <div class="timeline" style="margin-top:48px;">
+          <div class="tl-item"><div class="tl-num">01</div><div>
+            <h3 class="h3" style="font-size:20px;">プッシュ通知が届かない</h3>
+            <p class="small muted">端末やOSの仕様変更により到達率が下がり、施策の効果が読めない。</p></div></div>
+          <div class="tl-item"><div class="tl-num">02</div><div>
+            <h3 class="h3" style="font-size:20px;">チャネルが分散している</h3>
+            <p class="small muted">Push・Email・SMSがそれぞれ別ツール。配信管理も効果測定もばらばら。</p></div></div>
+          <div class="tl-item"><div class="tl-num">03</div><div>
+            <h3 class="h3" style="font-size:20px;">海外向け配信が難しい</h3>
+            <p class="small muted">国ごとの規制・キャリア事情に対応できず、海外SMSのコストも読みづらい。</p></div></div>
+          <div class="tl-arrow">↓</div>
+          <div class="tl-answer">
+            <h3 class="h3">EngageLabが、一つのプラットフォームで解決します。</h3>
+            <p class="small muted">配信・管理・分析をまとめ、運用工数とコストを同時に削減。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">④ Platform · 能力+架构合并成一屏</span>
+      <div class="wrap">
+        <div class="split narrow-left">
+          <div>
+            <p class="eyebrow">プラットフォーム</p>
+            <h2 class="h2 left">すべてのチャネルを、<br />一つの基盤に。</h2>
+            <p class="lead">
+              既存のCRM・アプリ・Webサイトのデータをそのまま接続。
+              EngageLabが配信先とタイミングを最適化し、各チャネルへ届けます。
+            </p>
+            <p class="small muted">
+              App Push ／ Web Push ／ Email ／ SMS ／ WhatsApp ／ OTP<br />
+              API・SDK ／ マーケティングオートメーション ／ ジャーニー ／ 分析
+            </p>
+          </div>
+          <div class="split-media">
+            <div class="arch">
+              <p class="arch-label">データソース</p>
+              <div class="arch-row">
+                <div class="arch-cell">CRM</div><div class="arch-cell">アプリ</div>
+                <div class="arch-cell">Webサイト</div><div class="arch-cell">基幹システム</div>
+              </div>
+              <div class="arch-arrow">↓</div>
+              <div class="arch-row"><div class="arch-cell core">EngageLab Platform</div></div>
+              <div class="arch-arrow">↓</div>
+              <p class="arch-label">配信チャネル</p>
+              <div class="arch-row">
+                <div class="arch-cell">App Push</div><div class="arch-cell">Email</div>
+                <div class="arch-cell">SMS</div><div class="arch-cell">WhatsApp</div>
+              </div>
+              <div class="arch-row" style="margin-top:12px;">
+                <div class="arch-cell">API / SDK</div><div class="arch-cell">オートメーション</div><div class="arch-cell">分析</div>
+              </div>
+            </div>
+            <p class="box-note">※ 実装時はイラスト化したアーキテクチャ図に差し替え</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">⑤ 業種別シーン · 大图横滑</span>
+      <div class="wrap">
+        <h2 class="h2 left">業種別の活用シーン</h2>
+        <p class="lead">お客様の業種に近い活用イメージからご覧いただけます。</p>
+      </div>
+      <div class="wrap" style="max-width:none;padding-right:0;">
+        <div class="scroller">
+          <div class="uc"><div class="box"></div><h4>小売・EC</h4><p>カゴ落ち通知やセール告知をチャネル横断で配信し、再訪率を改善。</p></div>
+          <div class="uc"><div class="box"></div><h4>ゲーム</h4><p>イベント通知と復帰施策を自動化し、継続率とLTVを向上。</p></div>
+          <div class="uc"><div class="box"></div><h4>金融</h4><p>本人認証（OTP）と重要通知を、確実性の高い経路で届ける。</p></div>
+          <div class="uc"><div class="box"></div><h4>旅行・交通</h4><p>予約確認や運行情報など、時間に依存する通知をリアルタイムに。</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey tight">
+      <span class="cn">中段副CTA · 日本B2B主转化路径＝先下资料</span>
+      <div class="wrap">
+        <div class="subcta">
+          <div class="box"></div>
+          <div class="t">
+            <h4>EngageLab サービス紹介資料（無料）</h4>
+            <p>機能一覧・導入事例・料金の考え方をまとめた資料をお送りします。</p>
+          </div>
+          <span class="btn">資料をダウンロード</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">⑦ 事例 · 大案例1个 + 行业入口3个</span>
+      <div class="wrap">
+        <h2 class="h2 left">導入事例</h2>
+        <div class="split" style="margin-top:44px;">
+          <div>
+            <div class="story-logo"></div>
+            <p class="eyebrow">小売・EC</p>
+            <p class="story-metric">+35%</p>
+            <h3 class="h3">プッシュ通知の到達率が改善し、<br />再訪率が向上しました。</h3>
+            <p class="lead">
+              複数ツールに分散していた配信をEngageLabに統合。運用工数を削減しながら、
+              チャネル横断でのコミュニケーション設計が可能になりました。
+            </p>
+            <span class="btn ghost">事例を読む</span>
+          </div>
+          <div class="split-media"><div class="box h400"></div></div>
+        </div>
+        <div class="story-more">
+          <div><div class="lg"></div><span class="tag">ゲーム</span><p class="small">復帰施策の自動化により継続率が改善。</p></div>
+          <div><div class="lg"></div><span class="tag">金融</span><p class="small">OTP配信の安定性と監査対応を両立。</p></div>
+          <div><div class="lg"></div><span class="tag">旅行</span><p class="small">運行情報のリアルタイム通知を実現。</p></div>
+        </div>
+        <p style="margin-top:36px;"><span class="textlink">導入事例をもっと見る →</span></p>
+      </div>
+    </div>
+
+    <div class="s grey finalcta">
+      <span class="cn">转化屏 · 資料主／問合せ副／公式サイト降级文字链</span>
+      <div class="wrap">
+        <h2 class="h2">EngageLabについて、<br />もっと詳しく。</h2>
+        <p class="lead center">サービス資料の無料ダウンロード、または個別のご相談を承っています。</p>
+        <div class="btn-row"><span class="btn">資料ダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+        <p style="margin-top:26px;"><span class="textlink">EngageLab公式サイトを見る ↗</span></p>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     03 ／ GPTBots.ai（SaaS型・02と同テンプレート）
+     ============================================================ -->
+<section class="page" id="p03">
+  <div class="page-tag">
+    <strong>03</strong> GPTBots.ai ／ Service Detail
+    <span>8スクリーン ・ 02と同じSaaS型テンプレート。内容のみ差し替え</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="事業"></div>
+
+    <div class="s">
+      <span class="cn">① Hero</span>
+      <div class="wrap">
+        <div class="split narrow-left">
+          <div>
+            <p class="crumb">ホーム ／ 事業 ／ GPTBots.ai</p>
+            <h1 class="h2 left" style="font-size:44px;">GPTBots.ai</h1>
+            <p class="lead" style="font-size:19px;margin-bottom:20px;">業務に組み込む、エンタープライズAIエージェント</p>
+            <p class="lead">
+              社内ドキュメント・基幹システム・CRMと接続し、実際の業務フローの中で動くAIエージェントを構築。
+              問い合わせ対応から社内ナレッジ活用まで、生産性を高めます。
+            </p>
+            <ul class="small muted" style="margin-bottom:30px;">
+              <li>✓　社内データを安全に学習・参照</li>
+              <li>✓　ノーコードでエージェントを構築</li>
+              <li>✓　既存システムとAPI連携</li>
+            </ul>
+            <div class="btn-row"><span class="btn">資料ダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+          </div>
+          <div class="split-media">
+            <div class="box h480"></div>
+            <p class="box-note">プロダクトビジュアル（エージェント構築画面）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey tight">
+      <span class="cn">② 窄数据带</span>
+      <div class="wrap">
+        <div class="statbar">
+          <div><p class="num">10,000+</p><p class="cap">導入企業数（グローバル）</p></div>
+          <div><p class="num">50+</p><p class="cap">対応言語</p></div>
+          <div><p class="num">100+</p><p class="cap">連携可能なシステム</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">③ 課題 · 纵向箭头</span>
+      <div class="wrap">
+        <h2 class="h2">このような課題はありませんか？</h2>
+        <div class="timeline" style="margin-top:48px;">
+          <div class="tl-item"><div class="tl-num">01</div><div>
+            <h3 class="h3" style="font-size:20px;">問い合わせ対応に人手がかかる</h3>
+            <p class="small muted">同じ質問への回答に時間を取られ、本来の業務に集中できない。</p></div></div>
+          <div class="tl-item"><div class="tl-num">02</div><div>
+            <h3 class="h3" style="font-size:20px;">社内のナレッジが探せない</h3>
+            <p class="small muted">資料が各所に分散し、必要な情報にたどり着くまでに時間がかかる。</p></div></div>
+          <div class="tl-item"><div class="tl-num">03</div><div>
+            <h3 class="h3" style="font-size:20px;">AI導入がPoCで止まる</h3>
+            <p class="small muted">検証はできても、既存業務やシステムに組み込めず本番運用に至らない。</p></div></div>
+          <div class="tl-arrow">↓</div>
+          <div class="tl-answer">
+            <h3 class="h3">GPTBots.aiが、業務に組み込めるAIを実現します。</h3>
+            <p class="small muted">構築・連携・運用までを一貫してサポート。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">④ Platform · 能力+架构合并</span>
+      <div class="wrap">
+        <div class="split narrow-left">
+          <div>
+            <p class="eyebrow">プラットフォーム</p>
+            <h2 class="h2 left">社内データと業務を、<br />AIでつなぐ。</h2>
+            <p class="lead">
+              既存のドキュメントやシステムをナレッジとして取り込み、業務ルールに沿って動くエージェントを構築。
+              Webチャット・社内ツール・APIなど、必要な接点に配置できます。
+            </p>
+            <p class="small muted">
+              ナレッジベース ／ ワークフロー ／ マルチエージェント<br />
+              API・SDK ／ アクセス権限管理 ／ 利用分析
+            </p>
+          </div>
+          <div class="split-media">
+            <div class="arch">
+              <p class="arch-label">ナレッジ・データソース</p>
+              <div class="arch-row">
+                <div class="arch-cell">社内文書</div><div class="arch-cell">CRM</div>
+                <div class="arch-cell">基幹システム</div><div class="arch-cell">Webサイト</div>
+              </div>
+              <div class="arch-arrow">↓</div>
+              <div class="arch-row"><div class="arch-cell core">GPTBots Platform</div></div>
+              <div class="arch-arrow">↓</div>
+              <p class="arch-label">利用チャネル</p>
+              <div class="arch-row">
+                <div class="arch-cell">Webチャット</div><div class="arch-cell">社内ツール</div>
+                <div class="arch-cell">音声・電話</div><div class="arch-cell">API</div>
+              </div>
+              <div class="arch-row" style="margin-top:12px;">
+                <div class="arch-cell">権限管理</div><div class="arch-cell">ログ・監査</div><div class="arch-cell">利用分析</div>
+              </div>
+            </div>
+            <p class="box-note">※ 実装時はイラスト化したアーキテクチャ図に差し替え</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">⑤ 活用シーン · 大图横滑</span>
+      <div class="wrap">
+        <h2 class="h2 left">部門別の活用シーン</h2>
+        <p class="lead">導入しやすい業務から段階的に展開できます。</p>
+      </div>
+      <div class="wrap" style="max-width:none;padding-right:0;">
+        <div class="scroller">
+          <div class="uc"><div class="box"></div><h4>カスタマーサポート</h4><p>一次回答の自動化により、対応時間と人的コストを削減。</p></div>
+          <div class="uc"><div class="box"></div><h4>社内ヘルプデスク</h4><p>人事・情シスへの定型的な問い合わせをAIが代行。</p></div>
+          <div class="uc"><div class="box"></div><h4>営業支援</h4><p>提案資料や過去案件を検索し、商談準備を短縮。</p></div>
+          <div class="uc"><div class="box"></div><h4>ナレッジ活用</h4><p>分散した社内文書を横断的に検索・要約。</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey tight">
+      <span class="cn">中段副CTA</span>
+      <div class="wrap">
+        <div class="subcta">
+          <div class="box"></div>
+          <div class="t">
+            <h4>GPTBots.ai サービス紹介資料（無料）</h4>
+            <p>機能・導入ステップ・セキュリティ方針をまとめた資料をお送りします。</p>
+          </div>
+          <span class="btn">資料をダウンロード</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">⑦ 事例 · 大案例1个 + 行业入口3个</span>
+      <div class="wrap">
+        <h2 class="h2 left">導入事例</h2>
+        <div class="split" style="margin-top:44px;">
+          <div>
+            <div class="story-logo"></div>
+            <p class="eyebrow">カスタマーサポート</p>
+            <p class="story-metric">-42%</p>
+            <h3 class="h3">一次対応の自動化により、<br />問い合わせ工数を削減しました。</h3>
+            <p class="lead">
+              FAQと過去の対応履歴をナレッジ化し、Webチャットに配置。
+              有人対応が必要な問い合わせだけを担当者へ引き継ぐ運用に変わりました。
+            </p>
+            <span class="btn ghost">事例を読む</span>
+          </div>
+          <div class="split-media"><div class="box h400"></div></div>
+        </div>
+        <div class="story-more">
+          <div><div class="lg"></div><span class="tag">製造</span><p class="small">技術文書の検索時間を大幅に短縮。</p></div>
+          <div><div class="lg"></div><span class="tag">人材</span><p class="small">社内問い合わせの自動応答を実現。</p></div>
+          <div><div class="lg"></div><span class="tag">EC</span><p class="small">多言語での顧客対応を内製化。</p></div>
+        </div>
+        <p style="margin-top:36px;"><span class="textlink">導入事例をもっと見る →</span></p>
+      </div>
+    </div>
+
+    <div class="s grey finalcta">
+      <span class="cn">转化屏</span>
+      <div class="wrap">
+        <h2 class="h2">GPTBots.aiについて、<br />もっと詳しく。</h2>
+        <p class="lead center">サービス資料の無料ダウンロード、または個別のご相談を承っています。</p>
+        <div class="btn-row"><span class="btn">資料ダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+        <p style="margin-top:26px;"><span class="textlink">GPTBots.ai公式サイトを見る ↗</span></p>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     04 ／ プログラマティック広告（サービス型バリアント）
+     ============================================================ -->
+<section class="page" id="p04">
+  <div class="page-tag">
+    <strong>04</strong> プログラマティック広告 ／ Service Detail
+    <span>8スクリーン ・ サービス型バリアント。④＝支援体制／導入フロー、⑦＝導入実績（公式サイト導線なし）</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="事業"></div>
+
+    <div class="s">
+      <span class="cn">① Hero</span>
+      <div class="wrap">
+        <div class="split narrow-left">
+          <div>
+            <p class="crumb">ホーム ／ 事業 ／ プログラマティック広告</p>
+            <h1 class="h2 left" style="font-size:44px;">プログラマティック広告</h1>
+            <p class="lead" style="font-size:19px;margin-bottom:20px;">海外ユーザー獲得を、データと運用力で。</p>
+            <p class="lead">
+              グローバル規模のデータとアルゴリズムをもとに広告配信を最適化。
+              媒体選定から配信設計、効果改善まで、日本語の専任チームが伴走します。
+            </p>
+            <ul class="small muted" style="margin-bottom:30px;">
+              <li>✓　海外市場での獲得単価を最適化</li>
+              <li>✓　主要アドネットワークに横断対応</li>
+              <li>✓　日本語での運用レポート・定例会</li>
+            </ul>
+            <div class="btn-row"><span class="btn">資料ダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+          </div>
+          <div class="split-media">
+            <div class="box h480"></div>
+            <p class="box-note">ビジュアル（配信レポート／グローバル配信イメージ）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey tight">
+      <span class="cn">② 窄数据带</span>
+      <div class="wrap">
+        <div class="statbar">
+          <div><p class="num">200+</p><p class="cap">配信対応国・地域</p></div>
+          <div><p class="num">100B+</p><p class="cap">月間インプレッション</p></div>
+          <div><p class="num">専任</p><p class="cap">日本語運用チームが担当</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">③ 課題 · 纵向箭头</span>
+      <div class="wrap">
+        <h2 class="h2">このような課題はありませんか？</h2>
+        <div class="timeline" style="margin-top:48px;">
+          <div class="tl-item"><div class="tl-num">01</div><div>
+            <h3 class="h3" style="font-size:20px;">海外での獲得単価が合わない</h3>
+            <p class="small muted">国内と同じ配信設計では、地域ごとの単価差や競合状況に対応できない。</p></div></div>
+          <div class="tl-item"><div class="tl-num">02</div><div>
+            <h3 class="h3" style="font-size:20px;">現地の媒体事情がわからない</h3>
+            <p class="small muted">どの媒体・面が有効なのか判断できず、検証に時間とコストがかかる。</p></div></div>
+          <div class="tl-item"><div class="tl-num">03</div><div>
+            <h3 class="h3" style="font-size:20px;">運用リソースが足りない</h3>
+            <p class="small muted">社内に海外広告の運用経験者がおらず、改善サイクルを回せない。</p></div></div>
+          <div class="tl-arrow">↓</div>
+          <div class="tl-answer">
+            <h3 class="h3">Auroraの専任チームが、設計から改善まで伴走します。</h3>
+            <p class="small muted">グローバルのデータ基盤と、日本語でのコミュニケーション体制。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">④ 服务型变体 · 换成「支援体制・導入フロー」，不放平台架构图</span>
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center;">支援体制</p>
+        <h2 class="h2">ご相談から改善まで、<br />専任チームが伴走します。</h2>
+        <p class="lead center">お客様の目標に合わせて、配信設計・運用・レポーティングまで一貫して対応します。</p>
+        <div class="steps four" style="margin-top:60px;">
+          <div><p class="n">STEP 01</p><div class="box h100"></div><h4>ヒアリング</h4><p>目標KPI・対象市場・予算を整理。</p></div>
+          <div><p class="n">STEP 02</p><div class="box h100"></div><h4>配信設計・提案</h4><p>媒体構成とクリエイティブ方針をご提案。</p></div>
+          <div><p class="n">STEP 03</p><div class="box h100"></div><h4>配信開始</h4><p>テスト配信から段階的に拡大。</p></div>
+          <div><p class="n">STEP 04</p><div class="box h100"></div><h4>改善・定例報告</h4><p>日本語レポートと定例会で継続改善。</p></div>
+        </div>
+        <div class="split" style="margin-top:80px;">
+          <div>
+            <h3 class="h3">日本語での運用体制</h3>
+            <p class="lead">
+              日本市場担当・グローバル配信チーム・データアナリストが連携。
+              時差を挟まず、日本のビジネス時間内でご相談いただけます。
+            </p>
+          </div>
+          <div class="split-media"><div class="box h240"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">⑤ 活用シーン · 大图横滑</span>
+      <div class="wrap">
+        <h2 class="h2 left">業種別の活用シーン</h2>
+        <p class="lead">海外展開のフェーズに合わせた配信設計が可能です。</p>
+      </div>
+      <div class="wrap" style="max-width:none;padding-right:0;">
+        <div class="scroller">
+          <div class="uc"><div class="box"></div><h4>アプリ</h4><p>インストール獲得から継続利用までを一気通貫で最適化。</p></div>
+          <div class="uc"><div class="box"></div><h4>越境EC</h4><p>地域ごとの購買データをもとに獲得効率を改善。</p></div>
+          <div class="uc"><div class="box"></div><h4>ゲーム</h4><p>タイトルの成長段階に応じた配信ボリュームの調整。</p></div>
+          <div class="uc"><div class="box"></div><h4>ブランド</h4><p>海外での認知獲得を目的とした面の選定。</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey tight">
+      <span class="cn">中段副CTA</span>
+      <div class="wrap">
+        <div class="subcta">
+          <div class="box"></div>
+          <div class="t">
+            <h4>プログラマティック広告 サービス資料（無料）</h4>
+            <p>支援範囲・体制・実績・費用の考え方をまとめた資料をお送りします。</p>
+          </div>
+          <span class="btn">資料をダウンロード</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">⑦ 服务型变体 · 换成「導入実績」，用实绩数字+客户Logo建立信任</span>
+      <div class="wrap">
+        <h2 class="h2 left">導入実績</h2>
+        <p class="lead">国内外の幅広い業種で、海外ユーザー獲得を支援しています。</p>
+        <div class="grid3" style="margin-top:52px;">
+          <div><p class="story-metric" style="font-size:48px;">-28%</p><p class="small muted">獲得単価（CPA）の改善　／　アプリ</p></div>
+          <div><p class="story-metric" style="font-size:48px;">3.2x</p><p class="small muted">インストール数の増加　／　ゲーム</p></div>
+          <div><p class="story-metric" style="font-size:48px;">12</p><p class="small muted">同時展開した国・地域　／　越境EC</p></div>
+        </div>
+        <div class="logorow" style="margin-top:72px;">
+          <div class="lg"></div><div class="lg"></div><div class="lg"></div><div class="lg"></div><div class="lg"></div>
+        </div>
+        <p class="box-note">お取引先企業ロゴ（掲載許諾済みのもの）</p>
+        <p style="margin-top:36px;"><span class="textlink">導入事例をもっと見る →</span></p>
+      </div>
+    </div>
+
+    <div class="s grey finalcta">
+      <span class="cn">转化屏 · 服务型没有公式サイト，只有資料＋問合せ</span>
+      <div class="wrap">
+        <h2 class="h2">まずは、現在の課題を<br />お聞かせください。</h2>
+        <p class="lead center">サービス資料の無料ダウンロード、または個別のご相談を承っています。</p>
+        <div class="btn-row"><span class="btn">資料ダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     05 ／ フィンテック（サービス型バリアント）
+     ============================================================ -->
+<section class="page" id="p05">
+  <div class="page-tag">
+    <strong>05</strong> フィンテック ／ Service Detail
+    <span>8スクリーン ・ サービス型バリアント。⑦＝導入実績＋認証・コンプライアンス</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="事業"></div>
+
+    <div class="s">
+      <span class="cn">① Hero</span>
+      <div class="wrap">
+        <div class="split narrow-left">
+          <div>
+            <p class="crumb">ホーム ／ 事業 ／ フィンテック</p>
+            <h1 class="h2 left" style="font-size:44px;">フィンテック</h1>
+            <p class="lead" style="font-size:19px;margin-bottom:20px;">データにもとづく、リスク管理とデジタル金融</p>
+            <p class="lead">
+              大規模なデータ基盤とモデリング技術をもとに、与信・不正検知・本人確認などの
+              金融業務を支援します。金融機関に求められる基準に沿った運用体制で提供します。
+            </p>
+            <ul class="small muted" style="margin-bottom:30px;">
+              <li>✓　リスクスコアリング・不正検知</li>
+              <li>✓　監査に対応したログ・権限管理</li>
+              <li>✓　国内法令・ガイドラインへの準拠</li>
+            </ul>
+            <div class="btn-row"><span class="btn">資料ダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+          </div>
+          <div class="split-media">
+            <div class="box h480"></div>
+            <p class="box-note">ビジュアル（リスク管理ダッシュボード）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey tight">
+      <span class="cn">② 窄数据带</span>
+      <div class="wrap">
+        <div class="statbar">
+          <div><p class="num">10年+</p><p class="cap">データ・モデリングの実績</p></div>
+          <div><p class="num">99.9%</p><p class="cap">サービス稼働率</p></div>
+          <div><p class="num">ISO</p><p class="cap">情報セキュリティ認証を取得</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">③ 課題 · 纵向箭头</span>
+      <div class="wrap">
+        <h2 class="h2">このような課題はありませんか？</h2>
+        <div class="timeline" style="margin-top:48px;">
+          <div class="tl-item"><div class="tl-num">01</div><div>
+            <h3 class="h3" style="font-size:20px;">不正利用の検知が後手に回る</h3>
+            <p class="small muted">既存ルールでは新しい手口に対応できず、被害の発見が遅れる。</p></div></div>
+          <div class="tl-item"><div class="tl-num">02</div><div>
+            <h3 class="h3" style="font-size:20px;">審査に時間がかかる</h3>
+            <p class="small muted">手作業の確認が多く、申込から結果通知までのリードタイムが長い。</p></div></div>
+          <div class="tl-item"><div class="tl-num">03</div><div>
+            <h3 class="h3" style="font-size:20px;">監査・説明責任に対応できない</h3>
+            <p class="small muted">判断根拠の記録が不十分で、社内監査や当局対応の負荷が高い。</p></div></div>
+          <div class="tl-arrow">↓</div>
+          <div class="tl-answer">
+            <h3 class="h3">データと運用体制の両面から支援します。</h3>
+            <p class="small muted">モデルの提供だけでなく、導入・検証・監査対応まで伴走。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">④ 服务型变体 · 支援体制・導入フロー</span>
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center;">支援体制</p>
+        <h2 class="h2">検証から本番運用まで、<br />段階的に導入できます。</h2>
+        <p class="lead center">金融業務に必要な検証プロセスを踏まえた導入ステップをご用意しています。</p>
+        <div class="steps four" style="margin-top:60px;">
+          <div><p class="n">STEP 01</p><div class="box h100"></div><h4>課題整理・要件定義</h4><p>対象業務とデータ要件を確認。</p></div>
+          <div><p class="n">STEP 02</p><div class="box h100"></div><h4>検証（PoC）</h4><p>既存データで精度と効果を検証。</p></div>
+          <div><p class="n">STEP 03</p><div class="box h100"></div><h4>導入・連携</h4><p>既存システムとの接続と権限設計。</p></div>
+          <div><p class="n">STEP 04</p><div class="box h100"></div><h4>運用・監査対応</h4><p>モニタリングとレポートを継続提供。</p></div>
+        </div>
+        <div class="split" style="margin-top:80px;">
+          <div>
+            <h3 class="h3">セキュリティと運用体制</h3>
+            <p class="lead">
+              アクセス権限の分離、操作ログの保全、データの暗号化に対応。
+              日本国内の担当者が、導入から運用まで日本語でご対応します。
+            </p>
+          </div>
+          <div class="split-media"><div class="box h240"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">⑤ 活用シーン · 大图横滑</span>
+      <div class="wrap">
+        <h2 class="h2 left">業務別の活用シーン</h2>
+        <p class="lead">対象業務を限定して、小さく始めることができます。</p>
+      </div>
+      <div class="wrap" style="max-width:none;padding-right:0;">
+        <div class="scroller">
+          <div class="uc"><div class="box"></div><h4>与信・審査</h4><p>スコアリングにより審査基準を標準化し、判断を高速化。</p></div>
+          <div class="uc"><div class="box"></div><h4>不正検知</h4><p>取引パターンの異常を検知し、被害の拡大を防止。</p></div>
+          <div class="uc"><div class="box"></div><h4>本人確認</h4><p>OTPを含む多要素認証で、なりすましのリスクを低減。</p></div>
+          <div class="uc"><div class="box"></div><h4>債権管理</h4><p>回収施策の優先度づけを、データにもとづいて最適化。</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey tight">
+      <span class="cn">中段副CTA</span>
+      <div class="wrap">
+        <div class="subcta">
+          <div class="box"></div>
+          <div class="t">
+            <h4>フィンテック サービス資料（無料）</h4>
+            <p>提供範囲・導入ステップ・セキュリティ体制をまとめた資料をお送りします。</p>
+          </div>
+          <span class="btn">資料をダウンロード</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">⑦ 服务型变体 · 導入実績＋認証（金融客户最关心资质）</span>
+      <div class="wrap">
+        <h2 class="h2 left">導入実績と認証</h2>
+        <p class="lead">金融機関に求められる基準に沿って、サービスを提供しています。</p>
+        <div class="grid3" style="margin-top:52px;">
+          <div><p class="story-metric" style="font-size:48px;">-35%</p><p class="small muted">審査リードタイムの短縮</p></div>
+          <div><p class="story-metric" style="font-size:48px;">+22%</p><p class="small muted">不正検知率の向上</p></div>
+          <div><p class="story-metric" style="font-size:48px;">24/7</p><p class="small muted">モニタリング体制</p></div>
+        </div>
+        <h3 class="h3" style="margin-top:76px;">取得認証・準拠基準</h3>
+        <div class="logorow" style="margin-top:24px;">
+          <div class="lg"></div><div class="lg"></div><div class="lg"></div><div class="lg"></div><div class="lg"></div>
+        </div>
+        <p class="box-note">ISO 27001 ／ SOC 2 ／ プライバシーマーク 等（実際の取得状況に合わせて差し替え）</p>
+      </div>
+    </div>
+
+    <div class="s grey finalcta">
+      <span class="cn">转化屏 · 服务型：資料＋問合せ</span>
+      <div class="wrap">
+        <h2 class="h2">導入のご相談を<br />承っています。</h2>
+        <p class="lead center">対象業務やデータ要件をお伺いし、最適な導入プランをご提案します。</p>
+        <div class="btn-row"><span class="btn">資料ダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     06 ／ 導入事例 一覧
+     ============================================================ -->
+<section class="page" id="p06">
+  <div class="page-tag">
+    <strong>06</strong> 導入事例 一覧 ／ Case Studies
+    <span>4スクリーン ・ フィルターUIは置かない。業種タグのみでの絞り込み</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="導入事例"></div>
+
+    <div class="s tight">
+      <span class="cn">页面头</span>
+      <div class="wrap">
+        <p class="crumb" style="text-align:center;">ホーム ／ 導入事例</p>
+        <h2 class="h2">導入事例</h2>
+        <p class="lead center">Auroraのサービスをご活用いただいているお客様の事例をご紹介します。</p>
+        <div class="taglist" style="margin-top:34px;">
+          <span class="tag" style="margin:0;">すべて</span>
+          <span class="tag" style="margin:0;">小売・EC</span>
+          <span class="tag" style="margin:0;">ゲーム</span>
+          <span class="tag" style="margin:0;">金融</span>
+          <span class="tag" style="margin:0;">旅行・交通</span>
+          <span class="tag" style="margin:0;">製造</span>
+        </div>
+        <p class="box-note" style="text-align:center;">※ 検索窓・複数条件フィルターは置かない（日本のB2Bサイトでは使われにくい）</p>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">注目事例 · 1件だけ大きく</span>
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <div class="story-logo"></div>
+            <span class="tag">小売・EC</span>
+            <p class="story-metric">+35%</p>
+            <h3 class="h3">チャネルを統合し、<br />再訪率が向上しました。</h3>
+            <p class="lead">分散していた配信をEngageLabへ統合。運用工数を削減しながら成果を改善。</p>
+            <span class="btn">事例を読む</span>
+          </div>
+          <div class="split-media"><div class="box h400"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">事例列表 · 列表页允许用卡片</span>
+      <div class="wrap">
+        <div class="grid3">
+          <div class="item"><div class="box"></div><span class="tag">ゲーム</span><p class="metric">+18%</p><h4>復帰施策の自動化で継続率が改善</h4><p>EngageLab</p></div>
+          <div class="item"><div class="box"></div><span class="tag">金融</span><p class="metric">99.9%</p><h4>OTP配信の安定性と監査対応を両立</h4><p>EngageLab ／ フィンテック</p></div>
+          <div class="item"><div class="box"></div><span class="tag">旅行・交通</span><p class="metric">-40%</p><h4>運行情報の通知遅延を大幅に削減</h4><p>EngageLab</p></div>
+          <div class="item"><div class="box"></div><span class="tag">製造</span><p class="metric">-52%</p><h4>技術文書の検索時間を短縮</h4><p>GPTBots.ai</p></div>
+          <div class="item"><div class="box"></div><span class="tag">越境EC</span><p class="metric">-28%</p><h4>海外広告の獲得単価を改善</h4><p>プログラマティック広告</p></div>
+          <div class="item"><div class="box"></div><span class="tag">人材</span><p class="metric">-42%</p><h4>社内問い合わせの一次対応を自動化</h4><p>GPTBots.ai</p></div>
+        </div>
+        <p style="text-align:center;margin-top:56px;"><span class="btn ghost">さらに表示する</span></p>
+      </div>
+    </div>
+
+    <div class="s grey finalcta">
+      <span class="cn">转化屏</span>
+      <div class="wrap">
+        <h2 class="h2">導入事例集をまとめて<br />ご覧いただけます。</h2>
+        <p class="lead center">業種別の導入事例をまとめた資料を無料でお送りします。</p>
+        <div class="btn-row"><span class="btn">導入事例集をダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     07 ／ 導入事例 詳細
+     ============================================================ -->
+<section class="page" id="p07">
+  <div class="page-tag">
+    <strong>07</strong> 導入事例 詳細 ／ Case Study Detail
+    <span>6スクリーン ・ 課題 → 導入の決め手 → 効果（数字）→ 関連サービス</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="導入事例"></div>
+
+    <div class="s">
+      <span class="cn">① Hero · 客户Logo＋成果数字</span>
+      <div class="wrap">
+        <p class="crumb">ホーム ／ 導入事例 ／ 株式会社◯◯◯◯</p>
+        <div class="split">
+          <div>
+            <div class="story-logo"></div>
+            <span class="tag">小売・EC</span>
+            <h1 class="h2 left" style="font-size:34px;">チャネルを統合し、<br />再訪率が35%向上しました。</h1>
+            <p class="lead">株式会社◯◯◯◯　マーケティング本部　◯◯ 様</p>
+          </div>
+          <div class="split-media"><div class="box h320"></div><p class="box-note">導入担当者様の写真／店舗イメージ</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey tight">
+      <span class="cn">② 企業情報 · 定义表</span>
+      <div class="wrap">
+        <div class="dl">
+          <div class="row"><dt>企業名</dt><dd>株式会社◯◯◯◯</dd></div>
+          <div class="row"><dt>業種</dt><dd>小売・EC</dd></div>
+          <div class="row"><dt>従業員数</dt><dd>◯◯◯名</dd></div>
+          <div class="row"><dt>ご利用サービス</dt><dd>EngageLab（App Push／Email／SMS）</dd></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">③ 課題 · 左右布局，不用卡片</span>
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="eyebrow">課題</p>
+            <h2 class="h2 left">ツールが分散し、<br />施策の効果が見えなかった。</h2>
+            <p class="lead">
+              プッシュ通知・メール・SMSをそれぞれ別のツールで運用しており、
+              配信管理にも効果測定にも時間がかかっていました。
+              チャネルをまたいだコミュニケーション設計ができない状態でした。
+            </p>
+          </div>
+          <div class="split-media"><div class="box h300"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">④ 導入の決め手 · 左右反转</span>
+      <div class="wrap">
+        <div class="split reverse">
+          <div>
+            <p class="eyebrow">導入の決め手</p>
+            <h2 class="h2 left">既存システムを<br />そのまま活かせたこと。</h2>
+            <p class="lead">
+              APIで既存の会員基盤と接続できたため、大きな改修を必要としませんでした。
+              導入時の技術的な相談に日本語で対応してもらえた点も安心材料でした。
+            </p>
+          </div>
+          <div class="split-media"><div class="box h300"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">⑤ 効果 · 三个数字＋一句引用</span>
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center;">導入効果</p>
+        <h2 class="h2">導入から6か月の変化</h2>
+        <div class="grid3" style="margin-top:56px;text-align:center;">
+          <div><p class="story-metric">+35%</p><p class="small muted">再訪率</p></div>
+          <div><p class="story-metric">-60%</p><p class="small muted">配信運用の工数</p></div>
+          <div><p class="story-metric">3→1</p><p class="small muted">利用ツール数</p></div>
+        </div>
+        <div class="split" style="margin-top:80px;">
+          <div class="split-media"><div class="box h240"></div></div>
+          <div>
+            <h3 class="h3">「運用が一本化され、<br />施策の検証が速くなりました。」</h3>
+            <p class="small muted">株式会社◯◯◯◯　マーケティング本部　◯◯ 様</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey finalcta">
+      <span class="cn">⑥ 関連サービス＋转化</span>
+      <div class="wrap">
+        <h2 class="h2">この事例で導入したサービス</h2>
+        <div class="grid3" style="margin-top:44px;text-align:left;">
+          <div class="item"><div class="box h160"></div><h4>EngageLab</h4><p>グローバル顧客エンゲージメント・プラットフォーム</p></div>
+          <div class="item"><div class="box h160"></div><h4>導入事例集</h4><p>業種別の事例をまとめた資料</p></div>
+          <div class="item"><div class="box h160"></div><h4>他の事例を見る</h4><p>同じ業種の導入事例</p></div>
+        </div>
+        <div class="btn-row" style="margin-top:52px;"><span class="btn">資料ダウンロード</span><span class="btn ghost">お問い合わせ</span></div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     08 ／ 資料 一覧
+     ============================================================ -->
+<section class="page" id="p08">
+  <div class="page-tag">
+    <strong>08</strong> 資料 一覧 ／ Resources
+    <span>4スクリーン ・ 日本B2Bの主要な転換導線。フォームと引き換えに資料を提供</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="資料"></div>
+
+    <div class="s tight">
+      <span class="cn">页面头</span>
+      <div class="wrap">
+        <p class="crumb" style="text-align:center;">ホーム ／ 資料</p>
+        <h2 class="h2">資料ダウンロード</h2>
+        <p class="lead center">サービス紹介資料・導入事例集・ホワイトペーパーを無料でご覧いただけます。</p>
+        <div class="taglist" style="margin-top:34px;">
+          <span class="tag" style="margin:0;">すべて</span>
+          <span class="tag" style="margin:0;">サービス資料</span>
+          <span class="tag" style="margin:0;">導入事例集</span>
+          <span class="tag" style="margin:0;">ホワイトペーパー</span>
+          <span class="tag" style="margin:0;">ウェビナー</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">おすすめ資料 · 1件だけ大きく</span>
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="eyebrow">おすすめ</p>
+            <h2 class="h2 left">Aurora サービス紹介資料</h2>
+            <p class="lead">
+              4つの事業の概要、提供体制、導入の流れをまとめた総合資料です。
+              はじめてご検討いただく方におすすめです。
+            </p>
+            <p class="small muted">PDF ／ 全24ページ ／ 無料</p>
+            <span class="btn" style="margin-top:18px;">ダウンロードする</span>
+          </div>
+          <div class="split-media"><div class="box h320"></div><p class="box-note">資料の表紙イメージ</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">资料列表</span>
+      <div class="wrap">
+        <div class="grid3">
+          <div class="item"><div class="box"></div><span class="tag">サービス資料</span><h4>EngageLab サービス紹介資料</h4><p>PDF ／ 18ページ</p></div>
+          <div class="item"><div class="box"></div><span class="tag">サービス資料</span><h4>GPTBots.ai サービス紹介資料</h4><p>PDF ／ 20ページ</p></div>
+          <div class="item"><div class="box"></div><span class="tag">導入事例集</span><h4>業種別 導入事例集 2026</h4><p>PDF ／ 32ページ</p></div>
+          <div class="item"><div class="box"></div><span class="tag">ホワイトペーパー</span><h4>プッシュ通知の到達率を改善する5つの方法</h4><p>PDF ／ 12ページ</p></div>
+          <div class="item"><div class="box"></div><span class="tag">ホワイトペーパー</span><h4>エンタープライズAI導入の進め方</h4><p>PDF ／ 16ページ</p></div>
+          <div class="item"><div class="box"></div><span class="tag">ウェビナー</span><h4>海外ユーザー獲得の最新動向（録画）</h4><p>動画 ／ 45分</p></div>
+        </div>
+        <p style="text-align:center;margin-top:56px;"><span class="btn ghost">さらに表示する</span></p>
+      </div>
+    </div>
+
+    <div class="s grey finalcta">
+      <span class="cn">转化屏</span>
+      <div class="wrap">
+        <h2 class="h2">ご不明な点は<br />お気軽にご相談ください。</h2>
+        <p class="lead center">資料に掲載していない内容についても、担当者がご説明します。</p>
+        <div class="btn-row"><span class="btn">お問い合わせ</span></div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     09 ／ 資料 詳細（ダウンロードフォーム）
+     ============================================================ -->
+<section class="page" id="p09">
+  <div class="page-tag">
+    <strong>09</strong> 資料 詳細 ／ Resource Detail
+    <span>3スクリーン ・ 内容紹介 → フォーム → 関連資料。リード獲得の中心ページ</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="資料"></div>
+
+    <div class="s">
+      <span class="cn">① 資料概要 · 左内容右封面</span>
+      <div class="wrap">
+        <p class="crumb">ホーム ／ 資料 ／ EngageLab サービス紹介資料</p>
+        <div class="split">
+          <div>
+            <span class="tag">サービス資料</span>
+            <h1 class="h2 left" style="font-size:34px;">EngageLab<br />サービス紹介資料</h1>
+            <p class="lead">
+              グローバル顧客エンゲージメント・プラットフォーム「EngageLab」の
+              機能一覧、活用シーン、導入事例、料金の考え方をまとめた資料です。
+            </p>
+            <h3 class="h3" style="font-size:18px;">掲載内容</h3>
+            <ul class="small muted">
+              <li>・ サービス概要と対応チャネル</li>
+              <li>・ 業種別の活用シーン</li>
+              <li>・ 導入事例（3社）</li>
+              <li>・ 導入までの流れとサポート体制</li>
+              <li>・ 料金の考え方</li>
+            </ul>
+            <p class="small muted" style="margin-top:20px;">PDF ／ 全18ページ ／ 無料</p>
+          </div>
+          <div class="split-media"><div class="box h400"></div><p class="box-note">資料の表紙イメージ</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">② ダウンロードフォーム · 日本B2B的关键留资表单</span>
+      <div class="wrap">
+        <h2 class="h2">資料ダウンロードフォーム</h2>
+        <p class="lead center">以下の項目をご入力いただくと、資料をダウンロードいただけます。</p>
+        <div class="form" style="margin-top:48px;">
+          <div class="grid2" style="gap:24px;">
+            <div class="field"><label>会社名 <i>必須</i></label><div class="input"></div></div>
+            <div class="field"><label>部署名</label><div class="input"></div></div>
+            <div class="field"><label>お名前 <i>必須</i></label><div class="input"></div></div>
+            <div class="field"><label>役職</label><div class="input"></div></div>
+            <div class="field"><label>メールアドレス <i>必須</i></label><div class="input"></div></div>
+            <div class="field"><label>電話番号</label><div class="input"></div></div>
+          </div>
+          <div class="field"><label>ご検討状況</label><div class="input"></div></div>
+          <p class="note">個人情報の取り扱いについては「プライバシーポリシー」をご確認ください。</p>
+          <div class="btn-row"><span class="btn">同意して資料をダウンロード</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">③ 関連資料</span>
+      <div class="wrap">
+        <h2 class="h2 left">あわせて読まれている資料</h2>
+        <div class="grid3" style="margin-top:40px;">
+          <div class="item"><div class="box h160"></div><h4>業種別 導入事例集 2026</h4><p>PDF ／ 32ページ</p></div>
+          <div class="item"><div class="box h160"></div><h4>プッシュ通知の到達率を改善する5つの方法</h4><p>PDF ／ 12ページ</p></div>
+          <div class="item"><div class="box h160"></div><h4>Aurora サービス紹介資料</h4><p>PDF ／ 24ページ</p></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     10 ／ 会社概要（旧「Auroraについて」を統合）
+     ============================================================ -->
+<section class="page" id="p10">
+  <div class="page-tag">
+    <strong>10</strong> 会社概要 ／ Company Profile
+    <span>6スクリーン ・ 前半で「私たちは何者か」、後半で取引審査に使われる法定情報。旧Aboutページを統合</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="会社情報"></div>
+
+    <!-- ① ページヘッダー -->
+    <div class="s tight">
+      <span class="cn">页面头</span>
+      <div class="wrap">
+        <p class="crumb" style="text-align:center;">ホーム ／ 会社情報 ／ 会社概要</p>
+        <h2 class="h2">会社概要</h2>
+        <p class="lead center">
+          Aurora Mobile株式会社（NASDAQ: JG）は、AIとカスタマーエンゲージメントを軸とした
+          グローバル・テクノロジーグループです。
+        </p>
+      </div>
+    </div>
+
+    <!-- ② 私たちについて（旧Aboutの物語部分。ここだけ残して重複を避ける） -->
+    <div class="s grey">
+      <span class="cn">② 我们是谁 · 叙事段（原About页只保留这一屏）</span>
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="eyebrow">私たちについて</p>
+            <h2 class="h2 left">10年以上にわたり、<br />データとAIに向き合ってきました。</h2>
+            <p class="lead">
+              2011年の創業以来、モバイルアプリ向けの開発者サービスを起点に、
+              メッセージング、データ分析、AIへと領域を広げてきました。
+              現在は世界各地の企業に対し、顧客とのコミュニケーションを支える基盤を提供しています。
+            </p>
+          </div>
+          <div class="split-media"><div class="box h320"></div><p class="box-note">企業イメージ／オフィス写真</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ③ 会社概要テーブル -->
+    <div class="s">
+      <span class="cn">③ 会社概要表 · 取引審査で実際に確認される項目</span>
+      <div class="wrap">
+        <h2 class="h2 left">会社情報</h2>
+        <div class="dl" style="margin-top:32px;">
+          <div class="row"><dt>会社名</dt><dd>Aurora Mobile株式会社（極光）</dd></div>
+          <div class="row"><dt>上場市場</dt><dd>NASDAQ（ティッカー: JG）</dd></div>
+          <div class="row"><dt>設立</dt><dd>2011年◯月</dd></div>
+          <div class="row"><dt>資本金</dt><dd>◯◯◯,◯◯◯,◯◯◯円</dd></div>
+          <div class="row"><dt>代表者</dt><dd>代表取締役　◯◯ ◯◯</dd></div>
+          <div class="row"><dt>従業員数</dt><dd>◯◯◯名（グループ全体）</dd></div>
+          <div class="row"><dt>事業内容</dt><dd>顧客エンゲージメント・プラットフォームの提供／エンタープライズAIサービス／プログラマティック広告／フィンテックサービス</dd></div>
+          <div class="row"><dt>本社所在地</dt><dd>◯◯◯◯（本社）</dd></div>
+          <div class="row"><dt>主要取引銀行</dt><dd>◯◯銀行　◯◯支店</dd></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ④ 沿革 -->
+    <div class="s grey">
+      <span class="cn">④ 沿革 · 体现企业持续性，日本必备</span>
+      <div class="wrap">
+        <h2 class="h2 left">沿革</h2>
+        <ul class="history" style="margin-top:36px;">
+          <li><span class="y">2011年</span><span>Aurora Mobile 創業。モバイル開発者向けサービスを開始。</span></li>
+          <li><span class="y">2014年</span><span>メッセージングプラットフォームの提供を開始。</span></li>
+          <li><span class="y">2018年</span><span>NASDAQ市場へ上場（ティッカー: JG）。</span></li>
+          <li><span class="y">2021年</span><span>EngageLabをグローバル向けに提供開始。</span></li>
+          <li><span class="y">2023年</span><span>GPTBots.aiを提供開始。エンタープライズAI領域へ拡大。</span></li>
+          <li><span class="y">2025年</span><span>日本市場での事業を本格展開。日本語サポート体制を強化。</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ⑤ 日本拠点 -->
+    <div class="s">
+      <span class="cn">⑤ 日本据点 · 左叙事＋右住所卡。日本客户最在意"有没有日本法人"</span>
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="eyebrow">日本拠点</p>
+            <h2 class="h2 left">東京から、<br />日本企業を支援します。</h2>
+            <p class="lead">
+              日本に子会社と国内サポート体制を設けており、導入前のご相談から
+              導入後の運用支援まで、日本語で一貫して対応します。
+            </p>
+            <p class="lead">
+              東京リージョンでの提供にも対応し、国内でのデータ処理が求められる企業にも
+              安心してご利用いただける環境を提供します。
+            </p>
+            <span class="btn">お問い合わせ</span>
+          </div>
+          <div class="split-media">
+            <div class="panel">
+              <h3>東京オフィス</h3>
+              <p class="addr">
+                東京都港区虎ノ門 1-10-5<br />
+                KDX虎ノ門一丁目ビル 11階
+              </p>
+              <div class="dl compact">
+                <div class="row"><dt>受付時間</dt><dd>平日 9:30 - 18:00（土日祝を除く）</dd></div>
+                <div class="row"><dt>アクセス</dt><dd>東京メトロ 虎ノ門駅 徒歩◯分</dd></div>
+                <div class="row"><dt>グローバル拠点</dt><dd>◯◯／◯◯／◯◯　ほか</dd></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑥ CTA -->
+    <div class="s grey finalcta">
+      <span class="cn">⑥ 转化屏</span>
+      <div class="wrap">
+        <h2 class="h2">事業に関するお問い合わせ</h2>
+        <p class="lead center">サービスの導入検討、取材、協業のご相談などを承っています。</p>
+        <div class="btn-row"><span class="btn">お問い合わせ</span><span class="btn ghost">資料ダウンロード</span></div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     11 ／ ニュース（一覧＋詳細）
+     ============================================================ -->
+<section class="page" id="p11">
+  <div class="page-tag">
+    <strong>11</strong> ニュース ／ News
+    <span>3スクリーン ・ 一覧は行リスト（カードにしない）。詳細は本文レイアウト</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="会社情報"></div>
+
+    <div class="s tight">
+      <span class="cn">页面头</span>
+      <div class="wrap">
+        <p class="crumb" style="text-align:center;">ホーム ／ 会社情報 ／ ニュース</p>
+        <h2 class="h2">ニュース</h2>
+        <div class="taglist" style="margin-top:28px;">
+          <span class="tag" style="margin:0;">すべて</span>
+          <span class="tag" style="margin:0;">プレスリリース</span>
+          <span class="tag" style="margin:0;">製品アップデート</span>
+          <span class="tag" style="margin:0;">イベント</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">ニュース一覧 · 行リスト，不用卡片</span>
+      <div class="wrap">
+        <ul class="rowlist">
+          <li><span class="date">2026.07.28</span><span class="cat">プレスリリース</span><span>日本市場向けサポート体制の拡充について</span><span class="arrow">→</span></li>
+          <li><span class="date">2026.07.10</span><span class="cat">製品アップデート</span><span>EngageLab、WhatsApp配信機能の提供を開始</span><span class="arrow">→</span></li>
+          <li><span class="date">2026.06.22</span><span class="cat">イベント</span><span>NexTech Japan 2026 に出展します</span><span class="arrow">→</span></li>
+          <li><span class="date">2026.06.05</span><span class="cat">製品アップデート</span><span>GPTBots.ai、日本語ナレッジ精度の改善を実施</span><span class="arrow">→</span></li>
+          <li><span class="date">2026.05.18</span><span class="cat">プレスリリース</span><span>2026年度 第1四半期 決算に関するお知らせ</span><span class="arrow">→</span></li>
+        </ul>
+        <p style="text-align:center;margin-top:48px;"><span class="btn ghost">さらに表示する</span></p>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">ニュース詳細 · 本文レイアウト（同一模板）</span>
+      <div class="wrap">
+        <div class="split wide-left">
+          <div>
+            <p class="crumb">ホーム ／ ニュース ／ プレスリリース</p>
+            <span class="tag">プレスリリース</span>
+            <h2 class="h2 left" style="font-size:30px;">日本市場向けサポート体制の拡充について</h2>
+            <p class="small muted" style="margin-bottom:28px;">2026年7月28日</p>
+            <div class="box h240" style="margin-bottom:28px;"></div>
+            <div style="max-width:640px;">
+              <div class="legal"><div class="body" style="grid-column:1/-1;">
+                <div class="line w90"></div><div class="line"></div><div class="line w80"></div>
+                <h4>拡充の背景</h4>
+                <div class="line"></div><div class="line w90"></div><div class="line w60"></div>
+                <h4>今後について</h4>
+                <div class="line w80"></div><div class="line"></div>
+              </div></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="small" style="font-weight:700;margin-bottom:16px;">最新のニュース</h4>
+            <ul class="small muted">
+              <li style="padding:10px 0;border-bottom:1px solid rgba(11,21,36,.16);">EngageLab、WhatsApp配信機能の提供を開始</li>
+              <li style="padding:10px 0;border-bottom:1px solid rgba(11,21,36,.16);">NexTech Japan 2026 に出展します</li>
+              <li style="padding:10px 0;border-bottom:1px solid rgba(11,21,36,.16);">GPTBots.ai、日本語ナレッジ精度の改善を実施</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     12 ／ 採用情報
+     ============================================================ -->
+<section class="page" id="p12">
+  <div class="page-tag">
+    <strong>12</strong> 採用情報 ／ Careers
+    <span>4スクリーン ・ 職種一覧は行リスト。応募導線は独立させる</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="会社情報"></div>
+
+    <div class="s">
+      <span class="cn">① Hero</span>
+      <div class="wrap">
+        <p class="crumb" style="text-align:center;">ホーム ／ 会社情報 ／ 採用情報</p>
+        <h1 class="h2">日本市場の立ち上げを、<br />一緒に進める仲間を探しています。</h1>
+        <p class="lead center">グローバルなプロダクトを、日本のお客様に届ける役割を担っていただきます。</p>
+        <div class="box h400" style="margin-top:48px;"></div>
+        <p class="box-note">チーム／オフィスの写真</p>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">② 働く環境 · 左右布局</span>
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="eyebrow">働く環境</p>
+            <h2 class="h2 left">グローバルチームと、<br />日本市場に向き合う。</h2>
+            <p class="lead">
+              プロダクト開発チームは海外、お客様は日本。
+              その間をつなぎ、日本のお客様に合わせた提案と改善を進めていく仕事です。
+            </p>
+            <ul class="small muted">
+              <li>・ フレックスタイム制／リモート併用</li>
+              <li>・ 語学サポート制度</li>
+              <li>・ 各種社会保険完備</li>
+            </ul>
+          </div>
+          <div class="split-media"><div class="box h320"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">③ 募集職種 · 行リスト</span>
+      <div class="wrap">
+        <h2 class="h2 left">募集職種</h2>
+        <ul class="joblist" style="margin-top:32px;">
+          <li><span>フィールドセールス（日本市場）</span><span class="meta">セールス</span><span class="meta">東京</span><span class="arrow">→</span></li>
+          <li><span>カスタマーサクセス</span><span class="meta">カスタマーサクセス</span><span class="meta">東京</span><span class="arrow">→</span></li>
+          <li><span>ソリューションエンジニア</span><span class="meta">技術</span><span class="meta">東京／リモート</span><span class="arrow">→</span></li>
+          <li><span>マーケティングマネージャー</span><span class="meta">マーケティング</span><span class="meta">東京</span><span class="arrow">→</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="s grey finalcta">
+      <span class="cn">转化屏 · 采用的CTA与销售分开</span>
+      <div class="wrap">
+        <h2 class="h2">まずはカジュアルに<br />お話ししませんか。</h2>
+        <p class="lead center">選考前に、事業や働き方についてご説明する機会をご用意しています。</p>
+        <div class="btn-row"><span class="btn">エントリーする</span><span class="btn ghost">カジュアル面談を申し込む</span></div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     13 ／ お問い合わせ
+     ============================================================ -->
+<section class="page" id="p13">
+  <div class="page-tag">
+    <strong>13</strong> お問い合わせ ／ Contact
+    <span>3スクリーン ・ 目的を先に選ばせる。営業時間と拠点の明記は日本では必須</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active="お問い合わせ"></div>
+
+    <div class="s tight">
+      <span class="cn">① 目的选择 · 先分流，降低表单心理门槛</span>
+      <div class="wrap">
+        <p class="crumb" style="text-align:center;">ホーム ／ お問い合わせ</p>
+        <h2 class="h2">お問い合わせ</h2>
+        <p class="lead center">ご用件に合わせて、担当者よりご連絡いたします。</p>
+        <div class="grid3" style="margin-top:48px;">
+          <div class="item"><div class="box h120"></div><h4>資料請求</h4><p>サービス資料をご覧になりたい方</p></div>
+          <div class="item"><div class="box h120"></div><h4>導入のご相談</h4><p>具体的な検討を進めたい方</p></div>
+          <div class="item"><div class="box h120"></div><h4>その他のお問い合わせ</h4><p>取材・協業・採用に関するご連絡</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s grey">
+      <span class="cn">② フォーム</span>
+      <div class="wrap">
+        <h2 class="h2">お問い合わせフォーム</h2>
+        <div class="form" style="margin-top:44px;">
+          <div class="grid2" style="gap:24px;">
+            <div class="field"><label>会社名 <i>必須</i></label><div class="input"></div></div>
+            <div class="field"><label>部署名</label><div class="input"></div></div>
+            <div class="field"><label>お名前 <i>必須</i></label><div class="input"></div></div>
+            <div class="field"><label>役職</label><div class="input"></div></div>
+            <div class="field"><label>メールアドレス <i>必須</i></label><div class="input"></div></div>
+            <div class="field"><label>電話番号</label><div class="input"></div></div>
+          </div>
+          <div class="field"><label>ご興味のあるサービス</label><div class="input"></div></div>
+          <div class="field"><label>お問い合わせ内容 <i>必須</i></label><div class="input area"></div></div>
+          <p class="note">個人情報の取り扱いについては「プライバシーポリシー」をご確認ください。</p>
+          <div class="btn-row"><span class="btn">同意して送信する</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">③ 拠点・営業時間 · 日本客户会确认这个才放心</span>
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <h2 class="h2 left">拠点・受付時間</h2>
+            <div class="dl" style="margin-top:24px;">
+              <div class="row"><dt>日本拠点</dt><dd>東京都港区虎ノ門 1-10-5　KDX虎ノ門一丁目ビル 11階</dd></div>
+              <div class="row"><dt>受付時間</dt><dd>平日 9:30 - 18:00（土日祝を除く）</dd></div>
+              <div class="row"><dt>お電話</dt><dd>03-◯◯◯◯-◯◯◯◯</dd></div>
+              <div class="row"><dt>ご返信の目安</dt><dd>2営業日以内に担当者よりご連絡します</dd></div>
+            </div>
+          </div>
+          <div class="split-media"><div class="box h320"></div><p class="box-note">地図</p></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     14 ／ 規約・ポリシー テンプレート
+     ============================================================ -->
+<section class="page" id="p14">
+  <div class="page-tag">
+    <strong>14</strong> 規約・ポリシー ／ Legal Template
+    <span>2スクリーン ・ プライバシーポリシー／利用規約／Cookie／セキュリティで共用</span>
+  </div>
+  <div class="frame">
+    <div class="wf-nav" data-active=""></div>
+
+    <div class="s tight">
+      <span class="cn">页面头</span>
+      <div class="wrap">
+        <p class="crumb" style="text-align:center;">ホーム ／ プライバシーポリシー</p>
+        <h2 class="h2">プライバシーポリシー</h2>
+        <p class="small muted" style="text-align:center;">最終更新日：2026年◯月◯日</p>
+      </div>
+    </div>
+
+    <div class="s">
+      <span class="cn">本文 · 左サイドナビ＋本文（4つの規約ページで共用）</span>
+      <div class="wrap">
+        <div class="legal">
+          <div class="side">
+            <ul>
+              <li><b>プライバシーポリシー</b></li>
+              <li>利用規約</li>
+              <li>Cookieポリシー</li>
+              <li>セキュリティ</li>
+            </ul>
+          </div>
+          <div class="body">
+            <h4 style="margin-top:0;">1. 個人情報の取得について</h4>
+            <div class="line w90"></div><div class="line"></div><div class="line w80"></div>
+            <h4>2. 利用目的</h4>
+            <div class="line"></div><div class="line w90"></div><div class="line w60"></div>
+            <h4>3. 第三者への提供</h4>
+            <div class="line w80"></div><div class="line"></div><div class="line w90"></div>
+            <h4>4. お問い合わせ窓口</h4>
+            <div class="line w60"></div><div class="line w80"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="wf-footer"></footer>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     共通パーツ（ナビ／フッター）を各ページへ差し込む
+     ============================================================ -->
+<template id="tpl-nav">
+  <div class="wrap">
+    <ul>
+      <li data-n="ホーム" data-go="p01"><span class="lbl">ホーム</span></li>
+
+      <li data-n="事業">
+        <span class="lbl">事業<span class="caret">▼</span></span>
+        <div class="menu">
+          <a data-go="p02"><strong>EngageLab</strong><em>顧客エンゲージメント</em></a>
+          <a data-go="p03"><strong>GPTBots.ai</strong><em>エンタープライズAI</em></a>
+          <a data-go="p04"><strong>プログラマティック広告</strong><em>グローバル広告</em></a>
+          <a data-go="p05"><strong>フィンテック</strong><em>金融テクノロジー</em></a>
+        </div>
+      </li>
+
+      <!-- 詳細ページはナビには置かない。一覧から辿る導線が正しい -->
+      <li data-n="導入事例" data-go="p06"><span class="lbl">導入事例</span></li>
+
+      <li data-n="資料" data-go="p08"><span class="lbl">資料</span></li>
+
+      <li data-n="会社情報" data-go="p10">
+        <span class="lbl">会社情報<span class="caret">▼</span></span>
+        <div class="menu">
+          <a data-go="p10"><strong>会社概要</strong><em>会社名・所在地・沿革</em></a>
+          <a data-go="p11"><strong>ニュース</strong><em>プレスリリース・更新情報</em></a>
+          <a data-go="p12"><strong>採用情報</strong><em>募集職種・働く環境</em></a>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-right">
+      <span class="lang">日本語 ／ EN ／ 中文</span>
+      <span class="btn" data-go="p08">資料ダウンロード</span>
+      <span class="btn ghost" data-go="p13">お問い合わせ</span>
+    </div>
+  </div>
+</template>
+
+<template id="tpl-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p class="fdesc">Aurora Mobile株式会社（NASDAQ: JG）<br />AIとカスタマーエンゲージメントのグローバル・テクノロジーグループ</p>
+      </div>
+      <div>
+        <h4>事業</h4>
+        <ul>
+          <li data-go="p02">EngageLab</li><li data-go="p03">GPTBots.ai</li>
+          <li data-go="p04">プログラマティック広告</li><li data-go="p05">フィンテック</li>
+        </ul>
+      </div>
+      <div>
+        <h4>資料・情報</h4>
+        <ul>
+          <li data-go="p08">ホワイトペーパー</li><li data-go="p08">サービス資料</li>
+          <li data-go="p08">ウェビナー</li><li data-go="p11">ブログ</li><li data-go="p06">導入事例</li>
+        </ul>
+      </div>
+      <div>
+        <h4>会社情報</h4>
+        <ul>
+          <li data-go="p10">会社概要</li>
+          <li data-go="p11">ニュース</li><li data-go="p12">採用情報</li><li>投資家情報 (IR)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>サポート</h4>
+        <ul>
+          <li data-go="p13">お問い合わせ</li><li data-go="p14">プライバシーポリシー</li>
+          <li data-go="p14">Cookieポリシー</li><li data-go="p14">利用規約</li><li data-go="p14">セキュリティ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© Aurora Mobile Limited</span>
+      <span class="lang-row"><span>日本語</span><span>English</span><span>中文</span></span>
+    </div>
+  </div>
+</template>
+
+<script>
+(function () {
+  /* ---------- 共通パーツを差し込む ---------- */
+  var nav = document.getElementById('tpl-nav').innerHTML;
+  var foot = document.getElementById('tpl-footer').innerHTML;
+
+  document.querySelectorAll('.wf-nav').forEach(function (el) {
+    el.innerHTML = nav;
+    var active = el.dataset.active;
+    if (active) {
+      var li = el.querySelector('li[data-n="' + active + '"]');
+      if (li) li.style.fontWeight = '700';
+    }
+    if (active === 'お問い合わせ') {
+      var cta = el.querySelector('.btn.ghost');
+      if (cta) cta.style.background = 'rgba(11,21,36,.08)';
+    }
+  });
+  document.querySelectorAll('.wf-footer').forEach(function (el) { el.innerHTML = foot; });
+
+  /* ---------- ボタン文言から遷移先を割り当てる ---------- */
+  var TEXT = {
+    '資料ダウンロード': 'p08', 'サービス資料をダウンロード': 'p08', '導入事例集をダウンロード': 'p08',
+    '資料をダウンロード': 'p09', 'ダウンロードする': 'p09', '同意して資料をダウンロード': 'p09',
+    'お問い合わせ': 'p13', 'エントリーする': 'p13', 'カジュアル面談を申し込む': 'p13', '同意して送信する': 'p13',
+    '事例を読む': 'p07', '導入事例をもっと見る →': 'p06',
+    '会社概要を見る': 'p10',
+    'EngageLab公式サイトを見る ↗': null, 'GPTBots.ai公式サイトを見る ↗': null, '公式サイトへ ↗': null
+  };
+  document.querySelectorAll('.btn, .textlink').forEach(function (el) {
+    if (el.dataset.go) return;
+    var t = el.textContent.trim();
+    if (TEXT[t]) el.dataset.go = TEXT[t];
+    if (t.indexOf('公式サイト') > -1) el.title = '実サイトでは各プロダクト公式サイトへ遷移（外部リンク）';
+  });
+
+  /* ---------- 文脈に応じた遷移先 ---------- */
+  ['p02', 'p03', 'p04', 'p05'].forEach(function (id, i) {
+    var item = document.querySelectorAll('#p10 .grid4 .item')[i];
+    if (item) item.dataset.go = id;
+  });
+  document.querySelectorAll('#p06 .grid3 .item').forEach(function (el) { el.dataset.go = 'p07'; });
+  document.querySelectorAll('#p08 .grid3 .item, #p09 .grid3 .item').forEach(function (el) { el.dataset.go = 'p09'; });
+  document.querySelectorAll('#p12 .joblist li').forEach(function (el) { el.dataset.go = 'p13'; });
+  document.querySelectorAll('#p11 .rowlist li').forEach(function (el) { el.dataset.go = 'p11'; });
+  var rel = document.querySelectorAll('#p07 .grid3 .item');
+  if (rel[0]) rel[0].dataset.go = 'p02';
+  if (rel[1]) rel[1].dataset.go = 'p08';
+  if (rel[2]) rel[2].dataset.go = 'p06';
+  var pur = document.querySelectorAll('#p13 .grid3 .item');
+  if (pur[0]) pur[0].dataset.go = 'p08';
+
+  /* ---------- パンくずをリンクにする ---------- */
+  var CRUMB = {
+    'ホーム': 'p01', '導入事例': 'p06',
+    '資料': 'p08', '会社情報': 'p10', 'ニュース': 'p11'
+  };
+  document.querySelectorAll('.crumb').forEach(function (c) {
+    var parts = c.textContent.split('／');
+    c.innerHTML = parts.map(function (s, i) {
+      var k = s.trim(), target = CRUMB[k];
+      if (!target || i === parts.length - 1) return ' ' + k + ' ';
+      var attr = target === 'index.html' ? 'data-href="index.html"' : 'data-go="' + target + '"';
+      return ' <span ' + attr + ' style="text-decoration:underline;text-underline-offset:3px;">' + k + '</span> ';
+    }).join('／');
+  });
+
+  /* ---------- ページ遷移 ---------- */
+  var pages = [].slice.call(document.querySelectorAll('.page'));
+  var sel = document.getElementById('pageSelect');
+  var now = document.getElementById('nowPage');
+  var toggle = document.getElementById('modeToggle');
+
+  function labelOf(p) {
+    var tag = p.querySelector('.page-tag'), txt = '';
+    [].forEach.call(tag.childNodes, function (n) { if (n.nodeType === 3) txt += n.textContent; });
+    return tag.querySelector('strong').textContent.trim() + ' ' + txt.trim();
+  }
+
+  pages.forEach(function (p) {
+    var o = document.createElement('option');
+    o.value = p.id; o.textContent = labelOf(p);
+    sel.appendChild(o);
+  });
+
+  function go(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (document.body.dataset.mode === 'proto') {
+      pages.forEach(function (p) { p.classList.toggle('active', p.id === id); });
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    } else {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+    sel.value = id;
+    now.textContent = '／ ' + labelOf(el);
+    history.replaceState(null, '', '#' + id);
+  }
+
+  function setMode(m) {
+    document.body.dataset.mode = m;
+    toggle.classList.toggle('on', m === 'proto');
+    toggle.textContent = m === 'proto' ? '試作表示' : '一覧表示';
+    toggle.title = m === 'proto' ? 'クリックすると全ページを縦に並べて確認できます' : 'クリックすると1ページずつの試作表示に戻ります';
+    go(sel.value || 'p02');
+  }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('[data-go],[data-href]');
+    if (!t) return;
+    if (t.dataset.href) { location.href = t.dataset.href; return; }
+    e.preventDefault();
+    go(t.dataset.go);
+  });
+
+  sel.addEventListener('change', function () { go(sel.value); });
+  toggle.addEventListener('click', function () {
+    setMode(document.body.dataset.mode === 'proto' ? 'list' : 'proto');
+  });
+
+  var start = (location.hash || '').replace('#', '');
+  sel.value = pages.some(function (p) { return p.id === start; }) ? start : 'p02';
+  setMode('proto');
+})();
+</script>
+
+</body>
+</html>
