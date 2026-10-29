@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>採用情報 | Aurora Mobile 株式会社</title>
+  <meta name="description" content="Aurora Mobile株式会社の採用情報。募集職種・働く環境をご紹介します。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style>
+.k-hero{position:relative;padding:72px 0 112px;overflow:hidden;background:#fff}
+.k-hero:before{content:"";position:absolute;right:-200px;top:-200px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,#e6ecff 0,rgba(230,236,255,0) 65%)}
+.k-hero .container{position:relative;display:grid;grid-template-columns:minmax(0,600px) minmax(0,1fr);gap:48px;align-items:center}
+.k-crumb{font-size:12px;color:#94a3b8;letter-spacing:.08em}
+.k-lbl{margin:48px 0 0;display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#2847fc;letter-spacing:.2em}
+.k-lbl i{width:8px;height:8px;border-radius:50%;background:#2847fc;box-shadow:0 0 0 5px #e6ecff}
+.k-h1{margin:24px 0 0;font-size:48px;white-space:nowrap;line-height:1.35;font-weight:900;letter-spacing:.02em;color:#0b1524}
+.k-h1 em{font-style:normal;color:#2847fc;position:relative}
+.k-h1 em:after{content:"";position:absolute;left:0;right:0;bottom:4px;height:12px;background:#dfe6ff;z-index:-1;border-radius:3px}
+.k-lead{margin:32px 0 0;font-size:16px;line-height:2;color:#4a5568;max-width:420px}
+.k-jump{margin:48px 0 0;display:flex;gap:12px}
+.k-mosaic{position:relative;display:grid;grid-template-columns:1.1fr 1fr 0.8fr;grid-template-rows:200px 150px 200px;gap:16px}
+.k-mosaic figure{margin:0;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(11,21,36,.35)}
+.k-mosaic img{width:100%;height:100%;object-fit:cover;display:block}
+.k-mosaic .a{grid-column:1/3;grid-row:1/3}
+.k-mosaic .b{grid-column:3;grid-row:1/2;margin-top:40px}
+.k-mosaic .f{grid-column:3;grid-row:2/4;margin-top:40px}
+.k-mosaic .d{grid-column:1;grid-row:3}
+.k-mosaic .e{grid-column:2;grid-row:3}
+.k-chip{position:absolute;background:#fff;border-radius:999px;padding:12px 20px;font-size:13px;font-weight:700;color:#0b1524;box-shadow:0 16px 36px -14px rgba(11,21,36,.3);display:flex;align-items:center;gap:10px}
+.k-chip b{color:#2847fc;font-size:18px}
+.k-chip.c1{left:-36px;top:150px}
+.k-chip.c2{right:-20px;bottom:24px}
+
+.s{padding:140px 0}
+.s-lb{margin:0;font-size:13px;font-weight:700;letter-spacing:.2em;color:#2847fc}
+.s-h2{margin:20px 0 0;font-size:40px;line-height:1.45;font-weight:900;color:#0b1524;letter-spacing:.02em}
+.w{background:#f4f6fa}
+.w-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:64px;align-items:end}
+.w-h{margin:24px 0 0;font-size:60px;line-height:1.4;font-weight:900;color:#0b1524;letter-spacing:.02em}
+.w-tx{margin:0;font-size:17px;line-height:2.1;color:#334155;text-wrap:pretty;word-break:keep-all;overflow-wrap:anywhere}
+.w-pk{margin:104px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
+.w-pk div{border-top:1px solid #cfd7e4;padding-top:28px}
+.w-pk small{display:block;font-size:13px;font-weight:700;color:#2847fc;letter-spacing:.1em}
+.w-pk b{display:block;margin-top:16px;font-size:20px;line-height:1.6;color:#0b1524}
+.j-hd{display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
+.j-cnt{margin:0;font-size:15px;color:#4a5568}.j-cnt b{font-size:40px;color:#2847fc;margin-right:6px}
+.j-grid{margin:64px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.j-card{background:#f4f6fa;border-radius:24px;padding:36px 32px 32px;display:flex;flex-direction:column;min-height:300px;text-decoration:none;transition:background .25s}
+.j-card:hover{background:#2847fc}
+.j-card small{font-size:13px;font-weight:700;color:#2847fc;letter-spacing:.1em}
+.j-card h3{margin:16px 0 0;font-size:22px;line-height:1.55;font-weight:700;color:#0b1524;text-wrap:pretty}
+.j-ft{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.j-ft span{font-size:14px;color:#64748b}
+.j-ft i{flex:none;width:44px;height:44px;border-radius:50%;background:#fff;color:#2847fc;display:grid;place-items:center}
+.j-ft i svg{width:16px;height:16px}
+.j-card:hover small,.j-card:hover h3,.j-card:hover .j-ft span{color:#fff}
+.note{margin:40px 0 0;font-size:12px;color:#94a3b8}
+.c{background:#2847fc;color:#fff;padding:120px 0}
+.c .container{display:flex;justify-content:space-between;align-items:flex-end;gap:48px}
+.c .s-lb{color:#c7d2ff}
+.c h2{margin:20px 0 0;font-size:44px;line-height:1.45;font-weight:900}
+.c p{margin:20px 0 0;font-size:16px;line-height:2;color:#dbe3ff}
+.c .b{flex:none;background:#fff;color:#2847fc;border-radius:999px;padding:22px 40px;font-weight:700;font-size:16px;display:inline-flex;gap:10px;align-items:center;text-decoration:none;white-space:nowrap}
+.c .b svg{width:18px;height:18px}
+.cw{background:#f7f8fb;padding:96px 0}
+.cw-hd{text-align:center}
+.cw-hd .cw-en{justify-content:center}
+.cw-hd .cw-en:after{content:"";width:24px;height:2px;background:#2847fc}
+.cw-hd .cw-tx{max-width:640px;margin:20px auto 0 !important}
+.cw-en{margin:0;display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.18em;color:#2847fc}
+.cw-en:before{content:"";width:24px;height:2px;background:#2847fc}
+.cw-h{margin:20px 0 0;font-size:40px;line-height:1.5;font-weight:900;color:#0a1324;letter-spacing:.02em;word-break:keep-all}
+.cw-tx{font-size:16px;line-height:2;color:#334155;word-break:keep-all;overflow-wrap:anywhere}
+.cw-bn{margin:56px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.cw-it{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:40px 24px 44px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.cw-it i{display:block;width:140px;height:140px}
+.cw-it i svg{width:100%;height:100%;display:block}
+.cw-it b{font-size:17px;line-height:1.6;color:#0a1324;font-weight:700;word-break:keep-all}
+.jx{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:80px;align-items:start}
+.jx-hd .j-cnt{margin:32px 0 0}
+.jx-hd .note{margin:24px 0 0;font-size:13px;line-height:1.9;color:#64748b}
+.jx-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #0a1324}
+.jx-c{display:flex;flex-direction:column;min-height:220px;padding:36px 36px 32px;border-bottom:1px solid #dfe5ef;text-decoration:none;transition:background .25s}
+.jx-c:nth-child(odd){border-right:1px solid #dfe5ef}
+.jx-c small{font-size:13px;font-weight:700;color:#2847fc;letter-spacing:.1em}
+.jx-c h3{margin:14px 0 0;font-size:24px;line-height:1.5;font-weight:700;color:#0a1324;word-break:keep-all}
+.jx-f{margin-top:auto;padding-top:24px;display:flex;justify-content:space-between;align-items:center}
+.jx-f span{font-size:14px;color:#64748b}
+.jx-f i{width:20px;height:20px;color:#2847fc;transition:transform .25s}
+.jx-f i svg{width:100%;height:100%;display:block}
+.jx-c:hover{background:#eef0ff}.jx-c:hover .jx-f i{transform:translateX(6px)}
+
+/* motion */
+.mo{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.mo.in{opacity:1;transform:none}
+.k-mosaic figure,.k-chip{opacity:0;transform:translateY(16px) scale(.98);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.k-mosaic .k-chip.c1{transform:translateX(-16px)}.k-mosaic .k-chip.c2{transform:translateX(16px)}
+.k-mosaic.in figure,.k-mosaic.in .k-chip{opacity:1;transform:none}
+.k-mosaic.in .b{transition-delay:.12s}.k-mosaic.in .f{transition-delay:.24s}.k-mosaic.in .d{transition-delay:.36s}.k-mosaic.in .e{transition-delay:.48s}
+.k-mosaic.in .c1{transition-delay:.75s}.k-mosaic.in .c2{transition-delay:.9s}
+.cw-it{transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),box-shadow .25s,border-color .25s}
+.cw-it.in:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(40,71,252,.28);transition-delay:0s!important}
+.mo-hand{transform-origin:110px 60px;transform-box:view-box}
+.cw-it:hover .mo-hand{animation:moSpin .9s cubic-bezier(.22,1,.36,1)}
+@keyframes moSpin{to{transform:rotate(360deg)}}
+.mo-b1,.mo-b2{transform-box:fill-box}
+.cw-it:hover .mo-b1{animation:moHop .5s ease-out}
+.cw-it:hover .mo-b2{animation:moHop .5s ease-out .18s}
+@keyframes moHop{40%{transform:translateY(-6px)}}
+.mo-chk{stroke-dasharray:1;stroke-dashoffset:0}
+.cw-it:hover .mo-chk{animation:moDraw .6s ease-out}
+@keyframes moDraw{from{stroke-dashoffset:1}}
+@media print{.mo,.k-mosaic figure,.k-chip{opacity:1!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){.mo,.k-mosaic figure,.k-chip{opacity:1!important;transform:none!important;transition:none!important}.cw-it:hover *{animation:none!important}}
+</style></head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo.svg" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="index.html#products">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="index.html#products">
+              <strong>プログラマティック広告</strong>
+              <span>高成長市場の成長機会を捉える</span>
+            </a>
+            <a href="index.html#products">
+              <strong>フィンテック</strong>
+              <span>スマートリスク管理とデジタル金融</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="index.html#resources" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+<section class="k-hero">
+  <div class="container">
+    <div>
+      <div class="k-crumb">ホーム ／ 会社情報 ／ 採用情報</div>
+      <p class="k-lbl"><i></i>CAREERS</p>
+      <h1 class="k-h1">日本市場の立ち上げを、<br />一緒に進める<em>仲間</em>を<br />探しています。</h1>
+      <p class="k-lead">グローバルなプロダクトを、日本のお客様に届ける役割を担っていただきます。</p>
+      <div class="k-jump"><a href="#positions" class="btn btn-primary">募集職種を見る <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#entry" class="btn btn-ghost">カジュアル面談</a></div>
+    </div>
+    <div class="k-mosaic" aria-label="東京オフィスで働くチームの写真">
+      <figure class="a"><img src="img/ph-4.png" alt="" /></figure>
+      <figure class="b"><img src="img/case-05.png" alt="" /></figure>
+      <figure class="f"><img src="img/news-6.png" alt="" /></figure>
+      <figure class="d"><img src="img/news-detail-main.png" alt="" /></figure>
+      <figure class="e"><img src="img/case-saas.png" alt="" /></figure>
+      <span class="k-chip c1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2847fc" stroke-width="2"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>東京オフィス</span>
+      <span class="k-chip c2"><b>4</b>職種を募集中</span>
+    </div>
+  </div>
+</section>
+<section class="cw"><div class="container">
+<div class="cw-hd"><div><p class="cw-en">WORK ENVIRONMENT</p><h2 class="cw-h">グローバルチームと、日本市場に向き合う。</h2></div><p class="cw-tx" style="margin:0">プロダクト開発チームは海外、お客様は日本。その間をつなぎ、日本のお客様に合わせた提案と改善を進めていく仕事です。</p></div>
+<div class="cw-pn">
+<div class="cw-bn">
+<div class="cw-it"><i><svg viewBox="0 0 160 160" aria-hidden="true"><circle cx="80" cy="80" r="62" fill="#eef0ff"/><circle cx="130" cy="36" r="6" fill="#b9c4ff"/><rect x="34" y="70" width="70" height="46" rx="6" fill="#1b2a4a"/><rect x="39" y="75" width="60" height="36" rx="3" fill="#2847fc"/><rect x="26" y="116" width="86" height="7" rx="3.5" fill="#c9d1ff"/><path d="M52 95l8-8 8 6 12-12" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="110" cy="60" r="24" fill="#fff" stroke="#2847fc" stroke-width="2.75"/><path class="mo-hand" d="M110 46v14l9 6" stroke="#1b2a4a" stroke-width="2.75" fill="none" stroke-linecap="round"/></svg></i><b>フレックスタイム制<br />リモート併用</b></div>
+<div class="cw-it"><i><svg viewBox="0 0 160 160" aria-hidden="true"><circle cx="80" cy="80" r="62" fill="#eef0ff"/><circle cx="130" cy="36" r="6" fill="#b9c4ff"/><g class="mo-b1"><rect x="30" y="44" width="64" height="46" rx="14" fill="#2847fc"/><path d="M46 90l-4 14 16-14z" fill="#2847fc"/><text x="62" y="76" text-anchor="middle" font-size="26" font-weight="900" fill="#fff" font-family="sans-serif">あ</text></g><g class="mo-b2"><rect x="68" y="76" width="64" height="46" rx="14" fill="#fff" stroke="#1b2a4a" stroke-width="2.75"/><path d="M116 122l4 12-16-12z" fill="#1b2a4a"/><text x="100" y="109" text-anchor="middle" font-size="26" font-weight="800" fill="#1b2a4a" font-family="sans-serif">A</text></g></svg></i><b>語学サポート制度</b></div>
+<div class="cw-it"><i><svg viewBox="0 0 160 160" aria-hidden="true"><circle cx="80" cy="80" r="62" fill="#eef0ff"/><circle cx="130" cy="36" r="6" fill="#b9c4ff"/><path d="M80 36l38 14v26c0 22-16 40-38 46-22-6-38-24-38-46V50z" fill="#2847fc"/><path d="M80 48l26 10v18c0 15-11 28-26 33z" fill="#5a69e0"/><path class="mo-chk" pathLength="1" d="M64 80l11 11 21-23" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="122" cy="112" r="14" fill="#81efc6"/><path d="M122 105v14M115 112h14" stroke="#1b2a4a" stroke-width="2.75" stroke-linecap="round"/></svg></i><b>各種社会保険完備</b></div>
+</div>
+</div>
+</div></section>
+<section class="s" id="positions"><div class="container"><div class="jx">
+<div class="jx-hd"><p class="cw-en">OPEN POSITIONS</p><h2 class="cw-h">募集職種</h2><p class="j-cnt"><b>4</b>職種を募集中</p><p class="note">※ 募集内容は変更となる場合があります。雇用形態・勤務条件は面談時にご案内します。</p></div>
+<div class="jx-g"><a class="jx-c" href="#" target="_blank" rel="noopener"><small>セールス</small><h3>フィールドセールス<wbr />（日本市場）</h3><div class="jx-f"><span>東京</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></div></a><a class="jx-c" href="#" target="_blank" rel="noopener"><small>カスタマーサクセス</small><h3>カスタマー<wbr />サクセス</h3><div class="jx-f"><span>東京</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></div></a><a class="jx-c" href="#" target="_blank" rel="noopener"><small>技術</small><h3>ソリューション<wbr />エンジニア</h3><div class="jx-f"><span>東京／リモート</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></div></a><a class="jx-c" href="#" target="_blank" rel="noopener"><small>マーケティング</small><h3>マーケティング<wbr />マネージャー</h3><div class="jx-f"><span>東京</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></div></a></div>
+</div></div></section>
+<section id="entry" style="padding:0 max(24px, calc((100% - 1152px) / 2)) 144px;">
+    <div class="cta-deco" style="border-radius:24px; background:linear-gradient(120deg,#2847fc 0%,#3a5bff 60%,#4a7dff 100%); padding:80px; text-align:center; color:#fff;">
+      <div style="font-size:34px; font-weight:700; line-height:1.5; font-feature-settings:'palt';">まずはカジュアルに、お話ししませんか。</div>
+      <div style="margin-top:16px; font-size:15px; line-height:1.95; color:rgba(255,255,255,.8);">選考前に、事業や働き方についてご説明する機会をご用意しています。</div>
+      <div style="margin-top:36px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <a href="#" style="height:52px; padding:0 32px; border-radius:40px; background:#fff; color:#2847fc; font-size:15px; font-weight:500; display:flex; align-items:center; text-decoration:none;">カジュアル面談を申し込む</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="index.html#products">GPTBots.ai</a>
+          <a href="index.html#products">プログラマティック広告</a>
+          <a href="index.html#products">フィンテック</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="news.html">ニュース</a>
+          <a href="careers.html">採用情報</a>
+          <a href="index.html#contact">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>(function(){
+var q=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var groups=[['.cw-hd'],['.cw-it',.1],['.jx-hd'],['.jx-c',.08]];
+groups.forEach(function(g){q(g[0]).forEach(function(el,i){el.classList.add('mo');if(g[1])el.style.transitionDelay=(i*g[1])+'s';});});
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15,rootMargin:'0px 0px -8% 0px'}):null;
+if(io)q('.mo').forEach(function(el){io.observe(el)});
+var m=document.querySelector('.k-mosaic');if(m)setTimeout(function(){m.classList.add('in')},80);
+var all=function(){q('.mo,.k-mosaic').forEach(function(el){el.classList.add('in')})};
+if(document.hidden||!('IntersectionObserver' in window))all();
+window.addEventListener('beforeprint',all);setTimeout(function(){if(document.hidden)all()},1200);
+})();</script>
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+</body>
+</html>

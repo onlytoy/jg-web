@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet"><style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Zen Kaku Gothic New",sans-serif;color:#0b1524;background:#e9ecf2;width:1440px}
+a{color:#2f4bf0;text-decoration:none}
+#cmp{display:flex;flex-direction:column;gap:28px;padding:28px 0}
+.opt{position:relative;background:linear-gradient(180deg,#fff,#F7F9FF);padding:72px 0;overflow:hidden}
+.opt:before{content:"";position:absolute;right:0;top:0;width:760px;height:100%;background-image:linear-gradient(#e9edf6 1px,transparent 1px),linear-gradient(90deg,#e9edf6 1px,transparent 1px);background-size:40px 40px;opacity:.5;-webkit-mask:radial-gradient(70% 70% at 60% 45%,#000 30%,transparent 80%);mask:radial-gradient(70% 70% at 60% 45%,#000 30%,transparent 80%)}
+.badge{position:absolute;left:24px;top:20px;background:#0b1524;color:#fff;font-size:14px;font-weight:700;padding:6px 14px;border-radius:6px;z-index:3}
+.badge small{font-weight:400;opacity:.75;margin-left:8px}
+.wrap{position:relative;width:1200px;margin:0 auto;display:grid;grid-template-columns:540px 1fr;gap:48px;align-items:center}
+.logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:700;margin-bottom:22px}
+.logo i{width:32px;height:32px;border-radius:8px;background:#6A4CF5;color:#fff;font-style:normal;display:grid;place-items:center;font-size:17px}
+h1{font-size:36px;line-height:1.6;font-weight:700;letter-spacing:.02em}h1 em{font-style:normal;color:#2f4bf0}
+.lead{margin-top:20px;font-size:15px;line-height:2;color:#5b6475}
+.btns{display:flex;gap:14px;margin-top:32px}
+.b{height:52px;padding:0 24px;border-radius:26px;display:inline-flex;align-items:center;font-weight:700;font-size:15px}
+.b.p{background:#2f4bf0;color:#fff;box-shadow:0 10px 24px rgba(47,75,240,.25)}.b.s{background:#fff;border:1px solid #dfe4ee}
+.chk{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:24px;font-size:13px;color:#5b6475}
+.chk span{display:flex;align-items:center;gap:8px}
+.chk span:before{content:"✓";width:18px;height:18px;border-radius:50%;background:#EEF2FF;color:#2f4bf0;font-size:10px;display:grid;place-items:center}
+/* F */
+.vF{background:#fff;border:1px solid #e6eaf2;border-radius:16px;padding:18px;box-shadow:0 24px 60px rgba(30,45,90,.07)}
+.srch{height:42px;border:1px solid #e6eaf2;border-radius:21px;display:flex;align-items:center;gap:10px;padding:0 16px;font-size:13px;color:#8a94a6}
+.mg{width:13px;height:13px;border:2px solid #9aa3b5;border-radius:50%;position:relative}
+.cnt{margin-left:auto;font-size:11px;letter-spacing:.06em;color:#6A4CF5;background:#F3F0FF;padding:3px 10px;border-radius:10px}
+.chips{display:flex;gap:8px;margin:14px 0}
+.chips span{height:28px;padding:0 14px;border-radius:14px;border:1px solid #e6eaf2;font-size:12px;color:#5b6475;display:flex;align-items:center}
+.chips .on{background:#0b1524;border-color:#0b1524;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mt{border:1px solid #eef1f6;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:2px;background:#fff}
+.mt.sel{border-color:#c9c0fb;box-shadow:0 0 0 3px #F3F0FF}
+.av{width:28px;height:28px;border-radius:8px;background:color-mix(in oklch,var(--c) 12%,#fff);color:var(--c);font-size:13px;font-weight:700;display:grid;place-items:center;margin-bottom:8px}
+.mt b{font-size:13px;font-weight:700}.mt small{font-size:11px;color:#8a94a6}
+.ft{white-space:nowrap;display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12px;font-weight:500}
+.ft em{font-style:normal;font-weight:400;color:#8a94a6;font-size:10px}
+.ty{font-size:10px;font-weight:700;color:var(--c);background:color-mix(in oklch,var(--c) 10%,#fff);padding:2px 8px;border-radius:8px}
+/* G */
+.vG{position:relative}
+.pr{height:52px;background:#fff;border:1px solid #e6eaf2;border-radius:26px;display:flex;align-items:center;gap:12px;padding:0 8px 0 20px;font-size:13px;color:#334155;box-shadow:0 14px 34px rgba(30,45,90,.06)}
+.pr .pl{font-size:10px;letter-spacing:.14em;font-weight:700;color:#6A4CF5}
+.pr .go{margin-left:auto;height:36px;padding:0 18px;border-radius:18px;background:#0b1524;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center}
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.rc{background:#fff;border:1px solid #e6eaf2;border-radius:14px;padding:8px;box-shadow:0 14px 34px rgba(30,45,90,.06)}
+.rc.best{border-color:#c9c0fb;box-shadow:0 0 0 3px #F3F0FF,0 14px 34px rgba(30,45,90,.06)}
+.im{height:200px;border-radius:9px;background:#eef1f6 url(img/case-02.png);background-size:auto 100%}
+.rm{padding:10px 4px 0}.rm b{display:block;font-size:13px}.rm small{font-size:11px;color:#8a94a6}
+.rs{display:flex;justify-content:space-between;margin:10px 4px 4px;padding-top:10px;border-top:1px solid #eef1f6;font-size:12px;color:#334155}
+.note{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;color:#8a94a6}
+.dot{width:6px;height:6px;border-radius:50%;background:#6A4CF5}
+/* H */
+.vH{position:relative;height:500px;width:560px;margin-left:auto}
+.ring{position:absolute;left:50%;top:240px;border:1px dashed #d6dbe7;border-radius:50%;transform:translate(-50%,-50%)}
+.r1{width:420px;height:344px}.r2{width:250px;height:205px;border-style:solid;border-color:#e6eaf2}
+.pv{position:absolute;transform:translate(-50%,-50%);background:#fff;border:1px solid #e6eaf2;border-radius:16px;height:32px;padding:0 14px;font-size:12px;font-weight:500;color:#334155;display:flex;align-items:center;box-shadow:0 6px 16px rgba(30,45,90,.05)}
+.hub{position:absolute;left:280px;top:240px;transform:translate(-50%,-50%);width:150px;height:150px;border-radius:50%;background:#fff;border:1px solid #e1dbfd;box-shadow:0 0 0 10px #F6F4FF,0 20px 44px rgba(106,76,245,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.hub i{width:36px;height:36px;border-radius:10px;background:#6A4CF5;color:#fff;font-style:normal;font-weight:700;display:grid;place-items:center;margin-bottom:4px}
+.hub b{font-size:13px}.hub small{font-size:11px;color:#8a94a6}
+.op{position:absolute;top:452px;transform:translateX(-50%);height:30px;padding:0 14px;border-radius:15px;font-size:12px;font-weight:700;color:var(--c);background:color-mix(in oklch,var(--c) 10%,#fff);display:flex;align-items:center}</style></head><body><div id="cmp">
+<section class="opt" id="F"><div class="badge">F<small>モデルカタログ</small></div><div class="wrap"><div><div class="logo"><i>M</i>Modellix</div>
+<h1>世界のAIメディアモデルを、<br><em>ひとつのAPIで。</em></h1>
+<p class="lead">画像・動画・音声・テキストの主要モデルを統合。<br>透明な料金と完全な呼び出しログで、安心して本番運用できます。</p>
+<div class="btns"><a class="b p">無料で始める →</a><a class="b s">モデルを見る</a></div>
+<div class="chk"><span>172以上のモデルを統合</span><span>透明な従量課金</span><span>ISO/IEC 27001・27701</span></div></div><div class="vF">
+<div class="srch"><span class="mg"></span>モデルを検索<span class="cnt">172 models</span></div>
+<div class="chips"><span class="on">すべて</span><span>画像</span><span>動画</span><span>音声</span><span>テキスト</span></div>
+<div class="grid"><div class="mt"><div class="av" style="--c:#2f4bf0">G</div><b>Nano Banana 2</b><small>Google</small><div class="ft"><span class="ty" style="--c:#2f4bf0">画像</span><span>$0.04</span></div></div><div class="mt"><div class="av" style="--c:#2f4bf0">B</div><b>Seedream 5.0</b><small>ByteDance</small><div class="ft"><span class="ty" style="--c:#2f4bf0">画像</span><span>$0.03</span></div></div><div class="mt sel"><div class="av" style="--c:#8b6cf6">K</div><b>Kling V3</b><small>Kling</small><div class="ft"><span class="ty" style="--c:#8b6cf6">動画</span><span>$0.28</span></div></div><div class="mt"><div class="av" style="--c:#8b6cf6">G</div><b>Veo 3.1</b><small>Google</small><div class="ft"><span class="ty" style="--c:#8b6cf6">動画</span><span>$0.40</span></div></div><div class="mt"><div class="av" style="--c:#2f4bf0">A</div><b>Qwen Image 2.0</b><small>Alibaba</small><div class="ft"><span class="ty" style="--c:#2f4bf0">画像</span><span>$0.02</span></div></div><div class="mt"><div class="av" style="--c:#F5A524">A</div><b>CosyVoice</b><small>Alibaba</small><div class="ft"><span class="ty" style="--c:#F5A524">音声</span><span>$0.01</span></div></div><div class="mt"><div class="av" style="--c:#8b6cf6">M</div><b>Hailuo 2.3</b><small>MiniMax</small><div class="ft"><span class="ty" style="--c:#8b6cf6">動画</span><span>$0.22</span></div></div><div class="mt"><div class="av" style="--c:#2f4bf0">O</div><b>GPT Image</b><small>OpenAI</small><div class="ft"><span class="ty" style="--c:#2f4bf0">画像</span><span>$0.05</span></div></div><div class="mt"><div class="av" style="--c:#F5A524">X</div><b>Grok Voice</b><small>xAI</small><div class="ft"><span class="ty" style="--c:#F5A524">音声</span><span>$0.02</span></div></div></div></div></div></section>
+<section class="opt" id="G"><div class="badge">G<small>同じプロンプトで比較</small></div><div class="wrap"><div><div class="logo"><i>M</i>Modellix</div>
+<h1>世界のAIメディアモデルを、<br><em>ひとつのAPIで。</em></h1>
+<p class="lead">画像・動画・音声・テキストの主要モデルを統合。<br>透明な料金と完全な呼び出しログで、安心して本番運用できます。</p>
+<div class="btns"><a class="b p">無料で始める →</a><a class="b s">モデルを見る</a></div>
+<div class="chk"><span>172以上のモデルを統合</span><span>透明な従量課金</span><span>ISO/IEC 27001・27701</span></div></div><div class="vG">
+<div class="pr"><span class="pl">PROMPT</span>オフィスで打ち合わせをする3人、自然光<span class="go">生成</span></div>
+<div class="res"><div class="rc best"><div class="im" style="background-position:50% 40%"></div><div class="rm"><b>Nano Banana 2</b><small>/google</small></div><div class="rs"><span>4.8s</span><span>$0.04</span></div></div><div class="rc"><div class="im" style="background-position:15% 40%"></div><div class="rm"><b>Seedream 5.0</b><small>/bytedance</small></div><div class="rs"><span>6.1s</span><span>$0.03</span></div></div><div class="rc"><div class="im" style="background-position:85% 40%"></div><div class="rm"><b>Qwen Image 2.0</b><small>/alibaba</small></div><div class="rs"><span>5.3s</span><span>$0.02</span></div></div></div>
+<div class="note"><span class="dot"></span>同じリクエストで、モデルだけを切り替えて比較</div></div></div></section>
+<section class="opt" id="H"><div class="badge">H<small>モデルハブ</small></div><div class="wrap"><div><div class="logo"><i>M</i>Modellix</div>
+<h1>世界のAIメディアモデルを、<br><em>ひとつのAPIで。</em></h1>
+<p class="lead">画像・動画・音声・テキストの主要モデルを統合。<br>透明な料金と完全な呼び出しログで、安心して本番運用できます。</p>
+<div class="btns"><a class="b p">無料で始める →</a><a class="b s">モデルを見る</a></div>
+<div class="chk"><span>172以上のモデルを統合</span><span>透明な従量課金</span><span>ISO/IEC 27001・27701</span></div></div><div class="vH"><div class="ring r1"></div><div class="ring r2"></div>
+<span class="pv" style="left:280px;top:76px">Google</span><span class="pv" style="left:421.4213562373095px;top:124.03448788540624px">ByteDance</span><span class="pv" style="left:480px;top:240px">Alibaba</span><span class="pv" style="left:421.4213562373095px;top:355.96551211459376px">Kling</span><span class="pv" style="left:280px;top:404px">MiniMax</span><span class="pv" style="left:138.57864376269052px;top:355.9655121145938px">OpenAI</span><span class="pv" style="left:80px;top:240.00000000000003px">xAI</span><span class="pv" style="left:138.57864376269046px;top:124.03448788540624px">Vidu</span>
+<div class="hub"><i>M</i><b>Modellix API</b><small>1 endpoint</small></div>
+<span class="op" style="left:160px;--c:#2f4bf0">画像</span><span class="op" style="left:240px;--c:#8b6cf6">動画</span><span class="op" style="left:320px;--c:#F5A524">音声</span><span class="op" style="left:400px;--c:#22a06b">テキスト</span>
+</div></div></section>
+</div></body></html>

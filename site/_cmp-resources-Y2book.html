@@ -1,0 +1,42 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#eef1f7;font-family:"Zen Kaku Gothic New",sans-serif;color:#0b1524}
+#cmp{padding:40px;width:max-content}
+.row{display:grid;grid-template-columns:repeat(4,320px);gap:22px}
+.t{font:500 20px/1.3 "Zen Kaku Gothic New";margin:0 0 4px}.t b{font:700 24px "JetBrains Mono";color:#3b4cf0;margin-right:10px}
+.d{font-size:12.5px;color:#64748b;margin:0 0 14px}
+.card{background:#fff;border:1px solid #e5e9f2;border-radius:16px;overflow:hidden}
+.st{position:relative;height:300px;overflow:hidden;background:var(--bg)}
+.st:after{content:"";position:absolute;left:50%;bottom:30px;width:200px;height:18px;margin-left:-96px;border-radius:50%;background:radial-gradient(rgba(11,21,36,.22),transparent 70%)}
+.disc{position:absolute;width:210px;height:210px;border-radius:50%;background:var(--c);opacity:.10;right:-40px;top:-50px}
+.ring{position:absolute;width:120px;height:120px;border-radius:50%;border:1.5px solid var(--c);opacity:.35;left:-30px;bottom:-40px}
+.bk{position:absolute;left:50%;top:38px;width:168px;height:224px;margin-left:-84px;transform:perspective(900px) rotateY(-16deg) rotateZ(-2deg);transform-origin:left center}
+.bk.back{transform:perspective(900px) rotateY(-16deg) rotateZ(4deg) translate(34px,-8px);opacity:.55;filter:saturate(.7)}
+.pg{position:absolute;top:3px;bottom:3px;right:-7px;width:8px;border-radius:0 3px 3px 0;background:repeating-linear-gradient(90deg,#fff 0 1px,#e3e7ef 1px 2px)}
+.cvr{position:absolute;inset:0;border-radius:3px 6px 6px 3px;background:#fbfcfe;overflow:hidden;box-shadow:0 18px 30px -12px rgba(11,21,36,.35)}
+.cvr:before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;background:var(--c)}
+.cvr:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,.0) 40%,rgba(255,255,255,.45) 55%,rgba(255,255,255,0) 70%)}
+.gr{position:absolute;inset:0 0 0 12px;background-image:linear-gradient(90deg,rgba(11,21,36,.045) 1px,transparent 1px);background-size:39px 100%}
+.hd{position:absolute;left:26px;right:14px;top:14px;display:flex;justify-content:space-between;border-bottom:1px solid #0b1524;padding-bottom:5px;font:700 6.5px "JetBrains Mono";letter-spacing:.14em}
+.mo{position:absolute;left:26px;right:14px;top:36px;height:84px}
+.ft{position:absolute;left:26px;right:14px;bottom:16px}.ft span{font:700 6.5px "JetBrains Mono";letter-spacing:.12em;color:var(--c)}.ft div{margin-top:4px;font:700 12.5px/1.45 "Zen Kaku Gothic New"}
+.ft i{display:block;width:22px;height:2px;background:var(--c);margin-top:8px}
+.meta{padding:16px 20px 18px}.meta i{font-style:normal;font-size:11.5px;font-weight:500;color:var(--c2)}.meta h3{margin:5px 0 0;font:500 15px/1.5 "Zen Kaku Gothic New"}
+</style></head><body><div id="cmp">
+<p class="t"><b>Y2B</b>タイポグラフィ × ブック</p><p class="d">Y2の表紙を、厚み・背表紙のある冊子に。シリーズの2冊目を奥に重ね、背景に類型色の円で奥行き。UIカードは使わない。</p>
+<div class="row" id="row"></div></div>
+<script>
+const M={
+blue:`<svg viewBox="0 0 128 84" width="100%" height="100%"><rect x="2" y="4" width="30" height="56" rx="6" fill="#3b4cf0"/><circle cx="17" cy="32" r="5" fill="#fff"/><g fill="none" stroke="#3b4cf0" stroke-width="2"><path d="M42 20a18 18 0 0 1 0 24"/><path d="M52 12a30 30 0 0 1 0 40" opacity=".55"/><path d="M62 4a42 42 0 0 1 0 56" opacity=".28"/></g><g fill="#3b4cf0"><rect x="76" y="10" width="50" height="10" rx="5" opacity=".2"/><rect x="84" y="26" width="42" height="10" rx="5" opacity=".4"/><rect x="92" y="42" width="34" height="10" rx="5"/></g></svg>`,
+teal:`<svg viewBox="0 0 128 84" width="100%" height="100%"><g fill="#14b8a6"><rect x="2" y="44" width="16" height="18" opacity=".25"/><rect x="22" y="34" width="16" height="28" opacity=".45"/><rect x="42" y="22" width="16" height="40" opacity=".7"/><rect x="62" y="8" width="16" height="54"/></g><path d="M10 40 L30 30 L50 18 L70 6" fill="none" stroke="#0b1524" stroke-width="1.2"/><g fill="none" stroke="#14b8a6" stroke-width="1.6"><rect x="88" y="10" width="18" height="18" rx="3"/><rect x="108" y="10" width="18" height="18" rx="9"/><rect x="88" y="32" width="18" height="18" rx="9"/><rect x="108" y="32" width="18" height="18" rx="3" fill="#14b8a6"/></g></svg>`,
+purple:`<svg viewBox="0 0 128 84" width="100%" height="100%"><path d="M2 4h34l10 10v48H2z" fill="#7c5cff"/><path d="M36 4v10h10" fill="#c9bcff"/><g fill="#fff"><rect x="9" y="24" width="30" height="3" rx="1.5"/><rect x="9" y="32" width="24" height="3" rx="1.5" opacity=".8"/><rect x="9" y="40" width="30" height="3" rx="1.5" opacity=".6"/></g><g fill="none" stroke="#7c5cff" stroke-width="1.6"><path d="M58 10h68l-14 14H72z"/><path d="M72 24h40l-12 14H84z" fill="#7c5cff" fill-opacity=".25"/><path d="M84 38h16l-6 16h-4z" fill="#7c5cff"/></g></svg>`,
+orange:`<svg viewBox="0 0 128 84" width="100%" height="100%"><rect x="2" y="4" width="62" height="42" rx="5" fill="none" stroke="#f59e0b" stroke-width="1.6"/><path d="M27 16 L43 25 L27 34z" fill="#f59e0b"/><rect x="22" y="52" width="24" height="3" rx="1.5" fill="#f59e0b"/><g fill="#f59e0b"><circle cx="82" cy="18" r="7" opacity=".35"/><circle cx="102" cy="18" r="7" opacity=".6"/><circle cx="122" cy="18" r="6"/></g><rect x="76" y="40" width="50" height="3" rx="1.5" fill="#f59e0b" opacity=".25"/><rect x="76" y="40" width="30" height="3" rx="1.5" fill="#f59e0b"/><circle cx="106" cy="41.5" r="4" fill="#fff" stroke="#f59e0b" stroke-width="1.5"/></svg>`};
+const D=[
+{k:'blue',c:'#3b4cf0',c2:'#3b4cf0',bg:'#f3f5ff',en:'SERVICE GUIDE',ti:'EngageLab<br>サービス紹介資料',cat:'サービス資料',h:'EngageLab サービス紹介資料'},
+{k:'teal',c:'#14b8a6',c2:'#0f9e8f',bg:'#effaf8',en:'CASE STUDIES',ti:'業界別<br>導入事例集',cat:'導入事例集',h:'業界別 導入事例集 2026'},
+{k:'purple',c:'#7c5cff',c2:'#6d4cf0',bg:'#f5f2ff',en:'WHITE PAPER',ti:'プッシュ通知<br>到達率改善ガイド',cat:'ホワイトペーパー',h:'プッシュ通知 到達率改善ガイド'},
+{k:'orange',c:'#f59e0b',c2:'#d97f06',bg:'#fff7ea',en:'WEBINAR',ti:'AI時代の<br>顧客エンゲージメント',cat:'ウェビナー',h:'AI時代の顧客エンゲージメント戦略'}];
+const book=(d,back)=>`<div class="bk${back?' back':''}"><div class="pg"></div><div class="cvr"><div class="gr"></div><div class="hd"><span>AURORA MOBILE</span><span>2026</span></div><div class="mo">${M[d.k]}</div><div class="ft"><span>${d.en}</span><div>${d.ti}</div><i></i></div></div></div>`;
+row.innerHTML=D.map(d=>`<div class="card" style="--c:${d.c};--c2:${d.c2};--bg:${d.bg}"><div class="st"><div class="disc"></div><div class="ring"></div>${book(d,1)}${book(d,0)}</div><div class="meta"><i>${d.cat}</i><h3>${d.h}</h3></div></div>`).join('');
+</script></body></html>

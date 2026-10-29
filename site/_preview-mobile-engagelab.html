@@ -1,0 +1,158 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EngageLab 手机版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mobile.css"><style>
+.mhome .mel-flow{margin-top:28px;padding:18px;border-radius:18px;background:#fff;border:1px solid #e6ebf7;box-shadow:0 16px 40px -20px rgba(30,40,90,.18);text-align:left}
+.mhome .mel-flow>small{font-size:11px;color:#8a92a6;letter-spacing:.06em}.mhome .mel-flow>b{display:block;margin:4px 0 6px;font-size:13.5px}
+.mhome .mel-flow>div{display:flex;flex-direction:column;gap:4px;padding:10px 0 10px 14px;border-left:2px solid #e6ebf7;margin-left:4px}
+.mhome .mel-flow i{font:600 10.5px Poppins;letter-spacing:.08em;color:var(--c);font-style:normal;display:flex;gap:8px}.mhome .mel-flow i em{font:400 10.5px 'Noto Sans JP';color:#8a92a6;font-style:normal}
+.mhome .mel-flow p{margin:0;font-size:12.5px;color:#3a4356;line-height:1.6}
+.mhome .mel-iss{margin-top:28px;display:flex;flex-direction:column;text-align:left}
+.mhome .mel-iss>div{padding:20px 0;border-top:1px solid #eef1f7;display:grid;grid-template-columns:36px 1fr;column-gap:8px}.mhome .mel-iss>div:last-child{border-bottom:1px solid #eef1f7}
+.mhome .mel-iss em{grid-row:span 2;font:300 22px Poppins;color:#2847fc;font-style:normal}.mhome .mel-iss b{font-size:16px}.mhome .mel-iss p{margin:6px 0 0;font-size:13px;line-height:1.8;color:#5b6172}
+.mhome .mel-sol{margin-top:24px;display:flex;flex-direction:column;gap:12px;text-align:left}
+.mhome .mel-sol>div{padding:18px 18px;border-radius:16px;background:#fff;border:1px solid #e6ebf7}
+.mhome .mel-sol small{font:500 11px Poppins;color:#2847fc;letter-spacing:.06em}.mhome .mel-sol b{display:block;margin-top:4px;font-size:15px}.mhome .mel-sol p{margin:6px 0 0;font-size:12.5px;color:#5b6172;line-height:1.7}
+.mhome .mel-ind{margin:24px -20px 0;padding:0 20px 4px;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;scrollbar-width:none;text-align:left}.mhome .mel-ind::-webkit-scrollbar{display:none}
+.mhome .mel-ind>div{flex:0 0 80%;scroll-snap-align:start;padding:20px;border-radius:18px;background:linear-gradient(160deg,#eef1ff,#fff 70%);border:1px solid #e3e8f8;display:flex;flex-direction:column;gap:8px;min-height:220px}
+.mhome .mel-ind small{font-size:12px;color:#2847fc;font-weight:500}.mhome .mel-ind b{font-size:15.5px;line-height:1.55}.mhome .mel-ind span{font-size:12px;color:#3a4356;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid #e3e8f3;align-self:flex-start}.mhome .mel-ind p{margin:auto 0 0;font-size:11.5px;color:#8a92a6;line-height:1.7}
+.mhome .dots{margin-top:16px}
+.mhome .mel-dl{display:block;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #e6ebf7;box-shadow:0 16px 40px -22px rgba(30,40,90,.2);color:#0a1324}
+.mhome .mel-dl .cv{padding:26px 22px;background:linear-gradient(150deg,#2847fc,#5a69e0);color:#fff}.mhome .mel-dl .cv small{font:500 10px Poppins;letter-spacing:.14em;opacity:.8}.mhome .mel-dl .cv b{display:block;margin-top:10px;font-size:19px;line-height:1.5}
+.mhome .mel-dl>div:last-child{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px}.mhome .mel-dl>div:last-child small{font-size:11.5px;color:#2847fc;font-weight:500}.mhome .mel-dl>div:last-child b{font-size:16px}.mhome .mel-dl p{margin:2px 0 0;font-size:12.5px;color:#5b6172;line-height:1.8}.mhome .mel-dl span{margin-top:8px;font-size:14px;font-weight:500;color:#2847fc}.mhome .mel-dl em{font-style:normal;font-size:11px;color:#8a92a6}
+.mhome .mel-case{margin-top:24px;display:block;border-radius:20px;overflow:hidden;background:#fff;text-align:left;color:#0a1324;border:1px solid #e6ebf7}.mhome .mel-case img{display:block;width:100%;height:190px;object-fit:cover}
+.mhome .mel-case>div{padding:20px 22px 22px}.mhome .mel-case small{font-size:12px;color:#2847fc}.mhome .mel-case b{display:block;margin-top:6px;font:300 40px Poppins;line-height:1}.mhome .mel-case b em{font-size:24px;color:#2847fc;font-style:normal}.mhome .mel-case p{margin:10px 0 0;font-size:13px;line-height:1.8;color:#3a4356}.mhome .mel-case span{display:block;margin-top:12px;font-size:14px;color:#2847fc}
+.mhome .mel-cs{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mhome .mel-cs a{padding:16px 8px;border-radius:14px;background:#fff;border:1px solid #e6ebf7;color:#0a1324;display:flex;flex-direction:column;gap:6px}.mhome .mel-cs b{font:400 20px Poppins}.mhome .mel-cs small{font-size:10.5px;color:#5b6172;line-height:1.5}
+</style>
+<style>html,body{margin:0;background:#e9edf5}body{max-width:390px;margin:0 auto!important;background:#fff}.mhome{display:block!important}.mhome a{text-decoration:none}</style>
+<style>
+.mhome .el-flow{ position: relative; margin-top: 14px; padding-left: 26px; }
+.mhome .el-flow .rail{ position: absolute; left: 3px; top: 10px; bottom: 16px; width: 1px;
+  background: linear-gradient(180deg, rgba(40,71,252,.35), rgba(149,222,253,.35) 55%, rgba(129,239,198,.3)); }
+.mhome .el-flow .stack{ display: flex; flex-direction: column; gap: 14px; }
+.mhome .el-flow .ev{ position: relative; font-size: 12.5px; color: var(--ink-500); padding: 2px 0 2px 2px; }
+.mhome .el-flow .ev em{ font-style: normal; color: var(--ink-400); }
+.mhome .el-flow .d{ position: absolute; left: -26px; top: 7px; width: 7px; height: 7px; border-radius: 50%; }
+.mhome .el-card{ position: relative; background: #fff; border: 1px solid rgba(10,19,36,.08); border-radius: 14px;
+  padding: 14px 16px; box-shadow: 0 10px 26px rgba(16,42,94,.07); }
+.mhome .el-card.hi{ box-shadow: 0 18px 40px rgba(16,42,94,.12); }
+.mhome .el-card .hd{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.mhome .el-card .ch{ display: inline-flex; align-items: center; gap: 7px; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; color: var(--ink-700); }
+.mhome .el-card .ch i{ width: 7px; height: 7px; border-radius: 3px; display: inline-block; }
+.mhome .el-card .tm{ font-size: 11px; color: var(--ink-400); }
+.mhome .el-card .push{ display: flex; gap: 12px; align-items: flex-start; }
+.mhome .el-card .push .ic{ width: 30px; height: 30px; border-radius: 9px; background: var(--aurora-blue); flex: none;
+  display: flex; align-items: center; justify-content: center; }
+.mhome .el-card .t1{ font-size: 13px; font-weight: 700; }
+.mhome .el-card .t2{ font-size: 12px; color: var(--ink-500); margin-top: 4px; }
+.mhome .el-card .bd{ font-size: 13px; line-height: 1.7; color: var(--ink-700); }
+.mhome .el-card .bub{ display: inline-block; font-size: 12.5px; line-height: 1.6; padding: 9px 13px; border-radius: 12px; }
+.mhome .el-card .bub.l{ background: #f1f3f7; color: var(--ink-700); border-bottom-left-radius: 4px; }
+.mhome .el-card .bub.g{ background: #e7f8ee; color: #15603a; border-bottom-left-radius: 4px; }
+.mhome .el-flow{ margin-top: 14px; padding-left: 38px; }
+.mhome .el-flow .rail{ left: 4px; top: 10px; bottom: 34px; width: 2px; border-radius: 2px; opacity: .78;
+  background: linear-gradient(180deg,#7ce0ff 0%,#7ce0ff 24%,#a78bfa 47%,#ffd479 72%,#4ade80 100%); }
+.mhome .el-flow .stack{ gap: 12px; }
+.mhome .el-flow .ev{ padding: 0 0 2px; font-size: 14px; font-weight: 700; color: #2a3142; }
+.mhome .el-flow .ev em{ font-weight: 500; color: #98a0ae; }
+.mhome .el-flow .ev .d{ left: -38px; top: 5px; }
+.mhome .el-flow .d{ position: absolute; left: -38px; top: 18px; width: 10px; height: 10px; border-radius: 50%; }
+.mhome .el-card{ border-radius: 10px; padding: 15px 18px 16px;
+  background: rgba(255,255,255,.86); border: 1px solid rgba(40,71,252,.09); box-shadow: 0 12px 34px rgba(31,55,125,.08); }
+.mhome .el-card.hi{ background: linear-gradient(135deg,rgba(255,255,255,.94),rgba(238,243,255,.88));
+  border: 1px solid rgba(40,71,252,.20); box-shadow: 0 12px 34px rgba(31,55,125,.08); }
+.mhome .el-card .hd{ gap: 16px; margin-bottom: 0; }
+.mhome .el-card .ch{ gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #5b6172; }
+.mhome .el-card .ch i{ width: 6px; height: 6px; border-radius: 50%; }
+.mhome .el-card .tm{ font-size: 11px; color: #98a0ae; }
+.mhome .el-card .push{ margin-top: 9px; gap: 11px; align-items: center; }
+.mhome .el-card .push .ic{ width: 31px; height: 31px; border-radius: 9px;
+  background: linear-gradient(135deg,#2847fc,#6a7fff); box-shadow: 0 6px 14px rgba(40,71,252,.20); }
+.mhome .el-card .t1{ font-size: 13px; font-weight: 500; line-height: 1.55; color: #2a3142; }
+.mhome .el-card .t2{ margin-top: 1px; font-size: 11px; line-height: 1.5; color: #98a0ae; }
+.mhome .el-card .bd{ margin-top: 9px; font-size: 13px; font-weight: 700; line-height: 1.55; color: #2a3142; }
+.mhome .el-card .bub{ margin-top: 9px; padding: 7px 12px; font-size: 12px; line-height: 1.6; }
+.mhome .el-card .bub.l{ border-radius: 11px 11px 11px 4px; background: #f4f5f8; color: #5b6172; }
+.mhome .el-card .bub.g{ border-radius: 11px 11px 4px 11px; background: #edf9f3; color: #39745a; }
+.mhome .mel-hv{margin-top:28px;width:100%;text-align:left;zoom:.86}
+.mhome .mel-st{grid-template-columns:1fr 1fr!important}.mhome .mel-st div{text-align:center}.mhome .mel-st div:nth-child(-n+4){border-bottom:1px solid #eef1f7}.mhome .mel-st div:last-child{grid-column:1/-1;border-right:0!important}
+.mhome .mel-fd{margin-top:24px;padding:20px 16px;border-radius:18px;background:#fff;border:1px solid #e6ebf7;display:flex;flex-direction:column;align-items:center;gap:10px}
+.mhome .mel-fd small{font-size:11px;color:#8a92a6;letter-spacing:.06em}
+.mhome .mel-fd .g4,.mhome .mel-fd .g3{width:100%;display:grid;gap:6px}.mhome .mel-fd .g4{grid-template-columns:repeat(4,1fr)}.mhome .mel-fd .g3{grid-template-columns:repeat(3,1fr)}
+.mhome .mel-fd .g4 span,.mhome .mel-fd .g3 span{padding:8px 2px;border-radius:9px;background:#f5f7fc;font-size:11px;color:#3a4356;white-space:nowrap}
+.mhome .mel-fd .ln{width:1.5px;height:22px;background:linear-gradient(#95defd,#2847fc)}.mhome .mel-fd .ln.g{background:linear-gradient(#2847fc,#81efc6)}
+.mhome .mel-fd .pl{display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:#0a1324;color:#fff;font-size:14px}.mhome .mel-fd .pl span{width:30px;height:30px;border-radius:9px;background:#2847fc;display:grid;place-items:center}
+.mhome .mel-ind>div{padding:0 0 18px!important;overflow:hidden;background:#fff!important}.mhome .mel-ind img{width:100%;height:150px;object-fit:cover;display:block;margin-bottom:6px}
+.mhome .mel-ind>div>*:not(img){margin-left:18px;margin-right:18px}
+</style><style>
+.mhome .mel-top{padding:28px 20px 22px;text-align:center;border-top:1px solid #eef1f7}
+.mhome .mel-top b{font:300 44px/1 Poppins}.mhome .mel-top b em{font-size:26px;color:#2847fc;font-style:normal}.mhome .mel-top small{display:block;margin-top:10px;font-size:12px;color:#5b6172}
+.mhome .mel-st div:nth-child(-n+4){border-bottom:0}.mhome .mel-st div:nth-child(-n+2){border-bottom:1px solid #eef1f7!important}
+.mhome .mel-dk{background:radial-gradient(120% 70% at 50% 0%,#0c2a7a 0%,#071a4e 45%,#050d24 100%)!important;color:#fff}
+.mhome .mel-dk h2{color:#fff}.mhome .mel-dk .ld{color:rgba(255,255,255,.72)!important}.mhome .mel-dk .eb{color:#95defd}
+.mhome .mel-dk .mel-fd{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14)}
+.mhome .mel-dk .mel-fd small{color:rgba(255,255,255,.55)}
+.mhome .mel-dk .mel-fd .g4 span,.mhome .mel-dk .mel-fd .g3 span{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.88)}
+.mhome .mel-dk .mel-fd .ln{background:linear-gradient(rgba(149,222,253,.7),#2847fc)}.mhome .mel-dk .mel-fd .ln.g{background:linear-gradient(#2847fc,rgba(129,239,198,.8))}
+.mhome .mel-dk .mel-fd .pl{background:#2847fc;box-shadow:0 0 0 6px rgba(40,71,252,.18),0 12px 30px rgba(40,71,252,.4)}.mhome .mel-dk .mel-fd .pl span{background:rgba(255,255,255,.16)}
+.mhome .mel-dk .mel-sol>div{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14)}
+.mhome .mel-dk .mel-sol small{color:#95defd}.mhome .mel-dk .mel-sol b{color:#fff}.mhome .mel-dk .mel-sol p{color:rgba(255,255,255,.65)}
+</style><style>
+.mhome .mel-st5 div{border-bottom:0!important}
+.mhome .mel-st5 div:nth-child(-n+4){border-bottom:1px solid #eef1f7!important}
+.mhome .mel-st5 div:last-child{grid-column:auto!important;border-right:1px solid #eef1f7!important}
+</style></head><body><template id="mmain">
+<section class="hero" style="padding:32px 20px 40px;text-align:center;display:flex;flex-direction:column;align-items:center">
+<div style="display:flex;align-items:center;gap:10px"><span style="width:40px;height:40px;border-radius:11px;background:#2847fc;display:grid;place-items:center"><img src="icon/engagelab icon white.svg" style="width:22px;height:22px"></span><b style="font:500 20px Poppins">EngageLab</b></div>
+<h1 style="margin-top:20px;font-size:26px">App Push・Email・SMS・WhatsApp を、<br>一つのプラットフォームで。</h1>
+<p class="ld" style="max-width:330px;word-break:keep-all">海外ユーザーにも確実に届く、企業向けメッセージング基盤です。配信・管理・分析をまとめ、運用工数とコストを同時に削減します。</p>
+<div style="margin-top:24px;width:100%;display:flex;flex-direction:column;gap:12px"><a class="btn bp" href="resources.html">資料ダウンロード</a><a class="btn bs" href="contact.html">お問い合わせ</a></div>
+<div style="margin-top:18px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;font-size:12px;color:#3a4356"><span>✓ グローバル配信・高到達率</span><span>✓ マルチチャネルを一元管理</span><span>✓ API / SDK で既存システムと連携</span></div>
+<div class="mel-hv"><div class="el-flow">
+            <span class="rail"></span>
+            <div class="stack">
+              <div class="ev"><span class="d" style="background:#7ce0ff;box-shadow:0 0 0 5px #7ce0ff2e"></span>カート放棄イベント <em>・CRM 連携</em></div>
+
+              <div class="el-card hi"><span class="d" style="background:#7ce0ff;box-shadow:0 0 0 5px #7ce0ff2e"></span>
+                <div class="hd"><span class="ch"><i style="background:#7ce0ff"></i>APP PUSH</span><span class="tm">即時</span></div>
+                <div class="push">
+                  <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="8"></circle><path d="M14.5 8.5h-5v7h5M9.5 12h4"></path></svg></span>
+                  <div><div class="t1">カートの商品が残っています</div><div class="t2">今なら送料無料が適用されます。</div></div>
+                </div>
+              </div>
+
+              <div class="el-card"><span class="d" style="background:#a78bfa;box-shadow:0 0 0 5px #a78bfa2e"></span>
+                <div class="hd"><span class="ch"><i style="background:#a78bfa"></i>EMAIL</span><span class="tm">30分後</span></div>
+                <div class="bd">【本日まで】カート内の商品をお取り置きしています</div>
+              </div>
+
+              <div class="el-card"><span class="d" style="background:#ffd479;box-shadow:0 0 0 5px #ffd4792e"></span>
+                <div class="hd"><span class="ch"><i style="background:#ffd479"></i>SMS</span><span class="tm">2時間後</span></div>
+                <div class="bub l">お取り置きは本日 23:59 まで有効です。</div>
+              </div>
+
+              <div class="el-card"><span class="d" style="background:#4ade80;box-shadow:0 0 0 5px #4ade802e"></span>
+                <div class="hd"><span class="ch"><i style="background:#4ade80"></i>WHATSAPP</span><span class="tm">翌日</span></div>
+                <div class="bub g">在庫が残りわずかです。ご確認ください。</div>
+              </div>
+            </div>
+          </div></div>
+</section>
+<div class="stats mel-st mel-st5"><div><b>200<em>+</em></b><small>対応国・地域</small></div><div><b>12B<em>+</em></b><small>1日あたりの配信数</small></div><div><b>1M<em>+</em></b><small>接続アプリ数</small></div><div><b>2,000<em>+</em></b><small>導入企業</small></div><div><b>99.97<em>%</em></b><small>メッセージ到達率</small></div></div>
+<section class="sec" style="text-align:center"><div class="eb c">課題</div><h2>このような課題はありませんか？</h2><p class="ld">グローバル配信の現場で、よくお聞きする課題です。</p>
+<div class="mel-iss"><div><em>01</em><b>プッシュ通知が届かない</b><p>端末や地域によって、配信したはずの通知が届かないことがある。</p></div><div><em>02</em><b>チャネルが分散している</b><p>ツールごとに管理画面が分かれ、効果測定も一元化できない。</p></div><div><em>03</em><b>海外向け配信が難しい</b><p>地域ごとに事業者やルールが異なり、運用負荷が大きい。</p></div></div></section>
+<section class="sec mel-dk" style="text-align:center"><div class="eb c">ソリューション</div><h2>すべてのチャネルを、<br>一つの基盤に。</h2><p class="ld" style="text-align:left">既存のCRM・アプリ・Webサイトのデータをそのまま接続。EngageLab が配信先とタイミングを最適化し、各チャネルへ届けます。</p>
+<div class="mel-fd"><small>データソース</small><div class="g4"><span>CRM</span><span>アプリ</span><span>Web サイト</span><span>基幹システム</span></div><i class="ln"></i><div class="pl"><span><svg width="18" height="18" viewBox="0 0 30 30" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="15" cy="15" r="10.5"></circle><path d="M10.5 12.5h9M10.5 17.5h5.5" stroke-linecap="round"></path></svg></span><b>EngageLab Platform</b></div><i class="ln g"></i><small>配信チャネル</small><div class="g3"><span>App Push</span><span>Web Push</span><span>Email</span><span>SMS</span><span>WhatsApp</span><span>LINE</span></div></div>
+<div class="mel-sol"><div><small>Verify</small><b>本人確認・認証</b><p>OTP／Silent Auth／CAPTCHA</p></div><div><small>Channels</small><b>マルチチャネル配信</b><p>App Push／Web Push／Email／SMS／WhatsApp</p></div><div><small>Marketing &amp; Support</small><b>自動化と顧客対応</b><p>オートメーション／ジャーニー／LiveDesk／AIエージェント／API・SDK・分析</p></div></div></section>
+<section class="sec" style="text-align:center"><div class="eb c">業種別</div><h2>業種別の活用シーン</h2><p class="ld">お客様の業種に近い活用イメージからご覧いただけます。</p>
+<div class="mel-ind" data-msc>
+<div><img src="img/ph-1.png" style="object-position:88% center" alt=""><small>小売・EC</small><b>カゴ落ちから再訪へ。行動に応じた自動追客</b><span>App Push ＋ Email</span><p>#カート放棄 #在庫復活 #セール告知 #会員ランク別</p></div>
+<div><img src="img/ph-2.png" style="object-position:62% center" alt=""><small>ゲーム</small><b>イベントの熱量を逃さない出し分け配信</b><span>App Push ＋ オートメーション</span><p>#イベント開始 #報酬受取 #休眠復帰 #行動セグメント</p></div>
+<div><img src="img/ph-3.png" style="object-position:50% 34%" alt=""><small>金融</small><b>確実に届く本人確認と、監査に耐える記録</b><span>SMS ＋ Verify</span><p>#OTP #取引通知 #不正検知 #監査ログ</p></div>
+<div><img src="img/ph-4.png" style="object-position:50% 30%" alt=""><small>旅行・交通</small><b>運行の変化を、多言語で該当者だけに</b><span>App Push ＋ SMS</span><p>#遅延・欠航 #搭乗案内 #多言語 #該当者のみ</p></div>
+<div><img src="img/ph-2.png" style="object-position:30% center" alt=""><small>製造</small><b>現場への一斉連絡を、確実に届ける</b><span>SMS ＋ App Push</span><p>#設備アラート #シフト連絡 #安否確認</p></div></div>
+<div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div></section>
+<section class="sec" style="padding-top:8px"><a class="mel-dl" href="resources.html"><div class="cv"><small>SERVICE OVERVIEW</small><b>EngageLab<br>サービス紹介資料</b></div><div><small>無料ダウンロード</small><b>EngageLab サービス紹介資料</b><p>機能一覧と対応チャネル／料金の考え方・導入の流れ／セキュリティ体制</p><span>ダウンロード →</span><em>PDF ／ 全 24 ページ</em></div></a></section>
+<section class="sec" style="background:#f7f9ff;text-align:center"><div class="eb c">導入事例</div><h2>導入企業での、成果。</h2>
+<a class="mel-case" href="case-detail.html"><img src="img/case-02.png" alt=""><div><small>小売・EC</small><b>+35<em>%</em></b><p>プッシュ通知の到達率が改善し、再訪率が向上しました。</p><span>事例を読む →</span></div></a>
+<div class="mel-cs"><a href="case-detail.html"><b>+18%</b><small>継続率・ゲーム</small></a><a href="case-detail.html"><b>99.9%</b><small>配信成功率・金融</small></a><a href="case-detail.html"><b>−40%</b><small>通知遅延・旅行・交通</small></a></div>
+<a href="cases.html" style="display:inline-block;margin-top:24px;font-size:14px;color:#2847fc">導入事例をもっと見る →</a></section></template><script src="mobile.js"></script></body></html>

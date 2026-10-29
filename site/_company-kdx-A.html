@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>会社概要 | Aurora Mobile 株式会社</title>
+  <meta name="description" content="Aurora Mobile株式会社（NASDAQ: JG）の会社概要・沿革・日本拠点についてご紹介します。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style>
+.hs-item{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:40px;align-items:center}
+.hs-prog .cnt{white-space:nowrap}
+.hs-item .ph{--r:3deg;margin:0;width:200px;aspect-ratio:3/2;border-radius:10px;overflow:hidden;
+  opacity:0;transform:translateY(36px) rotate(calc(var(--r) * -3)) scale(.55);transform-origin:50% 100%;
+  box-shadow:0 18px 40px -18px rgba(0,0,0,.6);
+  transition:opacity .35s ease,transform .5s cubic-bezier(.5,0,.75,0)}
+.hs-item:nth-child(even) .ph{--r:-3deg}
+.hs-item.on .ph{opacity:1;transform:translateY(0) rotate(var(--r)) scale(1);
+  transition:opacity .3s ease .08s,transform .85s cubic-bezier(.34,1.8,.5,1) .08s}
+.hs-item .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.hs-item.on .ph:hover{transform:translateY(-4px) rotate(0deg) scale(1.04);transition:transform .45s cubic-bezier(.34,1.8,.5,1)}
+
+.cv-hero{padding:40px 0 0;background:#fff}
+.cv-hero .crumb{margin-bottom:32px}
+.cv-top{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;align-items:end;margin-bottom:56px}
+.cv-top h1{margin:20px 0 0;font-size:46px;line-height:1.45;font-weight:700;letter-spacing:.01em;color:var(--ink-900);word-break:keep-all}
+.cv-top h1 em{font-style:normal;color:var(--aurora-blue)}
+@media (max-width:1100px){.cv-top{grid-template-columns:minmax(0,1fr);gap:24px}.cv-top p{max-width:560px}.cv-top h1{font-size:clamp(30px,4.6vw,46px);word-break:normal}}
+.cv-top p{margin:0 0 10px;font-size:15px;line-height:2;color:var(--ink-500)}
+.cv-ph{height:480px;border-radius:24px;overflow:hidden}
+.cv-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;animation:cvZoom 1.6s cubic-bezier(.22,1,.36,1) both}
+@keyframes cvZoom{from{transform:scale(1.05)}to{transform:none}}
+.cv-top{animation:cvUp 1s cubic-bezier(.22,1,.36,1) .1s both}
+@keyframes cvUp{from{opacity:0;transform:translateY(24px)}}
+.cv-data{background:#fff;padding:128px 0 136px}
+.cv-wrap{display:grid;grid-template-columns:360px minmax(0,1fr);gap:80px;align-items:start}
+.cv-side{position:sticky;top:120px}
+.cv-side .sub{margin:20px 0 0;font-size:15px;line-height:2;color:var(--ink-500)}
+.cv-side .lk{margin-top:28px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--aurora-blue);text-decoration:none}
+.cv-side .lk svg{width:16px;height:16px;transition:transform .25s}
+.cv-side .lk:hover svg{transform:translateX(4px)}
+.cv-tbl{margin:14px 0 0;border-top:1px solid var(--ink-900)}
+.cv-tbl>div{display:grid;grid-template-columns:160px minmax(0,1fr);gap:32px;padding:28px 0;border-bottom:1px solid #e6eaf2}
+.cv-tbl dt{font-size:14px;line-height:1.9;color:var(--ink-500)}
+.cv-tbl dd{margin:0;font-size:17px;line-height:1.85;font-weight:500;color:var(--ink-900)}
+.cv-close{margin-top:56px;padding-top:0}
+.cv-close h3{margin:0;font-size:22px;line-height:1.6;font-weight:700;color:var(--ink-900)}
+.cv-close p{margin:14px 0 0;font-size:15px;line-height:2;color:var(--ink-500)}
+
+.co-jp.v7{position:relative;overflow:hidden;background:#fff;padding:136px 0 144px}
+.co-jp.v7 .container{position:relative;z-index:1}
+.lc-l{max-width:440px}
+.lc-l h2{margin:28px 0 56px}
+.lc-info{margin:0;border-top:1px solid #1f2a44}
+.lc-info>div{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid #e3e7ef}
+.lc-info dt{font-size:13px;color:#8a93a3;letter-spacing:.06em}
+.lc-info dd{margin:0;font-size:15px;line-height:1.8;color:#1f2a44;white-space:nowrap}
+.lc-info .ad dt{color:#1f2a44;font-weight:700}
+.lc-map{position:absolute;top:0;bottom:0;left:50%;margin-left:-40px;width:1000px;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 80%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 80%,transparent 100%)}
+.lc-map>img{position:absolute;width:2600px;max-width:none;left:-1560px;top:-90px;opacity:.75}
+.lp{position:absolute;width:0;height:0}
+.lp i{position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:#2847fc}
+.lp em{position:absolute;left:14px;top:-9px;font-style:normal;white-space:nowrap;font-size:10px;letter-spacing:.14em;color:#8a93a3;display:flex;align-items:baseline;gap:8px}
+.lp em b{font-size:13px;font-weight:500;letter-spacing:.04em;color:#1f2a44}
+.lp.sg em{left:auto;right:14px;flex-direction:row-reverse}
+.lp.tk i{left:-6px;top:-6px;width:12px;height:12px;box-shadow:0 0 0 8px rgba(40,71,252,.12),0 0 0 20px rgba(40,71,252,.05)}
+.lp.tk em{left:30px;top:-12px}
+.lp.tk em b{font-size:18px;font-weight:700;color:#2847fc}
+.lp.tk{left:603px;top:255px}
+.lp.hk{left:499px;top:333px}
+.lp.sg{left:452px;top:431px}
+.lp.jk{left:504px;top:518px}
+
+.v2 .co-hist.hs{background:#fff;padding:0 24px}
+.hs-panel{position:relative;background:var(--ink-900);border-radius:32px;padding:128px 0;overflow:clip}
+.hs-panel::before{content:"";position:absolute;right:0;top:0;width:58%;height:560px;pointer-events:none;
+  background-image:linear-gradient(rgba(149,222,253,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(149,222,253,.14) 1px,transparent 1px);
+  background-size:40px 40px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 100% 0%,#000 0%,transparent 82%);mask-image:radial-gradient(ellipse 70% 80% at 100% 0%,#000 0%,transparent 82%)}
+.hs-panel .container{position:relative;z-index:1}
+.hs-year{font-size:160px}
+.hs-list{position:relative;padding:40px 0 0 44px}
+.hs-list::before{content:"";position:absolute;left:4px;top:76px;bottom:76px;width:1px;background:rgba(255,255,255,.14)}
+.hs-item{position:relative;border:0 !important}
+.hs-item::before{content:"";position:absolute;left:-45px;top:41px;width:9px;height:9px;border-radius:50%;background:var(--ink-900);border:1px solid rgba(255,255,255,.35);box-sizing:border-box;transition:all .35s}
+.hs-item.on::before{background:#95defd;border-color:#95defd;box-shadow:0 0 0 6px rgba(149,222,253,.16)}
+.hs-item:last-child::before{width:13px;height:13px;left:-47px;top:39px;background:#2847fc;border-color:#2847fc}
+.hs-item:last-child.on::before{box-shadow:0 0 0 7px rgba(40,71,252,.28)}
+.hs-item:last-child .y{color:#95defd}
+</style><style>
+.cv-hero{padding:40px 0 0;background:#fff}
+.cv-hero .crumb{margin-bottom:32px}
+.ov{position:relative;margin:0 24px;height:680px;border-radius:32px;overflow:hidden}
+.ov img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block;animation:cvZoom 1.6s cubic-bezier(.22,1,.36,1) both}
+.ov-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(7,16,38,.6) 0%,rgba(7,16,38,.42) 32%,rgba(7,16,38,.12) 58%,rgba(7,16,38,0) 74%),linear-gradient(0deg,rgba(7,16,38,.28) 0%,rgba(7,16,38,0) 45%)}
+.ov-tx{position:absolute;left:0;right:0;bottom:72px;z-index:2}
+.ov-tx .eyebrow{color:#fff}
+.ov-tx h1,.ov-lead{text-shadow:0 2px 18px rgba(7,16,38,.35)}
+.ov-lead{margin:20px 0 0;max-width:560px;font-size:16px;line-height:1.9;color:rgba(255,255,255,.92);word-break:keep-all}
+.cv-hero{padding-top:32px !important}
+.ov-tx h1{text-shadow:0 2px 24px rgba(7,16,38,.35);margin:20px 0 0;font-size:52px;line-height:1.45;font-weight:700;letter-spacing:.02em;color:#fff;word-break:keep-all}
+.ov-tx h1 em{font-style:normal;color:#9fd8ff}
+.ov-sub{display:grid;grid-template-columns:200px minmax(0,1fr);gap:56px;align-items:baseline;padding:56px 0 112px}
+.ov-sub b{font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;letter-spacing:.14em;color:var(--aurora-blue)}
+.ov-sub p{margin:0;max-width:720px;font-size:18px;line-height:2;color:var(--ink-700,#36405a);word-break:keep-all;overflow-wrap:anywhere}
+</style>
+<style id="hist-v9">
+.hs-panel{padding:112px 0 !important}
+.hs-left h2.hs-h{margin:18px 0 0;font-size:44px;line-height:1.35;font-weight:700;color:#fff;letter-spacing:.02em}
+.hs-year{margin-top:40px}
+.hs-list{padding-top:24px !important}
+.hs-item{grid-template-columns:120px minmax(0,1fr) 168px !important;gap:32px !important;padding:22px 0 !important}
+.hs-item .tx{display:contents}
+.hs-item .tx .y{grid-column:1;font-size:28px !important;font-weight:300;line-height:1.2;color:rgba(255,255,255,.55);align-self:center;margin:0 !important}
+.hs-item .tx b,.hs-item .tx p{grid-column:2}
+.hs-item .tx b{align-self:end}
+.hs-item .tx p{align-self:start;margin:0 !important}
+.hs-item{grid-template-rows:auto auto}
+.hs-item .tx .y{grid-row:1/3}
+.hs-item .ph{grid-column:3;grid-row:1/3;width:168px !important;opacity:.28 !important;transform:none !important;filter:grayscale(.6);transition:opacity .4s ease,transform .7s cubic-bezier(.34,1.8,.5,1),filter .4s !important}
+.hs-item.on .ph{opacity:1 !important;filter:none;transform:rotate(var(--r)) scale(1.04) !important}
+.hs-item.on .tx .y{color:#95defd}
+.hs-item::before{top:50% !important;margin-top:-4px}
+.hs-item:last-child::before{margin-top:-6px}
+.hs-list::before{top:60px !important;bottom:60px !important}
+
+.hs-grid{grid-template-columns:360px minmax(0,1fr) !important;gap:64px !important}
+.hs-item{column-gap:32px !important;row-gap:6px !important;align-content:center;grid-template-columns:96px minmax(0,1fr) 168px !important}
+.hs-item .tx b{font-size:18px !important;line-height:1.6 !important;word-break:keep-all}
+.hs-item .tx p{font-size:14px !important;line-height:1.7 !important}
+.hs-item:not(.on) .tx b{color:rgba(255,255,255,.72) !important}
+.hs-item:not(.on) .tx p{color:rgba(255,255,255,.5) !important}
+.hs-item:not(.on) .tx .y{color:rgba(255,255,255,.42) !important}
+.hs-item .ph{opacity:1 !important;filter:none !important;box-shadow:none !important;position:relative;transform:scale(.9) !important;transition:transform .5s cubic-bezier(.5,0,.75,0),box-shadow .5s !important}
+.hs-item .ph{background:#0a1324 !important;border:0 !important;outline:0 !important}
+.hs-item .ph img{opacity:.07;transition:opacity .4s ease}
+.hs-item.on .ph{transform:rotate(var(--r)) scale(1.04) !important;box-shadow:0 18px 40px -18px rgba(0,0,0,.6) !important;transition:transform .85s cubic-bezier(.34,1.8,.5,1) .08s,box-shadow .5s .08s !important}
+.hs-item.on .ph img{opacity:1;transition:opacity .35s ease .08s}
+.hs-item.on .ph:hover{transform:translateY(-4px) rotate(0deg) scale(1.08) !important;transition:transform .45s cubic-bezier(.34,1.8,.5,1) !important}
+.hs-year{font-size:140px !important}
+.hs-item,.hs-item .tx,.hs-item .tx>*{opacity:1 !important}
+@media (max-width:1100px){.hs-grid{grid-template-columns:minmax(0,1fr) !important;gap:40px !important}.hs-item{grid-template-columns:72px minmax(0,1fr) 120px !important;column-gap:20px !important}.hs-item .ph{width:120px !important}.hs-item .tx .y{font-size:22px !important}.hs-year{font-size:96px !important}}
+</style>
+<style id="kdxA">
+body.vA .ov img,body.vB .ov img{content:url(img/kdx-toranomon.jpg);animation:none}
+body.vA .ov img{object-position:50% 8%}
+body.vA .ov-shade{background:linear-gradient(90deg,rgba(7,16,38,.62) 0%,rgba(7,16,38,.42) 34%,rgba(7,16,38,.1) 60%,rgba(7,16,38,0) 76%),linear-gradient(0deg,rgba(7,16,38,.35) 0%,rgba(7,16,38,0) 40%)}
+body.vB .ov img{width:118%;max-width:none;margin-left:-14%;object-position:50% 6%;filter:saturate(.9) brightness(1.04)}
+body.vB .ov{background:#eef3ff}
+body.vB .ov-shade{background:linear-gradient(90deg,rgba(246,249,255,.97) 0%,rgba(246,249,255,.9) 30%,rgba(246,249,255,.45) 50%,rgba(246,249,255,0) 66%),linear-gradient(0deg,rgba(246,249,255,.55) 0%,rgba(246,249,255,0) 30%)}
+body.vB .ov-tx .eyebrow{color:#2847fc}
+body.vB .ov-tx h1{color:#0a1324;text-shadow:none}
+body.vB .ov-tx h1 em{color:#2847fc}
+body.vB .ov-lead{color:#4a5268;text-shadow:none}
+body.vA .ov img{position:absolute;right:0;top:0;width:96%!important;max-width:none;margin:0!important;height:100%;object-fit:cover;object-position:50% 0%}
+body.vA .ov{background:#16213d}
+body.vB .ov-shade{background:linear-gradient(90deg,#f4f7ff 0%,rgba(244,247,255,.96) 26%,rgba(244,247,255,.6) 44%,rgba(244,247,255,0) 62%),linear-gradient(0deg,rgba(244,247,255,.5) 0%,rgba(244,247,255,0) 26%)}
+body.vA .ov-shade{background:linear-gradient(90deg,#16213d 0%,rgba(22,33,61,.92) 22%,rgba(22,33,61,.5) 44%,rgba(22,33,61,0) 64%),linear-gradient(0deg,rgba(22,33,61,.35) 0%,rgba(22,33,61,0) 35%)}
+</style>
+</head>
+<body class="vA v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo.svg" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="gptbots.html">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="index.html#products">
+              <strong>Modellix</strong>
+              <span>AIモデルをひとつのAPIで</span>
+            </a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+        <a class="nav-link" href="pricing.html">料金</a>
+      
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-cta">
+        <a href="index.html#resources" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    
+  
+  <section class="cv-hero" id="top">
+        <div class="ov"><img src="img/kdx-toranomon.jpg" alt="Aurora Mobile のオフィス" /><div class="ov-shade"></div>
+      <div class="ov-tx"><div class="container"><span class="eyebrow">COMPANY</span><h1>15年以上にわたり、<br />データと<em>AI</em>に向き合ってきました。</h1><p class="ov-lead">Aurora Mobile株式会社は、AIと<wbr />カスタマーエンゲージメントを軸とした<wbr />グローバル・テクノロジーグループです。</p></div></div>
+    </div>
+  </section>
+
+  <section class="cv-data">
+    <div class="container">
+      <div class="cv-wrap">
+        <div class="cv-side">
+          <span class="eyebrow"><b>01</b>会社情報</span>
+          <h2 class="co-h2">会社概要</h2>
+          <a class="lk" href="index.html#contact">投資家情報（IR）へ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div>
+          <dl class="cv-tbl">
+            <div><dt>会社名</dt><dd>Aurora Mobile株式会社（極光）</dd></div>
+            <div><dt>代表者</dt><dd>代表取締役　◯◯ ◯◯</dd></div>
+            <div><dt>設立</dt><dd>2011年2月</dd></div>
+            <div><dt>日本法人設立</dt><dd>2026年</dd></div>
+            <div><dt>資本金</dt><dd>◯◯◯,◯◯◯,◯◯◯円</dd></div>
+            <div><dt>従業員数</dt><dd>◯◯◯名（グループ全体）</dd></div>
+            <div><dt>上場市場</dt><dd>NASDAQ（ティッカー: JG）</dd></div>
+            <div><dt>事業内容</dt><dd>顧客エンゲージメント・プラットフォームの提供<br />エンタープライズAIサービス<br />プログラマティック広告<br />フィンテックサービス</dd></div>
+            <div><dt>本社所在地</dt><dd>◯◯◯◯</dd></div>
+            <div><dt>主要取引銀行</dt><dd>◯◯銀行　◯◯支店</dd></div>
+          </dl>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="co-hist hs">
+   <div class="hs-panel">
+    <div class="container">
+      <div class="hs-grid">
+        <div class="hs-left">
+          <div class="hs-sticky">
+            <span class="eyebrow"><b>02</b>沿革</span>
+            <h2 class="hs-h">15年の歩み</h2>
+            <div class="hs-year" aria-hidden="true"><span class="a">20</span><span class="b">11</span></div>
+            <div class="hs-prog"><i class="bar"><i></i></i><span class="cnt"><em>01</em> / 06</span></div>
+          </div>
+        </div>
+        <ol class="hs-list">
+          <li class="hs-item on" data-y="2011"><div class="tx"><span class="y">2011</span><b>Aurora Mobile 創立。</b><p>開発者向けサービス「JPush」を開始。</p></div><figure class="ph"><img src="img/company-hero.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2018"><div class="tx"><span class="y">2018</span><b>NASDAQ市場へ上場。</b><p>ティッカー: JG。</p></div><figure class="ph"><img src="img/ph-4.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2022"><div class="tx"><span class="y">2022</span><b>EngageLabをグローバル提供開始。</b><p>シンガポール拠点を設立。</p></div><figure class="ph"><img src="img/case-saas.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2023"><div class="tx"><span class="y">2023</span><b>GPTBots.aiを提供開始。</b><p>香港拠点を設立。</p></div><figure class="ph"><img src="img/company-hero.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2025"><div class="tx"><span class="y">2025</span><b>MA・CAPTCHA・LiveDeskを提供開始。</b><p>インドネシア拠点を設立。</p></div><figure class="ph"><img src="img/ph-4.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2026"><div class="tx"><span class="y">2026</span><b>日本法人「Aurora Mobile株式会社」を設立。</b><p>Modellixを発表。</p></div><figure class="ph"><img src="img/case-saas.png" alt="" /></figure></li>
+        </ol>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <section class="co-jp">
+    <div class="jp-map">
+      <img src="img/map-blue.png" alt="" />
+      <span class="pt hk"><i></i><em>香港</em></span>
+      <span class="pt sg"><i></i><em>シンガポール</em></span>
+      <span class="pt jk"><i></i><em>ジャカルタ</em></span>
+      <span class="pt tk"><s></s><i></i><em>東京</em></span>
+    </div>
+    <div class="fade"></div>
+    <div class="container">
+      <div class="co-head solo">
+        <span class="eyebrow"><b>03</b>日本拠点</span>
+      </div>
+      <div class="jp-split">
+        <div class="jp-txt">
+          <h2>東京から、<br />日本企業を支援します。</h2>
+          <p>日本に子会社と国内サポート体制を設けており、導入前のご相談から導入後の運用支援まで、日本語で一貫して対応します。東京リージョンでの提供にも対応し、国内でのデータ処理が求められる企業にも安心してご利用いただける環境を提供します。</p>
+          <a href="index.html#contact" class="btn btn-primary">お問い合わせ
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="office-card">
+          <h3>東京オフィス</h3>
+          <p class="ad">東京都港区虎ノ門1丁目10番5号<br />KDX虎ノ門一丁目ビル11F</p>
+          <div class="rows">
+            <div><dt>受付時間</dt><dd>平日 9:30 – 18:00（土日祝を除く）</dd></div>
+            <div><dt>アクセス</dt><dd>東京メトロ 虎ノ門駅 徒歩◯分</dd></div>
+            <div><dt>海外拠点</dt><dd>シンガポール／香港／ジャカルタ</dd></div>
+          </div>
+        </div>
+      </div>
+      <div class="jp-tail"></div>
+    </div>
+  </section>
+
+    <div id="contact" style="position:relative;height:480px;overflow:hidden;background:linear-gradient(120deg,#ffffff 0%,#f2f5ff 60%,#e8eeff 100%);border-top:1px solid #edf0f6">
+    
+    <div style="position:absolute;inset:0;pointer-events:none"><svg style="position:absolute;left:calc(50% - 310px);top:-30px" width="900" height="608" viewBox="0 0 1784 1206" fill="none"><defs><linearGradient id="cta-rb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a7dff"/><stop offset=".6" stop-color="#3d63ff"/><stop offset="1" stop-color="#3fb6d8"/></linearGradient><linearGradient id="cta-fm" x1="0" y1="0" x2="1" y2="0"><stop offset=".12" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".25"/><stop offset=".48" stop-color="#fff" stop-opacity=".7"/><stop offset=".62" stop-color="#fff"/><stop offset=".8" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="cta-fv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".1" stop-color="#fff"/><stop offset=".5" stop-color="#fff"/><stop offset=".72" stop-color="#fff" stop-opacity=".45"/><stop offset=".9" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="cta-mk"><rect width="1784" height="1206" fill="url(#cta-fm)"/></mask><mask id="cta-mv"><rect width="1784" height="1206" fill="url(#cta-fv)"/></mask></defs><g mask="url(#cta-mv)"><g mask="url(#cta-mk)" stroke="url(#cta-rb)" stroke-width="2"><path d="M300.0,1300.0 C380.0,600.0 760.0,140.0 1100.0,140.0 C1440.0,140.0 1700.0,700.0 1800.0,1300.0" stroke-opacity="0.110"/><path d="M343.5,1300.0 C410.7,619.8 769.4,164.7 1100.5,162.8 C1433.1,160.8 1695.1,707.9 1796.0,1300.0" stroke-opacity="0.111"/><path d="M386.2,1300.0 C440.7,639.2 778.6,189.0 1101.0,185.0 C1426.3,181.1 1690.2,715.7 1792.2,1300.0" stroke-opacity="0.115"/><path d="M427.9,1300.0 C470.1,658.1 787.6,212.7 1101.5,206.8 C1419.7,201.0 1685.5,723.3 1788.4,1300.0" stroke-opacity="0.121"/><path d="M468.7,1300.0 C498.8,676.7 796.4,235.8 1101.9,228.2 C1413.2,220.5 1680.8,730.7 1784.7,1300.0" stroke-opacity="0.129"/><path d="M508.5,1300.0 C526.9,694.8 805.0,258.5 1102.4,249.0 C1406.8,239.5 1676.3,737.9 1781.0,1300.0" stroke-opacity="0.139"/><path d="M547.4,1300.0 C554.3,712.4 813.4,280.6 1102.8,269.3 C1400.6,258.1 1671.9,745.0 1777.5,1300.0" stroke-opacity="0.151"/><path d="M585.3,1300.0 C581.0,729.7 821.6,302.1 1103.2,289.1 C1394.6,276.2 1667.6,751.9 1774.1,1300.0" stroke-opacity="0.165"/><path d="M622.3,1300.0 C607.1,746.5 829.6,323.1 1103.7,308.5 C1388.7,293.8 1663.4,758.6 1770.7,1300.0" stroke-opacity="0.180"/><path d="M658.2,1300.0 C632.4,762.8 837.3,343.5 1104.1,327.3 C1383.0,311.0 1659.3,765.1 1767.4,1300.0" stroke-opacity="0.197"/><path d="M693.2,1300.0 C657.0,778.7 844.9,363.4 1104.5,345.5 C1377.4,327.7 1655.3,771.5 1764.3,1300.0" stroke-opacity="0.214"/><path d="M727.2,1300.0 C681.0,794.2 852.2,382.7 1104.9,363.3 C1372.0,343.9 1651.5,777.7 1761.2,1300.0" stroke-opacity="0.233"/><path d="M760.2,1300.0 C704.2,809.2 859.4,401.5 1105.2,380.5 C1366.8,359.6 1647.7,783.7 1758.2,1300.0" stroke-opacity="0.253"/><path d="M792.1,1300.0 C726.7,823.7 866.2,419.6 1105.6,397.2 C1361.7,374.9 1644.1,789.5 1755.3,1300.0" stroke-opacity="0.273"/><path d="M823.0,1300.0 C748.4,837.7 872.9,437.1 1105.9,413.4 C1356.8,389.6 1640.6,795.1 1752.5,1300.0" stroke-opacity="0.295"/><path d="M852.8,1300.0 C769.5,851.3 879.3,454.1 1106.3,428.9 C1352.1,403.8 1637.2,800.5 1749.7,1300.0" stroke-opacity="0.316"/><path d="M881.5,1300.0 C789.7,864.3 885.6,470.4 1106.6,444.0 C1347.5,417.5 1633.9,805.7 1747.1,1300.0" stroke-opacity="0.338"/><path d="M909.1,1300.0 C809.2,876.9 891.5,486.1 1106.9,458.4 C1343.1,430.7 1630.8,810.8 1744.6,1300.0" stroke-opacity="0.360"/><path d="M935.7,1300.0 C827.9,888.9 897.2,501.2 1107.2,472.3 C1338.9,443.4 1627.8,815.6 1742.2,1300.0" stroke-opacity="0.382"/><path d="M961.1,1300.0 C845.7,900.5 902.7,515.6 1107.5,485.6 C1334.8,455.5 1624.9,820.2 1739.9,1300.0" stroke-opacity="0.404"/><path d="M985.3,1300.0 C862.8,911.5 908.0,529.4 1107.8,498.2 C1331.0,467.1 1622.1,824.6 1737.7,1300.0" stroke-opacity="0.425"/><path d="M1008.3,1300.0 C879.1,922.0 912.9,542.5 1108.0,510.3 C1327.3,478.1 1619.5,828.8 1735.6,1300.0" stroke-opacity="0.447"/><path d="M1030.2,1300.0 C894.4,931.9 917.7,554.9 1108.3,521.7 C1323.8,488.5 1617.0,832.8 1733.6,1300.0" stroke-opacity="0.467"/><path d="M1050.8,1300.0 C909.0,941.3 922.1,566.6 1108.5,532.5 C1320.6,498.3 1614.7,836.5 1731.7,1300.0" stroke-opacity="0.487"/><path d="M1070.1,1300.0 C922.6,950.0 926.3,577.6 1108.8,542.6 C1317.5,507.6 1612.5,840.0 1730.0,1300.0" stroke-opacity="0.506"/><path d="M1088.1,1300.0 C935.3,958.2 930.2,587.8 1109.0,552.0 C1314.6,516.2 1610.4,843.3 1728.4,1300.0" stroke-opacity="0.523"/><path d="M1104.8,1300.0 C947.0,965.8 933.8,597.3 1109.1,560.7 C1312.0,524.1 1608.5,846.3 1726.8,1300.0" stroke-opacity="0.540"/><path d="M1120.1,1300.0 C957.8,972.8 937.1,605.9 1109.3,568.7 C1309.5,531.4 1606.8,849.1 1725.4,1300.0" stroke-opacity="0.555"/><path d="M1133.9,1300.0 C967.5,979.0 940.0,613.8 1109.5,575.9 C1307.3,538.0 1605.2,851.6 1724.2,1300.0" stroke-opacity="0.569"/><path d="M1146.2,1300.0 C976.2,984.6 942.7,620.8 1109.6,582.3 C1305.4,543.9 1603.8,853.9 1723.1,1300.0" stroke-opacity="0.581"/><path d="M1156.9,1300.0 C983.7,989.5 945.0,626.8 1109.7,587.9 C1303.7,549.0 1602.6,855.8 1722.1,1300.0" stroke-opacity="0.591"/><path d="M1165.8,1300.0 C990.0,993.5 946.9,631.9 1109.8,592.6 C1302.3,553.2 1601.6,857.4 1721.3,1300.0" stroke-opacity="0.599"/><path d="M1172.9,1300.0 C995.0,996.8 948.5,636.0 1109.9,596.3 C1301.1,556.6 1600.8,858.7 1720.6,1300.0" stroke-opacity="0.600"/><path d="M1177.8,1300.0 C998.5,999.0 949.5,638.8 1110.0,598.9 C1300.3,559.0 1600.2,859.6 1720.2,1300.0" stroke-opacity="0.600"/><path d="M1180.0,1300.0 C1000.0,1000.0 950.0,640.0 1110.0,600.0 C1300.0,560.0 1600.0,860.0 1720.0,1300.0" stroke-opacity="0.600"/></g></g></svg></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;box-sizing:border-box">
+      
+      <div style="position:relative">
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc"><i style="width:24px;height:1px;background:#2847fc"></i>Contact</div>
+        <div style="margin-top:24px;font-size:40px;font-weight:700;line-height:1.5;font-feature-settings:'palt';color:#0a1324">事業に関するお問い合わせ</div>
+        <div style="margin-top:20px;font-size:15px;line-height:2;color:#5b6172">サービスの導入検討、取材、協業のご相談などを承っています。<br>まずはお気軽にご連絡ください。</div>
+        <div style="margin-top:40px;display:flex;gap:14px">
+          <a href="index.html#contact" style="height:52px;padding:0 32px;border-radius:40px;background:#2847fc;color:#fff;font-size:15px;font-weight:500;display:flex;align-items:center;gap:12px;text-decoration:none">お問い合わせ<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+          <a href="index.html#resources" style="height:52px;padding:0 32px;border-radius:40px;border:1px solid #c9cedb;background:#fff;color:#0a1324;font-size:15px;font-weight:500;display:flex;align-items:center;text-decoration:none">資料ダウンロード</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="gptbots.html">GPTBots.ai</a>
+          <a href="index.html#products">Modellix</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="pricing.html">料金</a>
+          <a href="news.html">ニュース</a>
+          <a href="careers.html">採用情報</a>
+          <a href="index.html#contact">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+</body>
+</html>

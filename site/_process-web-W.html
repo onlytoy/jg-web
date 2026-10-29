@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Zen Kaku Gothic New",sans-serif;color:#0a1324;background:#e9ecf3;width:1440px}
+#cmp{display:flex;flex-direction:column;gap:56px;padding:56px 0}
+.lab{width:1440px;padding:0 40px 16px;display:flex;align-items:baseline;gap:14px}
+.lab b{font-size:22px;font-weight:900;color:#2847fc}.lab span{font-size:16px;color:#5b6172;font-weight:500}
+.frame{width:1440px;background:#fff}
+.wrap{width:1200px;margin:0 auto}
+.eb{font-size:12px;letter-spacing:.2em;font-weight:700;color:#2847fc;text-transform:uppercase}
+/* W1 */
+.w1{position:relative;padding:112px 0;background:linear-gradient(180deg,#f4f7ff 0%,#eef2ff 100%);overflow:hidden}
+.w1:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#dfe5f7 1px,transparent 1px),linear-gradient(90deg,#dfe5f7 1px,transparent 1px);background-size:40px 40px;-webkit-mask:radial-gradient(60% 80% at 0% 0%,#000,transparent 70%);mask:radial-gradient(60% 80% at 0% 0%,#000,transparent 70%);opacity:.7}
+.w1 .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 480px;gap:96px;align-items:center}
+.w1 h2{font-size:40px;line-height:1.45;font-weight:900;margin:18px 0 20px;letter-spacing:.02em}
+.w1 p{font-size:16px;line-height:2;color:#4a5165;max-width:520px}
+.acts{display:flex;gap:14px;margin-top:40px}
+.btn{height:56px;padding:0 30px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:700}
+.btn.p{background:#2847fc;color:#fff;box-shadow:0 10px 24px rgba(40,71,252,.25)}
+.btn.g{background:#fff;color:#0a1324;border:1px solid #d8dded}
+.note{margin-top:22px;font-size:13px;color:#7a8195}
+.steps{background:#fff;border-radius:16px;padding:36px 40px;box-shadow:0 20px 50px rgba(30,40,110,.08)}
+.steps h3{font-size:13px;letter-spacing:.14em;font-weight:700;color:#7a8195;margin-bottom:22px;display:flex;justify-content:space-between}
+.steps h3 em{font-style:normal;color:#2847fc}
+.st{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:16px;align-items:start;position:relative;padding-bottom:22px}
+.st:not(:last-child):after{content:"";position:absolute;left:13px;top:26px;bottom:0;width:2px;background:linear-gradient(#c9d4ff,#e6ebff)}
+.st i{width:28px;height:28px;border-radius:50%;background:#eef2ff;color:#2847fc;font-style:normal;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:"Helvetica Neue",Arial}
+.st.on i{background:#2847fc;color:#fff;box-shadow:0 0 0 5px rgba(40,71,252,.12)}
+.st b{display:block;font-size:16px;font-weight:700;line-height:28px}
+.st small{display:block;font-size:13px;color:#7a8195;margin-top:2px;line-height:1.6}
+.st span{font-size:12px;color:#2847fc;background:#f1f4ff;border-radius:999px;padding:4px 10px;margin-top:3px;white-space:nowrap}
+/* W2 */
+.w2{padding:120px 0}
+.w2 .hd{text-align:center;margin-bottom:64px}
+.w2 .hd h2{font-size:40px;font-weight:900;margin-top:16px}
+.w2 .hd p{font-size:16px;color:#4a5165;margin-top:16px}
+.w2 .wrap{}
+.w2 .bd{display:grid;grid-template-columns:560px minmax(0,1fr);gap:96px}
+.pic{position:relative;height:500px;border-radius:16px;overflow:hidden}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.pic .cap{position:absolute;left:24px;bottom:24px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:12px;padding:14px 18px;display:flex;gap:14px;align-items:center}
+.pic .cap b{font-size:30px;font-family:"Helvetica Neue",Arial;color:#2847fc;font-weight:700}
+.pic .cap span{font-size:13px;color:#4a5165;line-height:1.6}
+.pic .pg{position:absolute;right:24px;top:24px;display:flex;gap:6px}
+.pic .pg i{width:18px;height:3px;border-radius:2px;background:rgba(255,255,255,.55)}.pic .pg i.on{background:#fff;width:32px}
+.list{display:flex;flex-direction:column}
+.it{display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px;padding:26px 0;border-top:1px solid #edf0f6;color:#a3a9b8}
+.it:last-child{border-bottom:1px solid #edf0f6}
+.it em{font-style:normal;font-family:"Helvetica Neue",Arial;font-size:14px;font-weight:700;padding-top:4px}
+.it b{font-size:20px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.it b span{font-size:13px;font-weight:500}
+.it.on{color:#0a1324;position:relative}
+.it.on:before{content:"";position:absolute;left:0;top:-1px;width:120px;height:2px;background:#2847fc}
+.it.on em{color:#2847fc}.it.on b span{color:#2847fc}
+.it.on p{grid-column:2;font-size:15px;line-height:1.9;color:#4a5165;margin-top:10px}
+.it.on .lk{grid-column:2;margin-top:14px;font-size:14px;font-weight:700;color:#2847fc}
+.hint{margin-top:24px;font-size:12px;color:#a3a9b8;letter-spacing:.1em}
+</style></head><body>
+<div id="cmp">
+<div>
+<div class="lab"><b>W1</b><span>流程并入底部 CTA，作为"问询之后会怎样"的辅助信息（流程不再单独占一屏）</span></div>
+<div class="frame"><section class="w1"><div class="wrap">
+<div>
+<div class="eb">Contact</div>
+<h2>まずはお気軽に<br>ご相談ください</h2>
+<p>ご利用規模や課題をうかがい、最適なプランとお見積りをご提案します。社内稟議に必要なセキュリティ資料もあわせてご用意します。</p>
+<div class="acts"><a class="btn p">お問い合わせ →</a><a class="btn g">資料ダウンロード</a></div>
+<div class="note">通常1営業日以内にご連絡します</div>
+</div>
+<div class="steps">
+<h3>ご契約までの流れ<em>最短 ◯週間</em></h3>
+<div class="st on"><i>01</i><div><b>お問い合わせ</b><small>フォームから課題をお送りください</small></div><span>1営業日</span></div>
+<div class="st"><i>02</i><div><b>ヒアリング</b><small>オンラインで要件を確認します</small></div><span>約1時間</span></div>
+<div class="st"><i>03</i><div><b>お見積り・ご提案</b><small>規模に合わせたプランをご提示</small></div><span>◯営業日</span></div>
+<div class="st"><i>04</i><div><b>社内稟議</b><small>セキュリティ資料一式をご提供</small></div><span>資料あり</span></div>
+<div class="st"><i>05</i><div><b>ご契約・導入開始</b><small>専任担当がオンボーディング</small></div><span>◯週間</span></div>
+</div>
+</div></section></div>
+</div>
+<div>
+<div class="lab"><b>W2</b><span>滚动联动：滚到哪一步，右侧展开说明、左侧切换画面（图为第 3 步状态）</span></div>
+<div class="frame"><section class="w2"><div class="wrap">
+<div class="hd"><div class="eb">Process</div><h2>ご契約までの流れ</h2><p>お問い合わせから導入開始まで、専任担当が伴走します。</p></div>
+<div class="bd">
+<div class="pic"><img src="img/ph-2.png"><div class="pg"><i></i><i></i><i class="on"></i><i></i><i></i></div><div class="cap"><b>03</b><span>ご利用規模に合わせた<br>お見積りをご提示</span></div></div>
+<div>
+<div class="list">
+<div class="it"><em>01</em><b>お問い合わせ<span>1営業日</span></b></div>
+<div class="it"><em>02</em><b>ヒアリング<span>約1時間</span></b></div>
+<div class="it on"><em>03</em><b>お見積り・ご提案<span>◯営業日</span></b><p>ヒアリング内容をもとに、配信量や機能に応じたプランとお見積りをご提示します。複数パターンの比較も可能です。</p><div class="lk">料金の考え方を見る →</div></div>
+<div class="it"><em>04</em><b>社内稟議<span>資料あり</span></b></div>
+<div class="it"><em>05</em><b>ご契約・導入開始<span>◯週間</span></b></div>
+</div>
+<div class="hint">SCROLL ↓ 次のステップへ</div>
+</div>
+</div>
+</div></section></div>
+</div>
+</div>
+</body></html>

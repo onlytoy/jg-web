@@ -1,0 +1,71 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{font-family:"Zen Kaku Gothic New",sans-serif;color:#0a1324;background:#fff}
+#cmp{width:1440px;padding:112px 120px 128px;background:#fff}
+.mono{font-family:"JetBrains Mono",monospace}
+.hd{text-align:center;margin-bottom:56px}
+.hd .ey{font-size:12px;letter-spacing:.18em;color:#6d5cf0;font-weight:500}
+.hd h2{font-size:40px;font-weight:700;margin-top:12px;letter-spacing:.02em}
+.hd p{font-size:16px;color:#5b6172;margin-top:14px}
+.g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.c{border:1px solid #e6e8f0;border-radius:16px;background:#fff;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.c.hv{transform:translateY(-4px);box-shadow:0 18px 40px rgba(17,24,52,.08)}
+.v{position:relative;aspect-ratio:4/3;background:#f7f8fc;border-bottom:1px solid #eef0f5;
+ background-image:linear-gradient(rgba(109,92,240,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(109,92,240,.05) 1px,transparent 1px);background-size:22px 22px;
+ -webkit-mask-image:none;display:flex;align-items:center;justify-content:center}
+.v::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 50% 50%,transparent 40%,#f7f8fc 100%);pointer-events:none}
+.w{position:relative;z-index:1;width:76%;background:#fff;border:1px solid #e4e6ef;border-radius:10px;box-shadow:0 8px 24px rgba(17,24,52,.06);padding:10px}
+.lb{font-size:9.5px;letter-spacing:.12em;color:#8a90a2}
+.chip{font-size:9.5px;color:#5b4fd6;background:#f1effe;border-radius:4px;padding:2px 6px}
+.row{display:flex;align-items:center;gap:6px}
+.b{padding:22px 22px 26px}
+.b h3{font-size:18px;font-weight:700;display:flex;align-items:baseline;gap:10px}
+.b h3 span{font-size:10.5px;letter-spacing:.14em;color:#8a90a2;font-weight:500}
+.b p{font-size:14px;line-height:1.85;color:#5b6172;margin-top:10px}
+</style></head><body>
+<div id="cmp">
+ <div class="hd"><div class="ey mono">USE CASES</div><h2>活用シーン</h2><p>用途に合わせて、最適なモデルを選べます。</p></div>
+ <div class="g">
+  <div class="c">
+   <div class="v"><div class="w">
+    <div class="row" style="justify-content:space-between"><span class="lb mono">IMAGE</span><span class="chip mono">1024×1024</span></div>
+    <div style="margin-top:8px;height:96px;border-radius:6px;background:url(img/case-01.png) center/cover"></div>
+    <div class="row" style="margin-top:8px;justify-content:space-between"><span class="mono" style="font-size:10px;color:#0a1324">seedream-5</span><span class="mono" style="font-size:9.5px;color:#8a90a2">4.2s</span></div>
+   </div></div>
+   <div class="b"><h3>画像生成<span class="mono">IMAGE</span></h3><p>テキストからの生成、画像の加工まで。ポスター・図版・商品画像などの制作に。</p></div>
+  </div>
+  <div class="c hv">
+   <div class="v"><div class="w">
+    <div class="row" style="justify-content:space-between"><span class="lb mono">VIDEO</span><span class="chip mono">1080p · 8s</span></div>
+    <div style="margin-top:8px;height:84px;border-radius:6px;background:linear-gradient(rgba(10,19,36,.15),rgba(10,19,36,.15)),url(img/case-02.png) center/cover;display:flex;align-items:center;justify-content:center"><span style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center"><span style="border-left:8px solid #6d5cf0;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px"></span></span></div>
+    <div style="margin-top:9px;height:3px;border-radius:2px;background:#eceef5"><div style="width:38%;height:100%;border-radius:2px;background:#6d5cf0"></div></div>
+    <div class="row" style="margin-top:6px;justify-content:space-between"><span class="mono" style="font-size:10px">kling-v3</span><span class="mono" style="font-size:9.5px;color:#8a90a2">00:03 / 00:08</span></div>
+   </div></div>
+   <div class="b"><h3>動画生成<span class="mono">VIDEO</span></h3><p>テキストから動画、画像から動画まで。ショート動画や広告素材の制作に。</p></div>
+  </div>
+  <div class="c">
+   <div class="v"><div class="w">
+    <div class="row" style="justify-content:space-between"><span class="lb mono">AUDIO</span><span class="chip mono">TTS</span></div>
+    <div class="row" style="margin-top:12px;height:40px;gap:3px;justify-content:center" id="wave"></div>
+    <div style="margin-top:10px;padding:7px 8px;border-radius:6px;background:#f7f8fc;font-size:10.5px;color:#0a1324;line-height:1.5">「本日のご案内をお知らせします。」</div>
+    <div class="row" style="margin-top:7px;justify-content:space-between"><span class="mono" style="font-size:10px">cosyvoice-2</span><span class="mono" style="font-size:9.5px;color:#8a90a2">ja-JP</span></div>
+   </div></div>
+   <div class="b"><h3>音声<span class="mono">AUDIO</span></h3><p>読み上げ・文字起こし・音声変換。ナレーションや字幕の制作に。</p></div>
+  </div>
+  <div class="c">
+   <div class="v"><div class="w">
+    <div class="row" style="justify-content:space-between"><span class="lb mono">TEXT</span><span class="chip mono">LLM Gateway</span></div>
+    <div style="margin-top:10px;margin-left:auto;width:78%;padding:7px 9px;border-radius:8px 8px 2px 8px;background:#6d5cf0;color:#fff;font-size:10.5px;line-height:1.5">新商品の紹介文を3案ください</div>
+    <div style="margin-top:7px;width:86%;padding:7px 9px;border-radius:8px 8px 8px 2px;background:#f4f5f9">
+     <div style="height:4px;border-radius:2px;background:#d9dcea;width:92%"></div><div style="height:4px;border-radius:2px;background:#d9dcea;width:80%;margin-top:5px"></div><div style="height:4px;border-radius:2px;background:#d9dcea;width:58%;margin-top:5px"></div>
+    </div>
+    <div class="row" style="margin-top:9px"><span class="chip mono" style="background:#6d5cf0;color:#fff">GPT</span><span class="chip mono">Claude</span><span class="chip mono">Gemini</span></div>
+   </div></div>
+   <div class="b"><h3>テキスト<span class="mono">TEXT</span></h3><p>LLMゲートウェイ経由で、主要な言語モデルを同じAPIキーで利用。</p></div>
+  </div>
+ </div>
+</div>
+<script>const w=document.getElementById('wave');[6,12,20,30,22,36,28,40,30,18,26,34,20,12,22,16,8].forEach((h,i)=>{const s=document.createElement('span');s.style.cssText=`width:3px;height:${h}px;border-radius:2px;background:${i>4&&i<12?'#6d5cf0':'#cfc9fb'}`;w.appendChild(s)})</script>
+</body></html>

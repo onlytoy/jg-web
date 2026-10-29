@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:"Zen Kaku Gothic New",sans-serif;background:#e9ecf2;color:#1e2638}
+#cmp{display:flex;gap:24px;padding:40px;width:max-content}
+.col{display:flex;flex-direction:column;gap:12px}.t{font-size:15px;font-weight:700;color:#0b1524}.t small{font-weight:400;color:#6b7385;margin-left:8px}
+.pn{width:630px;height:620px;border-radius:12px;overflow:hidden;background:#fff}
+.pn img{width:100%;height:100%;object-fit:cover;object-position:top}
+.mx{position:relative;background:linear-gradient(160deg,#F7F8FE,#FBFCFF 60%,#fff)}
+.mx:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#e8ebf7 1px,transparent 1px),linear-gradient(90deg,#e8ebf7 1px,transparent 1px);background-size:40px 40px;-webkit-mask:linear-gradient(180deg,#000 40%,transparent 95%);mask:linear-gradient(180deg,#000 40%,transparent 95%);opacity:.8}
+.in{position:relative;padding:48px 40px 0 45px}
+.cap{font-size:11px;letter-spacing:.16em;color:#8a94a6;font-weight:500}
+.req{margin-top:20px;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:#1e2638}
+.req .ep{font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:500;color:#6A4CF5;background:#F3F0FF;padding:4px 10px;border-radius:6px}
+.req small{font-weight:400;color:#9aa3b5;font-size:14px}
+.gr{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px;width:500px}
+.mc{background:#fff;border:1px solid #edf0f6;border-radius:12px;padding:12px 16px;box-shadow:0 8px 22px rgba(30,45,90,.05)}
+.mc.on{background:#F7F7FF;border-color:#d6d3fb;box-shadow:0 10px 26px rgba(80,70,200,.10)}
+.lb{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;font-weight:700;color:#5b6475}
+.lb i{width:6px;height:6px;border-radius:50%}
+.mc b{display:block;margin-top:7px;font-size:14px;font-weight:700;color:#1e2638}
+.mf{display:flex;justify-content:space-between;margin-top:3px;font-size:11px;color:#9aa3b5}
+.mf span:last-child{color:#334155;font-weight:500}.mf small{color:#9aa3b5;font-weight:400}
+.bill{padding:14px 18px!important;position:absolute;right:26px;top:392px;width:220px;background:#fff;border:1px solid #edf0f6;border-radius:14px;padding:16px 18px;box-shadow:0 18px 40px rgba(30,45,90,.10)}
+.bh{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#1e2638;margin-bottom:12px}
+.bh i{width:30px;height:30px;border-radius:9px;background:#EEF8F1;display:grid;place-items:center}
+.br{display:flex;justify-content:space-between;font-size:11px;color:#8a94a6;line-height:1.95}
+.br b{color:#1e2638;font-weight:500}
+.br.tt{border-top:1px solid #eef1f6;margin-top:6px;padding-top:6px;font-size:12px;color:#334155}.br.tt b{font-weight:700}
+</style></head><body><div id="cmp">
+<div class="col"><div class="t">EngageLab<small>配信フロー（縦タイムライン）</small></div><div class="pn"><img src="../uploads/pasted-1792141424551-0.png"></div></div>
+<div class="col"><div class="t">GPTBots<small>ワークスペース（ウィンドウ＋浮きカード）</small></div><div class="pn"><img src="../uploads/pasted-1792141440067-0.png"></div></div>
+<div class="col"><div class="t">Modellix（新）<small>モデル一覧（グリッド＋利用明細）</small></div><div class="pn mx"><div class="in">
+<div class="cap">モデルの切り替え例</div>
+<div class="req"><span class="ep">POST /v1/generate</span>ひとつのエンドポイント<small>・172+ モデル</small></div>
+<div class="gr"><div class="mc on"><div class="lb"><i style="background:#2f4bf0"></i>IMAGE</div><b>Nano Banana 2</b><div class="mf"><span>Google</span><span>$0.04</span></div></div><div class="mc"><div class="lb"><i style="background:#8b6cf6"></i>VIDEO</div><b>Kling V3</b><div class="mf"><span>Kling</span><span>$0.28</span></div></div><div class="mc"><div class="lb"><i style="background:#2f4bf0"></i>IMAGE</div><b>Seedream 5.0</b><div class="mf"><span>ByteDance</span><span>$0.03</span></div></div><div class="mc"><div class="lb"><i style="background:#8b6cf6"></i>VIDEO</div><b>Veo 3.1</b><div class="mf"><span>Google</span><span>$0.40</span></div></div><div class="mc"><div class="lb"><i style="background:#F5B544"></i>AUDIO</div><b>CosyVoice</b><div class="mf"><span>Alibaba</span><span>$0.01</span></div></div><div class="mc"><div class="lb"><i style="background:#5FCB7E"></i>TEXT</div><b>Qwen 3</b><div class="mf"><span>Alibaba</span><span>$0.002</span></div></div></div>
+</div>
+<div class="bill"><div class="bh"><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2f9e5a" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></i>利用明細</div>
+<div class="br"><span>Nano Banana 2 × 120</span><b>$4.80</b></div>
+<div class="br"><span>Kling V3 × 8</span><b>$2.24</b></div>
+<div class="br"><span>CosyVoice × 300</span><b>$3.00</b></div>
+<div class="br tt"><span>今月の合計</span><b>$10.04</b></div></div>
+</div></div>
+</div></body></html>

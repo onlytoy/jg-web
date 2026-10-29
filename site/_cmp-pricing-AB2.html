@@ -1,0 +1,132 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Zen Kaku Gothic New',sans-serif;color:#141a2e;background:#e9ecf3;-webkit-font-smoothing:antialiased}
+a{color:#2847fc;text-decoration:none}
+#cmp{display:flex;flex-direction:column;gap:56px;padding:48px;width:max-content}
+.lab{font:600 15px Outfit;letter-spacing:.1em;color:#2847fc;margin-bottom:14px}.lab b{display:inline-flex;width:30px;height:30px;border-radius:50%;background:#2847fc;color:#fff;align-items:center;justify-content:center;margin-right:10px}.lab span{color:#5b6172;font-family:'Zen Kaku Gothic New';font-weight:500;letter-spacing:.04em;margin-left:8px}
+.ab{width:1440px;background:#fff;overflow:hidden}
+.w{width:1200px;margin:0 auto}
+.eb{display:inline-flex;align-items:center;gap:12px;font:400 15px Outfit;letter-spacing:.08em;color:#2847fc}.eb:before{content:"";width:40px;height:1px;background:#2847fc}
+.ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none}
+.ico img{width:22px;height:22px;object-fit:contain}.ico.m{font:600 18px Outfit;color:#fff}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 36px;border-radius:56px;background:#2847fc;color:#fff;font-weight:700;font-size:15px;letter-spacing:.08em;box-shadow:0 14px 28px -16px rgba(40,71,252,.8)}
+.free{display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 14px;border-radius:28px;background:#fff4dc;color:#b6761c;font-size:12.5px;font-weight:700;letter-spacing:.08em}.free:before{content:"";width:6px;height:6px;border-radius:50%;background:#f2a531}
+
+/* ===== A ===== */
+.A .hd{position:relative;padding:72px 0 220px}
+.A .hd:before{content:"";position:absolute;inset:0 24px;border-radius:0 0 28px 28px;background:radial-gradient(50% 90% at 90% 0%,rgba(255,214,170,.5),transparent 60%),radial-gradient(55% 90% at 8% 0%,rgba(196,212,255,.7),transparent 65%),linear-gradient(180deg,#f4f7ff,#fbfaf7)}
+.A .hd:after{content:"";position:absolute;inset:0 24px;background-image:linear-gradient(rgba(40,71,252,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(40,71,252,.05) 1px,transparent 1px);background-size:40px 40px;-webkit-mask:linear-gradient(90deg,transparent,#000 50%,transparent);mask:linear-gradient(90deg,transparent,#000 50%,transparent)}
+.A .hd .w{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:48px}
+.A h1{font-size:52px;font-weight:700;letter-spacing:.06em;margin-top:20px}
+.A .hd p{font-size:16px;line-height:2.1;color:#4a5266}
+.A .sheet{position:relative;z-index:2;margin-top:-172px;background:#fff;border:1px solid #e7ebf3;border-radius:24px;box-shadow:0 40px 80px -48px rgba(20,40,120,.35);display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.A .col{padding:44px 40px 40px;display:flex;flex-direction:column}
+.A .col+.col{border-left:1px solid #eef1f6}
+.A .ch{display:flex;align-items:center;gap:14px}.A .ch b{display:block;font:500 22px Outfit}.A .ch small{display:block;font-size:12.5px;color:#7a8296;margin-top:2px;letter-spacing:.06em}
+.A .kv{margin-top:32px;padding:20px 0;border-top:1px solid #eef1f6;border-bottom:1px solid #eef1f6;display:grid;grid-template-columns:96px 1fr;row-gap:12px;font-size:13.5px}
+.A .kv dt{color:#7a8296}.A .kv dd{font-weight:500}
+.A .cnt{display:flex;align-items:baseline;gap:10px;margin-top:28px;font-size:13px;color:#5b6172;font-weight:500;letter-spacing:.06em}.A .cnt b{font:300 44px/1 Outfit;color:#141a2e}
+.A .gl{margin-top:18px}.A .gl small{display:block;font-size:12px;color:#8a92a6;letter-spacing:.08em;margin:16px 0 8px}
+.A .gl ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}.A .gl li{display:flex;align-items:center;gap:8px;font:500 14px Outfit;color:#2a3146}.A .gl li svg{width:16px;height:16px;color:var(--c)}
+.A .go{margin-top:auto;padding-top:36px}.A .go a{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 22px;border:1px solid #dfe4ef;border-radius:52px;color:#141a2e;font-weight:700;font-size:14px;letter-spacing:.06em}.A .go a:after{content:"→";color:#2847fc}
+.A .shared{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:40px;padding:0 8px}
+.A .shared .t{display:flex;align-items:center;gap:20px}.A .shared h3{font-size:24px;font-weight:700;letter-spacing:.04em}.A .shared p{font-size:14px;color:#5b6172;margin-top:6px}
+.A .fl{padding:128px 0 136px}
+.A .fl .top{display:flex;justify-content:space-between;align-items:end}
+.A h2{font-size:32px;font-weight:700;letter-spacing:.04em;margin-top:16px}.A .fl .top p{font-size:15px;color:#5b6172;line-height:2;max-width:460px}
+.A .track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:56px;border-top:1px solid #dfe4ef}
+.A .st{position:relative;padding:28px 24px 0 0}.A .st:before{content:"";position:absolute;left:0;top:-1px;width:100%;height:3px;background:transparent}
+.A .st em{font:300 15px Outfit;color:#8a92a6;letter-spacing:.08em;font-style:normal}.A .st h4{font-size:20px;font-weight:700;margin-top:10px;letter-spacing:.04em}.A .st p{font-size:13.5px;color:#5b6172;margin-top:10px;line-height:1.8}
+.A .st.on:before{background:#2847fc}.A .st.on em,.A .st.on h4{color:#2847fc}.A .st.on .dur{display:inline-block;margin-top:14px;padding:4px 12px;border-radius:20px;background:#eef2ff;color:#2847fc;font-size:12.5px;font-weight:700}
+
+/* ===== B ===== */
+.B .hd{position:relative;padding:88px 0 72px;text-align:center}
+.B .hd:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#f3f6ff 0%,#fff 100%)}
+.B .hd:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(40,71,252,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(40,71,252,.05) 1px,transparent 1px);background-size:40px 40px;-webkit-mask:radial-gradient(60% 100% at 50% 0%,#000,transparent);mask:radial-gradient(60% 100% at 50% 0%,#000,transparent)}
+.B .hd>*{position:relative;z-index:1}.B .hd .eb{justify-content:center}
+.B h1{font-size:48px;font-weight:700;letter-spacing:.06em;margin-top:20px}.B .hd p{font-size:16px;line-height:2;color:#4a5266;margin-top:20px}
+.B .mod{display:grid;grid-template-columns:340px minmax(0,1fr);gap:32px;padding-bottom:120px}
+.B .nav{display:flex;flex-direction:column;gap:8px}
+.B .nav a{display:flex;align-items:center;gap:16px;padding:20px 20px;border-radius:18px;color:#141a2e;border:1px solid transparent;transition:.3s}
+.B .nav a b{display:block;font:500 18px Outfit}.B .nav a small{display:block;font-size:12.5px;color:#7a8296;margin-top:2px}
+.B .nav a .n{margin-left:auto;font:300 13px Outfit;color:#8a92a6;letter-spacing:.06em}
+.B .nav a:not(.on){opacity:.62}.B .nav a:not(.on):hover{opacity:1;background:#f7f9fd}
+.B .nav a.on{background:#fff;border-color:#e7ebf3;box-shadow:0 18px 36px -24px rgba(20,40,120,.35)}
+.B .nav a.on .n{color:#2847fc}
+.B .nav .note{margin-top:24px;padding:0 20px;font-size:13px;line-height:1.9;color:#7a8296}
+.B .pane{background:#fff;border:1px solid #e7ebf3;border-radius:24px;box-shadow:0 40px 80px -52px rgba(20,40,120,.4);overflow:hidden}
+.B .ptop{position:relative;padding:44px 48px 40px;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;background:linear-gradient(120deg,#f7f9ff,#fff 60%)}
+.B .ptop:after{content:"";position:absolute;left:48px;right:48px;bottom:0;height:1px;background:#eef1f6}
+.B .ptop .e{font:500 13px Outfit;letter-spacing:.14em;color:var(--c,#2847fc)}
+.B .ptop h3{font-size:30px;font-weight:700;letter-spacing:.04em;margin-top:14px;line-height:1.5}
+.B .ptop .fx{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}.B .ptop .fx span{height:30px;padding:0 14px;border-radius:30px;border:1px solid #e3e8f2;background:#fff;display:inline-flex;align-items:center;font-size:13px;color:#3a4356}
+.B .ptop .r{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:14px;flex:none}
+.B .grp{padding:32px 48px 8px}.B .grp:last-child{padding-bottom:44px}
+.B .gh{display:flex;align-items:baseline;gap:12px;font-size:13.5px;font-weight:700;letter-spacing:.08em;color:#3a4356}.B .gh span{font:300 12px Outfit;color:#9aa1b3}
+.B .its{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.B .it{display:flex;gap:14px;padding:18px;border-radius:14px;background:#f8f9fc;transition:.3s}.B .it:hover{background:#fff;box-shadow:0 0 0 1px #e3e8f2,0 14px 28px -20px rgba(20,40,120,.4)}
+.B .it .ti{width:38px;height:38px;border-radius:10px;background:#fff;box-shadow:0 0 0 1px #e8ecf4;display:flex;align-items:center;justify-content:center;color:var(--c,#2847fc);flex:none}
+.B .it b{display:block;font:500 15px Outfit}.B .it p{font-size:12.5px;color:#6a7286;line-height:1.7;margin-top:4px}
+.B .fl{padding:120px 0 136px;background:linear-gradient(180deg,#fff,#f7f9fd)}
+.B .fl .hd2{text-align:center}.B .fl .eb{justify-content:center}.B h2{font-size:32px;font-weight:700;letter-spacing:.04em;margin-top:16px}.B .fl .hd2 p{font-size:15px;color:#5b6172;margin-top:16px;line-height:2}
+.B .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:56px}
+.B .sp{position:relative;padding:28px 24px 30px;border-radius:18px;background:#fff;border:1px solid #e9edf5}
+.B .sp em{font:200 44px/1 Outfit;color:#c3cada;font-style:normal}.B .sp h4{font-size:18px;font-weight:700;margin-top:18px}.B .sp p{font-size:13px;color:#5b6172;margin-top:8px;line-height:1.8}
+.B .sp:not(:last-child):after{content:"";position:absolute;right:-12px;top:50%;width:12px;height:1px;background:#d3d9e6}
+.B .sp.on{background:#2847fc;border-color:#2847fc;box-shadow:0 24px 44px -24px rgba(40,71,252,.8)}.B .sp.on em{color:rgba(255,255,255,.55)}.B .sp.on h4,.B .sp.on p{color:#fff}.B .sp.on .dur{display:inline-block;margin-top:14px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.16);color:#fff;font-size:12.5px;font-weight:700}
+.B .fl .c{text-align:center;margin-top:56px}
+</style></head><body><div id="cmp">
+<div><div class="lab"><b>A</b>並列シート<span>3事業を一望できる比較表。切り替えなしで全体が分かる</span></div><div class="ab A" id="A"></div></div>
+<div><div class="lab"><b>B</b>プロダクト選択＋詳細パネル<span>左で選び、右で中身と料金の考え方を確認</span></div><div class="ab B" id="B"></div></div>
+</div>
+<script>
+const P=(n,ic,d,f)=>({n,ic,d,f});
+const D=[
+{n:'EngageLab',t:'全10プロダクト込み',d:'顧客接点を、ひとつの基盤でつなぐ。',p:'3',u:'ご利用規模・配信数により変動',g:[
+['メッセージング',[P('App Push','bell','iOS・Android アプリへ、高い到達率でプッシュ通知を届けます。',[['高到達率配信','各OS・メーカーの通知経路に最適化'],['リッチ通知','画像・ボタン付きの通知に対応'],['セグメント配信','属性・行動データで配信先を絞り込み'],['到達・開封分析','配信から開封までをリアルタイムで計測']]),
+P('Web Push','globe','アプリ不要で、ブラウザへ直接通知を届けます。',[['主要ブラウザ対応','Chrome・Safari・Edge などに対応'],['ノーコード導入','タグ設置だけで利用開始'],['パーソナライズ','閲覧行動に合わせて内容を出し分け'],['効果測定','クリック・CV を自動で集計']]),
+P('Email','mail','大量配信でも安定して届く、メール配信基盤です。',[['高い到達率','送信ドメイン認証に標準対応'],['テンプレート','ドラッグ&ドロップで作成'],['A/B テスト','件名・本文を比較検証'],['配信分析','開封・クリック・バウンスを可視化']]),
+P('SMS','sms','国内・海外への SMS 配信を、ひとつの API で。',[['国内外配信','200以上の国・地域に対応'],['認証コード送信','OTP の自動送信に対応'],['送信者名設定','ブランド名での配信が可能'],['配信レポート','到達状況を一件ずつ確認']]),
+P('WhatsApp','chat','WhatsApp Business でグローバル顧客とつながります。',[['公式アカウント','認証済みビジネスとして配信'],['テンプレート配信','承認済みメッセージを一斉送信'],['双方向会話','顧客からの返信にも対応'],['自動応答','よくある質問を自動化']])]],
+['マーケティング・サポート',[P('Marketing Automation','flow','チャネルを横断したシナリオ配信を自動化します。',[['シナリオ設計','画面上でフローを作成'],['チャネル横断','Push・Email・SMS を組み合わせ'],['トリガー配信','行動をきっかけに自動送信'],['効果分析','シナリオごとの成果を計測']]),
+P('LiveDesk','head','複数チャネルの問い合わせを、ひとつの画面で対応します。',[['統合受信箱','全チャネルの会話を一元管理'],['AI 応答','よくある質問を自動で回答'],['担当振り分け','条件に応じて自動アサイン'],['対応分析','応答時間・満足度を可視化']])]],
+['認証',[P('OTP','key','ワンタイムパスワードで、安全な本人確認を実現します。',[['マルチチャネル','SMS・Email・音声で送信'],['自動フェイルオーバー','届かない場合は別経路で再送'],['不正対策','異常な送信を自動で検知'],['簡単導入','API 一つで組み込み']]),
+P('Silent Auth','shield','ユーザー操作なしで、通信キャリア経由の認証を行います。',[['入力不要','コード入力なしで認証完了'],['高いセキュリティ','SIM 情報による本人確認'],['離脱率の低減','登録・ログインをスムーズに'],['OTP と併用','未対応時は自動で切替']]),
+P('CAPTCHA','check','ボットや不正アクセスから、サービスを守ります。',[['行動分析型','ユーザーの操作で人を判定'],['低負荷','ほとんどの場合は操作不要'],['カスタマイズ','デザインを自社サイトに合わせて調整'],['リアルタイム監視','攻撃傾向をダッシュボードで確認']])]]]},
+{n:'GPTBots.ai',t:'◯◯込み',d:'業務に合わせた AI エージェントを構築。',p:'◯',u:'ご利用規模・リクエスト数により変動',g:[
+['構築',[P('AI Agent','bot','ノーコードで、業務に合わせた AI エージェントを作成できます。',[['ノーコード構築','画面操作で Agent を作成'],['複数モデル対応','用途に応じて LLM を選択'],['マルチチャネル','LINE・Slack・Teams・Web に展開'],['権限管理','部署ごとに利用範囲を設定']]),
+P('Workflow','flow','業務手順を AI と組み合わせて自動化します。',[['フロー設計','画面上で手順を組み立て'],['外部連携','API で既存システムと接続'],['条件分岐','状況に応じて処理を切替'],['実行履歴','処理の流れを後から確認']])]],
+['データ',[P('Knowledge Base','book','社内文書を取り込み、正確な回答に活用します。',[['多様な形式','PDF・Word・Web ページに対応'],['自動更新','元データの変更を反映'],['出典表示','回答の根拠を明示'],['アクセス制御','閲覧権限を文書ごとに管理']]),
+P('Analytics','chart','利用状況と回答品質を可視化します。',[['利用状況','部署・期間ごとに集計'],['回答評価','ユーザー評価を蓄積'],['改善提案','未回答の質問を抽出'],['レポート出力','CSV で書き出し']])]]]},
+{n:'Modellix',t:'◯◯込み',d:'主要 AI モデルを、ひとつの API で。',p:'◯',u:'ご利用量により変動',g:[
+['開発',[P('Unified API','code','主要な LLM を、単一の API で利用できます。',[['統一インターフェース','モデルごとの差異を吸収'],['モデル切替','コード変更なしで切替'],['自動フォールバック','障害時は別モデルへ'],['低レイテンシ','国内リージョンから応答']]),
+P('Playground','term','ブラウザ上でモデルを試し、比較できます。',[['並列比較','複数モデルの出力を並べて確認'],['プロンプト管理','バージョンごとに保存'],['コード出力','そのまま実装に利用'],['チーム共有','検証結果を共有']]),
+P('Fine-tuning','tune','自社データでモデルを最適化します。',[['データ準備','学習データの整形を支援'],['学習管理','進捗とコストを確認'],['評価','精度をベンチマークで比較'],['セキュア学習','データは学習後に削除']])]],
+['運用',[P('Usage Console','gauge','利用量・費用・稼働状況を一元管理します。',[['コスト管理','プロジェクトごとに予算設定'],['API キー管理','発行・失効を一元管理'],['監視・ログ','リクエストを常時記録'],['アラート','上限超過を自動通知']])]]]}];
+const IC={"bell":"<path d=\"M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z\"/><path d=\"M10 20a2 2 0 0 0 4 0\"/>","globe":"<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M3.5 12h17M12 3.5c3 3.2 3 13.8 0 17M12 3.5c-3 3.2-3 13.8 0 17\"/>","mail":"<rect x=\"3.5\" y=\"5.5\" width=\"17\" height=\"13\" rx=\"2\"/><path d=\"m4 7 8 6 8-6\"/>","sms":"<path d=\"M4 5h16v11H9l-5 4z\"/><path d=\"M8 10h8\"/>","chat":"<path d=\"M5 18.5 6 15a7.5 7.5 0 1 1 3 3z\"/>","flow":"<rect x=\"3.5\" y=\"4\" width=\"6\" height=\"5\" rx=\"1\"/><rect x=\"14.5\" y=\"15\" width=\"6\" height=\"5\" rx=\"1\"/><path d=\"M6.5 9v4a2 2 0 0 0 2 2h6\"/>","head":"<path d=\"M5 13a7 7 0 0 1 14 0v4h-3v-5h3M5 13v4h3v-5H5\"/>","key":"<circle cx=\"8\" cy=\"14\" r=\"4\"/><path d=\"m11 11 8-8M16 6l2 2\"/>","shield":"<path d=\"M12 3.5 19 6v5.5c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z\"/><path d=\"m9 12 2 2 4-4\"/>","check":"<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3\"/><path d=\"m8.5 12 2.5 2.5 4.5-5\"/>","bot":"<rect x=\"5\" y=\"8\" width=\"14\" height=\"10\" rx=\"3\"/><path d=\"M12 4v4M9.5 13h0M14.5 13h0\"/>","book":"<path d=\"M5 4.5h10a3 3 0 0 1 3 3V19.5H8a3 3 0 0 1-3-3z\"/><path d=\"M5 16.5a3 3 0 0 1 3-3h10\"/>","chart":"<path d=\"M4.5 19.5h15M7 16v-4M12 16V7M17 16v-6\"/>","code":"<path d=\"m8.5 8-4 4 4 4M15.5 8l4 4-4 4\"/>","term":"<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"14\" rx=\"2\"/><path d=\"m7.5 10 2.5 2-2.5 2M12.5 14.5h4\"/>","tune":"<path d=\"M5 6h9M18 6h1M5 12h3M12 12h7M5 18h11M19 18h0\"/><circle cx=\"16\" cy=\"6\" r=\"2\"/><circle cx=\"10\" cy=\"12\" r=\"2\"/><circle cx=\"17.5\" cy=\"18\" r=\"1.5\"/>","gauge":"<path d=\"M4 16a8 8 0 1 1 16 0\"/><path d=\"m12 16 4-5\"/>"};
+const S=(k,s)=>'<svg class="i" viewBox="0 0 24 24" style="width:'+(s||20)+'px;height:'+(s||20)+'px">'+(IC[k]||'')+'</svg>';
+const M=[{c:'#2c45f5',bg:'linear-gradient(140deg,#2c45f5,#4f7bff)',lg:'<img src="icon/engagelab icon white.svg">',cat:'カスタマーエンゲージメント',u:['ご利用規模','配信数']},
+{c:'#1d6b5e',bg:'linear-gradient(140deg,#1d2b2b,#2f4545)',lg:'<img src="icon/gptbots-mark.png" style="filter:brightness(0) invert(1)">',cat:'AIエージェント',u:['ご利用規模','リクエスト数']},
+{c:'#6a4ff0',bg:'linear-gradient(140deg,#6a4ff0,#8a74f2)',lg:'M',cat:'AIモデル基盤',u:['ご利用量']}];
+const FL=[['お問い合わせ','フォーム・お電話で受付'],['ヒアリング','規模・目的を伺います'],['お見積り','個別にご提示します'],['社内稟議','稟議資料をご用意します'],['ご契約','導入をサポートします']];
+const NOTE='通常◯◯週間程度です。社内稟議に必要な資料は、当社でご用意します。';
+const cnt=d=>d.g.reduce((a,g)=>a+g[1].length,0);
+/* A */
+document.getElementById('A').innerHTML='<section class="hd"><div class="w"><div><span class="eb">Pricing</span><h1>料金・導入の流れ</h1></div><p>事業ごとに課金の考え方が異なります。ご利用規模により金額が変わるため、具体的なお見積りは個別にご案内しています。</p></div></section>'+
+'<div class="w"><div class="sheet">'+D.map((d,i)=>'<div class="col" style="--c:'+M[i].c+'"><div class="ch"><span class="ico'+(i==2?' m':'')+'" style="background:'+M[i].bg+'">'+M[i].lg+'</span><div><b>'+d.n+'</b><small>'+M[i].cat+'</small></div></div>'+
+'<dl class="kv"><dt>課金の考え方</dt><dd>'+M[i].u.join('・')+'</dd><dt>お見積り</dt><dd>個別にご案内</dd></dl>'+
+'<div class="cnt"><b>'+String(cnt(d)).padStart(2,'0')+'</b>取り扱いプロダクト</div><div class="gl">'+d.g.map(g=>'<small>'+g[0]+'</small><ul>'+g[1].map(p=>'<li>'+S(p.ic,16)+p.n+'</li>').join('')+'</ul>').join('')+'</div>'+
+'<div class="go"><a>'+d.n+' を相談する</a></div></div>').join('')+'</div>'+
+'<div class="shared"><div class="t"><span class="free">お見積り無料</span><div><h3>ご利用規模に応じた個別お見積り</h3><p>複数事業の組み合わせもご相談いただけます。</p></div></div><a class="btn">営業に相談する →</a></div></div>'+
+'<section class="fl"><div class="w"><div class="top"><div><span class="eb">Process</span><h2>ご契約までの流れ</h2></div><p>'+NOTE+'</p></div><div class="track">'+FL.map((s,i)=>'<div class="st'+(i==3?' on':'')+'"><em>STEP '+String(i+1).padStart(2,'0')+'</em><h4>'+s[0]+'</h4><p>'+s[1]+'</p>'+(i==3?'<span class="dur">通常◯◯週間</span>':'')+'</div>').join('')+'</div></div></section>';
+/* B */
+const B=document.getElementById('B');
+B.innerHTML='<section class="hd"><span class="eb">Pricing</span><h1>料金・導入の流れ</h1><p>事業ごとに課金の考え方が異なります。<br>ご利用規模により金額が変わるため、具体的なお見積りは個別にご案内しています。</p></section>'+
+'<div class="w mod"><div class="nav">'+D.map((d,i)=>'<a data-i="'+i+'"'+(i==0?' class="on"':'')+'><span class="ico'+(i==2?' m':'')+'" style="background:'+M[i].bg+'">'+M[i].lg+'</span><div><b>'+d.n+'</b><small>'+M[i].cat+'</small></div><span class="n">'+String(cnt(d)).padStart(2,'0')+'</span></a>').join('')+'<p class="note">複数事業を組み合わせたご利用も、まとめてお見積りいたします。</p></div><div class="pane" id="pane"></div></div>'+
+'<section class="fl"><div class="w"><div class="hd2"><span class="eb">Process</span><h2>ご契約までの流れ</h2><p>'+NOTE+'</p></div><div class="steps">'+FL.map((s,i)=>'<div class="sp'+(i==3?' on':'')+'"><em>'+String(i+1).padStart(2,'0')+'</em><h4>'+s[0]+'</h4><p>'+s[1]+'</p>'+(i==3?'<span class="dur">通常◯◯週間</span>':'')+'</div>').join('')+'</div><div class="c"><a class="btn">営業に相談する →</a></div></div></section>';
+function pane(i){const d=D[i];document.getElementById('pane').style.setProperty('--c',M[i].c);document.getElementById('pane').innerHTML='<div class="ptop"><div><span class="e">'+d.n.toUpperCase()+' の料金</span><h3>ご利用規模に応じた<br>個別お見積り</h3><div class="fx">'+M[i].u.map(u=>'<span>'+u+'</span>').join('')+'<span>に応じて変動</span></div></div><div class="r"><span class="free">お見積り無料</span><a class="btn">営業に相談する →</a></div></div>'+
+d.g.map(g=>'<div class="grp"><div class="gh">'+g[0]+'<span>'+String(g[1].length).padStart(2,'0')+'</span></div><div class="its">'+g[1].map(p=>'<div class="it"><span class="ti">'+S(p.ic,18)+'</span><div><b>'+p.n+'</b><p>'+p.d+'</p></div></div>').join('')+'</div></div>').join('')}
+pane(0);B.querySelectorAll('.nav a').forEach(a=>a.onclick=()=>{B.querySelectorAll('.nav a').forEach(x=>x.classList.toggle('on',x===a));pane(+a.dataset.i)});
+</script></body></html>

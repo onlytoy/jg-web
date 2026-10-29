@@ -1,0 +1,280 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modellix 手机版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mobile.css"><style>
+.mhome .mel-flow{margin-top:28px;padding:18px;border-radius:18px;background:#fff;border:1px solid #e6ebf7;box-shadow:0 16px 40px -20px rgba(30,40,90,.18);text-align:left}
+.mhome .mel-flow>small{font-size:11px;color:#8a92a6;letter-spacing:.06em}.mhome .mel-flow>b{display:block;margin:4px 0 6px;font-size:13.5px}
+.mhome .mel-flow>div{display:flex;flex-direction:column;gap:4px;padding:10px 0 10px 14px;border-left:2px solid #e6ebf7;margin-left:4px}
+.mhome .mel-flow i{font:600 10.5px Poppins;letter-spacing:.08em;color:var(--c);font-style:normal;display:flex;gap:8px}.mhome .mel-flow i em{font:400 10.5px 'Noto Sans JP';color:#8a92a6;font-style:normal}
+.mhome .mel-flow p{margin:0;font-size:12.5px;color:#3a4356;line-height:1.6}
+.mhome .mel-iss{margin-top:28px;display:flex;flex-direction:column;text-align:left}
+.mhome .mel-iss>div{padding:20px 0;border-top:1px solid #eef1f7;display:grid;grid-template-columns:36px 1fr;column-gap:8px}.mhome .mel-iss>div:last-child{border-bottom:1px solid #eef1f7}
+.mhome .mel-iss em{grid-row:span 2;font:300 22px Poppins;color:#2847fc;font-style:normal}.mhome .mel-iss b{font-size:16px}.mhome .mel-iss p{margin:6px 0 0;font-size:13px;line-height:1.8;color:#5b6172}
+.mhome .mel-sol{margin-top:24px;display:flex;flex-direction:column;gap:12px;text-align:left}
+.mhome .mel-sol>div{padding:18px 18px;border-radius:16px;background:#fff;border:1px solid #e6ebf7}
+.mhome .mel-sol small{font:500 11px Poppins;color:#2847fc;letter-spacing:.06em}.mhome .mel-sol b{display:block;margin-top:4px;font-size:15px}.mhome .mel-sol p{margin:6px 0 0;font-size:12.5px;color:#5b6172;line-height:1.7}
+.mhome .mel-ind{margin:24px -20px 0;padding:0 20px 4px;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;scrollbar-width:none;text-align:left}.mhome .mel-ind::-webkit-scrollbar{display:none}
+.mhome .mel-ind>div{flex:0 0 80%;scroll-snap-align:start;padding:20px;border-radius:18px;background:linear-gradient(160deg,#eef1ff,#fff 70%);border:1px solid #e3e8f8;display:flex;flex-direction:column;gap:8px;min-height:220px}
+.mhome .mel-ind small{font-size:12px;color:#2847fc;font-weight:500}.mhome .mel-ind b{font-size:15.5px;line-height:1.55}.mhome .mel-ind span{font-size:12px;color:#3a4356;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid #e3e8f3;align-self:flex-start}.mhome .mel-ind p{margin:auto 0 0;font-size:11.5px;color:#8a92a6;line-height:1.7}
+.mhome .dots{margin-top:16px}
+.mhome .mel-dl{display:block;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #e6ebf7;box-shadow:0 16px 40px -22px rgba(30,40,90,.2);color:#0a1324}
+.mhome .mel-dl .cv{padding:26px 22px;background:linear-gradient(150deg,#2847fc,#5a69e0);color:#fff}.mhome .mel-dl .cv small{font:500 10px Poppins;letter-spacing:.14em;opacity:.8}.mhome .mel-dl .cv b{display:block;margin-top:10px;font-size:19px;line-height:1.5}
+.mhome .mel-dl>div:last-child{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px}.mhome .mel-dl>div:last-child small{font-size:11.5px;color:#2847fc;font-weight:500}.mhome .mel-dl>div:last-child b{font-size:16px}.mhome .mel-dl p{margin:2px 0 0;font-size:12.5px;color:#5b6172;line-height:1.8}.mhome .mel-dl span{margin-top:8px;font-size:14px;font-weight:500;color:#2847fc}.mhome .mel-dl em{font-style:normal;font-size:11px;color:#8a92a6}
+.mhome .mel-case{margin-top:24px;display:block;border-radius:20px;overflow:hidden;background:#fff;text-align:left;color:#0a1324;border:1px solid #e6ebf7}.mhome .mel-case img{display:block;width:100%;height:190px;object-fit:cover}
+.mhome .mel-case>div{padding:20px 22px 22px}.mhome .mel-case small{font-size:12px;color:#2847fc}.mhome .mel-case b{display:block;margin-top:6px;font:300 40px Poppins;line-height:1}.mhome .mel-case b em{font-size:24px;color:#2847fc;font-style:normal}.mhome .mel-case p{margin:10px 0 0;font-size:13px;line-height:1.8;color:#3a4356}.mhome .mel-case span{display:block;margin-top:12px;font-size:14px;color:#2847fc}
+.mhome .mel-cs{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mhome .mel-cs a{padding:16px 8px;border-radius:14px;background:#fff;border:1px solid #e6ebf7;color:#0a1324;display:flex;flex-direction:column;gap:6px}.mhome .mel-cs b{font:400 20px Poppins}.mhome .mel-cs small{font-size:10.5px;color:#5b6172;line-height:1.5}
+</style>
+<style>html,body{margin:0;background:#e9edf5}body{max-width:390px;margin:0 auto!important;background:#fff}.mhome{display:block!important}.mhome a{text-decoration:none}</style>
+<style>
+.mhome .el-flow{ position: relative; margin-top: 14px; padding-left: 26px; }
+.mhome .el-flow .rail{ position: absolute; left: 3px; top: 10px; bottom: 16px; width: 1px;
+  background: linear-gradient(180deg, rgba(40,71,252,.35), rgba(149,222,253,.35) 55%, rgba(129,239,198,.3)); }
+.mhome .el-flow .stack{ display: flex; flex-direction: column; gap: 14px; }
+.mhome .el-flow .ev{ position: relative; font-size: 12.5px; color: var(--ink-500); padding: 2px 0 2px 2px; }
+.mhome .el-flow .ev em{ font-style: normal; color: var(--ink-400); }
+.mhome .el-flow .d{ position: absolute; left: -26px; top: 7px; width: 7px; height: 7px; border-radius: 50%; }
+.mhome .el-card{ position: relative; background: #fff; border: 1px solid rgba(10,19,36,.08); border-radius: 14px;
+  padding: 14px 16px; box-shadow: 0 10px 26px rgba(16,42,94,.07); }
+.mhome .el-card.hi{ box-shadow: 0 18px 40px rgba(16,42,94,.12); }
+.mhome .el-card .hd{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.mhome .el-card .ch{ display: inline-flex; align-items: center; gap: 7px; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; color: var(--ink-700); }
+.mhome .el-card .ch i{ width: 7px; height: 7px; border-radius: 3px; display: inline-block; }
+.mhome .el-card .tm{ font-size: 11px; color: var(--ink-400); }
+.mhome .el-card .push{ display: flex; gap: 12px; align-items: flex-start; }
+.mhome .el-card .push .ic{ width: 30px; height: 30px; border-radius: 9px; background: var(--aurora-blue); flex: none;
+  display: flex; align-items: center; justify-content: center; }
+.mhome .el-card .t1{ font-size: 13px; font-weight: 700; }
+.mhome .el-card .t2{ font-size: 12px; color: var(--ink-500); margin-top: 4px; }
+.mhome .el-card .bd{ font-size: 13px; line-height: 1.7; color: var(--ink-700); }
+.mhome .el-card .bub{ display: inline-block; font-size: 12.5px; line-height: 1.6; padding: 9px 13px; border-radius: 12px; }
+.mhome .el-card .bub.l{ background: #f1f3f7; color: var(--ink-700); border-bottom-left-radius: 4px; }
+.mhome .el-card .bub.g{ background: #e7f8ee; color: #15603a; border-bottom-left-radius: 4px; }
+.mhome .el-flow{ margin-top: 14px; padding-left: 38px; }
+.mhome .el-flow .rail{ left: 4px; top: 10px; bottom: 34px; width: 2px; border-radius: 2px; opacity: .78;
+  background: linear-gradient(180deg,#7ce0ff 0%,#7ce0ff 24%,#a78bfa 47%,#ffd479 72%,#4ade80 100%); }
+.mhome .el-flow .stack{ gap: 12px; }
+.mhome .el-flow .ev{ padding: 0 0 2px; font-size: 14px; font-weight: 700; color: #2a3142; }
+.mhome .el-flow .ev em{ font-weight: 500; color: #98a0ae; }
+.mhome .el-flow .ev .d{ left: -38px; top: 5px; }
+.mhome .el-flow .d{ position: absolute; left: -38px; top: 18px; width: 10px; height: 10px; border-radius: 50%; }
+.mhome .el-card{ border-radius: 10px; padding: 15px 18px 16px;
+  background: rgba(255,255,255,.86); border: 1px solid rgba(40,71,252,.09); box-shadow: 0 12px 34px rgba(31,55,125,.08); }
+.mhome .el-card.hi{ background: linear-gradient(135deg,rgba(255,255,255,.94),rgba(238,243,255,.88));
+  border: 1px solid rgba(40,71,252,.20); box-shadow: 0 12px 34px rgba(31,55,125,.08); }
+.mhome .el-card .hd{ gap: 16px; margin-bottom: 0; }
+.mhome .el-card .ch{ gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #5b6172; }
+.mhome .el-card .ch i{ width: 6px; height: 6px; border-radius: 50%; }
+.mhome .el-card .tm{ font-size: 11px; color: #98a0ae; }
+.mhome .el-card .push{ margin-top: 9px; gap: 11px; align-items: center; }
+.mhome .el-card .push .ic{ width: 31px; height: 31px; border-radius: 9px;
+  background: linear-gradient(135deg,#2847fc,#6a7fff); box-shadow: 0 6px 14px rgba(40,71,252,.20); }
+.mhome .el-card .t1{ font-size: 13px; font-weight: 500; line-height: 1.55; color: #2a3142; }
+.mhome .el-card .t2{ margin-top: 1px; font-size: 11px; line-height: 1.5; color: #98a0ae; }
+.mhome .el-card .bd{ margin-top: 9px; font-size: 13px; font-weight: 700; line-height: 1.55; color: #2a3142; }
+.mhome .el-card .bub{ margin-top: 9px; padding: 7px 12px; font-size: 12px; line-height: 1.6; }
+.mhome .el-card .bub.l{ border-radius: 11px 11px 11px 4px; background: #f4f5f8; color: #5b6172; }
+.mhome .el-card .bub.g{ border-radius: 11px 11px 4px 11px; background: #edf9f3; color: #39745a; }
+.mhome .mel-hv{margin-top:28px;width:100%;text-align:left;zoom:.86}
+.mhome .mel-st{grid-template-columns:1fr 1fr!important}.mhome .mel-st div{text-align:center}.mhome .mel-st div:nth-child(-n+4){border-bottom:1px solid #eef1f7}.mhome .mel-st div:last-child{grid-column:1/-1;border-right:0!important}
+.mhome .mel-fd{margin-top:24px;padding:20px 16px;border-radius:18px;background:#fff;border:1px solid #e6ebf7;display:flex;flex-direction:column;align-items:center;gap:10px}
+.mhome .mel-fd small{font-size:11px;color:#8a92a6;letter-spacing:.06em}
+.mhome .mel-fd .g4,.mhome .mel-fd .g3{width:100%;display:grid;gap:6px}.mhome .mel-fd .g4{grid-template-columns:repeat(4,1fr)}.mhome .mel-fd .g3{grid-template-columns:repeat(3,1fr)}
+.mhome .mel-fd .g4 span,.mhome .mel-fd .g3 span{padding:8px 2px;border-radius:9px;background:#f5f7fc;font-size:11px;color:#3a4356;white-space:nowrap}
+.mhome .mel-fd .ln{width:1.5px;height:22px;background:linear-gradient(#95defd,#2847fc)}.mhome .mel-fd .ln.g{background:linear-gradient(#2847fc,#81efc6)}
+.mhome .mel-fd .pl{display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:#0a1324;color:#fff;font-size:14px}.mhome .mel-fd .pl span{width:30px;height:30px;border-radius:9px;background:#2847fc;display:grid;place-items:center}
+.mhome .mel-ind>div{padding:0 0 18px!important;overflow:hidden;background:#fff!important}.mhome .mel-ind img{width:100%;height:150px;object-fit:cover;display:block;margin-bottom:6px}
+.mhome .mel-ind>div>*:not(img){margin-left:18px;margin-right:18px}
+</style><style>
+.mhome .mel-top{padding:28px 20px 22px;text-align:center;border-top:1px solid #eef1f7}
+.mhome .mel-top b{font:300 44px/1 Poppins}.mhome .mel-top b em{font-size:26px;color:#2847fc;font-style:normal}.mhome .mel-top small{display:block;margin-top:10px;font-size:12px;color:#5b6172}
+.mhome .mel-st div:nth-child(-n+4){border-bottom:0}.mhome .mel-st div:nth-child(-n+2){border-bottom:1px solid #eef1f7!important}
+.mhome .mel-dk{background:radial-gradient(120% 70% at 50% 0%,#0c2a7a 0%,#071a4e 45%,#050d24 100%)!important;color:#fff}
+.mhome .mel-dk h2{color:#fff}.mhome .mel-dk .ld{color:rgba(255,255,255,.72)!important}.mhome .mel-dk .eb{color:#95defd}
+.mhome .mel-dk .mel-fd{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14)}
+.mhome .mel-dk .mel-fd small{color:rgba(255,255,255,.55)}
+.mhome .mel-dk .mel-fd .g4 span,.mhome .mel-dk .mel-fd .g3 span{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.88)}
+.mhome .mel-dk .mel-fd .ln{background:linear-gradient(rgba(149,222,253,.7),#2847fc)}.mhome .mel-dk .mel-fd .ln.g{background:linear-gradient(#2847fc,rgba(129,239,198,.8))}
+.mhome .mel-dk .mel-fd .pl{background:#2847fc;box-shadow:0 0 0 6px rgba(40,71,252,.18),0 12px 30px rgba(40,71,252,.4)}.mhome .mel-dk .mel-fd .pl span{background:rgba(255,255,255,.16)}
+.mhome .mel-dk .mel-sol>div{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14)}
+.mhome .mel-dk .mel-sol small{color:#95defd}.mhome .mel-dk .mel-sol b{color:#fff}.mhome .mel-dk .mel-sol p{color:rgba(255,255,255,.65)}
+</style><style>
+.mhome .mel-st5 div{border-bottom:0!important}
+.mhome .mel-st5 div:nth-child(-n+4){border-bottom:1px solid #eef1f7!important}
+.mhome .mel-st5 div:last-child{grid-column:auto!important;border-right:1px solid #eef1f7!important}
+</style><style>.mhome .gb-win{position:relative;margin:24px 30px 24px 0;background:#fff;border:1px solid #e3e8f2;border-radius:14px;box-shadow:0 30px 60px -30px #1b2a6b33;overflow:hidden}
+.mhome .gb-win .bar{height:38px;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid #eef1f6;background:#fafbfd}
+.mhome .gb-win .bar i{width:9px;height:9px;border-radius:50%;background:#dfe3ec}
+.mhome .gb-win .bar span{margin-left:12px;font-size:11px;color:#98a0ae;letter-spacing:.04em}
+.mhome .gb-win .bd{display:grid;grid-template-columns:150px 1fr;height:330px}
+.mhome .gb-side{border-right:1px solid #eef1f6;padding:16px 10px;background:#fbfcfe}
+.mhome .gb-side .w{display:flex;align-items:center;gap:8px;padding:0 6px 14px;font-size:12px;font-weight:700;color:#0a1324}
+.mhome .gb-side .w img{width:16px;height:16px}
+.mhome .gb-side div.it{display:flex;align-items:center;gap:8px;height:30px;padding:0 8px;border-radius:7px;font-size:12px;color:#5b6172}
+.mhome .gb-side div.it.on{background:#f1f3f6;color:#0a1324;font-weight:600}
+.mhome .gb-side div.it.on svg{color:#17654f;stroke:#17654f}
+.mhome .gb-chat{padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+.mhome .gb-chat .u{align-self:flex-end;max-width:78%;background:#e3f5ec;color:#0f3d31;border:1px solid #cdebdc;font-size:12.5px;line-height:1.7;padding:10px 14px;border-radius:12px 12px 2px 12px}
+.mhome .gb-chat .ai{display:flex;gap:10px;max-width:90%}
+.mhome .gb-chat .ai .av{flex:none;width:26px;height:26px;border-radius:8px;background:#0f3d31;display:flex;align-items:center;justify-content:center}
+.mhome .gb-chat .ai .av img{width:14px;filter:brightness(0) saturate(100%) invert(86%) sepia(18%) saturate(640%) hue-rotate(95deg)}
+.mhome .gb-chat .ai .tx{font-size:12.5px;line-height:1.8;color:#0a1324;background:#f5f7fb;padding:10px 14px;border-radius:2px 12px 12px 12px}
+.mhome .gb-chat .src{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.mhome .gb-chat .src span{font-size:10.5px;color:#17654f;background:#fff;border:1px solid #cdebdc;border-radius:20px;padding:2px 8px}
+.mhome .gb-chat .inp{margin-top:auto;height:36px;border:1px solid #e3e8f2;border-radius:9px;display:flex;align-items:center;justify-content:space-between;padding:0 6px 0 12px;font-size:11.5px;color:#a8afbc}
+.mhome .gb-chat .inp i{width:24px;height:24px;border-radius:6px;background:#0f4a3a;display:flex;align-items:center;justify-content:center;color:#fff}
+.mhome .gb-node{position:absolute;background:#fff;border:1px solid #e3e8f2;border-radius:12px;box-shadow:0 18px 40px -20px #1b2a6b40;padding:12px 14px;display:flex;gap:10px;align-items:center;font-size:12px;color:#0a1324;white-space:nowrap}
+.mhome .gb-node .i{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.mhome .gb-node small{display:block;font-size:10.5px;color:#98a0ae;margin-top:2px}
+.mhome .gb-node.n1{right:-6px;top:-6px}
+.mhome .gb-node.n2{left:-26px;bottom:-4px}
+.mhome .gb-node.n3{right:-6px;bottom:72px}
+.mhome .gb-sec{padding:120px 0}
+.mhome .gb-k{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc}
+.mhome .gb-k:before{content:"";width:24px;height:1px;background:#2847fc}
+.mhome .gb-h2{margin:20px 0 0;font-size:32px;line-height:1.55;font-weight:700;color:#0a1324;font-feature-settings:'palt'}
+.mhome .gb-prob{display:grid;grid-template-columns:360px minmax(0,1fr);gap:80px}
+.mhome .gb-prob .l p{margin:20px 0 0;font-size:15px;line-height:2;color:#5b6172}
+.mhome .gb-rows{position:relative;padding-left:40px}
+.mhome .gb-rows:before{content:"";position:absolute;left:7px;top:14px;bottom:44px;width:1px;background:linear-gradient(#d6dcea,#2847fc)}
+.mhome .gb-row{position:relative;display:grid;grid-template-columns:56px 240px minmax(0,1fr);align-items:baseline;padding:26px 0;border-bottom:1px solid #eef1f6}
+.mhome .gb-row:before{content:"";position:absolute;left:-38px;top:34px;width:11px;height:11px;border-radius:50%;background:#fff;border:1.5px solid #c3cbe0}
+.mhome .gb-row .n{font-size:13px;font-weight:700;color:#98a0ae;font-feature-settings:'tnum'}
+.mhome .gb-row h3{margin:0;font-size:18px;font-weight:700;color:#0a1324}
+.mhome .gb-row p{margin:0;font-size:14px;line-height:1.9;color:#5b6172}
+.mhome .gb-con{position:relative;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 30px;border-radius:14px;background:linear-gradient(100deg,#2847fc,#4a6bff);color:#fff}
+.mhome .gb-con:before{content:"";position:absolute;left:-40px;top:50%;width:11px;height:11px;margin-top:-6px;border-radius:50%;background:#2847fc;box-shadow:0 0 0 5px #2847fc22}
+.mhome .gb-con b{font-size:19px;font-weight:700}
+.mhome .gb-con span{font-size:13px;opacity:.85}
+.mhome .gb-plat{background:#f6f9fd}
+.mhome .gb-ph{text-align:center}
+.mhome .gb-ph .gb-k{justify-content:center}
+.mhome .gb-ph p{margin:18px auto 0;max-width:720px;font-size:15px;line-height:2;color:#5b6172}
+.mhome .gb-steps{margin-top:56px;display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);align-items:stretch}
+.mhome .gb-step{background:#fff;border:1px solid #e6eaf2;border-radius:16px;padding:32px 32px 30px}
+.mhome .gb-step .t{display:flex;align-items:center;justify-content:space-between}
+.mhome .gb-step .t em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.12em;color:#2847fc}
+.mhome .gb-step .t span{font-size:11px;color:#98a0ae;border:1px solid #e6eaf2;border-radius:20px;padding:3px 10px}
+.mhome .gb-step h3{margin:14px 0 0;font-size:22px;font-weight:700;color:#0a1324}
+.mhome .gb-step .s{margin:6px 0 0;font-size:14px;color:#5b6172}
+.mhome .gb-step .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.mhome .gb-step .chips span{font-size:12.5px;color:#0a1324;background:#f5f7fb;border-radius:6px;padding:6px 10px}
+.mhome .gb-step.s2{border-color:#cdd7ff;box-shadow:0 24px 50px -30px #2847fc55}
+.mhome .gb-step.s2 .chips span{background:#eef2ff;color:#2847fc}
+.mhome .gb-arr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:11px;color:#2847fc;writing-mode:horizontal-tb}
+.mhome .gb-arr i{display:block;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #cdd7ff;display:flex;align-items:center;justify-content:center}
+.mhome .gb-arch{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.1fr) 120px minmax(0,1fr);align-items:center;padding:30px 32px;background:#fff;border:1px solid #e6eaf2;border-radius:16px}
+.mhome .gb-arch .gb-ac .c{font-size:11px;font-weight:700;letter-spacing:.12em;color:#98a0ae;margin-bottom:12px}
+.mhome .gb-arch .gb-ac .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mhome .gb-arch .gb-ac .g span{font-size:12.5px;color:#0a1324;border:1px solid #e6eaf2;border-radius:8px;padding:8px 10px;text-align:center}
+.mhome .gb-arch .gb-core{text-align:center;padding:22px 16px;border-radius:12px;background:linear-gradient(135deg,#2847fc,#5a7dff);color:#fff}
+.mhome .gb-arch .gb-core img{width:26px;filter:brightness(0) invert(1)}
+.mhome .gb-arch .gb-core b{display:block;margin-top:8px;font-size:15px}
+.mhome .gb-arch .gb-core small{font-size:11.5px;opacity:.85}
+.mhome .gb-arch .gb-ln{height:1px;background:repeating-linear-gradient(90deg,#9fb0ff 0 4px,transparent 4px 8px);position:relative;margin:0 10px}
+.mhome .gb-arch .gb-ln:after{content:"";position:absolute;right:-2px;top:-3px;border-left:6px solid #9fb0ff;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
+.mhome .gb-scn{display:grid;grid-template-columns:400px minmax(0,1fr);gap:64px;margin-top:56px;align-items:stretch}
+.mhome .gb-tabs{display:flex;flex-direction:column}
+.mhome .gb-tab{position:relative;text-align:left;background:none;border:0;border-bottom:1px solid #eef1f6;padding:24px 0 24px 24px;cursor:pointer;font-family:inherit}
+.mhome .gb-tab:before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:2px;background:#eef1f6;transition:background .3s}
+.mhome .gb-tab .n{font-size:12px;font-weight:700;color:#98a0ae}
+.mhome .gb-tab b{display:block;margin-top:6px;font-size:19px;font-weight:700;color:#98a0ae;transition:color .3s}
+.mhome .gb-tab p{margin:0;max-height:0;overflow:hidden;opacity:0;font-size:14px;line-height:1.9;color:#5b6172;transition:all .4s}
+.mhome .gb-tab.on:before{background:#2847fc}
+.mhome .gb-tab.on b{color:#0a1324}
+.mhome .gb-tab.on .n{color:#2847fc}
+.mhome .gb-tab.on p{max-height:80px;opacity:1;margin-top:8px}
+.mhome .gb-pic{position:relative;border-radius:16px;overflow:hidden;min-height:400px;background:#eef1f6}
+.mhome .gb-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.03);transition:opacity .6s,transform 1.2s}
+.mhome .gb-pic img.on{opacity:1;transform:none}
+.mhome .gb-pic .tg{position:absolute;left:20px;bottom:20px;font-size:13px;font-weight:500;color:#0a1324;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:20px;padding:6px 14px}
+.mhome .gb-case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#fff;border:1px solid #e6eaf2;border-radius:16px;overflow:hidden;text-decoration:none;margin-top:48px}
+.mhome .gb-case .im{position:relative;min-height:340px}
+.mhome .gb-case .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mhome .gb-case .tx{padding:48px 52px;display:flex;flex-direction:column}
+.mhome .gb-case .k{font-size:12px;font-weight:500;color:#2847fc}
+.mhome .gb-case .v{margin-top:18px;font-size:72px;font-weight:700;line-height:1;color:#0a1324;font-feature-settings:'tnum'}
+.mhome .gb-case h3{margin:20px 0 0;font-size:19px;line-height:1.7;font-weight:700;color:#0a1324}
+.mhome .gb-case .m{margin-top:14px;font-size:13px;line-height:1.9;color:#5b6172}
+.mhome .gb-case .lk{margin-top:auto;padding-top:24px;font-size:14px;font-weight:500;color:#2847fc}
+.mhome .gb-inds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:0;margin-top:20px;border-top:1px solid #e6eaf2}
+.mhome .gb-inds a{display:flex;align-items:baseline;gap:14px;padding:20px 24px 20px 0;text-decoration:none;color:#0a1324;font-size:14px}
+.mhome .gb-inds a b{font-size:13px;color:#2847fc;font-weight:700}
+.mhome .gb-inds a.more{color:#2847fc;font-weight:500;justify-content:flex-end;padding-right:0}
+.mhome .hv-scale{margin-top:0}
+.mhome .mgp-hv,.mhome .mgp-dv{margin-top:28px;width:100%;overflow:hidden;text-align:left}
+.mhome .mgp-in{width:560px;zoom:.62}.mhome .mgp-hv .mgp-in{width:500px;zoom:.58;padding:0 34px;box-sizing:content-box}.mhome .mgp-hv .gb-win .src span{white-space:nowrap}.mhome .hero .ld{overflow-wrap:anywhere}
+.mhome .mgp-in .hv-scale{transform:none!important}
+.mhome .mgp-st div:last-child{grid-column:1/-1;border-right:0!important}
+.mhome .mgp-st div:nth-child(-n+2){border-bottom:1px solid #eef1f7}
+.mhome .mgp-cs b{font:600 15px 'Noto Sans JP'!important}
+.mhome .mgp-cs small{text-align:left}
+</style><style>
+.mhome .mgp-st3{grid-template-columns:repeat(3,1fr)!important}
+.mhome .mgp-st3 div{padding:24px 6px!important;text-align:center;border-bottom:0!important;border-right:1px solid #eef1f7!important}
+.mhome .mgp-st3 div:last-child{border-right:0!important}
+.mhome .mgp-st3 b{font-size:26px!important}.mhome .mgp-st3 b em{font-size:17px!important}
+.mhome .mgp-st3 small{font-size:10.5px!important;line-height:1.5;word-break:keep-all}
+</style><style>.mhome .hv-scale{margin-top:0}
+.mhome .mx-a2 svg path{stroke:rgba(149,222,253,.16);stroke-width:1;transition:stroke .5s,stroke-width .5s}
+.mhome .mx-a2 svg path.l0{stroke:rgba(149,222,253,.5);stroke-width:1.2}
+.mhome .mx-a2 svg path.on{stroke:#81efc6;stroke-width:1.6}
+.mhome .mx-a2 .dot{fill:#d9fff0;filter:drop-shadow(0 0 4px #81efc6);opacity:0;transition:opacity .2s}
+.mhome .mx-a2 .tp{position:absolute;left:352px;width:72px;height:28px;border-radius:999px;background:#13213d;border:1px solid rgba(149,222,253,.16);display:flex;align-items:center;justify-content:center;font-size:11.5px;color:#dfe6f5;transition:border-color .5s,color .5s,box-shadow .5s}
+.mhome .mx-a2 .tp.on{border-color:rgba(129,239,198,.6);color:#81efc6;box-shadow:0 0 0 4px rgba(129,239,198,.08)}
+.mhome .mx-a2 .md{position:absolute;left:496px;height:22px;display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(232,238,252,.42);transition:color .5s}
+.mhome .mx-a2 .md i{width:5px;height:5px;border-radius:50%;background:rgba(149,222,253,.3);transition:background .5s,box-shadow .5s}
+.mhome .mx-a2 .md.on{color:#fff;font-weight:500}
+.mhome .mx-a2 .md.on i{background:#81efc6;box-shadow:0 0 0 4px rgba(129,239,198,.15)}
+.mhome .mx-a2 .mxm{box-shadow:0 0 0 8px rgba(122,96,255,.12),0 0 0 18px rgba(122,96,255,.05),0 14px 40px rgba(91,61,240,.45);transition:box-shadow .4s}
+.mhome .mx-a2 .mxm.pulse{box-shadow:0 0 0 10px rgba(122,96,255,.2),0 0 0 24px rgba(122,96,255,.08),0 14px 40px rgba(91,61,240,.6)}
+.mhome .mx-a2 .mreq{transition:opacity .3s}
+.mhome .mx-a2 .draw path{stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.mhome .mx-a2 .draw.in path{stroke-dashoffset:0;transition:stroke-dashoffset 1s cubic-bezier(.4,0,.2,1),stroke .5s}
+.mhome .mx-a2{position:relative;aspect-ratio:660/440;border-radius:14px;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 80px rgba(0,0,0,.35);overflow:hidden;background:radial-gradient(120% 90% at 80% 0%,#16264a 0,#0a1426 60%)}
+.mhome .mx-a2-in{position:absolute;left:0;top:0;width:660px;height:440px;transform-origin:0 0;color:#e8eefc;font-family:"Noto Sans JP",sans-serif}
+.mhome .mx-a2 .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.mhome .mx-a2 .cap{font-size:10.5px;letter-spacing:.14em;color:rgba(232,238,252,.45)}
+.mhome #mxs .mono{font-family:"JetBrains Mono",monospace}
+.mhome .z9{position:relative;width:530px;height:380px;margin-left:auto;font-family:"Zen Kaku Gothic New",sans-serif;color:#1e2638}
+.mhome .z9 .c{position:absolute;background:#fff;border:1px solid #eceff5;border-radius:14px;box-shadow:0 14px 36px rgba(30,45,90,.07)}
+.mhome .z9 .lb{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;font-weight:700;color:#5b6475}
+.mhome .z9 .lb i{width:6px;height:6px;border-radius:50%}
+.mhome .z9 .mut{color:#9aa3b5}
+.mhome .z9 .mono{font-family:ui-monospace,Menlo,monospace}
+.mhome .mmx-hv .mgp-in{width:560px;zoom:.6;padding:0;box-sizing:content-box;margin:0 auto}
+.mhome .mmx-dv{overflow:hidden}.mhome .mmx-in{width:660px;height:440px;zoom:.53;position:relative}
+.mhome .mmx-cert span{display:flex;justify-content:center;gap:6px;height:30px}.mhome .mmx-cert img{height:30px;width:auto}
+.mhome .mmx-lg{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 20px}.mhome .mmx-lg img{height:18px;width:auto}.mhome .mmx-lg span{font-size:12px;color:#8a92a6}
+.mhome .mmx-sc{margin-top:24px;text-align:left}.mhome .mmx-sc>div{display:flex!important;flex-direction:column;gap:14px}
+.mhome .mmx-sc>div>*{grid-column:auto!important;grid-row:auto!important}
+</style></head><body><template id="mmain">
+<section class="hero" style="padding:32px 20px 40px;text-align:center;display:flex;flex-direction:column;align-items:center">
+<div style="display:flex;align-items:center;gap:10px"><span style="width:40px;height:40px;border-radius:11px;background:#6a4cf5;display:grid;place-items:center;font:600 20px Poppins;color:#fff">M</span><b style="font:500 20px Poppins">Modellix</b></div>
+<h1 style="margin-top:20px;font-size:22px;line-height:1.6"><span style="white-space:nowrap">すべてのAIメディア生成を、</span><br><span style="white-space:nowrap">ひとつのプラットフォームで。</span></h1>
+<p class="ld" style="max-width:330px;word-break:keep-all;overflow-wrap:anywhere">画像・動画・音声・テキストを、<wbr>ひとつのAPIで。<wbr>世界水準のAIモデルを、<wbr>統合されたゲートウェイから<wbr>利用できます。</p>
+<div style="margin-top:24px;width:100%;display:flex;flex-direction:column;gap:12px"><a class="btn bp" href="contact.html">無料で始める</a><a class="btn bs" href="#">ドキュメントを見る</a></div>
+<div style="margin-top:18px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;font-size:12px;color:#3a4356"><span>✓ 172以上のモデルを、ひとつのAPIで</span><span>✓ 透明な従量課金（サブスクリプション不要）</span><span>✓ ISO/IEC 27001・27701 取得</span></div>
+<div class="mgp-hv mmx-hv"><div class="mgp-in"><div class="hv-scale" style="position:relative"><div class="z9">
+<div class="c" style="left:0;top:0;width:220px;height:380px;padding:16px 16px;display:flex;flex-direction:column">
+<div class="lb"><i style="background:#6A4CF5"></i>PROMPT</div><div style="margin-top:8px;padding:9px 11px;border:1px solid #eceff5;border-radius:9px;font-size:12px;line-height:1.6;color:#334155;height:58px">朝の光に包まれる都市のビル、シネマティック</div>
+<div class="lb" style="margin-top:14px"><i style="background:#6A4CF5"></i>MODEL</div>
+<div style="margin-top:8px;display:flex;flex-direction:column;gap:2px"><div style="height:33px;display:flex;align-items:center;gap:10px;padding:0 4px"><span style="width:16px;height:16px;border-radius:50%;flex:none;display:grid;place-items:center;border:1.5px solid #6A4CF5"><i style="width:8px;height:8px;border-radius:50%;background:#6A4CF5"></i></span><span style="flex:1;font-size:12.5px;font-weight:700;color:#0b1524">Kling V3</span><span class="mut" style="font-size:10.5px">Kling</span></div><div style="height:33px;display:flex;align-items:center;gap:10px;padding:0 4px"><span style="width:16px;height:16px;border-radius:50%;flex:none;display:grid;place-items:center;border:1.5px solid #d5dae4"></span><span style="flex:1;font-size:12.5px;font-weight:400;color:#5b6475">Veo 3.1</span><span class="mut" style="font-size:10.5px">Google</span></div><div style="height:33px;display:flex;align-items:center;gap:10px;padding:0 4px"><span style="width:16px;height:16px;border-radius:50%;flex:none;display:grid;place-items:center;border:1.5px solid #d5dae4"></span><span style="flex:1;font-size:12.5px;font-weight:400;color:#5b6475">Seedance 2.0</span><span class="mut" style="font-size:10.5px">ByteDance</span></div><div style="height:33px;display:flex;align-items:center;gap:10px;padding:0 4px"><span style="width:16px;height:16px;border-radius:50%;flex:none;display:grid;place-items:center;border:1.5px solid #d5dae4"></span><span style="flex:1;font-size:12.5px;font-weight:400;color:#5b6475">Hailuo 02</span><span class="mut" style="font-size:10.5px">MiniMax</span></div></div>
+<span class="mono mut" style="font-size:10.5px;margin:12px 4px 0">+168 models</span>
+<span style="margin-top:auto;height:36px;border-radius:9px;background:#6A4CF5;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">実行</span></div>
+<div class="c" style="left:234px;top:0;width:296px;height:298px;padding:8px 8px 0;display:flex;flex-direction:column"><div style="position:relative;flex:1;border-radius:9px;overflow:hidden;background:url(img/kdx-clean2.jpg) center/cover"><span style="position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center"><svg width="11" height="11" viewBox="0 0 24 24" fill="#6A4CF5"><path d="M7 4l13 8-13 8z"/></svg></span></div><div style="padding:10px 6px 12px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12.5px;font-weight:700;color:#0b1524">Kling V3</span><span class="mut" style="font-size:10.5px">Kling</span></div></div>
+<div class="lb" style="position:absolute;left:236px;top:310px;color:#9aa3b5">HISTORY</div><div style="position:absolute;left:234px;top:326px;width:296px;height:54px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px"><div class="c" style="position:relative;padding:5px;display:flex;gap:6px;align-items:center;border-radius:11px;min-width:0;border-color:#cfc8fb"><div style="width:26px;height:40px;border-radius:6px;flex:none;background:url(img/kdx-clean2.jpg) center/cover"></div><span style="font-size:10.5px;font-weight:700;color:#0b1524;line-height:1.25;min-width:0;font-size:10px;overflow-wrap:normal;word-break:keep-all">Kling V3</span></div><div class="c" style="position:relative;padding:5px;display:flex;gap:6px;align-items:center;border-radius:11px;min-width:0;"><div style="width:26px;height:40px;border-radius:6px;flex:none;background:url(img/kdx-clean2.jpg) 30% 70%/200% auto"></div><span style="font-size:10.5px;font-weight:700;color:#0b1524;line-height:1.25;min-width:0;font-size:10px;overflow-wrap:normal;word-break:keep-all">Seedream 5.0</span></div><div class="c" style="position:relative;padding:5px;display:flex;gap:6px;align-items:center;border-radius:11px;min-width:0;"><div style="width:26px;height:40px;border-radius:6px;flex:none;background:linear-gradient(160deg,#F5F3FF,#E9E4FF);box-shadow:inset 0 0 0 1px rgba(106,76,245,.10);display:flex;align-items:center;justify-content:center;gap:1.5px"><i style="width:1.5px;height:4px;border-radius:1px;background:#6A4CF5;opacity:0.55"></i><i style="width:1.5px;height:7px;border-radius:1px;background:#6A4CF5;opacity:0.63"></i><i style="width:1.5px;height:11px;border-radius:1px;background:#6A4CF5;opacity:0.71"></i><i style="width:1.5px;height:16px;border-radius:1px;background:#6A4CF5;opacity:0.79"></i><i style="width:1.5px;height:10px;border-radius:1px;background:#6A4CF5;opacity:0.87"></i><i style="width:1.5px;height:20px;border-radius:1px;background:#6A4CF5;opacity:1"></i><i style="width:1.5px;height:13px;border-radius:1px;background:#6A4CF5;opacity:0.87"></i><i style="width:1.5px;height:8px;border-radius:1px;background:#6A4CF5;opacity:0.79"></i><i style="width:1.5px;height:15px;border-radius:1px;background:#6A4CF5;opacity:0.71"></i><i style="width:1.5px;height:9px;border-radius:1px;background:#6A4CF5;opacity:0.63"></i><i style="width:1.5px;height:5px;border-radius:1px;background:#6A4CF5;opacity:0.55"></i></div><span style="font-size:10.5px;font-weight:700;color:#0b1524;line-height:1.25;min-width:0;font-size:10px;overflow-wrap:normal;word-break:keep-all">CosyVoice 2</span></div></div>
+</div></div></div></div>
+</section>
+<div class="stats mgp-st3"><div><b>172<em>+</em></b><small>対応モデル数</small></div><div><b>3</b><small>プロダクト</small></div><div class="mmx-cert"><span><img src="img/cert-iso27001.png" alt=""><img src="img/cert-iso27701.png" alt=""></span><small>情報セキュリティ認証</small></div></div>
+<section class="sec" style="text-align:center"><div class="eb c">課題</div><h2>このような課題はありませんか？</h2>
+<div class="mel-iss"><div><em>01</em><b>モデルごとにAPIが違う</b><p>パラメータ構造がバラバラで、モデルの追加や切り替えのたびに実装が必要。</p></div><div><em>02</em><b>コストの内訳が見えない</b><p>従量課金の内訳が分からず、予算管理や社内説明が難しい。</p></div><div><em>03</em><b>本番運用でログが追えない</b><p>呼び出し履歴や課金履歴が残らず、障害時の切り分けに時間がかかる。</p></div></div></section>
+<section class="sec mel-dk" style="text-align:center"><div class="eb c">プラットフォーム</div><h2>複雑なモデル群を、<br>標準化された<br>ひとつのゲートウェイに。</h2><p class="ld" style="text-align:left">画像・動画・音声はメディアAPI、テキストはOpenAI／Anthropic互換のLLMゲートウェイ。用途に応じて使い分けられ、パラメータは標準化されています。</p>
+<div class="mgp-dv mmx-dv"><div class="mmx-in"><div class="mx-a2"><div class="mx-a2-in"><svg viewBox="0 0 660 440" style="position:absolute;inset:0" fill="none"><path class="l0" d="M182 220H218"/><path class="l1" data-t="0" d="M274 220 C313 220,313 100,352 100"/><path class="l2" data-t="0" data-m="0" d="M424 100 C456 100,456 82,488 82"/><path class="l2" data-t="0" data-m="1" d="M424 100 C456 100,456 118,488 118"/><path class="l1" data-t="1" d="M274 220 C313 220,313 180,352 180"/><path class="l2" data-t="1" data-m="0" d="M424 180 C456 180,456 162,488 162"/><path class="l2" data-t="1" data-m="1" d="M424 180 C456 180,456 198,488 198"/><path class="l1" data-t="2" d="M274 220 C313 220,313 260,352 260"/><path class="l2" data-t="2" data-m="0" d="M424 260 C456 260,456 242,488 242"/><path class="l2" data-t="2" data-m="1" d="M424 260 C456 260,456 278,488 278"/><path class="l1" data-t="3" d="M274 220 C313 220,313 340,352 340"/><path class="l2" data-t="3" data-m="0" d="M424 340 C456 340,456 322,488 322"/><path class="l2" data-t="3" data-m="1" d="M424 340 C456 340,456 358,488 358"/><circle class="dot" r="3" cx="-10" cy="-10"/></svg>
+<div class="cap" style="position:absolute;left:32px;top:28px">REQUEST</div><div class="cap" style="position:absolute;left:352px;top:28px">TYPE</div><div class="cap" style="position:absolute;left:496px;top:28px">MODELS</div>
+<div class="mono" style="position:absolute;left:32px;top:186px;width:150px;white-space:nowrap;padding:12px 14px;border-radius:10px;background:#13213d;border:1px solid rgba(255,255,255,.12);font-size:11px;line-height:1.75;color:#cfd8ec;box-sizing:border-box;box-shadow:0 12px 30px rgba(0,0,0,.25)"><span style="color:#95defd">POST</span> /v1/generate<br><span style="color:rgba(232,238,252,.45)">model:</span> <span class="mreq" style="color:#81efc6">"kling-v3"</span></div>
+<div style="position:absolute;left:218px;top:192px"><div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(150deg,#8a6dff,#5b3df0);display:flex;align-items:center;justify-content:center;font:500 22px Poppins,sans-serif;color:#fff" class="mxm">M</div></div><div style="position:absolute;left:186px;top:268px;width:120px;text-align:center;font-size:11.5px;font-weight:500">Gateway</div><div class="md" data-t="0" data-m="0" style="top:71px"><i></i>Seedream 5.0</div><div class="md" data-t="0" data-m="1" style="top:107px"><i></i>FLUX.1</div><div class="tp" data-t="0" style="top:86px">画像</div><div class="md" data-t="1" data-m="0" style="top:151px"><i></i>Kling V3</div><div class="md" data-t="1" data-m="1" style="top:187px"><i></i>Veo 3.1</div><div class="tp" data-t="1" style="top:166px">動画</div><div class="md" data-t="2" data-m="0" style="top:231px"><i></i>CosyVoice 2</div><div class="md" data-t="2" data-m="1" style="top:267px"><i></i>MiniMax TTS</div><div class="tp" data-t="2" style="top:246px">音声</div><div class="md" data-t="3" data-m="0" style="top:311px"><i></i>Qwen3</div><div class="md" data-t="3" data-m="1" style="top:347px"><i></i>DeepSeek V3</div><div class="tp" data-t="3" style="top:326px">テキスト</div><div class="mono" style="position:absolute;left:496px;top:392px;font-size:11px;color:rgba(232,238,252,.4)">+164 models</div></div></div></div></div>
+<div class="mel-sol"><div><small>Media API</small><b>メディアAPI</b><p>画像・動画・音声の生成を、共通のパラメータで</p></div><div><small>LLM Gateway</small><b>LLMゲートウェイ</b><p>Chat Completions／Responses／Messages に対応</p></div><div><small>CLI · Console</small><b>CLIと管理機能</b><p>CLI（npm）／モデルハブ（172+）／コールログ／課金履歴</p></div></div></section>
+<section class="sec" style="text-align:center"><div class="eb c">活用シーン</div><h2>活用シーン</h2><p class="ld">用途に合わせて、最適なモデルを選べます。</p><div id="mmxs" class="mmx-sc"></div></section>
+<section class="sec" style="padding-top:8px"><a class="mel-dl" href="resources.html"><div class="cv" style="background:linear-gradient(150deg,#6a4cf5,#8f7bff)"><small>SERVICE OVERVIEW</small><b>Modellix<br>サービス紹介資料</b></div><div><small>無料ダウンロード</small><b>Modellix サービス紹介資料</b><p>対応モデル／料金体系／セキュリティ体制</p><span>資料をダウンロード →</span><em>PDF</em></div></a></section>
+<section class="sec" style="background:#f7f9ff;text-align:center"><div class="eb c">Platform</div><h2>プラットフォーム実績・活用例</h2><p class="ld"><b style="font:300 30px Poppins;color:#0a1324">172</b>以上のモデルを、ひとつのAPIで。</p>
+<div class="mmx-lg"><img src="assets/logo-alibaba-sm.png" alt=""><img src="assets/logo-bytedance-sm.png" alt=""><img src="assets/logo-google-sm.png" alt=""><img src="assets/logo-kling-sm.png" alt=""><img src="assets/logo-openai-sm.png" alt=""><span>ほか</span></div>
+<div class="mel-iss" style="margin-top:20px"><div><em>01</em><b>クリエイティブ制作</b><p>複数モデルを使い分け、制作フローを短縮。</p></div><div><em>02</em><b>プロダクト組み込み</b><p>メディアAPIとLLMゲートウェイを、同じAPIキーで統合。</p></div><div><em>03</em><b>社内業務の自動化</b><p>CLIからスクリプトやCIに接続。</p></div></div></section></template><script src="mobile.js"></script><script>(function(){var t=document.getElementById("mmxs"),g=document.querySelector("#oA>div:last-child");if(t&&g)t.appendChild(g)})();</script></body></html>

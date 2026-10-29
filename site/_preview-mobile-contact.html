@@ -1,0 +1,56 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>お問い合わせ 手机版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mobile.css"><style>
+.mhome .kh{position:relative;padding:28px 20px 28px;text-align:center;background:linear-gradient(180deg,#eef2ff 0%,#f7f9ff 60%,#fff 100%);overflow:hidden}
+.mhome .kh:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(40,71,252,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(40,71,252,.05) 1px,transparent 1px);background-size:28px 28px;-webkit-mask:linear-gradient(180deg,#000 0%,transparent 80%);mask:linear-gradient(180deg,#000 0%,transparent 80%);pointer-events:none}
+.mhome .kh>*{position:relative}
+.mhome .ke{display:inline-flex;align-items:center;gap:8px;font:600 11px Poppins;letter-spacing:.16em;color:#2847fc}.mhome .ke i{width:20px;height:3px;border-radius:2px;background:linear-gradient(90deg,#2847fc,#5ec8e0)}
+.mhome .kh h1{margin:14px 0 12px;font-size:26px;line-height:1.5;font-weight:700;letter-spacing:.04em;color:#0b1524}
+.mhome .kh p{margin:0;font-size:14px;line-height:1.85;color:#5b6172}
+.mhome .mci{margin:24px 0 0;padding:4px 18px;background:#fff;border:1px solid #e6eaf3;border-radius:16px;text-align:left;box-shadow:0 10px 28px -18px rgba(15,30,80,.25)}
+.mhome .mci div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #eef1f7}.mhome .mci div:first-child{border-top:0}
+.mhome .mci dt{font-size:12px;color:#8a93a6;padding-top:2px}.mhome .mci dd{margin:0;font-size:14px;color:#0b1524;line-height:1.6}
+.mhome .mci dd b{font-weight:600}.mhome .mci dd small{display:block;font-size:12px;color:#8a93a6}.mhome .mci .num{font:600 15px Poppins;letter-spacing:.02em}
+.mhome .mfm{padding:8px 20px 48px}
+.mhome .mfm .ct-f{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+.mhome .mfm label.lb{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#0b1524}
+.mhome .mfm .req{font-size:10px;font-weight:600;color:#2847fc;background:#eef1ff;border-radius:4px;padding:2px 6px;letter-spacing:.04em}
+.mhome .mfm input,.mhome .mfm textarea{width:100%;box-sizing:border-box;height:48px;padding:0 14px;border:1px solid #dde3ef;border-radius:10px;font:15px 'Noto Sans JP';color:#0b1524;background:#fff;outline:none;-webkit-appearance:none}
+.mhome .mfm textarea{height:140px;font-size:14px;padding:12px 14px;line-height:1.7;resize:vertical}
+.mhome .mfm input:focus,.mhome .mfm textarea:focus{border-color:#2847fc;box-shadow:0 0 0 3px rgba(40,71,252,.12)}
+.mhome .mfm input::placeholder,.mhome .mfm textarea::placeholder{color:#a8b0c0}
+.mhome .mseg{display:flex;flex-direction:column;gap:8px}
+.mhome .mseg label{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid #dde3ef;border-radius:12px;background:#fff}
+.mhome .mseg input{display:none}.mhome .mseg i{flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid #c3cbdc;box-sizing:border-box}
+.mhome .mseg b{display:block;font-size:14px;font-weight:600;color:#0b1524}.mhome .mseg small{font-size:12px;color:#8a93a6}
+.mhome .mseg label:has(input:checked){border-color:#2847fc;background:#f5f7ff}.mhome .mseg label:has(input:checked) i{border:5px solid #2847fc}
+.mhome .ct-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mhome .ct-chip{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 14px;border:1px solid #dde3ef;border-radius:999px;font-size:13px;color:#3a4356;background:#fff}
+.mhome .ct-chip i{width:14px;height:14px;border-radius:4px;border:1.5px solid #c3cbdc;box-sizing:border-box}
+.mhome .ct-chip.on{border-color:#2847fc;color:#2847fc;background:#f5f7ff}.mhome .ct-chip.on i{background:#2847fc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat;border-color:#2847fc}
+.mhome .ct-agree{display:flex;align-items:center;gap:10px;margin-top:28px;font-size:14px;color:#0b1524}
+.mhome .ct-agree i{flex:none;width:18px;height:18px;border-radius:5px;border:1.5px solid #c3cbdc;box-sizing:border-box}
+.mhome .ct-agree.on i{background:#2847fc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat;border-color:#2847fc}
+.mhome .ct-agree a{color:#2847fc}
+.mhome .mnt{margin:10px 0 0;text-wrap:pretty;font-size:12px;line-height:1.7;color:#8a93a6}
+.mhome .msb{margin-top:24px;width:100%;height:54px;border:0;border-radius:999px;background:#2847fc;color:#fff;font:500 16px 'Noto Sans JP';box-shadow:0 10px 22px -10px rgba(40,71,252,.55)}
+.mhome .mmp{padding:0 20px 56px}
+.mhome .mmp .mt{font-size:14px;font-weight:600;color:#0b1524;display:flex;align-items:center;gap:6px;margin:0 0 12px}.mhome .mmp .mt svg{width:15px;height:15px;color:#2847fc}
+.mhome .mmp iframe{display:block;width:100%;height:220px;border:0;border-radius:14px;filter:saturate(.85)}
+.mhome .mmp a{display:inline-block;margin-top:12px;font-size:13px;color:#2847fc;text-decoration:none}
+.mhome [data-mcta]{display:none}</style><style>html,body{margin:0;background:#e9edf5}body{max-width:390px;margin:0 auto!important;background:#fff}.mhome{display:block!important}.mhome a{text-decoration:none}.mhome .kh .mrp{margin:18px auto 0;display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #e3e8f3;font-size:12.5px;color:#5b6172}.mhome .mrp b{color:#2847fc;font-weight:600}
+.mhome .mmp{background:#f6f8fc;padding:40px 20px 56px}.mhome .mmp .mt{justify-content:center;font-size:18px;font-weight:700;margin:0 0 18px}.mhome .mmp .mci{margin:0 0 14px}.mhome .mmp iframe{height:200px}
+.mhome .mmp .mci dd{font-size:14px}.mhome .mci dd .num{display:block;line-height:1.5}.mhome .mci div{align-items:start}.mhome .ct-chip{justify-content:center;height:44px}.mhome .mmp .mt{display:block;text-align:center}.mhome .mmp .mci{margin:0 0 16px}</style></head><body><template id="mmain">
+<section class="kh"><div class="ke"><i></i>CONTACT</div><h1>お問い合わせ</h1><p>ご用件に合わせて、<br>担当者よりご連絡いたします。</p>
+<p class="mrp">ご返信の目安<b>2営業日以内</b></p></section>
+<section class="mfm"><form class="ct-form" onsubmit="return false" novalidate>
+<div class="ct-f"><label class="lb">ご用件<span class="req">必須</span></label><div class="mseg"><label><input type="radio" name="mkind"><i></i><span><b>資料請求</b><small>サービス資料をご覧になりたい方</small></span></label><label><input type="radio" name="mkind" checked><i></i><span><b>導入のご相談</b><small>具体的な検討を進めたい方</small></span></label><label><input type="radio" name="mkind"><i></i><span><b>その他</b><small>取材・協業・採用に関するご連絡</small></span></label></div></div>
+<div class="ct-f"><label class="lb">会社名<span class="req">必須</span></label><input placeholder="例）Aurora Mobile株式会社"></div><div class="ct-f"><label class="lb">部署名</label><input placeholder="例）マーケティング部"></div><div class="ct-f"><label class="lb">お名前<span class="req">必須</span></label><input placeholder="例）山田 太郎"></div><div class="ct-f"><label class="lb">役職</label><input placeholder="例）部長"></div><div class="ct-f"><label class="lb">メールアドレス<span class="req">必須</span></label><input type="email" placeholder="例）taro.yamada@example.co.jp"></div><div class="ct-f"><label class="lb">電話番号</label><input type="tel" placeholder="例）03-1234-5678"></div>
+<div class="ct-f"><label class="lb">ご興味のあるサービス</label><div class="ct-chips"><span class="ct-chip on"><i></i>EngageLab</span><span class="ct-chip"><i></i>GPTBots.ai</span><span class="ct-chip"><i></i>Modellix</span><span class="ct-chip"><i></i>その他・未定</span></div></div>
+<div class="ct-f"><label class="lb">お問い合わせ内容<span class="req">必須</span></label><textarea placeholder="ご検討中の内容、現在の課題などをご記入ください。"></textarea></div>
+<div class="ct-agree"><i></i><span><a href="legal.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span><span class="req">必須</span></div>
+<p class="mnt">ご入力いただいた情報は、お問い合わせへの回答のために利用します。</p>
+<button class="msb" type="submit">送信する →</button></form></section>
+<section class="mmp"><p class="mt">お電話・所在地</p><dl class="mci"><div><dt>受付時間</dt><dd><b>平日 9:30〜18:30</b><small>土日祝を除く</small></dd></div><div><dt>お電話</dt><dd><a class="num" href="tel:05058987956" style="color:#0b1524;text-decoration:none">050-5898-7956</a></dd></div><div><dt>所在地</dt><dd>〒105-0001<br>東京都港区虎ノ門1-10-5<br>KDX虎ノ門一丁目ビル 11階</dd></div></dl><iframe loading="lazy" src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E8%99%8E%E3%83%8E%E9%96%801-10-5&z=16&hl=ja&output=embed"></iframe></section>
+<div data-mcta class="cta"></div>
+</template><script src="mobile.js"></script><script>document.addEventListener('click',function(e){var c=e.target.closest('#mhome .ct-chip');if(c){c.classList.toggle('on');return}var a=e.target.closest('#mhome .ct-agree');if(a&&!e.target.closest('a'))a.classList.toggle('on')});</script></body></html>

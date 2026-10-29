@@ -1,0 +1,45 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ニュース詳細 手机版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mobile.css"><style>
+.mhome .md{padding:20px 20px 8px}
+.mhome .md-bk{display:inline-block;font-size:13px;color:#5b6172;margin-bottom:20px}
+.mhome .mn-m{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.mhome .mn-m time{font:500 12px Poppins;color:#8a92a6;letter-spacing:.04em}
+.mhome .cat{font-size:11px;padding:2px 8px;border-radius:999px;background:#eef1ff;color:#2847fc}.mhome .cat-pu{background:#e8f7f4;color:#0f9b8e}.mhome .cat-ev{background:#f1edff;color:#6a4ff0}
+.mhome .md-hd h1{margin:12px 0 14px;font-size:22px;line-height:1.5;font-weight:700;letter-spacing:.02em}
+.mhome .md-by{display:flex;gap:10px;align-items:baseline;font-size:12.5px;color:#8a92a6;padding-bottom:20px;border-bottom:1px solid #eef1f7}.mhome .md-by b{font-weight:500;color:#3a4356}
+.mhome .md-ph{margin:20px -20px 0;aspect-ratio:16/10;overflow:hidden}.mhome .md-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.mhome .md-lead{margin:24px 0 0;font-size:15px;line-height:1.9;font-weight:500;color:#0b1524}
+.mhome .md-body{margin-top:8px}.mhome .md-body h2{margin:32px 0 12px;padding-left:12px;border-left:3px solid #2847fc;font-size:17px;line-height:1.5}
+.mhome .md-body p{margin:0 0 14px;font-size:14px;line-height:1.95;color:#3a4356}
+.mhome .md-body ul{margin:0 0 14px;padding:16px 16px 16px 34px;background:#f6f8fc;border-radius:12px}.mhome .md-body li{font-size:14px;line-height:1.85;color:#3a4356}
+.mhome .md-pdf{margin-top:20px;display:flex;align-items:center;gap:10px;padding:14px 16px;border:1px solid #e3e8f3;border-radius:12px;font-size:14px;font-weight:500;color:#0b1524}.mhome .md-pdf svg{flex:none;width:20px;height:20px;color:#2847fc}.mhome .md-pdf small{margin-left:auto;font:400 12px Poppins;color:#8a92a6}
+.mhome .md-sh{margin-top:28px;display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-top:1px solid #eef1f7;border-bottom:1px solid #eef1f7}.mhome .md-sh span{font:600 11px Poppins;letter-spacing:.14em;color:#8a92a6}
+.mhome .md-sh div{display:flex;gap:8px}.mhome .md-sh a{width:36px;height:36px;border-radius:50%;border:1px solid #e3e8f3;display:flex;align-items:center;justify-content:center;color:#3a4356}.mhome .md-sh svg{width:16px;height:16px}
+.mhome .md-info{margin-top:28px;display:flex;flex-direction:column;gap:12px}.mhome .md-info section{padding:20px;border-radius:14px;background:#f6f8fc}
+.mhome .md-info h3{margin:0 0 10px;font-size:14px}.mhome .md-info p{margin:0;font-size:13px;line-height:1.85;color:#5b6172}.mhome .md-info a{display:inline-block;margin-top:10px;font-size:13px;font-weight:500;color:#2847fc}
+.mhome .md-info dl{margin:0;display:grid;grid-template-columns:64px 1fr;row-gap:8px;font-size:13px}.mhome .md-info dt{color:#8a92a6}.mhome .md-info dd{margin:0;color:#3a4356}
+.mhome .md-pn{margin-top:28px;display:flex;flex-direction:column;gap:12px}.mhome .md-pn a{display:block;padding:16px;border:1px solid #e3e8f3;border-radius:12px;font-size:13.5px;line-height:1.6;color:#0b1524}.mhome .md-pn small{display:block;margin-bottom:4px;font-size:11.5px;color:#8a92a6}
+.mhome .md-pn .bk{text-align:center;padding:0;height:48px;line-height:46px;border-radius:999px;font-weight:500}
+.mhome .md-rel{padding:48px 16px 56px;text-align:center;background:#f7f9ff;margin-top:40px}.mhome .md-rel h2{margin:10px 0 16px}
+.mhome .mn-list{display:flex;flex-direction:column;text-align:left}
+.mhome .mn-c{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid #e9edf5;color:inherit}
+.mhome .mn-th{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#eef1ff}.mhome .mn-th img{width:100%;height:100%;object-fit:cover;display:block}
+.mhome .mn-c h3{margin:6px 0 0;font-size:14px;line-height:1.6;font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mhome .md-all{display:inline-block;margin-top:24px;font-size:14px;font-weight:500;color:#2847fc}
+</style><style>html,body{margin:0;background:#e9edf5}body{max-width:390px;margin:0 auto!important;background:#fff}.mhome{display:block!important}.mhome a{text-decoration:none}</style></head><body><template id="mmain">
+<article class="md">
+<div class="md-hd"><a class="md-bk" href="news.html">← ニュース一覧</a>
+<div class="mn-m"><span class="cat cat-pr">プレスリリース</span><time>2026.07.28</time></div>
+<h1>日本市場向けサポート体制の<br>拡充について</h1>
+<div class="md-by"><b>Aurora Mobile株式会社</b><span>東京都港区</span></div></div>
+<div class="md-ph"><img src="img/news-detail-main.png" alt=""></div>
+<p class="md-lead">Aurora Mobile株式会社は、日本国内のお客様へのサポート品質をさらに高めるため、国内サポート体制を拡充いたしました。日本語による技術サポートの対応時間を拡大し、導入から運用までを一貫して支援します。</p>
+<div class="md-body"><h2>拡充の背景</h2><p>近年、EngageLab・GPTBots.ai をはじめとする当社サービスを導入いただく国内企業が増加しています。それに伴い、導入時の設計支援や運用中の迅速な問い合わせ対応へのご要望が高まっていました。</p><p>今回の拡充では、次の取り組みを行います。</p><ul><li>日本語サポート窓口の対応時間を平日 9:00〜20:00 に拡大</li><li>導入支援を担うカスタマーサクセス担当の増員</li><li>国内データ保管に関するご相談窓口の新設</li></ul><h2>今後について</h2><p>当社は今後も、日本のお客様の事業成長に寄り添うパートナーとして、サービスとサポートの両面から品質向上に取り組んでまいります。</p>
+<a class="md-pdf" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg><span>プレスリリース（PDF）</span><small>245KB</small></a></div>
+<div class="md-sh"><span>SHARE</span><div><a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3H21l-7 8 8.2 10h-6.4l-5-6.3L5 21H1.8l7.5-8.6L1.5 3H8l4.6 5.8L17.8 3zm-1.1 16h1.8L7.4 4.9H5.5L16.7 19z"/></svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-3.6 0-4.5 2.7-4.5 4.4V8H7v4h2.5v11H14V12h3.4l.6-4H14z"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9.5h4V21H3V9.5zm7 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4V9.5z"/></svg></a><a href="#" aria-label="リンクをコピー"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg></a></div></div>
+<div class="md-info"><section><h3>Aurora Mobile について</h3><p>Aurora Mobile（NASDAQ: JG）は、AI とカスタマーエンゲージメントを軸に、EngageLab・GPTBots.ai などのサービスを提供するグローバル・テクノロジーグループです。</p><a href="company.html">会社概要 →</a></section>
+<section><h3>本件に関するお問い合わせ先</h3><dl><dt>会社名</dt><dd>Aurora Mobile株式会社</dd><dt>担当</dt><dd>広報担当</dd><dt>E-mail</dt><dd>pr@aurora-mobile.jp（仮）</dd></dl></section></div>
+<nav class="md-pn"><a href="news-detail.html"><small>← 前の記事</small>EngageLab、WhatsApp配信機能の提供を開始</a><a class="bk" href="news.html">一覧へ戻る</a></nav>
+</article>
+<section class="md-rel"><div class="eb c">Related</div><h2>関連ニュース</h2><div class="mn-list"><a class="mn-c" href="news-detail.html"><div class="mn-th"><img src="img/news-4.png" alt=""></div><div><div class="mn-m"><time>2026.07.10</time><span class="cat cat-pu">製品アップデート</span></div><h3>EngageLab、WhatsApp配信機能の提供を開始</h3></div></a><a class="mn-c" href="news-detail.html"><div class="mn-th"><img src="img/news-6.png" alt=""></div><div><div class="mn-m"><time>2026.06.22</time><span class="cat cat-ev">イベント</span></div><h3>NexTech Japan 2026 に出展します</h3></div></a><a class="mn-c" href="news-detail.html"><div class="mn-th"><img src="img/news-8.png" alt=""></div><div><div class="mn-m"><time>2026.06.05</time><span class="cat cat-pu">製品アップデート</span></div><h3>GPTBots.ai、日本語ナレッジ精度の改善を実施</h3></div></a></div><a class="md-all" href="news.html">ニュース一覧へ →</a></section>
+</template><script src="mobile.js"></script></body></html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modellix | Aurora Mobile 株式会社</title>
+  <meta name="description" content="App Push・Email・SMS・WhatsApp を一つのプラットフォームで。海外ユーザーにも確実に届く、企業向けメッセージング基盤 EngageLab。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style id="tag-b">.ind-card .ph .tag{background:rgba(255,255,255,.72) !important;-webkit-backdrop-filter:blur(10px) saturate(1.4);backdrop-filter:blur(10px) saturate(1.4);color:#0b1524 !important;border:1px solid rgba(255,255,255,.6) !important;box-shadow:0 2px 10px -4px rgba(11,21,36,.25) !important;font-weight:500 !important}</style>
+<style>.el-page-hero .el-hero{margin-top:36px}</style>
+<style id="indFit4">.ind-sec .ind-nav{display:none!important}.ind-sec .ind-rail{max-width:1152px;margin:48px auto 0;padding-left:0!important;padding-right:0!important;cursor:default!important}.ind-sec .ind-track{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;transform:none!important}.ind-sec .ind-card{width:auto!important;min-width:0!important;flex:none!important}</style>
+<style id="elNumsPad">.v2 .el-nums{padding-bottom:80px}</style><style id="elTop80">.el-page-hero{padding-top:0!important}.el-hero{margin-top:0!important;padding-top:80px!important}.el-hero>div:first-child{padding-top:0!important}@media (max-width:1024px){.el-hero{padding-top:56px!important}}</style><style id="indNavFix">.ind-nav .ar{background:none;padding:0;font:inherit;cursor:default}.ind-nav .ar.on{cursor:pointer}.ind-nav .ar.on:hover{background:var(--ink-900);color:#fff}.ind-rail .ind-track{transition:transform .5s cubic-bezier(.22,.61,.36,1)}.ind-rail .ind-card{transition:opacity .4s ease}.ind-rail .ind-card.gone{opacity:0;pointer-events:none}</style><style id="flowFx">.fx-src,.fx-ch{transition:border-color .35s,color .35s,box-shadow .35s,background-color .35s}.fx-src.lit{border-color:rgba(149,222,253,.75)!important;color:#fff!important;box-shadow:0 0 18px rgba(149,222,253,.25)}.fx-ch.lit{border-color:rgba(129,239,198,.75)!important;color:#fff!important;box-shadow:0 0 18px rgba(129,239,198,.22)}.fx-plat{transition:box-shadow .4s,filter .4s}.fx-plat.lit{filter:brightness(1.12);box-shadow:0 0 0 1px rgba(255,255,255,.25),0 18px 60px rgba(60,90,255,.6)!important}.fx-pre .fx-src,.fx-pre .fx-ch{opacity:0;transform:translateY(8px)}.fx-pre path.fx-base{stroke-dashoffset:100}</style><style id="platx">
+.px{font-family:inherit;color:#e8eefc}
+.px .cap{font-size:12px;letter-spacing:.14em;color:rgba(232,238,252,.5);margin-bottom:12px}
+.px .bx{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:14px}
+.px .chip{color:#e8eefc!important;display:flex;align-items:center;gap:8px;font-size:13px;padding:9px 12px;border-radius:9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.px .chip i{width:6px;height:6px;border-radius:50%;background:#7fb4ff;flex:none}
+.px .hi{background:linear-gradient(135deg,#3a5bff,#2a3fe6);border-color:rgba(160,185,255,.5);box-shadow:0 10px 40px rgba(50,80,255,.35)}
+.lab{display:inline-flex;gap:10px;align-items:center;margin:0 auto 24px;font-size:14px;color:#0a1324;font-weight:700}
+.lab span{background:#2a3fe6;color:#fff;border-radius:6px;padding:3px 10px}
+.wrapx{padding:56px 0 24px;text-align:center}
+</style><style id="heroWin">
+.gb-win{position:relative;margin:24px 30px 24px 0;background:#fff;border:1px solid #e3e8f2;border-radius:14px;box-shadow:0 30px 60px -30px #1b2a6b33;overflow:hidden}
+
+.gb-win .bar{height:38px;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid #eef1f6;background:#fafbfd}
+
+.gb-win .bar i{width:9px;height:9px;border-radius:50%;background:#dfe3ec}
+
+.gb-win .bar span{margin-left:12px;font-size:11px;color:#98a0ae;letter-spacing:.04em}
+
+.gb-win .bd{display:grid;grid-template-columns:150px 1fr;height:330px}
+
+.gb-side{border-right:1px solid #eef1f6;padding:16px 10px;background:#fbfcfe}
+
+.gb-side .w{display:flex;align-items:center;gap:8px;padding:0 6px 14px;font-size:12px;font-weight:700;color:#0a1324}
+
+.gb-side .w img{width:16px;height:16px}
+
+.gb-side div.it{display:flex;align-items:center;gap:8px;height:30px;padding:0 8px;border-radius:7px;font-size:12px;color:#5b6172}
+
+.gb-side div.it.on{background:#f1f3f6;color:#0a1324;font-weight:600}.gb-side div.it.on svg{color:#17654f;stroke:#17654f}
+
+.gb-chat{padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+
+.gb-chat .u{align-self:flex-end;max-width:78%;background:#e3f5ec;color:#0f3d31;border:1px solid #cdebdc;font-size:12.5px;line-height:1.7;padding:10px 14px;border-radius:12px 12px 2px 12px}
+
+.gb-chat .ai{display:flex;gap:10px;max-width:90%}
+
+.gb-chat .ai .av{flex:none;width:26px;height:26px;border-radius:8px;background:#0f3d31;display:flex;align-items:center;justify-content:center}
+
+.gb-chat .ai .av img{width:14px;filter:brightness(0) saturate(100%) invert(86%) sepia(18%) saturate(640%) hue-rotate(95deg)}
+
+.gb-chat .ai .tx{font-size:12.5px;line-height:1.8;color:#0a1324;background:#f5f7fb;padding:10px 14px;border-radius:2px 12px 12px 12px}
+
+.gb-chat .src{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+
+.gb-chat .src span{font-size:10.5px;color:#17654f;background:#fff;border:1px solid #cdebdc;border-radius:20px;padding:2px 8px}
+
+.gb-chat .inp{margin-top:auto;height:36px;border:1px solid #e3e8f2;border-radius:9px;display:flex;align-items:center;justify-content:space-between;padding:0 6px 0 12px;font-size:11.5px;color:#a8afbc}
+
+.gb-chat .inp i{width:24px;height:24px;border-radius:6px;background:#0f4a3a;display:flex;align-items:center;justify-content:center;color:#fff}
+
+.gb-node{position:absolute;background:#fff;border:1px solid #e3e8f2;border-radius:12px;box-shadow:0 18px 40px -20px #1b2a6b40;padding:12px 14px;display:flex;gap:10px;align-items:center;font-size:12px;color:#0a1324;white-space:nowrap}
+
+.gb-node .i{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+
+.gb-node small{display:block;font-size:10.5px;color:#98a0ae;margin-top:2px}
+
+.gb-node.n1{right:-6px;top:-6px}
+.gb-node.n2{left:-26px;bottom:-4px}
+.gb-node.n3{right:-6px;bottom:72px}
+
+.gb-sec{padding:120px 0}
+
+.gb-k{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc}
+.gb-k:before{content:"";width:24px;height:1px;background:#2847fc}
+
+.gb-h2{margin:20px 0 0;font-size:32px;line-height:1.55;font-weight:700;color:#0a1324;font-feature-settings:'palt'}
+
+.gb-prob{display:grid;grid-template-columns:360px minmax(0,1fr);gap:80px}
+
+.gb-prob .l p{margin:20px 0 0;font-size:15px;line-height:2;color:#5b6172}
+
+.gb-rows{position:relative;padding-left:40px}
+
+.gb-rows:before{content:"";position:absolute;left:7px;top:14px;bottom:44px;width:1px;background:linear-gradient(#d6dcea,#2847fc)}
+
+.gb-row{position:relative;display:grid;grid-template-columns:56px 240px minmax(0,1fr);align-items:baseline;padding:26px 0;border-bottom:1px solid #eef1f6}
+
+.gb-row:before{content:"";position:absolute;left:-38px;top:34px;width:11px;height:11px;border-radius:50%;background:#fff;border:1.5px solid #c3cbe0}
+
+.gb-row .n{font-size:13px;font-weight:700;color:#98a0ae;font-feature-settings:'tnum'}
+
+.gb-row h3{margin:0;font-size:18px;font-weight:700;color:#0a1324}
+
+.gb-row p{margin:0;font-size:14px;line-height:1.9;color:#5b6172}
+
+.gb-con{position:relative;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 30px;border-radius:14px;background:linear-gradient(100deg,#2847fc,#4a6bff);color:#fff}
+
+.gb-con:before{content:"";position:absolute;left:-40px;top:50%;width:11px;height:11px;margin-top:-6px;border-radius:50%;background:#2847fc;box-shadow:0 0 0 5px #2847fc22}
+
+.gb-con b{font-size:19px;font-weight:700}
+.gb-con span{font-size:13px;opacity:.85}
+
+.gb-plat{background:#f6f9fd}
+
+.gb-ph{text-align:center}
+.gb-ph .gb-k{justify-content:center}
+.gb-ph p{margin:18px auto 0;max-width:720px;font-size:15px;line-height:2;color:#5b6172}
+
+.gb-steps{margin-top:56px;display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);align-items:stretch}
+
+.gb-step{background:#fff;border:1px solid #e6eaf2;border-radius:16px;padding:32px 32px 30px}
+
+.gb-step .t{display:flex;align-items:center;justify-content:space-between}
+
+.gb-step .t em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.12em;color:#2847fc}
+
+.gb-step .t span{font-size:11px;color:#98a0ae;border:1px solid #e6eaf2;border-radius:20px;padding:3px 10px}
+
+.gb-step h3{margin:14px 0 0;font-size:22px;font-weight:700;color:#0a1324}
+
+.gb-step .s{margin:6px 0 0;font-size:14px;color:#5b6172}
+
+.gb-step .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+
+.gb-step .chips span{font-size:12.5px;color:#0a1324;background:#f5f7fb;border-radius:6px;padding:6px 10px}
+
+.gb-step.s2{border-color:#cdd7ff;box-shadow:0 24px 50px -30px #2847fc55}
+
+.gb-step.s2 .chips span{background:#eef2ff;color:#2847fc}
+
+.gb-arr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:11px;color:#2847fc;writing-mode:horizontal-tb}
+
+.gb-arr i{display:block;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #cdd7ff;display:flex;align-items:center;justify-content:center}
+
+.gb-arch{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.1fr) 120px minmax(0,1fr);align-items:center;padding:30px 32px;background:#fff;border:1px solid #e6eaf2;border-radius:16px}
+
+.gb-arch .gb-ac .c{font-size:11px;font-weight:700;letter-spacing:.12em;color:#98a0ae;margin-bottom:12px}
+
+.gb-arch .gb-ac .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+
+.gb-arch .gb-ac .g span{font-size:12.5px;color:#0a1324;border:1px solid #e6eaf2;border-radius:8px;padding:8px 10px;text-align:center}
+
+.gb-arch .gb-core{text-align:center;padding:22px 16px;border-radius:12px;background:linear-gradient(135deg,#2847fc,#5a7dff);color:#fff}
+
+.gb-arch .gb-core img{width:26px;filter:brightness(0) invert(1)}
+
+.gb-arch .gb-core b{display:block;margin-top:8px;font-size:15px}
+.gb-arch .gb-core small{font-size:11.5px;opacity:.85}
+
+.gb-arch .gb-ln{height:1px;background:repeating-linear-gradient(90deg,#9fb0ff 0 4px,transparent 4px 8px);position:relative;margin:0 10px}
+
+.gb-arch .gb-ln:after{content:"";position:absolute;right:-2px;top:-3px;border-left:6px solid #9fb0ff;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
+
+.gb-scn{display:grid;grid-template-columns:400px minmax(0,1fr);gap:64px;margin-top:56px;align-items:stretch}
+
+.gb-tabs{display:flex;flex-direction:column}
+
+.gb-tab{position:relative;text-align:left;background:none;border:0;border-bottom:1px solid #eef1f6;padding:24px 0 24px 24px;cursor:pointer;font-family:inherit}
+
+.gb-tab:before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:2px;background:#eef1f6;transition:background .3s}
+
+.gb-tab .n{font-size:12px;font-weight:700;color:#98a0ae}
+
+.gb-tab b{display:block;margin-top:6px;font-size:19px;font-weight:700;color:#98a0ae;transition:color .3s}
+
+.gb-tab p{margin:0;max-height:0;overflow:hidden;opacity:0;font-size:14px;line-height:1.9;color:#5b6172;transition:all .4s}
+
+.gb-tab.on:before{background:#2847fc}
+.gb-tab.on b{color:#0a1324}
+.gb-tab.on .n{color:#2847fc}
+.gb-tab.on p{max-height:80px;opacity:1;margin-top:8px}
+
+.gb-pic{position:relative;border-radius:16px;overflow:hidden;min-height:400px;background:#eef1f6}
+
+.gb-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.03);transition:opacity .6s,transform 1.2s}
+
+.gb-pic img.on{opacity:1;transform:none}
+
+.gb-pic .tg{position:absolute;left:20px;bottom:20px;font-size:13px;font-weight:500;color:#0a1324;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:20px;padding:6px 14px}
+
+.gb-case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#fff;border:1px solid #e6eaf2;border-radius:16px;overflow:hidden;text-decoration:none;margin-top:48px}
+
+.gb-case .im{position:relative;min-height:340px}
+.gb-case .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.gb-case .tx{padding:48px 52px;display:flex;flex-direction:column}
+
+.gb-case .k{font-size:12px;font-weight:500;color:#2847fc}
+
+.gb-case .v{margin-top:18px;font-size:72px;font-weight:700;line-height:1;color:#0a1324;font-feature-settings:'tnum'}
+
+.gb-case h3{margin:20px 0 0;font-size:19px;line-height:1.7;font-weight:700;color:#0a1324}
+
+.gb-case .m{margin-top:14px;font-size:13px;line-height:1.9;color:#5b6172}
+
+.gb-case .lk{margin-top:auto;padding-top:24px;font-size:14px;font-weight:500;color:#2847fc}
+
+.gb-inds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:0;margin-top:20px;border-top:1px solid #e6eaf2}
+
+.gb-inds a{display:flex;align-items:baseline;gap:14px;padding:20px 24px 20px 0;text-decoration:none;color:#0a1324;font-size:14px}
+
+.gb-inds a b{font-size:13px;color:#2847fc;font-weight:700}
+
+.gb-inds a.more{color:#2847fc;font-weight:500;justify-content:flex-end;padding-right:0}</style><style id="heroFit">.el-page-hero .el-hero{grid-template-columns:minmax(0,1.06fr) minmax(0,1fr)!important;gap:36px!important}.el-page-hero .el-hero h1{font-size:38px;line-height:1.55}.el-page-hero .el-hero .lead br{display:none}.el-page-hero .el-hero.el-hero{align-items:center!important}.hv-scale{margin-top:0}@media(min-width:1280px){.el-page-hero .el-hero h1{white-space:nowrap}}@media(max-width:1100px){.el-page-hero .el-hero{grid-template-columns:1fr!important}.hv-scale{max-width:560px;margin:24px auto 0}}</style><style id="numsCenter">.el-nums>div:not(.rule){text-align:center;flex:1 1 0;min-width:0;padding-left:32px!important;padding-right:32px!important;box-sizing:border-box}.el-nums{justify-content:space-between;margin-top:64px!important;padding-bottom:64px!important;padding-top:48px!important}</style><style id="dvfx">
+#dvf .dv-live{display:inline-block;font-weight:400;transition:transform .5s,text-shadow .5s}
+#dvf .dv-live.on{transform:scale(1.35);text-shadow:0 0 10px #95defd}
+#dvf .dv-br{display:block;padding:1px 4px;margin:0 -4px;border-radius:4px;transition:background .5s,color .5s}
+#dvf .dv-br.on{background:rgba(127,180,255,.18);color:#fff}
+#dvf .dv-n{z-index:2;opacity:0;transform:translateY(8px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .5s,border-color .5s,background .5s}
+#dvf.in .dv-n{opacity:1;transform:none}
+#dvf .dv-n.on{border-color:rgba(149,222,253,.85)!important;box-shadow:0 0 0 4px rgba(127,180,255,.14),0 0 24px rgba(127,180,255,.28)!important}
+#dvf .dv-n.dv-sel{background:#1c2c5a!important;border-color:rgba(130,160,255,.45)!important;box-shadow:none!important}
+#dvf .dv-n.dv-sel.on{background:linear-gradient(135deg,#3a5bff,#2a3fe6)!important;border-color:rgba(170,195,255,.75)!important;box-shadow:0 0 0 5px rgba(80,120,255,.2),0 10px 32px rgba(50,80,255,.45)!important}
+#dvf .dv-n .dv-tag{transition:background .5s,color .5s}
+#dvf .dv-n.on .dv-tag{background:rgba(149,222,253,.3)!important;color:#fff!important}
+#dvf .dv-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:1;pointer-events:none}
+#dvf .dv-svg .ln{fill:none;stroke:rgba(150,180,255,.42);stroke-width:1.4;transition:stroke .5s}
+#dvf .dv-svg .ln.lit{stroke:rgba(149,222,253,.85)}
+#dvf .dv-svg .tr{fill:none;stroke-linecap:round;transition:opacity .4s}
+#dvf .dv-svg .hd{fill:#d6f5ff;transition:opacity .3s}
+@media (prefers-reduced-motion:reduce){#dvf .dv-n{opacity:1;transform:none}}
+</style>
+<style id="mlx">
+.mx-win{position:relative;margin:24px 30px 24px 0;background:#fff;border:1px solid #e3e8f2;border-radius:14px;box-shadow:0 30px 60px -30px #1b2a6b33;overflow:hidden}
+.mx-win .bar{height:38px;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid #eef1f6;background:#fafbfd}
+.mx-win .bar i{width:9px;height:9px;border-radius:50%;background:#dfe3ec}
+.mx-win .bar span{margin-left:12px;font-size:11px;color:#98a0ae}
+.mx-bd{display:grid;grid-template-columns:200px 1fr;height:330px}
+.mx-list{border-right:1px solid #eef1f6;padding:14px 10px;background:#fbfcfe;display:flex;flex-direction:column;gap:4px}
+.mx-list .tb{display:flex;gap:4px;margin-bottom:8px}
+.mx-list .tb span{font-size:10.5px;padding:3px 8px;border-radius:20px;color:#5b6172;background:#f1f3f7}
+.mx-list .tb span.on{background:#6a4cf5;color:#fff}
+.mx-list .m{display:flex;justify-content:space-between;align-items:center;height:32px;padding:0 10px;border-radius:7px;font-size:12px;color:#3a4152}
+.mx-list .m small{font-size:10px;color:#a3a9b6}
+.mx-list .m.on{background:#f1eeff;color:#0a1324;font-weight:600}
+.mx-list .m.on small{color:#6a4cf5}
+.mx-main{padding:16px 18px;display:grid;grid-template-rows:auto 1fr auto;gap:12px}
+.mx-prm{font-size:11.5px;color:#5b6172;border:1px solid #e3e8f2;border-radius:8px;padding:8px 10px;line-height:1.6}
+.mx-prm b{color:#6a4cf5;font-weight:600;margin-right:6px}
+.mx-out{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mx-out div{border-radius:10px;position:relative;overflow:hidden}
+.mx-out .o1{background:radial-gradient(circle at 30% 70%,#ffd9c2 0,transparent 45%),radial-gradient(circle at 75% 30%,#c9c0ff 0,transparent 50%),linear-gradient(160deg,#eef0ff,#fdf4ef)}
+.mx-out .o1:after{content:"";position:absolute;left:28%;top:26%;width:44%;height:52%;border-radius:50% 50% 12px 12px;background:linear-gradient(180deg,#8f7bff,#5a46e0);opacity:.85}
+.mx-out .o2{background:radial-gradient(circle at 70% 75%,#bdeaff 0,transparent 45%),linear-gradient(200deg,#f2efff,#e9f6ff)}
+.mx-out .o2:after{content:"";position:absolute;left:22%;bottom:18%;width:56%;height:40%;border-radius:12px;background:linear-gradient(135deg,#a9d8ff,#7c6cf5);opacity:.75;transform:rotate(-6deg)}
+.mx-out span{position:absolute;left:8px;bottom:8px;z-index:1;font-size:10px;background:rgba(255,255,255,.85);border-radius:20px;padding:2px 8px;color:#3a4152}
+.mx-ft{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#98a0ae;font-feature-settings:'tnum'}
+.mx-ft b{font-weight:600;color:#0a1324}
+.mx-code{font:11px/1.7 ui-monospace,Menlo,monospace;color:#c8d0ff}
+.probs-con{margin:40px auto 0;max-width:1152px;display:flex;align-items:center;justify-content:center;gap:16px;text-align:center;flex-direction:column}
+.probs-con .ar{width:1px;height:36px;background:linear-gradient(#d6dcea,#2847fc)}
+.probs-con b{font-size:22px;font-weight:700;color:#0a1324}
+.probs-con span{font-size:14px;color:#5b6172}
+.mx-arch{border-radius:14px;border:1px solid rgba(255,255,255,.14);background:#0d1830;box-shadow:0 30px 80px rgba(0,0,0,.35);padding:28px 26px;display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,.9fr) 40px minmax(0,1fr);align-items:center;min-height:380px;box-sizing:border-box}
+.mx-arch .cap{font-size:11px;letter-spacing:.12em;color:rgba(232,238,252,.5);margin-bottom:12px}
+.mx-arch .col{display:flex;flex-direction:column;gap:8px}
+.mx-arch .chip{font-size:12.5px;color:#e8eefc;padding:9px 12px;border-radius:9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;gap:8px}
+.mx-arch .chip i{width:6px;height:6px;border-radius:50%;background:#a99bff;flex:none}
+.mx-arch .chip.more{color:rgba(232,238,252,.5);border-style:dashed}
+.mx-arch .ln{height:1px;background:repeating-linear-gradient(90deg,rgba(169,155,255,.7) 0 4px,transparent 4px 8px);position:relative}
+.mx-arch .ln:after{content:"";position:absolute;right:-1px;top:-3px;border-left:6px solid rgba(169,155,255,.8);border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
+.mx-core{text-align:center;padding:26px 14px;border-radius:14px;background:linear-gradient(135deg,#7a5cff,#5137e0);border:1px solid rgba(200,190,255,.5);box-shadow:0 10px 40px rgba(106,76,245,.4);color:#fff}
+.mx-core .lg{width:40px;height:40px;margin:0 auto;border-radius:11px;background:rgba(255,255,255,.18)}
+.mx-core b{display:block;margin-top:12px;font-size:15px}
+.mx-core small{display:block;margin-top:6px;font-size:11px;opacity:.8;line-height:1.7}
+.mx-core .sub{margin-top:14px;display:grid;gap:6px}
+.mx-core .sub span{font-size:11px;padding:5px 6px;border-radius:6px;background:rgba(255,255,255,.12)}
+.ind-card .ph.il{background:#f4f2ff}
+.il-box{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.feat-mx{position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(150deg,#f3f0ff 0%,#fff 70%);border:1px solid #6a4cf522;padding:48px 52px;display:flex;flex-direction:column;min-height:380px;box-sizing:border-box}
+.feat-mx .k{font-size:12px;font-weight:500;color:#6a4cf5;display:flex;gap:10px;align-items:center}
+.feat-mx .k:before{content:"";width:20px;height:1px;background:#6a4cf5}
+.feat-mx .v{margin-top:22px;font:600 88px/1 Poppins,sans-serif;color:#0a1324;letter-spacing:-.02em}
+.feat-mx .v small{font-size:44px;color:#6a4cf5}
+.feat-mx h3{margin:16px 0 0;font-size:22px;font-weight:700;color:#0a1324}
+.feat-mx p{margin:14px 0 0;max-width:440px;font-size:14px;line-height:1.95;color:#5b6172}
+.feat-mx .pv{margin-top:auto;padding-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+.feat-mx .pv span{font-size:12px;color:#3a4152;background:#fff;border:1px solid #e6e2fb;border-radius:20px;padding:5px 12px}
+.use-mini{display:block;background:#fff;border:1px solid #e6eaf2;border-radius:14px;padding:26px 26px 24px;text-decoration:none}
+.use-mini .ic{width:40px;height:40px;border-radius:10px;background:#f1eeff;color:#6a4cf5;display:flex;align-items:center;justify-content:center}
+.use-mini b{display:block;margin-top:16px;font-size:17px;font-weight:700;color:#0a1324}
+.use-mini p{margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#5b6172}
+.dev-strip{display:flex;align-items:center;gap:40px;padding:26px 36px;border:1px solid #e6eaf2;border-radius:14px;background:#fff}
+.dev-strip .t{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:700;color:#0a1324;flex:none}
+.dev-strip .t i{width:36px;height:36px;border-radius:9px;background:#0d1830;color:#a99bff;display:flex;align-items:center;justify-content:center;font:500 13px ui-monospace,Menlo,monospace;font-style:normal}
+.dev-strip .ls{display:flex;flex:1;justify-content:flex-end;gap:12px}
+.dev-strip .ls a{display:flex;align-items:center;gap:10px;height:44px;padding:0 20px;border-radius:40px;border:1px solid #dfe3ec;font-size:14px;color:#0a1324;text-decoration:none}
+.dev-strip .ls a span{color:#98a0ae}
+</style>
+</head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo.svg" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="index.html#products">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="index.html#products">
+              <strong>Modellix</strong>
+              <span>AIモデルをひとつのAPIで</span>
+            </a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+        <a class="nav-link" href="pricing.html">料金</a>
+      
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-cta">
+        <a href="index.html#resources" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    
+  <!-- ============ HERO ============ -->
+  <section class="el-page-hero" id="top">
+    <div class="container">
+      <div class="el-hero">
+        <div>
+          <div class="el-mark">
+            <span class="m" style="background:#6a4cf5;box-shadow:none"><span style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font:500 20px Poppins,sans-serif;color:#fff">M</span></span>
+            <b>Modellix</b>
+          </div>
+          <h1>すべてのAIメディア生成を、<br /><span class="accent">ひとつのプラットフォームで。</span></h1>
+          <p class="lead">画像・動画・音声・テキストを、ひとつのAPIで。世界水準のAIモデルを、統合されたゲートウェイから利用できます。</p>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary">無料で始める
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#" class="btn btn-ghost">ドキュメントを見る</a>
+          </div>
+          <div class="hero-meta">
+            <span><i class="tick">✓</i> 172以上のモデルを、ひとつのAPIで</span>
+            <span><i class="tick">✓</i> 透明な従量課金（サブスクリプション不要）</span>
+            <span><i class="tick">✓</i> ISO/IEC 27001・27701 取得</span>
+          </div>
+        </div>
+        <div class="hv-scale" style="position:relative">
+ <div class="mx-win"><div class="bar"><i></i><i></i><i></i><span>Modellix Console ／ Playground</span></div>
+  <div class="mx-bd">
+   <div class="mx-list">
+    <div class="tb"><span class="on">画像</span><span>動画</span><span>音声</span><span>テキスト</span></div>
+    <div class="m on">Seedream 4.0<small>ByteDance</small></div>
+    <div class="m">Imagen 4<small>Google</small></div>
+    <div class="m">Qwen-Image<small>Alibaba</small></div>
+    <div class="m">Kling Image<small>Kling</small></div>
+    <div class="m" style="color:#98a0ae">＋ 168 models</div>
+   </div>
+   <div class="mx-main">
+    <div class="mx-prm"><b>Prompt</b>春の新作バッグの商品画像、やわらかい自然光、白背景</div>
+    <div class="mx-out"><div class="o1"><span>1024 × 1024</span></div><div class="o2"><span>1024 × 1024</span></div></div>
+    <div class="mx-ft"><span>生成時間 <b>6.2s</b></span><span>今回の利用料 <b>$0.06</b></span></div>
+   </div>
+  </div></div>
+ <div class="gb-node n1" style="right:-6px;top:-6px"><span class="i" style="background:#f1eeff;color:#6a4cf5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></svg></span><div>Unified API<small>パラメータを標準化</small></div></div>
+ <div class="gb-node n2" style="left:-26px;bottom:-4px;background:#0d1830;border-color:#0d1830"><div class="mx-code"><span style="color:#7d86a8">$</span> npx modellix generate \<br />&nbsp;&nbsp;--model seedream-4.0</div></div>
+</div>
+      </div>
+      <div class="el-nums reveal">
+        <div><div class="v">172<small>+</small></div><div class="l">対応モデル数</div></div>
+        <div class="rule"></div>
+        <div><div class="v">3</div><div class="l">プロダクト（メディアAPI・LLMゲートウェイ・CLI）</div></div>
+        <div class="rule"></div>
+        <div><div class="v" style="font-size:30px;line-height:1.6">ISO/IEC 27001・27701</div><div class="l">情報セキュリティ認証</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 課題 ============ -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">課題</span>
+        <h2>このような課題はありませんか？</h2>
+      </div>
+      <div class="probs">
+        <div class="prob reveal"><div class="n">01</div><h3>モデルごとに<br />APIが違う</h3><p>パラメータ構造がバラバラで、モデルの追加や切り替えのたびに実装が必要。</p></div>
+        <div class="prob reveal"><div class="n">02</div><h3>コストの内訳が<br />見えない</h3><p>従量課金の内訳が分からず、予算管理や社内説明が難しい。</p></div>
+        <div class="prob reveal"><div class="n">03</div><h3>本番運用で<br />ログが追えない</h3><p>呼び出し履歴や課金履歴が残らず、障害時の切り分けに時間がかかる。</p></div>
+      </div>
+      <div class="probs-con reveal"><i class="ar"></i><b>Modellixは、これらの課題をひとつのAPIで解決します。</b><span>標準化されたパラメータ、透明な料金、完全なログ。</span></div>
+    </div>
+  </section>
+
+  <!-- ============ Platform ============ -->
+  <div class="sol reveal">
+    <div class="sol-head">
+      <div class="k">プラットフォーム</div>
+      <h2>複雑なモデル群を、<b>標準化されたひとつのゲートウェイに。</b></h2>
+      <p>画像・動画・音声はメディアAPI、テキストはOpenAI／Anthropic互換のLLMゲートウェイ。用途に応じて使い分けられ、パラメータは標準化されています。</p>
+    </div>
+    <div class="sol-inner">
+      <div class="sol-list">
+        <div><div class="k">Media API</div><div class="st">メディアAPI</div><div class="sd">画像・動画・音声の生成を、共通のパラメータで</div></div>
+        <div><div class="k">LLM Gateway</div><div class="st">LLMゲートウェイ</div><div class="sd">Chat Completions／Responses／Messages に対応</div></div>
+        <div><div class="k">CLI · Console</div><div class="st">CLIと管理機能</div><div class="sd">CLI（npm）／モデルハブ（172+）／コールログ／課金履歴</div></div>
+      </div>
+      <div><div class="mx-arch">
+        <div><div class="cap">モデルプロバイダー</div><div class="col"><span class="chip"><i></i>Alibaba</span><span class="chip"><i></i>ByteDance</span><span class="chip"><i></i>Google</span><span class="chip"><i></i>Kling</span><span class="chip more">ほか</span></div></div>
+        <div class="ln"></div>
+        <div class="mx-core"><div class="lg"><span style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font:500 20px Poppins,sans-serif;color:#fff">M</span></div><b>Modellix Gateway</b><small>標準化パラメータ<br />ログ・課金を一元管理</small><div class="sub"><span>Media API</span><span>LLM Gateway</span></div></div>
+        <div class="ln"></div>
+        <div><div class="cap">利用方法</div><div class="col"><span class="chip"><i style="background:#95defd"></i>API</span><span class="chip"><i style="background:#95defd"></i>SDK</span><span class="chip"><i style="background:#95defd"></i>CLI</span><span class="chip"><i style="background:#95defd"></i>コンソール</span></div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ============ 活用シーン ============ -->
+  <section class="ind-sec">
+    <div class="container">
+      <div class="ind-head">
+        <div>
+          <h2>活用シーン</h2>
+          <p>用途に合わせて、最適なモデルを選べます。</p>
+        </div>
+        <div class="ind-nav">
+          <span class="cnt"><b>1</b> / 4</span>
+          <div class="arrows"><button type="button" class="ar" aria-label="前へ">←</button><button type="button" class="ar on" aria-label="次へ">→</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="ind-rail">
+      <div class="ind-track">
+        <div class="ind-card"><div class="ph il"><div class="il-box" style="background:radial-gradient(circle at 80% 20%,#e3dcff 0,transparent 50%),linear-gradient(160deg,#f6f3ff,#fff4ee)"><div style="display:grid;grid-template-columns:repeat(3,64px);gap:10px;transform:rotate(-4deg)"><i style="height:64px;border-radius:10px;background:linear-gradient(160deg,#c9bfff,#fff);box-shadow:0 10px 24px -14px #3a2fa060;"></i><i style="height:84px;border-radius:10px;background:linear-gradient(160deg,#ffd8c4,#fff);box-shadow:0 10px 24px -14px #3a2fa060;"></i><i style="height:64px;border-radius:10px;background:linear-gradient(160deg,#bfe6ff,#fff);box-shadow:0 10px 24px -14px #3a2fa060;"></i><i style="height:84px;border-radius:10px;background:linear-gradient(160deg,#ffe9b8,#fff);box-shadow:0 10px 24px -14px #3a2fa060;"></i><i style="height:64px;border-radius:10px;background:linear-gradient(160deg,#8f7bff,#fff);box-shadow:0 10px 24px -14px #3a2fa060;outline:2px solid #6a4cf5;outline-offset:3px"></i><i style="height:84px;border-radius:10px;background:linear-gradient(160deg,#d9f2e6,#fff);box-shadow:0 10px 24px -14px #3a2fa060;"></i></div></div><span class="tag">画像生成</span></div><h3>テキストからの生成、画像の加工まで。ポスター・図版・商品画像などの制作に。</h3></div>
+        <div class="ind-card"><div class="ph il"><div class="il-box" style="background:linear-gradient(160deg,#eef4ff,#f5f1ff)"><div style="width:72%"><div style="height:110px;border-radius:12px;background:linear-gradient(135deg,#a9c8ff,#7c6cf5);position:relative;box-shadow:0 18px 30px -18px #3a2fa080"><i style="position:absolute;left:50%;top:50%;margin:-18px 0 0 -18px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9)"></i><i style="position:absolute;left:50%;top:50%;margin:-7px 0 0 -4px;border-left:12px solid #6a4cf5;border-top:7px solid transparent;border-bottom:7px solid transparent"></i></div><div style="display:flex;gap:4px;margin-top:12px"><i style="flex:1;height:26px;border-radius:4px;background:#c9bfff"></i><i style="flex:1;height:26px;border-radius:4px;background:#c9bfff"></i><i style="flex:1;height:26px;border-radius:4px;background:#c9bfff"></i><i style="flex:1;height:26px;border-radius:4px;background:#e6e2f8"></i><i style="flex:1;height:26px;border-radius:4px;background:#e6e2f8"></i><i style="flex:1;height:26px;border-radius:4px;background:#e6e2f8"></i><i style="flex:1;height:26px;border-radius:4px;background:#e6e2f8"></i></div><div style="margin-top:8px;height:3px;border-radius:2px;background:#e6e2f8"><i style="display:block;width:42%;height:100%;border-radius:2px;background:#6a4cf5"></i></div></div></div><span class="tag">動画生成</span></div><h3>テキストから動画、画像から動画まで。ショート動画や広告素材の制作に。</h3></div>
+        <div class="ind-card"><div class="ph il"><div class="il-box" style="background:radial-gradient(circle at 20% 80%,#dff3ff 0,transparent 50%),linear-gradient(160deg,#f5f2ff,#fff)"><div style="display:flex;align-items:center;gap:5px;height:120px"><i style="width:6px;height:18px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:34px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:56px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:40px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:80px;border-radius:3px;background:#6a4cf5"></i><i style="width:6px;height:104px;border-radius:3px;background:#6a4cf5"></i><i style="width:6px;height:70px;border-radius:3px;background:#6a4cf5"></i><i style="width:6px;height:46px;border-radius:3px;background:#6a4cf5"></i><i style="width:6px;height:90px;border-radius:3px;background:#6a4cf5"></i><i style="width:6px;height:62px;border-radius:3px;background:#6a4cf5"></i><i style="width:6px;height:30px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:52px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:76px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:40px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:24px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:44px;border-radius:3px;background:#c9bfff"></i><i style="width:6px;height:20px;border-radius:3px;background:#c9bfff"></i></div></div><span class="tag">音声</span></div><h3>読み上げ・文字起こし・音声変換。ナレーションや字幕の制作に。</h3></div>
+        <div class="ind-card"><div class="ph il"><div class="il-box" style="background:linear-gradient(160deg,#f3f0ff,#eef6ff)"><div style="width:70%;display:flex;flex-direction:column;gap:10px"><div style="align-self:flex-end;width:62%;padding:12px;border-radius:12px 12px 2px 12px;background:#6a4cf5"><i style="display:block;height:5px;border-radius:3px;background:rgba(255,255,255,.7)"></i><i style="display:block;margin-top:6px;width:60%;height:5px;border-radius:3px;background:rgba(255,255,255,.5)"></i></div><div style="width:78%;padding:12px;border-radius:2px 12px 12px 12px;background:#fff;box-shadow:0 12px 24px -16px #3a2fa060"><i style="display:block;margin-top:6px;width:100%;height:5px;border-radius:3px;background:#dcd6f6"></i><i style="display:block;margin-top:6px;width:90%;height:5px;border-radius:3px;background:#dcd6f6"></i><i style="display:block;margin-top:6px;width:70%;height:5px;border-radius:3px;background:#dcd6f6"></i></div><div style="display:flex;gap:6px"><span style="font:500 10px Poppins,sans-serif;color:#6a4cf5;background:#fff;border:1px solid #e1dbfb;border-radius:20px;padding:3px 9px">GPT</span><span style="font:500 10px Poppins,sans-serif;color:#6a4cf5;background:#fff;border:1px solid #e1dbfb;border-radius:20px;padding:3px 9px">Claude</span><span style="font:500 10px Poppins,sans-serif;color:#6a4cf5;background:#fff;border:1px solid #e1dbfb;border-radius:20px;padding:3px 9px">Gemini</span></div></div></div><span class="tag">テキスト</span></div><h3>LLMゲートウェイ経由で、主要な言語モデルを同じAPIキーで利用。</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 資料ダウンロード帯 ============ -->
+  <section style="padding:0 0 110px">
+    <div class="container">
+      <div class="doc-band reveal">
+        <div class="doc-cover">
+          <span class="back"></span>
+          <div class="front">
+            <span class="spine"></span>
+            <div class="face">
+              <span class="g1"></span><span class="g2"></span><span class="edge"></span><span class="inl"></span>
+              <div class="body">
+                <div class="lg"><i style="background:#6a4cf5"><span style="font:600 7px Poppins,sans-serif;color:#fff">M</span></i><span>Modellix</span></div>
+                <div class="kk"><i></i><span>SERVICE OVERVIEW</span></div>
+                <div class="tt">サービス<br />紹介資料</div>
+                <div class="cp">Aurora Mobile 株式会社</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="doc-txt">
+          <div class="k">無料ダウンロード</div>
+          <h3>Modellix サービス紹介資料</h3>
+          <div class="doc-pts">
+            <span><i>—</i>対応モデル</span>
+            <span><i>—</i>料金体系</span>
+            <span><i>—</i>セキュリティ体制</span>
+          </div>
+        </div>
+        <div class="doc-act">
+          <a href="index.html#resources" class="btn btn-primary">資料をダウンロード
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <span class="cap">PDF</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ プラットフォーム実績・活用例 ============ -->
+  <section class="section-pad bg-soft" style="background:linear-gradient(180deg,#f6f9fd 0%,#f6f9fd 60%,#ffffff 100%)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Platform</span>
+        <h2>プラットフォーム実績・活用例</h2>
+      </div>
+      <div class="cases-row">
+        <div class="feat-mx reveal">
+          <svg viewBox="-2 -2 124 124" style="position:absolute;right:-70px;bottom:-90px;width:380px;height:380px;pointer-events:none" fill="none" stroke="#6a4cf5" stroke-width="1"><path stroke-opacity=".12" d="M14 104V16H34L60 62L86 16H106V104H88V48L66 86H54L32 48V104Z"/></svg>
+          <div class="k">プラットフォーム</div>
+          <div class="v">172<small>+</small></div>
+          <h3>172以上のモデルを、ひとつのAPIで。</h3>
+          <p>用途ごとに最適なモデルを選び、パラメータは標準化。呼び出しログと課金履歴も、コンソールで一括管理できます。</p>
+          <div class="pv"><span>Alibaba</span><span>ByteDance</span><span>Google</span><span>Kling</span><span>ほか</span></div>
+        </div>
+        <div class="case-side">
+          <div class="use-mini reveal"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.6-1 1-2-.7-1.2 0-2.5 1.4-2.5H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10.5" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></span><b>クリエイティブ制作</b><p>複数モデルを使い分け、制作フローを短縮。</p></div>
+          <div class="use-mini reveal"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></svg></span><b>プロダクト組み込み</b><p>メディアAPIとLLMゲートウェイを、同じAPIキーで統合。</p></div>
+          <div class="use-mini reveal"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 9l3 3-3 3M12 15h5"/></svg></span><b>社内業務の自動化</b><p>CLIからスクリプトやCIに接続。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 技術者向け ============ -->
+  <section style="padding:0 0 110px">
+    <div class="container">
+      <div class="dev-strip reveal">
+        <div class="t"><i>&lt;/&gt;</i>技術者の方へ</div>
+        <div class="ls"><a href="#">API ドキュメント <span>↗</span></a><a href="#">CLI（npm） <span>↗</span></a><a href="#">コンソール <span>↗</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+    <div id="contact" style="position:relative;height:480px;overflow:hidden;background:linear-gradient(120deg,#ffffff 0%,#f2f5ff 60%,#e8eeff 100%);border-top:1px solid #edf0f6">
+    
+    <div style="position:absolute;inset:0;pointer-events:none"><svg style="position:absolute;left:calc(50% - 310px);top:-30px" width="900" height="608" viewBox="0 0 1784 1206" fill="none"><defs><linearGradient id="cta-rb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a7dff"/><stop offset=".6" stop-color="#3d63ff"/><stop offset="1" stop-color="#3fb6d8"/></linearGradient><linearGradient id="cta-fm" x1="0" y1="0" x2="1" y2="0"><stop offset=".12" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".25"/><stop offset=".48" stop-color="#fff" stop-opacity=".7"/><stop offset=".62" stop-color="#fff"/><stop offset=".8" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="cta-fv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".1" stop-color="#fff"/><stop offset=".5" stop-color="#fff"/><stop offset=".72" stop-color="#fff" stop-opacity=".45"/><stop offset=".9" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="cta-mk"><rect width="1784" height="1206" fill="url(#cta-fm)"/></mask><mask id="cta-mv"><rect width="1784" height="1206" fill="url(#cta-fv)"/></mask></defs><g mask="url(#cta-mv)"><g mask="url(#cta-mk)" stroke="url(#cta-rb)" stroke-width="2"><path d="M300.0,1300.0 C380.0,600.0 760.0,140.0 1100.0,140.0 C1440.0,140.0 1700.0,700.0 1800.0,1300.0" stroke-opacity="0.110"/><path d="M343.5,1300.0 C410.7,619.8 769.4,164.7 1100.5,162.8 C1433.1,160.8 1695.1,707.9 1796.0,1300.0" stroke-opacity="0.111"/><path d="M386.2,1300.0 C440.7,639.2 778.6,189.0 1101.0,185.0 C1426.3,181.1 1690.2,715.7 1792.2,1300.0" stroke-opacity="0.115"/><path d="M427.9,1300.0 C470.1,658.1 787.6,212.7 1101.5,206.8 C1419.7,201.0 1685.5,723.3 1788.4,1300.0" stroke-opacity="0.121"/><path d="M468.7,1300.0 C498.8,676.7 796.4,235.8 1101.9,228.2 C1413.2,220.5 1680.8,730.7 1784.7,1300.0" stroke-opacity="0.129"/><path d="M508.5,1300.0 C526.9,694.8 805.0,258.5 1102.4,249.0 C1406.8,239.5 1676.3,737.9 1781.0,1300.0" stroke-opacity="0.139"/><path d="M547.4,1300.0 C554.3,712.4 813.4,280.6 1102.8,269.3 C1400.6,258.1 1671.9,745.0 1777.5,1300.0" stroke-opacity="0.151"/><path d="M585.3,1300.0 C581.0,729.7 821.6,302.1 1103.2,289.1 C1394.6,276.2 1667.6,751.9 1774.1,1300.0" stroke-opacity="0.165"/><path d="M622.3,1300.0 C607.1,746.5 829.6,323.1 1103.7,308.5 C1388.7,293.8 1663.4,758.6 1770.7,1300.0" stroke-opacity="0.180"/><path d="M658.2,1300.0 C632.4,762.8 837.3,343.5 1104.1,327.3 C1383.0,311.0 1659.3,765.1 1767.4,1300.0" stroke-opacity="0.197"/><path d="M693.2,1300.0 C657.0,778.7 844.9,363.4 1104.5,345.5 C1377.4,327.7 1655.3,771.5 1764.3,1300.0" stroke-opacity="0.214"/><path d="M727.2,1300.0 C681.0,794.2 852.2,382.7 1104.9,363.3 C1372.0,343.9 1651.5,777.7 1761.2,1300.0" stroke-opacity="0.233"/><path d="M760.2,1300.0 C704.2,809.2 859.4,401.5 1105.2,380.5 C1366.8,359.6 1647.7,783.7 1758.2,1300.0" stroke-opacity="0.253"/><path d="M792.1,1300.0 C726.7,823.7 866.2,419.6 1105.6,397.2 C1361.7,374.9 1644.1,789.5 1755.3,1300.0" stroke-opacity="0.273"/><path d="M823.0,1300.0 C748.4,837.7 872.9,437.1 1105.9,413.4 C1356.8,389.6 1640.6,795.1 1752.5,1300.0" stroke-opacity="0.295"/><path d="M852.8,1300.0 C769.5,851.3 879.3,454.1 1106.3,428.9 C1352.1,403.8 1637.2,800.5 1749.7,1300.0" stroke-opacity="0.316"/><path d="M881.5,1300.0 C789.7,864.3 885.6,470.4 1106.6,444.0 C1347.5,417.5 1633.9,805.7 1747.1,1300.0" stroke-opacity="0.338"/><path d="M909.1,1300.0 C809.2,876.9 891.5,486.1 1106.9,458.4 C1343.1,430.7 1630.8,810.8 1744.6,1300.0" stroke-opacity="0.360"/><path d="M935.7,1300.0 C827.9,888.9 897.2,501.2 1107.2,472.3 C1338.9,443.4 1627.8,815.6 1742.2,1300.0" stroke-opacity="0.382"/><path d="M961.1,1300.0 C845.7,900.5 902.7,515.6 1107.5,485.6 C1334.8,455.5 1624.9,820.2 1739.9,1300.0" stroke-opacity="0.404"/><path d="M985.3,1300.0 C862.8,911.5 908.0,529.4 1107.8,498.2 C1331.0,467.1 1622.1,824.6 1737.7,1300.0" stroke-opacity="0.425"/><path d="M1008.3,1300.0 C879.1,922.0 912.9,542.5 1108.0,510.3 C1327.3,478.1 1619.5,828.8 1735.6,1300.0" stroke-opacity="0.447"/><path d="M1030.2,1300.0 C894.4,931.9 917.7,554.9 1108.3,521.7 C1323.8,488.5 1617.0,832.8 1733.6,1300.0" stroke-opacity="0.467"/><path d="M1050.8,1300.0 C909.0,941.3 922.1,566.6 1108.5,532.5 C1320.6,498.3 1614.7,836.5 1731.7,1300.0" stroke-opacity="0.487"/><path d="M1070.1,1300.0 C922.6,950.0 926.3,577.6 1108.8,542.6 C1317.5,507.6 1612.5,840.0 1730.0,1300.0" stroke-opacity="0.506"/><path d="M1088.1,1300.0 C935.3,958.2 930.2,587.8 1109.0,552.0 C1314.6,516.2 1610.4,843.3 1728.4,1300.0" stroke-opacity="0.523"/><path d="M1104.8,1300.0 C947.0,965.8 933.8,597.3 1109.1,560.7 C1312.0,524.1 1608.5,846.3 1726.8,1300.0" stroke-opacity="0.540"/><path d="M1120.1,1300.0 C957.8,972.8 937.1,605.9 1109.3,568.7 C1309.5,531.4 1606.8,849.1 1725.4,1300.0" stroke-opacity="0.555"/><path d="M1133.9,1300.0 C967.5,979.0 940.0,613.8 1109.5,575.9 C1307.3,538.0 1605.2,851.6 1724.2,1300.0" stroke-opacity="0.569"/><path d="M1146.2,1300.0 C976.2,984.6 942.7,620.8 1109.6,582.3 C1305.4,543.9 1603.8,853.9 1723.1,1300.0" stroke-opacity="0.581"/><path d="M1156.9,1300.0 C983.7,989.5 945.0,626.8 1109.7,587.9 C1303.7,549.0 1602.6,855.8 1722.1,1300.0" stroke-opacity="0.591"/><path d="M1165.8,1300.0 C990.0,993.5 946.9,631.9 1109.8,592.6 C1302.3,553.2 1601.6,857.4 1721.3,1300.0" stroke-opacity="0.599"/><path d="M1172.9,1300.0 C995.0,996.8 948.5,636.0 1109.9,596.3 C1301.1,556.6 1600.8,858.7 1720.6,1300.0" stroke-opacity="0.600"/><path d="M1177.8,1300.0 C998.5,999.0 949.5,638.8 1110.0,598.9 C1300.3,559.0 1600.2,859.6 1720.2,1300.0" stroke-opacity="0.600"/><path d="M1180.0,1300.0 C1000.0,1000.0 950.0,640.0 1110.0,600.0 C1300.0,560.0 1600.0,860.0 1720.0,1300.0" stroke-opacity="0.600"/></g></g></svg></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;box-sizing:border-box">
+      
+      <div style="position:relative">
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc"><i style="width:24px;height:1px;background:#2847fc"></i>Contact</div>
+        <div style="margin-top:24px;font-size:40px;font-weight:700;line-height:1.5;font-feature-settings:'palt';color:#0a1324">まずは、<br>無料でお試しください。</div>
+        <div style="margin-top:20px;font-size:15px;line-height:2;color:#5b6172">無料で開始できます。技術的なご相談も承っています。</div>
+        <div style="margin-top:40px;display:flex;gap:14px">
+          <a href="#" style="height:52px;padding:0 32px;border-radius:40px;background:#2847fc;color:#fff;font-size:15px;font-weight:500;display:flex;align-items:center;gap:12px;text-decoration:none">無料で始める<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+          <a href="index.html#contact" style="height:52px;padding:0 32px;border-radius:40px;border:1px solid #c9cedb;background:#fff;color:#0a1324;font-size:15px;font-weight:500;display:flex;align-items:center;text-decoration:none">お問い合わせ</a>
+        </div>
+        <div style="margin-top:22px"><a href="#" style="font-size:14px;color:#2847fc;text-decoration:none">Modellix公式サイトを見る ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="gptbots.html">GPTBots.ai</a>
+          <a href="index.html#products">Modellix</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="pricing.html">料金</a>
+          <a href="news.html">ニュース</a>
+          <a href="careers.html">採用情報</a>
+          <a href="index.html#contact">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+  
+  <script>(function(){var r=document.querySelector('.ind-rail'),t=r&&r.querySelector('.ind-track');if(!t)return;var cards=t.children,n=cards.length,i=0,b=document.querySelectorAll('.ind-nav .ar'),c=document.querySelector('.ind-nav .cnt b');
+function geo(){var pl=parseFloat(getComputedStyle(r).paddingLeft),step=cards[1].offsetLeft-cards[0].offsetLeft,max=Math.max(0,t.scrollWidth-(r.clientWidth-pl*2));return{step:step,max:max,last:Math.ceil(max/step-0.01)};}
+function go(k){var g=geo();i=Math.max(0,Math.min(g.last,k));var end=i>=g.last;t.style.transform='translateX('+(-Math.min(g.step*i,g.max))+'px)';c.textContent=end?n:i+1;var off=Math.min(g.step*i,g.max);for(var j=0;j<n;j++){cards[j].classList.toggle('gone',cards[j].offsetLeft+cards[j].offsetWidth/2<off);}b[0].classList.toggle('on',i>0);b[1].classList.toggle('on',!end);}
+var cn=document.querySelector('.ind-nav .cnt');cn.innerHTML='<b>1</b> / '+n;c=cn.querySelector('b');b[0].onclick=function(){go(i-1)};b[1].onclick=function(){go(i+1)};addEventListener('resize',function(){go(i)});go(0);})();</script>
+
+</body>
+</html>

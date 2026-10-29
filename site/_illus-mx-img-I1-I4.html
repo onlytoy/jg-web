@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#fff;font-family:"Noto Sans JP",sans-serif}
+#cmp{display:grid;grid-template-columns:repeat(2,480px);gap:40px 32px;padding:40px;width:max-content}
+.t{font:600 15px "Noto Sans JP";color:#0a1324;margin-bottom:10px}.t small{font-weight:400;color:#6b7280;margin-left:8px;font-size:12px}
+.box{position:relative;width:480px;height:360px;border-radius:20px;background:#f7f8fc;background-image:linear-gradient(#eceefa 1px,transparent 1px),linear-gradient(90deg,#eceefa 1px,transparent 1px);background-size:32px 32px;overflow:hidden}
+.pr{position:absolute;left:28px;top:26px;display:flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #e2e4ee;box-shadow:0 4px 14px rgba(17,24,52,.05);font-size:13px;color:#0a1324;white-space:nowrap}
+.pr b{color:#5b4fd6;font-weight:500}.pr i{width:2px;height:15px;background:#5b4fd6}
+.fm{position:absolute;box-sizing:border-box;border-radius:12px;background:#fff;border:1px solid #e2e4ee;box-shadow:0 16px 40px rgba(17,24,52,.08);padding:8px}
+.tg{position:absolute;font:500 10.5px "JetBrains Mono",monospace;letter-spacing:.08em;color:#5b4fd6;background:#f1effe;border-radius:4px;padding:3px 7px}
+canvas{display:block;border-radius:7px}
+</style></head><body><div id="cmp"></div><script>
+const P=['#efedfd','#ddd8fb','#c3bbf6','#a197ee','#7d70e3','#5b4fd6','#3f35a8'];
+function cv(w,h,draw){const c=document.createElement('canvas');c.width=w*2;c.height=h*2;c.style.width=w+'px';c.style.height=h+'px';const x=c.getContext('2d');x.scale(2,2);draw(x,w,h);return c}
+function pixelate(c,frac,q){const x=c.getContext('2d');const W=c.width,H=c.height;const s=document.createElement('canvas');s.width=Math.ceil(W/q);s.height=Math.ceil(H/q);s.getContext('2d').drawImage(c,0,0,s.width,s.height);x.save();x.setTransform(1,0,0,1,0,0);x.imageSmoothingEnabled=false;const cut=Math.round(s.width*frac);x.drawImage(s,0,0,cut,s.height,0,0,cut*q,s.height*q);x.fillStyle='rgba(255,255,255,.35)';x.fillRect(0,0,cut*q,H);x.fillStyle='#fff';x.fillRect(cut*q-1.5,0,3,H);x.restore()}
+function grad(x,w,h,a,b){const g=x.createLinearGradient(0,0,0,h);g.addColorStop(0,a);g.addColorStop(1,b);x.fillStyle=g;x.fillRect(0,0,w,h)}
+function skyline(x,w,h){grad(x,w,h,P[0],P[2]);x.fillStyle='#fff';x.globalAlpha=.85;x.beginPath();x.arc(w*.3,h*.34,26,0,7);x.fill();x.globalAlpha=1;
+ x.fillStyle=P[3];[[0,.58,60],[64,.5,44],[112,.62,70],[186,.54,40],[230,.6,64],[298,.5,52],[354,.64,70]].forEach(([a,t,bw])=>x.fillRect(a,h*t,bw,h));
+ const tx=w*.68,tb=h*.82,tt=h*.18;x.fillStyle=P[5];x.beginPath();x.moveTo(tx-26,tb);x.lineTo(tx-3,tt+30);x.lineTo(tx,tt);x.lineTo(tx+3,tt+30);x.lineTo(tx+26,tb);x.closePath();x.fill();x.fillStyle=P[1];x.fillRect(tx-12,h*.52,24,3);x.fillRect(tx-7,h*.36,14,3);
+ x.fillStyle=P[5];[[0,.7,90],[96,.76,60],[w-150,.68,70],[w-76,.74,76]].forEach(([a,t,bw])=>x.fillRect(a,h*t,bw,h));
+ x.fillStyle=P[1];[[0,.7,90],[96,.76,60],[w-150,.68,70],[w-76,.74,76]].forEach(([a,t,bw])=>{for(let yy=h*t+10;yy<h;yy+=14)for(let xx=a+10;xx<a+bw-8;xx+=14)if(((xx+yy)|0)%3)x.fillRect(xx,yy,5,6)})}
+function product(x,w,h){grad(x,w,h,P[0],P[1]);x.fillStyle=P[2];x.beginPath();x.ellipse(w/2,h*.8,110,18,0,0,7);x.fill();x.fillStyle='#fff';x.fillRect(w/2-110,h*.8-2,220,h);
+ x.fillStyle='rgba(255,255,255,.8)';x.beginPath();x.arc(w/2,h*.44,92,0,7);x.fill();
+ x.fillStyle=P[5];x.fillRect(w/2-34,h*.34,68,h*.46);x.beginPath();x.roundRect(w/2-34,h*.34,68,h*.46,10);x.fill();x.fillStyle=P[6];x.fillRect(w/2-14,h*.22,28,h*.12);
+ x.fillStyle='#fff';x.globalAlpha=.9;x.fillRect(w/2-22,h*.52,44,22);x.globalAlpha=.35;x.fillRect(w/2+14,h*.37,6,h*.38);x.globalAlpha=1;x.fillStyle=P[5];x.fillRect(w/2-14,h*.56,28,3);x.fillRect(w/2-10,h*.62,20,2)}
+function mountain(x,w,h){grad(x,w,h,P[1],P[0]);x.fillStyle='#fff';x.beginPath();x.arc(w*.7,h*.32,24,0,7);x.fill();x.fillStyle=P[2];x.beginPath();x.moveTo(0,h*.72);x.lineTo(w*.3,h*.4);x.lineTo(w*.55,h*.66);x.lineTo(w*.78,h*.46);x.lineTo(w,h*.7);x.lineTo(w,h);x.lineTo(0,h);x.fill();x.fillStyle=P[4];x.beginPath();x.moveTo(0,h*.86);x.quadraticCurveTo(w*.4,h*.66,w,h*.84);x.lineTo(w,h);x.lineTo(0,h);x.fill()}
+const opts=[
+ ['I1','東京シルエット・左右スライド','夕暮れの東京、タワーのある街並み',b=>{b.innerHTML+='<div class="fm" style="left:24px;top:76px;width:432px;height:256px"></div>';const c=cv(416,240,skyline);pixelate(c,.46,22);b.querySelector('.fm').appendChild(c);tag(b,40,298,'GENERATING 62%');tag(b,null,298,'seedream-5',40)}],
+ ['I2','商品画像・単体','透明なボトルの商品写真、やわらかい光',b=>{b.innerHTML+='<div class="fm" style="left:110px;top:76px;width:260px;height:256px"></div>';const c=cv(244,240,product);pixelate(c,.5,20);b.querySelector('.fm').appendChild(c);tag(b,126,298,'GENERATING');tag(b,null,298,'1024×1024',126)}],
+ ['I3','バリエーション 4 案から選ぶ','夕暮れの東京、タワーのある街並み',b=>{const pos=[[24,80],[244,80],[24,210],[244,210]];pos.forEach(([l,t],i)=>{const d=document.createElement('div');d.className='fm';d.style.cssText='left:'+l+'px;top:'+t+'px;width:212px;height:118px;padding:6px'+(i===1?';border:2px solid #5b4fd6;box-shadow:0 18px 40px rgba(91,79,214,.18)':';opacity:.82');const c=cv(200-(i===1?2:0),106-(i===1?2:0),(x,w,h)=>{x.save();if(i%2)x.translate(w,0),x.scale(-1,1);[skyline,mountain,skyline,mountain][i](x,w,h);x.restore()});d.appendChild(c);b.appendChild(d)});tag(b,null,94,'✓ SELECTED',42)}],
+ ['I4','上から描き出される','雲海から昇る朝日、ポスター用',b=>{b.innerHTML+='<div class="fm" style="left:24px;top:76px;width:432px;height:256px"></div>';const c=cv(416,240,mountain);const x=c.getContext('2d');x.save();x.setTransform(1,0,0,1,0,0);const H=c.height,W=c.width,cut=H*.55;const s=document.createElement('canvas');s.width=W/24;s.height=H/24;s.getContext('2d').drawImage(c,0,0,s.width,s.height);x.imageSmoothingEnabled=false;x.drawImage(s,0,cut/24,s.width,s.height-cut/24,0,cut,W,H-cut);x.fillStyle='rgba(255,255,255,.4)';x.fillRect(0,cut,W,H-cut);const g=x.createLinearGradient(0,cut-30,0,cut+6);g.addColorStop(0,'rgba(91,79,214,0)');g.addColorStop(1,'rgba(91,79,214,.5)');x.fillStyle=g;x.fillRect(0,cut-30,W,36);x.fillStyle='#5b4fd6';x.fillRect(0,cut,W,3);x.restore();b.querySelector('.fm').appendChild(c);tag(b,40,298,'RENDERING 55%');tag(b,null,298,'seedream-5',40)}]];
+function tag(b,l,t,txt,r){const d=document.createElement('div');d.className='tg';d.textContent=txt;d.style.top=t+'px';if(l!=null)d.style.left=l+'px';else d.style.right=r+'px';b.appendChild(d)}
+const cmp=document.getElementById('cmp');opts.forEach(([id,desc,pr,fn])=>{const w=document.createElement('div');w.innerHTML='<div class="t">'+id+'<small>'+desc+'</small></div><div class="box"><div class="pr"><b>›</b>'+pr+'<i></i></div></div>';cmp.appendChild(w);fn(w.querySelector('.box'))});
+</script></body></html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GPTBots.ai | Aurora Mobile 株式会社</title>
+  <meta name="description" content="App Push・Email・SMS・WhatsApp を一つのプラットフォームで。海外ユーザーにも確実に届く、企業向けメッセージング基盤 EngageLab。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style id="tag-b">.ind-card .ph .tag{background:rgba(255,255,255,.72) !important;-webkit-backdrop-filter:blur(10px) saturate(1.4);backdrop-filter:blur(10px) saturate(1.4);color:#0b1524 !important;border:1px solid rgba(255,255,255,.6) !important;box-shadow:0 2px 10px -4px rgba(11,21,36,.25) !important;font-weight:500 !important}</style>
+<style>.el-page-hero .el-hero{margin-top:36px}</style>
+<style id="elNumsPad">.v2 .el-nums{padding-bottom:80px}</style><style id="elTop80">.el-page-hero{padding-top:0!important}.el-hero{margin-top:0!important;padding-top:80px!important;align-items:start!important}.el-hero>div:first-child{padding-top:0!important}@media (max-width:1024px){.el-hero{padding-top:56px!important}}</style><style id="indNavFix">.ind-nav .ar{background:none;padding:0;font:inherit;cursor:default}.ind-nav .ar.on{cursor:pointer}.ind-nav .ar.on:hover{background:var(--ink-900);color:#fff}.ind-rail .ind-track{transition:transform .5s cubic-bezier(.22,.61,.36,1)}.ind-rail .ind-card{transition:opacity .4s ease}.ind-rail .ind-card.gone{opacity:0;pointer-events:none}</style><style id="flowFx">.fx-src,.fx-ch{transition:border-color .35s,color .35s,box-shadow .35s,background-color .35s}.fx-src.lit{border-color:rgba(149,222,253,.75)!important;color:#fff!important;box-shadow:0 0 18px rgba(149,222,253,.25)}.fx-ch.lit{border-color:rgba(129,239,198,.75)!important;color:#fff!important;box-shadow:0 0 18px rgba(129,239,198,.22)}.fx-plat{transition:box-shadow .4s,filter .4s}.fx-plat.lit{filter:brightness(1.12);box-shadow:0 0 0 1px rgba(255,255,255,.25),0 18px 60px rgba(60,90,255,.6)!important}.fx-pre .fx-src,.fx-pre .fx-ch{opacity:0;transform:translateY(8px)}.fx-pre path.fx-base{stroke-dashoffset:100}</style><style id="gb2">
+.gb-hero{position:relative;padding:72px 0 96px;background:linear-gradient(180deg,#f3f6ff 0%,#fff 100%);overflow:hidden}
+.gb-hero:before{content:"";position:absolute;right:0;top:0;width:55%;height:100%;background-image:linear-gradient(#2847fc0f 1px,transparent 1px),linear-gradient(90deg,#2847fc0f 1px,transparent 1px);background-size:40px 40px;-webkit-mask:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);mask:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
+.gb-hg{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:56px;align-items:center}
+.gb-hg h1{max-width:none;font-size:32px;line-height:1.55;font-weight:700;color:#0a1324;margin:22px 0 0;font-feature-settings:'palt'}
+.gb-hg h1 .accent{color:#2847fc}
+.gb-hg .lead{margin:20px 0 0;font-size:15px;line-height:2;color:#5b6172}
+.gb-kpi{display:flex;gap:36px;margin-top:40px;padding-top:28px;border-top:1px solid #e6eaf2}
+.gb-kpi b{display:block;font-size:30px;font-weight:700;color:#0a1324;line-height:1;font-feature-settings:'tnum'}
+.gb-kpi b small{font-size:18px;color:#2847fc;margin-left:2px}
+.gb-kpi span{display:block;margin-top:8px;font-size:12px;color:#5b6172}
+.gb-win{position:relative;margin:24px 30px 24px 0;background:#fff;border:1px solid #e3e8f2;border-radius:14px;box-shadow:0 30px 60px -30px #1b2a6b33;overflow:hidden}
+.gb-win .bar{height:38px;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid #eef1f6;background:#fafbfd}
+.gb-win .bar i{width:9px;height:9px;border-radius:50%;background:#dfe3ec}
+.gb-win .bar span{margin-left:12px;font-size:11px;color:#98a0ae;letter-spacing:.04em}
+.gb-win .bd{display:grid;grid-template-columns:150px 1fr;height:330px}
+.gb-side{border-right:1px solid #eef1f6;padding:16px 10px;background:#fbfcfe}
+.gb-side .w{display:flex;align-items:center;gap:8px;padding:0 6px 14px;font-size:12px;font-weight:700;color:#0a1324}
+.gb-side .w img{width:16px;height:16px}
+.gb-side div.it{display:flex;align-items:center;gap:8px;height:30px;padding:0 8px;border-radius:7px;font-size:12px;color:#5b6172}
+.gb-side div.it.on{background:#eef2ff;color:#2847fc;font-weight:500}
+.gb-chat{padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+.gb-chat .u{align-self:flex-end;max-width:78%;background:#2847fc;color:#fff;font-size:12.5px;line-height:1.7;padding:10px 14px;border-radius:12px 12px 2px 12px}
+.gb-chat .ai{display:flex;gap:10px;max-width:90%}
+.gb-chat .ai .av{flex:none;width:26px;height:26px;border-radius:8px;background:#eef2ff;display:flex;align-items:center;justify-content:center}
+.gb-chat .ai .av img{width:14px}
+.gb-chat .ai .tx{font-size:12.5px;line-height:1.8;color:#0a1324;background:#f5f7fb;padding:10px 14px;border-radius:2px 12px 12px 12px}
+.gb-chat .src{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.gb-chat .src span{font-size:10.5px;color:#2847fc;background:#fff;border:1px solid #dfe5ff;border-radius:20px;padding:2px 8px}
+.gb-chat .inp{margin-top:auto;height:36px;border:1px solid #e3e8f2;border-radius:9px;display:flex;align-items:center;justify-content:space-between;padding:0 6px 0 12px;font-size:11.5px;color:#a8afbc}
+.gb-chat .inp i{width:24px;height:24px;border-radius:6px;background:#2847fc}
+.gb-node{position:absolute;background:#fff;border:1px solid #e3e8f2;border-radius:12px;box-shadow:0 18px 40px -20px #1b2a6b40;padding:12px 14px;display:flex;gap:10px;align-items:center;font-size:12px;color:#0a1324;white-space:nowrap}
+.gb-node .i{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.gb-node small{display:block;font-size:10.5px;color:#98a0ae;margin-top:2px}
+.gb-node.n1{right:-6px;top:4px}.gb-node.n2{left:-26px;bottom:-4px}.gb-node.n3{right:-6px;bottom:72px}
+.gb-sec{padding:120px 0}
+.gb-k{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc}.gb-k:before{content:"";width:24px;height:1px;background:#2847fc}
+.gb-h2{margin:20px 0 0;font-size:32px;line-height:1.55;font-weight:700;color:#0a1324;font-feature-settings:'palt'}
+.gb-prob{display:grid;grid-template-columns:360px minmax(0,1fr);gap:80px}
+.gb-prob .l p{margin:20px 0 0;font-size:15px;line-height:2;color:#5b6172}
+.gb-rows{position:relative;padding-left:40px}
+.gb-rows:before{content:"";position:absolute;left:7px;top:14px;bottom:44px;width:1px;background:linear-gradient(#d6dcea,#2847fc)}
+.gb-row{position:relative;display:grid;grid-template-columns:56px 240px minmax(0,1fr);align-items:baseline;padding:26px 0;border-bottom:1px solid #eef1f6}
+.gb-row:before{content:"";position:absolute;left:-38px;top:34px;width:11px;height:11px;border-radius:50%;background:#fff;border:1.5px solid #c3cbe0}
+.gb-row .n{font-size:13px;font-weight:700;color:#98a0ae;font-feature-settings:'tnum'}
+.gb-row h3{margin:0;font-size:18px;font-weight:700;color:#0a1324}
+.gb-row p{margin:0;font-size:14px;line-height:1.9;color:#5b6172}
+.gb-con{position:relative;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 30px;border-radius:14px;background:linear-gradient(100deg,#2847fc,#4a6bff);color:#fff}
+.gb-con:before{content:"";position:absolute;left:-40px;top:50%;width:11px;height:11px;margin-top:-6px;border-radius:50%;background:#2847fc;box-shadow:0 0 0 5px #2847fc22}
+.gb-con b{font-size:19px;font-weight:700}.gb-con span{font-size:13px;opacity:.85}
+.gb-plat{background:#f6f9fd}
+.gb-ph{text-align:center}.gb-ph .gb-k{justify-content:center}.gb-ph p{margin:18px auto 0;max-width:720px;font-size:15px;line-height:2;color:#5b6172}
+.gb-steps{margin-top:56px;display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);align-items:stretch}
+.gb-step{background:#fff;border:1px solid #e6eaf2;border-radius:16px;padding:32px 32px 30px}
+.gb-step .t{display:flex;align-items:center;justify-content:space-between}
+.gb-step .t em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.12em;color:#2847fc}
+.gb-step .t span{font-size:11px;color:#98a0ae;border:1px solid #e6eaf2;border-radius:20px;padding:3px 10px}
+.gb-step h3{margin:14px 0 0;font-size:22px;font-weight:700;color:#0a1324}
+.gb-step .s{margin:6px 0 0;font-size:14px;color:#5b6172}
+.gb-step .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.gb-step .chips span{font-size:12.5px;color:#0a1324;background:#f5f7fb;border-radius:6px;padding:6px 10px}
+.gb-step.s2{border-color:#cdd7ff;box-shadow:0 24px 50px -30px #2847fc55}
+.gb-step.s2 .chips span{background:#eef2ff;color:#2847fc}
+.gb-arr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:11px;color:#2847fc;writing-mode:horizontal-tb}
+.gb-arr i{display:block;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #cdd7ff;display:flex;align-items:center;justify-content:center}
+.gb-arch{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.1fr) 120px minmax(0,1fr);align-items:center;padding:30px 32px;background:#fff;border:1px solid #e6eaf2;border-radius:16px}
+.gb-arch .gb-ac .c{font-size:11px;font-weight:700;letter-spacing:.12em;color:#98a0ae;margin-bottom:12px}
+.gb-arch .gb-ac .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gb-arch .gb-ac .g span{font-size:12.5px;color:#0a1324;border:1px solid #e6eaf2;border-radius:8px;padding:8px 10px;text-align:center}
+.gb-arch .gb-core{text-align:center;padding:22px 16px;border-radius:12px;background:linear-gradient(135deg,#2847fc,#5a7dff);color:#fff}
+.gb-arch .gb-core img{width:26px;filter:brightness(0) invert(1)}
+.gb-arch .gb-core b{display:block;margin-top:8px;font-size:15px}.gb-arch .gb-core small{font-size:11.5px;opacity:.85}
+.gb-arch .gb-ln{height:1px;background:repeating-linear-gradient(90deg,#9fb0ff 0 4px,transparent 4px 8px);position:relative;margin:0 10px}
+.gb-arch .gb-ln:after{content:"";position:absolute;right:-2px;top:-3px;border-left:6px solid #9fb0ff;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
+.gb-scn{display:grid;grid-template-columns:400px minmax(0,1fr);gap:64px;margin-top:56px;align-items:stretch}
+.gb-tabs{display:flex;flex-direction:column}
+.gb-tab{position:relative;text-align:left;background:none;border:0;border-bottom:1px solid #eef1f6;padding:24px 0 24px 24px;cursor:pointer;font-family:inherit}
+.gb-tab:before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:2px;background:#eef1f6;transition:background .3s}
+.gb-tab .n{font-size:12px;font-weight:700;color:#98a0ae}
+.gb-tab b{display:block;margin-top:6px;font-size:19px;font-weight:700;color:#98a0ae;transition:color .3s}
+.gb-tab p{margin:0;max-height:0;overflow:hidden;opacity:0;font-size:14px;line-height:1.9;color:#5b6172;transition:all .4s}
+.gb-tab.on:before{background:#2847fc}.gb-tab.on b{color:#0a1324}.gb-tab.on .n{color:#2847fc}.gb-tab.on p{max-height:80px;opacity:1;margin-top:8px}
+.gb-pic{position:relative;border-radius:16px;overflow:hidden;min-height:400px;background:#eef1f6}
+.gb-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.03);transition:opacity .6s,transform 1.2s}
+.gb-pic img.on{opacity:1;transform:none}
+.gb-pic .tg{position:absolute;left:20px;bottom:20px;font-size:13px;font-weight:500;color:#0a1324;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:20px;padding:6px 14px}
+.gb-case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#fff;border:1px solid #e6eaf2;border-radius:16px;overflow:hidden;text-decoration:none;margin-top:48px}
+.gb-case .im{position:relative;min-height:340px}.gb-case .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gb-case .tx{padding:48px 52px;display:flex;flex-direction:column}
+.gb-case .k{font-size:12px;font-weight:500;color:#2847fc}
+.gb-case .v{margin-top:18px;font-size:72px;font-weight:700;line-height:1;color:#0a1324;font-feature-settings:'tnum'}
+.gb-case h3{margin:20px 0 0;font-size:19px;line-height:1.7;font-weight:700;color:#0a1324}
+.gb-case .m{margin-top:14px;font-size:13px;line-height:1.9;color:#5b6172}
+.gb-case .lk{margin-top:auto;padding-top:24px;font-size:14px;font-weight:500;color:#2847fc}
+.gb-inds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:0;margin-top:20px;border-top:1px solid #e6eaf2}
+.gb-inds a{display:flex;align-items:baseline;gap:14px;padding:20px 24px 20px 0;text-decoration:none;color:#0a1324;font-size:14px}
+.gb-inds a b{font-size:13px;color:#2847fc;font-weight:700}
+.gb-inds a.more{color:#2847fc;font-weight:500;justify-content:flex-end;padding-right:0}
+</style>
+<style id="platx">
+.px{font-family:inherit;color:#e8eefc}
+.px .cap{font-size:12px;letter-spacing:.14em;color:rgba(232,238,252,.5);margin-bottom:12px}
+.px .bx{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:14px}
+.px .chip{color:#e8eefc!important;display:flex;align-items:center;gap:8px;font-size:13px;padding:9px 12px;border-radius:9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.px .chip i{width:6px;height:6px;border-radius:50%;background:#7fb4ff;flex:none}
+.px .hi{background:linear-gradient(135deg,#3a5bff,#2a3fe6);border-color:rgba(160,185,255,.5);box-shadow:0 10px 40px rgba(50,80,255,.35)}
+.lab{display:inline-flex;gap:10px;align-items:center;margin:0 auto 24px;font-size:14px;color:#0a1324;font-weight:700}
+.lab span{background:#2a3fe6;color:#fff;border-radius:6px;padding:3px 10px}
+.wrapx{padding:56px 0 24px;text-align:center}
+</style><style>.reveal{opacity:1!important;transform:none!important}</style></head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo.svg" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="index.html#products">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="index.html#products">
+              <strong>プログラマティック広告</strong>
+              <span>高成長市場の成長機会を捉える</span>
+            </a>
+            <a href="index.html#products">
+              <strong>フィンテック</strong>
+              <span>スマートリスク管理とデジタル金融</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+        <a class="nav-link" href="pricing.html">料金</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="index.html#resources" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top"><div class="wrapx" id="D"><div class="lab"><span>D</span>プロダクト画面<em style="font-weight:400;color:#5b6172;font-style:normal">Agent Builder キャンバス</em></div></div><div class="sol reveal">
+    <div class="sol-head">
+      <div class="k">プラットフォーム</div>
+      <h2>まず全社員が使い、<b>次に業務に組み込む。</b></h2>
+      <p>Workspaceは、ログインするだけで使える企業向けAIワークスペースです。成熟度が上がったら、Devspaceで既存のドキュメントやシステムをナレッジとして取り込み、業務ルールに沿って動くエージェントを構築できます。</p>
+    </div>
+    <div class="sol-inner">
+      <div class="sol-list">
+        <div><div class="k">Step 1 · Workspace</div><div class="st">全社員のAIワークスペース</div><div class="sd">AI-Work／AI検索／AIワークフロー／AIエージェント／A2A／企業メモリ／権限・監査</div></div>
+        <div><div class="k">Step 2 · Devspace</div><div class="st">業務に組み込むエージェント開発</div><div class="sd">Agent Builder／FlowAgent／LoopAgent／Audio（リアルタイム音声）／知識ベース（RAG）／ツール構築／マルチモデル</div></div>
+        <div><div class="k">Integration</div><div class="st">連携と分析</div><div class="sd">API・SDK／利用分析</div></div>
+      </div>
+      <div><div class="px"><div style="border-radius:14px;border:1px solid rgba(255,255,255,.14);background:#0d1830;box-shadow:0 30px 80px rgba(0,0,0,.35);overflow:hidden">
+<div style="display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.08);font-size:12px;color:rgba(232,238,252,.6)"><i style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18)"></i><i style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18)"></i><i style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18)"></i><span style="margin-left:10px;color:#e8eefc;font-weight:600">GPTBots Devspace</span><span>／ Agent Builder</span><span style="margin-left:auto;padding:3px 10px;border-radius:6px;background:rgba(127,180,255,.14);color:#95defd;font-size:11px">● 公開中</span></div>
+<div style="display:grid;grid-template-columns:1fr 168px;min-height:380px">
+<div style="position:relative;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:16px 16px">
+<svg viewBox="0 0 380 380" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%" fill="none" stroke-width="1.4"><path d="M70 66 V112" stroke="rgba(150,180,255,.45)"/><path d="M70 152 V186" stroke="#7fb4ff"/><path d="M70 226 C70 260,70 260,70 284" stroke="rgba(150,180,255,.45)"/><path d="M132 206 C190 206,190 206,226 206" stroke="rgba(150,180,255,.45)" stroke-dasharray="3 4"/><path d="M290 226 V284" stroke="rgba(150,180,255,.45)"/></svg>
+<div style="position:absolute;left:5%;top:7%;padding:10px 14px;border-radius:10px;font-size:12.5px;color:#e8eefc;background:#15233f;border:1px solid rgba(255,255,255,.12);display:flex;gap:8px;align-items:center;white-space:nowrap"><b style="color:#95defd">⏵</b> 問い合わせ受付</div>
+<div style="position:absolute;left:5%;top:30%;padding:10px 14px;border-radius:10px;font-size:12.5px;color:#e8eefc;background:#15233f;border:1px solid rgba(255,255,255,.12);display:flex;gap:8px;align-items:center;white-space:nowrap">ナレッジ検索<span style="font-size:10px;padding:1px 6px;border-radius:4px;background:rgba(127,180,255,.14);color:#95defd">RAG</span></div>
+<div style="position:absolute;left:5%;top:49%;padding:10px 14px;border-radius:10px;font-size:12.5px;color:#fff;background:linear-gradient(135deg,#3a5bff,#2a3fe6);border:1px solid rgba(170,195,255,.7);box-shadow:0 0 0 4px rgba(80,120,255,.18),0 10px 30px rgba(50,80,255,.35);display:flex;gap:8px;align-items:center;white-space:nowrap">条件判断<span style="font-size:10px;padding:1px 6px;border-radius:4px;background:rgba(255,255,255,.2);color:#fff">LLM</span></div>
+<div style="position:absolute;left:58%;top:49%;padding:10px 14px;border-radius:10px;font-size:12.5px;color:#e8eefc;background:#15233f;border:1px solid rgba(255,255,255,.12);display:flex;gap:8px;align-items:center;white-space:nowrap">CRM 連携<span style="font-size:10px;padding:1px 6px;border-radius:4px;background:rgba(127,180,255,.14);color:#95defd">API</span></div>
+<div style="position:absolute;left:5%;top:75%;padding:10px 14px;border-radius:10px;font-size:12.5px;color:#e8eefc;background:#15233f;border:1px solid rgba(255,255,255,.12);display:flex;gap:8px;align-items:center;white-space:nowrap">回答を生成</div>
+<div style="position:absolute;left:58%;top:75%;padding:10px 14px;border-radius:10px;font-size:12.5px;color:#e8eefc;background:#15233f;border:1px solid rgba(255,255,255,.12);display:flex;gap:8px;align-items:center;white-space:nowrap">担当者へ引き継ぎ</div>
+</div>
+<div style="border-left:1px solid rgba(255,255,255,.08);padding:16px 14px;font-size:11px;color:rgba(232,238,252,.55);display:grid;align-content:start;gap:12px;background:rgba(255,255,255,.02)">
+<div style="font-size:12px;color:#e8eefc;font-weight:700">条件判断</div>
+<div>モデル<div style="margin-top:5px;padding:7px 8px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#e8eefc;line-height:1.6">GPT-4o</div></div>
+<div>判定条件<div style="margin-top:5px;padding:7px 8px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#e8eefc;line-height:1.6">解約・返金に関する内容</div></div>
+<div>分岐先<div style="margin-top:5px;padding:7px 8px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#e8eefc;line-height:1.6">はい → CRM 連携<br>いいえ → 回答を生成</div></div>
+<div style="margin-top:4px;padding:8px;border-radius:7px;background:#2a3fe6;color:#fff;text-align:center;font-weight:600">テスト実行</div>
+</div></div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapx" id="E"><div class="lab"><span>E</span>成熟度カーブ<em style="font-weight:400;color:#5b6172;font-style:normal">Workspace → Devspace</em></div></div><div class="sol reveal">
+    <div class="sol-head">
+      <div class="k">プラットフォーム</div>
+      <h2>まず全社員が使い、<b>次に業務に組み込む。</b></h2>
+      <p>Workspaceは、ログインするだけで使える企業向けAIワークスペースです。成熟度が上がったら、Devspaceで既存のドキュメントやシステムをナレッジとして取り込み、業務ルールに沿って動くエージェントを構築できます。</p>
+    </div>
+    <div class="sol-inner">
+      <div class="sol-list">
+        <div><div class="k">Step 1 · Workspace</div><div class="st">全社員のAIワークスペース</div><div class="sd">AI-Work／AI検索／AIワークフロー／AIエージェント／A2A／企業メモリ／権限・監査</div></div>
+        <div><div class="k">Step 2 · Devspace</div><div class="st">業務に組み込むエージェント開発</div><div class="sd">Agent Builder／FlowAgent／LoopAgent／Audio（リアルタイム音声）／知識ベース（RAG）／ツール構築／マルチモデル</div></div>
+        <div><div class="k">Integration</div><div class="st">連携と分析</div><div class="sd">API・SDK／利用分析</div></div>
+      </div>
+      <div><div class="px"><div style="position:relative;height:420px">
+<svg viewBox="0 0 560 420" style="position:absolute;inset:0;width:100%;height:100%" fill="none"><defs><linearGradient id="eg" x1="0" x2="1"><stop offset="0" stop-color="#7fb4ff" stop-opacity=".25"/><stop offset="1" stop-color="#95defd"/></linearGradient><linearGradient id="ef" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a6bff" stop-opacity=".22"/><stop offset="1" stop-color="#4a6bff" stop-opacity="0"/></linearGradient></defs>
+<path d="M0 380 H560" stroke="rgba(255,255,255,.12)"/><path d="M20 380 V40" stroke="rgba(255,255,255,.08)"/>
+<path d="M30 360 C180 350,260 300,330 220 S470 70,540 50 V380 H30Z" fill="url(#ef)"/>
+<path d="M30 360 C180 350,260 300,330 220 S470 70,540 50" stroke="url(#eg)" stroke-width="2"/>
+<circle cx="30" cy="360" r="5" fill="#0b1524" stroke="#7fb4ff" stroke-width="1.5"/>
+<circle cx="190" cy="336" r="4" fill="#7fb4ff"/><circle cx="330" cy="220" r="4" fill="#95defd"/><circle cx="450" cy="105" r="4" fill="#95defd"/>
+<circle cx="540" cy="50" r="12" fill="#95defd" opacity=".18"/><circle cx="540" cy="50" r="6" fill="#fff"/></svg>
+<div style="position:absolute;left:5%;top:66%;font-size:11px;letter-spacing:.14em;color:#95defd">STEP 1<div style="font-size:20px;letter-spacing:0;color:#fff;font-weight:700;margin-top:4px">Workspace</div></div>
+<div style="position:absolute;left:36%;top:82%;font-size:12.5px;color:#e8eefc;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap">全社員が使う</div>
+<div style="position:absolute;left:62%;top:54%;font-size:12.5px;color:#e8eefc;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap">ナレッジをつなぐ</div>
+<div style="position:absolute;left:58%;top:22%;font-size:12.5px;color:#e8eefc;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap">業務に組み込む</div>
+<div style="position:absolute;right:0;top:17%;text-align:right;font-size:11px;letter-spacing:.14em;color:#95defd">STEP 2<div style="font-size:20px;letter-spacing:0;color:#fff;font-weight:700;margin-top:4px">Devspace</div></div>
+<div style="position:absolute;left:5%;bottom:0;font-size:11px;color:rgba(232,238,252,.45);letter-spacing:.1em">導入</div><div style="position:absolute;right:0;bottom:0;font-size:11px;color:rgba(232,238,252,.45);letter-spacing:.1em">AI 活用の成熟度 →</div>
+</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapx" id="F"><div class="lab"><span>F</span>同心円<em style="font-weight:400;color:#5b6172;font-style:normal">データを中心に広がる</em></div></div><div class="sol reveal">
+    <div class="sol-head">
+      <div class="k">プラットフォーム</div>
+      <h2>まず全社員が使い、<b>次に業務に組み込む。</b></h2>
+      <p>Workspaceは、ログインするだけで使える企業向けAIワークスペースです。成熟度が上がったら、Devspaceで既存のドキュメントやシステムをナレッジとして取り込み、業務ルールに沿って動くエージェントを構築できます。</p>
+    </div>
+    <div class="sol-inner">
+      <div class="sol-list">
+        <div><div class="k">Step 1 · Workspace</div><div class="st">全社員のAIワークスペース</div><div class="sd">AI-Work／AI検索／AIワークフロー／AIエージェント／A2A／企業メモリ／権限・監査</div></div>
+        <div><div class="k">Step 2 · Devspace</div><div class="st">業務に組み込むエージェント開発</div><div class="sd">Agent Builder／FlowAgent／LoopAgent／Audio（リアルタイム音声）／知識ベース（RAG）／ツール構築／マルチモデル</div></div>
+        <div><div class="k">Integration</div><div class="st">連携と分析</div><div class="sd">API・SDK／利用分析</div></div>
+      </div>
+      <div><div class="px"><div style="position:relative;height:440px;max-width:520px;margin:0 auto">
+<svg viewBox="0 0 440 440" style="position:absolute;inset:0;width:100%;height:100%" fill="none"><defs><radialGradient id="fg"><stop offset="0" stop-color="#4a6bff" stop-opacity=".55"/><stop offset="1" stop-color="#4a6bff" stop-opacity="0"/></radialGradient></defs>
+<circle cx="220" cy="220" r="210" stroke="rgba(255,255,255,.1)" stroke-dasharray="2 5"/><circle cx="220" cy="220" r="150" stroke="rgba(150,180,255,.28)"/><circle cx="220" cy="220" r="92" stroke="rgba(150,180,255,.45)"/>
+<circle cx="220" cy="220" r="80" fill="url(#fg)"/><circle cx="220" cy="220" r="44" fill="#2a3fe6" stroke="rgba(170,195,255,.7)"/>
+</svg>
+<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;font-size:12px;color:#fff;font-weight:700;line-height:1.4">企業<br>データ</div>
+<div style="position:absolute;left:50%;top:27%;transform:translateX(-50%);font-size:12.5px;color:#e8eefc;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap">ナレッジ（RAG）</div>
+<div style="position:absolute;left:61%;top:62%;font-size:12.5px;color:#e8eefc;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap">企業メモリ</div>
+<div style="position:absolute;left:15%;top:62%;font-size:12.5px;color:#e8eefc;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap">権限・監査</div>
+<div style="position:absolute;left:50%;top:9%;transform:translateX(-50%);font-size:12.5px;color:#e8eefc;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap;background:linear-gradient(135deg,#3a5bff,#2a3fe6);border-color:rgba(170,195,255,.6)">AI エージェント</div>
+<div style="position:absolute;left:76%;top:70%;font-size:12.5px;color:#e8eefc;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap">業務フロー</div>
+<div style="position:absolute;left:0;top:70%;font-size:12.5px;color:#e8eefc;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);white-space:nowrap">ツール・API</div>
+<div style="position:absolute;right:0;top:4%;font-size:11px;color:rgba(232,238,252,.5);letter-spacing:.12em;text-align:right;line-height:2">Web ／ Slack<br>Teams ／ LINE<br>API</div>
+<div style="position:absolute;left:0;bottom:0;font-size:11px;color:rgba(232,238,252,.45);letter-spacing:.12em">内側から：データ → ナレッジ → エージェント → チャネル</div>
+</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  
+  </div>
+
+  

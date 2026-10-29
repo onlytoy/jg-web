@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<link rel="stylesheet" href="styles.css">
+<style>
+body{background:#e9ecf3;width:1440px;margin:0}
+#cmp{display:flex;flex-direction:column;gap:56px;padding:56px 0}
+.lab{padding:0 40px 16px;display:flex;align-items:baseline;gap:14px}
+.lab b{font-size:22px;font-weight:700;color:#2847fc}.lab span{font-size:16px;color:#5b6172}
+.frame{width:1440px;background:#fff}
+.sec{padding:112px 0}
+.w{width:1200px;margin:0 auto}
+.eb{display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc}
+.eb i{width:24px;height:1px;background:#2847fc}
+.hd{text-align:center;margin-bottom:72px}
+.hd h2{font-size:36px;font-weight:700;margin:20px 0 0;line-height:1.5;font-feature-settings:'palt'}
+.hd p{font-size:15px;color:#5b6172;margin:16px 0 0;line-height:2}
+.num{font-family:"Helvetica Neue",Arial,sans-serif}
+svg.ic{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+/* Y1 */
+.y1{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+.y1:before{content:"";position:absolute;left:10%;right:10%;top:44px;height:2px;background:linear-gradient(90deg,#2847fc 0%,#2847fc 12%,#dfe4f0 12%)}
+.y1 .s{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.y1 .d{width:88px;height:88px;border-radius:50%;background:#fff;border:1px solid #e3e7f0;display:flex;align-items:center;justify-content:center;color:#2847fc}
+.y1 .n{font-size:12px;letter-spacing:.14em;color:#8a90a2;margin-top:24px;font-weight:600}
+.y1 b{font-size:18px;font-weight:700;margin-top:8px}
+.y1 small{font-size:13px;color:#5b6172;margin-top:10px;line-height:1.8}
+.y1 .t{margin-top:14px;font-size:12px;color:#2847fc;background:#f1f4ff;border-radius:999px;padding:4px 12px}
+.y1 .s.go .d{background:#2847fc;border-color:#2847fc;color:#fff;box-shadow:0 14px 30px rgba(40,71,252,.28),0 0 0 8px rgba(40,71,252,.08)}
+.y1 .s.go b{color:#2847fc}
+.y1 .btn{margin-top:18px;height:40px;padding:0 20px;border-radius:40px;background:#2847fc;color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px}
+/* Y2 */
+.y2{display:grid;grid-template-columns:520px minmax(0,1fr);gap:96px;align-items:center}
+.y2 .ph{height:520px;border-radius:24px;overflow:hidden;position:relative}
+.y2 .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.y2 .ph .tag{position:absolute;left:24px;bottom:24px;background:rgba(255,255,255,.94);border-radius:14px;padding:16px 20px;font-size:14px;line-height:1.7;color:#0a1324}
+.y2 .ph .tag b{display:block;color:#2847fc;font-size:13px;font-weight:600}
+.y2 h2{font-size:36px;font-weight:700;line-height:1.5;margin:20px 0 40px;font-feature-settings:'palt'}
+.y2 .eb{justify-content:flex-start}
+.y2 .l{display:flex;flex-direction:column}
+.y2 .r{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:20px;position:relative;padding-bottom:28px}
+.y2 .r:not(:last-child):after{content:"";position:absolute;left:21px;top:46px;bottom:4px;width:1px;background:#dfe4f0}
+.y2 .r i{width:44px;height:44px;border-radius:50%;border:1px solid #dfe4f0;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:13px;font-weight:600;color:#2847fc;background:#fff}
+.y2 .r b{display:block;font-size:17px;font-weight:700;line-height:44px}
+.y2 .r small{display:block;font-size:14px;color:#5b6172;line-height:1.8;margin-top:-4px}
+.y2 .r span{font-size:12px;color:#2847fc;background:#f1f4ff;border-radius:999px;padding:4px 12px;margin-top:11px;white-space:nowrap;height:fit-content}
+.y2 .r a{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:#2847fc}
+/* Y3 */
+.y3{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;position:relative}
+.y3 .c{background:#fff;border-radius:20px;padding:32px 24px 30px;box-shadow:0 24px 60px rgba(45,43,155,.08);position:relative}
+.y3 .c:not(:last-child):after{content:"";position:absolute;right:-19px;top:50%;width:14px;height:14px;border-top:1.5px solid #b8c3e6;border-right:1.5px solid #b8c3e6;transform:translateY(-50%) rotate(45deg)}
+.y3 .ic2{width:52px;height:52px;border-radius:14px;background:#f1f4ff;color:#2847fc;display:flex;align-items:center;justify-content:center}
+.y3 .n{font-size:12px;letter-spacing:.14em;color:#8a90a2;font-weight:600;margin-top:28px}
+.y3 b{display:block;font-size:18px;font-weight:700;margin-top:8px}
+.y3 small{display:block;font-size:13px;color:#5b6172;line-height:1.8;margin-top:10px;min-height:47px}
+.y3 .t{display:flex;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid #eef1f7;font-size:12px;color:#8a90a2}
+.y3 .t em{font-style:normal;color:#2847fc;font-weight:600}
+.y3 .c.hv{transform:translateY(-6px);box-shadow:0 30px 70px rgba(45,43,155,.16)}
+.y3 .c.hv .ic2{background:#2847fc;color:#fff}
+.y3bg{background:linear-gradient(180deg,#f7f8fb,#fff)}
+</style></head><body>
+<div id="cmp">
+
+<div><div class="lab"><b>Y1</b><span>第一步就是按钮：流程本身成为问询入口；滚动进入时细线从左画出、节点依次亮起（只播一次）</span></div>
+<div class="frame"><section class="sec"><div class="w">
+<div class="hd"><div class="eb"><i></i>Process<i></i></div><h2>ご契約までの流れ</h2><p>お問い合わせから導入開始まで、専任担当が伴走します。</p></div>
+<div class="y1">
+<div class="s go"><div class="d"><svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4z"/></svg></div><div class="n num">STEP 01</div><b>お問い合わせ</b><small>課題やご利用規模を<br>お聞かせください</small><a class="btn">今すぐ相談する →</a></div>
+<div class="s"><div class="d"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg></div><div class="n num">STEP 02</div><b>ヒアリング</b><small>オンラインで<br>要件を確認します</small><span class="t">約1時間</span></div>
+<div class="s"><div class="d"><svg class="ic" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></div><div class="n num">STEP 03</div><b>お見積り</b><small>規模に合わせた<br>プランをご提示</small><span class="t">◯営業日</span></div>
+<div class="s"><div class="d"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div><div class="n num">STEP 04</div><b>社内稟議</b><small>必要な資料は<br>当社でご用意します</small><span class="t">通常 ◯◯ 週間</span></div>
+<div class="s"><div class="d"><svg class="ic" viewBox="0 0 24 24"><path d="M4 17l4-4 3 3 7-7"/><path d="M14 9h4v4"/></svg></div><div class="n num">STEP 05</div><b>ご契約</b><small>専任担当が<br>導入を支援します</small></div>
+</div>
+</div></section></div></div>
+
+<div><div class="lab"><b>Y2</b><span>一张照片 + 纵向流程：照片固定不切换，右侧 5 步一目了然，稟議一步附资料链接</span></div>
+<div class="frame"><section class="sec"><div class="w y2">
+<div class="ph"><img src="img/case-hero.png"><div class="tag"><b>専任担当</b>お問い合わせからご契約まで<br>一人の担当者が伴走します</div></div>
+<div><div class="eb"><i></i>Process</div><h2>ご契約までの流れ</h2>
+<div class="l">
+<div class="r"><i class="num">01</i><div><b>お問い合わせ</b><small>フォームから課題やご利用規模をお送りください。</small></div><span>1営業日以内</span></div>
+<div class="r"><i class="num">02</i><div><b>ヒアリング</b><small>オンラインで要件と現状を確認します。</small></div><span>約1時間</span></div>
+<div class="r"><i class="num">03</i><div><b>お見積り</b><small>規模に合わせたプランとお見積りをご提示します。</small></div><span>◯営業日</span></div>
+<div class="r"><i class="num">04</i><div><b>社内稟議</b><small>稟議に必要な資料は、当社でご用意します。</small><a>セキュリティ資料を見る →</a></div><span>通常 ◯◯ 週間</span></div>
+<div class="r"><i class="num">05</i><div><b>ご契約</b><small>専任担当がオンボーディングを支援します。</small></div><i style="visibility:hidden;border:0"></i></div>
+</div></div>
+</div></section></div></div>
+
+<div><div class="lab"><b>Y3</b><span>与全站统一的图标卡片：悬停卡片上浮、图标变品牌蓝（图中第 4 张为悬停状态）</span></div>
+<div class="frame"><section class="sec y3bg"><div class="w">
+<div class="hd"><div class="eb"><i></i>Process<i></i></div><h2>ご契約までの流れ</h2></div>
+<div class="y3">
+<div class="c"><div class="ic2"><svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4z"/></svg></div><div class="n num">STEP 01</div><b>お問い合わせ</b><small>課題やご利用規模をお聞かせください</small><div class="t">目安<em>1営業日</em></div></div>
+<div class="c"><div class="ic2"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg></div><div class="n num">STEP 02</div><b>ヒアリング</b><small>オンラインで要件を確認します</small><div class="t">目安<em>約1時間</em></div></div>
+<div class="c"><div class="ic2"><svg class="ic" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></div><div class="n num">STEP 03</div><b>お見積り</b><small>規模に合わせたプランをご提示</small><div class="t">目安<em>◯営業日</em></div></div>
+<div class="c hv"><div class="ic2"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div><div class="n num">STEP 04</div><b>社内稟議</b><small>必要な資料は当社でご用意します</small><div class="t">目安<em>◯◯週間</em></div></div>
+<div class="c"><div class="ic2"><svg class="ic" viewBox="0 0 24 24"><path d="M4 17l4-4 3 3 7-7"/><path d="M14 9h4v4"/></svg></div><div class="n num">STEP 05</div><b>ご契約</b><small>専任担当が導入を支援します</small><div class="t">目安<em>—</em></div></div>
+</div>
+</div></section></div></div>
+
+</div></body></html>

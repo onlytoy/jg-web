@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;color:#0a1324;background:#e9ecf3}
+#cmp{width:1440px;padding:40px;display:flex;flex-direction:column;gap:40px}
+.opt{background:#f7f8fc;border-radius:8px;overflow:hidden;position:relative}
+.badge{position:absolute;left:24px;top:20px;font:700 13px/1 "Helvetica Neue",Arial;letter-spacing:.1em;color:#fff;background:#2847fc;padding:7px 12px;border-radius:4px}
+.sec{width:1200px;margin:0 auto;padding:96px 0 104px}
+.eb{display:flex;align-items:center;justify-content:center;gap:14px;font:500 13px/1 "Helvetica Neue",Arial;letter-spacing:.2em;color:#2847fc}
+.eb i{width:22px;height:2px;background:linear-gradient(90deg,#2847fc,#34d3ff)}
+h2{text-align:center;font-size:36px;font-weight:700;letter-spacing:.06em;margin-top:18px}
+.num{font-family:"Helvetica Neue",Arial,sans-serif}
+.d{font-size:14px;line-height:1.85;color:#5b6172}
+.tag{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#eaf0ff;color:#2847fc;font-size:12px;font-weight:700;letter-spacing:.06em}
+a.lk{color:#2847fc;font-size:13px;font-weight:600;text-decoration:none}
+
+/* A time band */
+.A .band{margin-top:64px;display:grid;grid-template-columns:2fr 3fr 3fr 5fr 2fr}
+.A .seg{position:relative;padding:0 24px 0 0}
+.A .bar{height:6px;background:#dfe4f1;margin-bottom:28px;position:relative}
+.A .seg:first-child .bar{border-radius:3px 0 0 3px}.A .seg:last-child .bar{border-radius:0 3px 3px 0}
+.A .seg+.seg .bar{margin-left:-24px}
+.A .seg+.seg .bar:before{content:"";position:absolute;left:0;top:-6px;width:2px;height:18px;background:#f7f8fc}
+.A .seg.k .bar{background:linear-gradient(90deg,#2847fc,#5d8bff)}
+.A .seg.k{}
+.A .n{font-size:44px;font-weight:200;color:#b7bfd3;letter-spacing:-.01em;line-height:1}
+.A .seg.k .n{color:#2847fc}
+.A .t{font-size:19px;font-weight:700;margin:14px 0 8px;letter-spacing:.04em}
+.A .p{font-size:12px;color:#8a91a5;letter-spacing:.06em;margin-bottom:10px}
+.A .p b{color:#0a1324;font-weight:700}
+.A .ex{margin-top:14px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.A .scale{margin-top:40px;display:flex;justify-content:space-between;font-size:12px;color:#8a91a5;letter-spacing:.08em;border-top:1px dashed #d6dbe8;padding-top:14px}
+
+/* B stairs */
+.B .st{margin-top:64px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:end;height:420px}
+.B .c{background:#fff;border-radius:12px;padding:28px 24px;box-shadow:0 10px 30px rgba(20,32,90,.06);border:1px solid #edf0f6;position:relative}
+.B .c:nth-child(1){margin-bottom:0}.B .c:nth-child(2){margin-bottom:48px}.B .c:nth-child(3){margin-bottom:96px}.B .c:nth-child(4){margin-bottom:144px}.B .c:nth-child(5){margin-bottom:192px}
+.B .c .n{font-size:40px;font-weight:200;color:#2847fc;line-height:1}
+.B .c .t{font-size:18px;font-weight:700;margin:16px 0 8px}
+.B .c .p{font-size:12px;color:#8a91a5;margin-top:12px;letter-spacing:.06em}
+.B .c.k{background:linear-gradient(160deg,#f4f7ff,#fff 60%);border-color:#d8e1ff}
+.B .c.k .tag{margin-top:12px}
+.B .c:after{content:"";position:absolute;left:24px;right:24px;bottom:-1px;height:2px;background:linear-gradient(90deg,#2847fc,#34d3ff);border-radius:2px;opacity:.0}
+.B .c:last-child:after{opacity:1}
+
+/* C numerals */
+.C .row{margin-top:72px;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.C .row:before{content:"";position:absolute;left:0;right:0;top:58px;height:1px;background:linear-gradient(90deg,#c9d2ec,#2847fc 70%,#c9d2ec)}
+.C .s{padding-right:28px;position:relative;display:flex;flex-direction:column}.C .s .p{margin-top:auto}.C .s .d{margin-bottom:16px}
+.C .n{font-size:116px;font-weight:200;line-height:1;color:transparent;-webkit-text-stroke:1px #aeb8d4;letter-spacing:-.03em;background:#f7f8fc;display:inline-block;padding-right:12px;position:relative}
+.C .s.k .n{-webkit-text-stroke:1px #2847fc}
+.C .dot{position:absolute;left:0;top:54px;width:9px;height:9px;border-radius:50%;background:#2847fc;display:none}
+.C .t{font-size:19px;font-weight:700;margin:22px 0 8px;letter-spacing:.04em}
+.C .p{font-size:12px;color:#8a91a5;margin-top:14px;letter-spacing:.06em;padding-top:12px;border-top:1px solid #e6e9f2}
+.C .p b{color:#0a1324}
+.C .ex{margin-top:12px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+</style></head><body>
+<div id="cmp">
+
+<section class="opt A"><span class="badge">A　時間帯</span>
+<div class="sec"><div class="eb"><i></i>PROCESS</div><h2>ご契約までの流れ</h2>
+<div class="band">
+ <div class="seg"><div class="bar"></div><div class="n num">01</div><div class="t">お問い合わせ</div><div class="p">所要 <b>即日</b></div><div class="d">フォームまたはお電話でご連絡ください。</div></div>
+ <div class="seg"><div class="bar"></div><div class="n num">02</div><div class="t">ヒアリング</div><div class="p">所要 <b>◯日程度</b></div><div class="d">課題と現在の運用をお伺いします。</div></div>
+ <div class="seg"><div class="bar"></div><div class="n num">03</div><div class="t">お見積り</div><div class="p">所要 <b>◯日程度</b></div><div class="d">ご利用規模に合わせてご提示します。</div></div>
+ <div class="seg k"><div class="bar"></div><div class="n num">04</div><div class="t">社内稟議</div><div class="p">所要 <b>通常◯◯週間程度</b></div><div class="d">稟議に必要な資料は、当社でご用意します。</div><div class="ex"><span class="tag">資料は当社でご用意</span><a class="lk">セキュリティ資料を見る →</a></div></div>
+ <div class="seg"><div class="bar"></div><div class="n num">05</div><div class="t">ご契約</div><div class="p">所要 <b>◯日</b></div><div class="d">契約締結後、導入を開始します。</div></div>
+</div>
+<div class="scale"><span>お問い合わせから</span><span>ご契約まで　目安 ◯〜◯週間</span></div>
+</div></section>
+
+<section class="opt B"><span class="badge">B　階段</span>
+<div class="sec"><div class="eb"><i></i>PROCESS</div><h2>ご契約までの流れ</h2>
+<div class="st">
+ <div class="c"><div class="n num">01</div><div class="t">お問い合わせ</div><div class="d">フォームまたはお電話でご連絡ください。</div><div class="p">即日</div></div>
+ <div class="c"><div class="n num">02</div><div class="t">ヒアリング</div><div class="d">課題と現在の運用をお伺いします。</div><div class="p">◯日程度</div></div>
+ <div class="c"><div class="n num">03</div><div class="t">お見積り</div><div class="d">ご利用規模に合わせてご提示します。</div><div class="p">◯日程度</div></div>
+ <div class="c k"><div class="n num">04</div><div class="t">社内稟議</div><div class="d">稟議に必要な資料は、当社でご用意します。</div><span class="tag">資料は当社でご用意</span><div class="p">通常◯◯週間程度</div></div>
+ <div class="c"><div class="n num">05</div><div class="t">ご契約</div><div class="d">契約締結後、導入を開始します。</div><div class="p">◯日</div></div>
+</div></div></section>
+
+<section class="opt C"><span class="badge">C　数字主導</span>
+<div class="sec"><div class="eb"><i></i>PROCESS</div><h2>ご契約までの流れ</h2>
+<div class="row">
+ <div class="s"><div class="n num">01</div><div class="t">お問い合わせ</div><div class="d">フォームまたはお電話でご連絡ください。</div><div class="p">所要 <b>即日</b></div></div>
+ <div class="s"><div class="n num">02</div><div class="t">ヒアリング</div><div class="d">課題と現在の運用をお伺いします。</div><div class="p">所要 <b>◯日程度</b></div></div>
+ <div class="s"><div class="n num">03</div><div class="t">お見積り</div><div class="d">ご利用規模に合わせてご提示します。</div><div class="p">所要 <b>◯日程度</b></div></div>
+ <div class="s k"><div class="n num">04</div><div class="t">社内稟議</div><div class="d">稟議に必要な資料は、当社でご用意します。</div><div class="ex"><span class="tag">資料は当社でご用意</span></div><div class="p">所要 <b>通常◯◯週間程度</b></div></div>
+ <div class="s"><div class="n num">05</div><div class="t">ご契約</div><div class="d">契約締結後、導入を開始します。</div><div class="p">所要 <b>◯日</b></div></div>
+</div></div></section>
+
+</div></body></html>

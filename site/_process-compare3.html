@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;color:#0a1324;background:#e9ecf3}
+#cmp{width:1440px;padding:40px;display:flex;flex-direction:column;gap:40px}
+.opt{background:#f7f8fc;border-radius:8px;overflow:hidden;position:relative}
+.badge{position:absolute;left:24px;top:20px;font:700 13px/1 "Helvetica Neue",Arial;letter-spacing:.1em;color:#fff;background:#2847fc;padding:7px 12px;border-radius:4px;z-index:2}
+.sec{width:1200px;margin:0 auto;padding:104px 0}
+.num{font-family:"Helvetica Neue",Arial,sans-serif}
+.eb{display:flex;align-items:center;gap:14px;font:500 13px/1 "Helvetica Neue",Arial;letter-spacing:.2em;color:#2847fc}
+.eb i{width:22px;height:2px;background:linear-gradient(90deg,#2847fc,#34d3ff)}
+h2{font-size:36px;font-weight:700;letter-spacing:.06em;margin-top:18px;line-height:1.4}
+.hd{display:flex;justify-content:space-between;align-items:flex-end}
+.lead{font-size:15px;line-height:2;color:#5b6172;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:20px;height:52px;padding:0 28px;border-radius:999px;font-size:15px;font-weight:700;text-decoration:none;background:#2847fc;color:#fff;box-shadow:0 10px 24px rgba(40,71,252,.22)}
+.tag{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;background:#eaf0ff;color:#2847fc;font-size:11px;font-weight:700;letter-spacing:.06em}
+a.lk{color:#2847fc;font-size:13px;font-weight:600;text-decoration:none}
+.ic{width:44px;height:44px;border-radius:12px;background:#eef2ff;display:flex;align-items:center;justify-content:center;color:#2847fc}
+.ic svg{width:22px;height:22px}
+
+/* X */
+.X .row{margin-top:56px;display:flex;align-items:stretch}
+.X .c{flex:1;min-width:0;background:#fff;border:1px solid #edf0f6;border-radius:16px;padding:28px 24px 26px;box-shadow:0 8px 24px rgba(20,32,90,.05);display:flex;flex-direction:column}
+.X .ar{flex:none;width:32px;display:flex;align-items:center;justify-content:center;color:#a9b5da}
+.X .top{display:flex;justify-content:space-between;align-items:flex-start}
+.X .n{font-size:13px;color:#2847fc;letter-spacing:.12em;font-weight:500}
+.X .t{font-size:18px;font-weight:700;margin-top:22px;letter-spacing:.04em}
+.X .d{font-size:13px;line-height:1.85;color:#5b6172;margin-top:8px}
+.X .dur{margin-top:auto;padding-top:18px;border-top:1px solid #f0f2f7;font-size:12px;color:#8a91a5;display:flex;justify-content:space-between}
+.X .dur b{color:#0a1324}
+.X .c .dbox{margin-top:16px}
+.X .c.k{border-color:#cfdaff;background:linear-gradient(180deg,#f5f8ff,#fff 55%)}
+
+/* Y */
+.Y .tl{margin-top:72px;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.Y .s{position:relative;padding-right:28px}
+.Y .ln{position:relative;height:44px;display:flex;align-items:center}
+.Y .ln .ic{position:relative;z-index:1}
+.Y .ln:after{content:"";position:absolute;left:56px;right:0;top:50%;height:1px;background:repeating-linear-gradient(90deg,#b9c3e3 0 4px,transparent 4px 9px)}
+.Y .s:last-child .ln:after{display:none}
+.Y .ln .du{position:absolute;left:calc(56px + 50% - 40px);top:50%;transform:translate(-50%,-50%);background:#f7f8fc;padding:0 10px;font-size:12px;color:#5b6172;z-index:1;white-space:nowrap;letter-spacing:.04em}
+.Y .ln .du b{color:#0a1324}
+.Y .n{font-size:12px;color:#2847fc;letter-spacing:.14em;margin-top:26px}
+.Y .t{font-size:19px;font-weight:700;margin-top:8px;letter-spacing:.04em}
+.Y .d{font-size:13px;line-height:1.85;color:#5b6172;margin-top:8px}
+.Y .ex{margin-top:14px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.Y .s.k .ic{background:#2847fc;color:#fff;box-shadow:0 8px 18px rgba(40,71,252,.25)}
+.Y .s.e .ic{background:linear-gradient(135deg,#2847fc,#34b8ff);color:#fff}
+.Y .total{margin-top:48px;display:flex;justify-content:space-between;align-items:center;padding:22px 28px;background:#fff;border:1px solid #edf0f6;border-radius:14px}
+.Y .total p{font-size:15px}.Y .total p b{font-size:20px;margin:0 6px}
+</style></head><body>
+<div id="cmp">
+
+<section class="opt X"><span class="badge">X　横カード連結</span>
+<div class="sec">
+ <div class="hd"><div><div class="eb"><i></i>PROCESS</div><h2>ご契約までの流れ</h2><p class="lead">お問い合わせからご契約まで、目安は◯〜◯週間です。</p></div><a class="btn">お問い合わせ <span>→</span></a></div>
+ <div class="row">
+  <div class="c"><div class="top"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H9l-5 4z"/></svg></div><span class="n num">01</span></div><div class="t">お問い合わせ</div><div class="d">フォームまたはお電話でご連絡ください。</div><div class="dur"><span>所要期間</span><b>即日</b></div></div>
+  <div class="ar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 2l5 5-5 5"/></svg></div>
+  <div class="c"><div class="top"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg></div><span class="n num">02</span></div><div class="t">ヒアリング</div><div class="d">課題と現在の運用をお伺いします。</div><div class="dur"><span>所要期間</span><b>◯日程度</b></div></div>
+  <div class="ar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 2l5 5-5 5"/></svg></div>
+  <div class="c"><div class="top"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3h7l4 4v14H7z"/><path d="M10 12h5M10 16h5"/></svg></div><span class="n num">03</span></div><div class="t">お見積り</div><div class="d">ご利用規模に合わせてご提示します。</div><div class="dur"><span>所要期間</span><b>◯日程度</b></div></div>
+  <div class="ar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 2l5 5-5 5"/></svg></div>
+  <div class="c k"><div class="top"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><span class="n num">04</span></div><div class="t">社内稟議</div><div class="d">稟議に必要な資料は、当社でご用意します。</div><div class="dbox"><span class="tag">資料は当社でご用意</span></div><div class="dur"><span>所要期間</span><b>通常◯◯週間</b></div></div>
+  <div class="ar"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 2l5 5-5 5"/></svg></div>
+  <div class="c"><div class="top"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l5-5 4 4 7-7"/><path d="M15 8h5v5"/></svg></div><span class="n num">05</span></div><div class="t">ご契約</div><div class="d">契約締結後、導入を開始します。</div><div class="dur"><span>所要期間</span><b>◯日</b></div></div>
+ </div>
+</div></section>
+
+<section class="opt Y"><span class="badge">Y　タイムライン + 期間をライン上に</span>
+<div class="sec">
+ <div class="hd"><div><div class="eb"><i></i>PROCESS</div><h2>ご契約までの流れ</h2></div></div>
+ <div class="tl">
+  <div class="s"><div class="ln"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H9l-5 4z"/></svg></div><span class="du">即日</span></div><div class="n num">STEP 01</div><div class="t">お問い合わせ</div><div class="d">フォームまたはお電話でご連絡ください。</div></div>
+  <div class="s"><div class="ln"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg></div><span class="du"><b>◯日</b>程度</span></div><div class="n num">STEP 02</div><div class="t">ヒアリング</div><div class="d">課題と現在の運用をお伺いします。</div></div>
+  <div class="s"><div class="ln"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3h7l4 4v14H7z"/><path d="M10 12h5M10 16h5"/></svg></div><span class="du"><b>◯日</b>程度</span></div><div class="n num">STEP 03</div><div class="t">お見積り</div><div class="d">ご利用規模に合わせてご提示します。</div></div>
+  <div class="s k"><div class="ln"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><span class="du">通常<b>◯◯週間</b></span></div><div class="n num">STEP 04</div><div class="t">社内稟議</div><div class="d">稟議に必要な資料は、当社でご用意します。</div><div class="ex"><a class="lk">セキュリティ資料を見る →</a></div></div>
+  <div class="s e"><div class="ln"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12l5 5 9-10"/></svg></div></div><div class="n num">STEP 05</div><div class="t">ご契約</div><div class="d">契約締結後、導入を開始します。</div></div>
+ </div>
+ <div class="total"><p>お問い合わせからご契約まで　目安<b class="num">◯〜◯</b>週間</p><a class="btn">お問い合わせ <span>→</span></a></div>
+</div></section>
+
+</div></body></html>

@@ -1,0 +1,239 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Zen Kaku Gothic New",sans-serif;color:#0b1524;background:#eef0f5}
+#cmp{width:1340px;padding:40px;display:flex;flex-direction:column;gap:32px}
+.lab{font-family:Outfit;font-size:14px;font-weight:600;color:#2847fc;letter-spacing:.08em;margin-bottom:10px}
+.lab small{font-family:"Zen Kaku Gothic New";color:#64748b;font-weight:400;margin-left:10px;letter-spacing:0}
+.sec{background:#fff;border-radius:16px;padding:72px 70px}
+.hd{text-align:center;margin-bottom:56px}
+.eb{display:inline-flex;align-items:center;gap:12px;font-family:Outfit;font-size:13px;color:#2847fc;letter-spacing:.08em}
+.eb:before{content:"";width:24px;height:1px;background:#2847fc}
+.hd h2{font-size:34px;font-weight:700;letter-spacing:.04em;margin-top:14px}
+.num{font-family:Outfit;font-weight:300;color:#2847fc}
+.note{font-size:14px;color:#475569}.note b{color:#0b1524}
+.tag{display:inline-block;margin-top:14px;padding:5px 12px;border-radius:999px;background:#fdf3e2;color:#9a5b10;font-size:12px;font-weight:700}
+/* A */
+.a-row{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative}
+.a-card{position:relative;border:1px solid #e3e7f0;border-radius:12px;padding:26px 22px 24px;background:#fff}
+.a-card .num{font-size:34px;line-height:1}
+.a-card h3{font-size:17px;font-weight:700;margin-top:18px}
+.a-card p{font-size:12.5px;color:#64748b;line-height:1.75;margin-top:8px}
+.a-card .ic{position:absolute;right:20px;top:24px;width:22px;height:22px;color:#94a3c4}
+.a-card+.a-card:before{content:"";position:absolute;left:-14px;top:42px;width:14px;height:1px;background:#c9d2ea}
+.a-card.hl{background:#fffaf1;border-color:#f3dfb8}
+.a-ft{text-align:center;margin-top:40px}
+/* B */
+.b-line{position:relative;display:grid;grid-template-columns:repeat(5,1fr);padding-top:0}
+.b-line:before{content:"";position:absolute;left:10%;right:10%;top:74.5px;height:1px;background:linear-gradient(90deg,#c9d2ea,#2847fc)}
+.b-it{text-align:center;position:relative}
+.b-it h3{font-size:17px;font-weight:700;height:40px}
+.b-it .sm{font-family:Outfit;font-size:11px;color:#94a3b8;letter-spacing:.12em;margin-bottom:6px}
+.b-dot{width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid #2847fc;margin:8px auto 0;position:relative;z-index:1}
+.b-it.last .b-dot{background:#2847fc;box-shadow:0 0 0 6px #e6ebff}
+.b-t{margin-top:22px;font-size:13px;color:#2847fc;font-weight:700}
+.b-it p{font-size:12.5px;color:#64748b;line-height:1.7;margin:8px auto 0;max-width:180px}
+.b-sum{margin:48px auto 0;max-width:560px;display:flex;align-items:center;justify-content:center;gap:18px;padding:18px 28px;border-top:1px solid #e3e7f0;border-bottom:1px solid #e3e7f0}
+.b-sum .num{font-size:22px}
+/* C */
+.c-g{display:grid;grid-template-columns:380px 1fr;gap:72px;align-items:start}
+.c-l .eb{justify-content:flex-start}
+.c-l h2{font-size:34px;font-weight:700;letter-spacing:.04em;margin-top:14px}
+.c-l p{font-size:14px;color:#475569;line-height:1.9;margin-top:20px}
+.c-du{margin-top:36px;padding-top:24px;border-top:1px solid #e3e7f0}
+.c-du small{font-size:12px;color:#64748b}
+.c-du div{margin-top:8px;font-size:15px}.c-du .num{font-size:28px;margin:0 4px}
+.c-r{border-top:1px solid #e3e7f0}
+.c-it{display:grid;grid-template-columns:64px 170px 1fr;align-items:baseline;gap:16px;padding:24px 0;border-bottom:1px solid #e3e7f0}
+.c-it .num{font-size:22px}
+.c-it h3{font-size:17px;font-weight:700}
+.c-it p{font-size:13px;color:#64748b;line-height:1.75}
+.c-it .tag{margin:0 0 0 10px;vertical-align:middle}
+
+/* D */
+.d-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.d-seg{position:relative;height:112px;display:flex;align-items:center;gap:14px;padding:0 20px 0 44px;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%,22px 50%)}
+.d-seg:first-child{clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);padding-left:28px;border-radius:12px 0 0 12px}
+.d-seg .ic{width:40px;height:40px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;color:#2847fc}
+.d-seg .ic svg{width:20px;height:20px}
+.d-seg small{display:block;font-family:Outfit;font-size:11px;letter-spacing:.12em;color:#2847fc;opacity:.8}
+.d-seg b{display:block;font-size:16px;margin-top:3px;white-space:nowrap}
+.d-seg.s1{background:#f1f4ff}.d-seg.s2{background:#e8edff}.d-seg.s3{background:#dde5ff}.d-seg.s4{background:#d0dbff}
+.d-seg.s5{background:linear-gradient(90deg,#3a57ff,#2847fc);color:#fff}.d-seg.s5 small{color:#fff}
+.d-sub{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:18px}
+.d-sub div{padding:0 22px 0 30px;font-size:12.5px;color:#64748b;line-height:1.7}
+.d-sub .tag{margin-top:8px}
+/* E */
+.e-wrap{position:relative;padding:8px 0 0}
+.e-track{position:absolute;left:10%;right:10%;top:44px;height:2px;background:linear-gradient(90deg,#d6defb,#2847fc);border-radius:2px}
+.e-track:after{content:"";position:absolute;right:-6px;top:-4px;border-left:9px solid #2847fc;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.e-row{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.e-it{text-align:center}
+.e-n{width:72px;height:72px;margin:0 auto;border-radius:50%;background:#fff;border:1px solid #dfe5f6;box-shadow:0 10px 24px -14px rgba(40,71,252,.45);display:flex;align-items:center;justify-content:center;color:#2847fc;position:relative}
+.e-n svg{width:28px;height:28px}
+.e-n i{position:absolute;top:-6px;right:-6px;min-width:26px;height:26px;border-radius:13px;background:#0b1524;color:#fff;font-style:normal;font-family:Outfit;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;border:3px solid #fff}
+.e-it.goal .e-n{background:#2847fc;color:#fff;border-color:#2847fc;box-shadow:0 0 0 8px #eef1ff,0 14px 28px -12px rgba(40,71,252,.6)}
+.e-it h3{font-size:16px;font-weight:700;margin-top:22px}
+.e-it p{font-size:12.5px;color:#64748b;margin-top:6px}
+.e-ft{margin:44px auto 0;display:flex;justify-content:center}
+.e-ft span{display:inline-flex;align-items:center;gap:10px;padding:10px 22px;border-radius:999px;background:#f3f6ff;font-size:14px;color:#334155}
+.e-ft b{color:#2847fc}
+
+/* F */
+.f-pn{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#f4f6ff 0%,#fbfcff 55%,#f3f8fb 100%);border:1px solid #e6eaf5;display:grid;grid-template-columns:330px 1fr;gap:0}
+.f-pn:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(40,71,252,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(40,71,252,.05) 1px,transparent 1px);background-size:32px 32px;-webkit-mask:radial-gradient(70% 90% at 85% 10%,#000,transparent 70%);mask:radial-gradient(70% 90% at 85% 10%,#000,transparent 70%)}
+.f-l{position:relative;padding:56px 44px;border-right:1px solid #e6eaf5}
+.f-l h2{font-size:30px;font-weight:700;letter-spacing:.04em;margin-top:14px;line-height:1.4}
+.f-l p{font-size:13.5px;color:#475569;line-height:1.9;margin-top:16px}
+.f-du{margin-top:28px;font-size:13px;color:#64748b}.f-du b{display:block;font-size:20px;color:#0b1524;margin-top:4px}
+.f-btn{margin-top:32px;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 26px;border-radius:999px;background:#2847fc;color:#fff;font-size:14px;font-weight:700;box-shadow:0 10px 22px -10px rgba(40,71,252,.6)}
+.f-r{position:relative;padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+.f-row{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.f-row:before{content:"";position:absolute;left:28px;right:calc(20% - 28px);top:28px;height:1px;background:linear-gradient(90deg,#2847fc,#c9d2ea)}
+.f-it{position:relative;padding-right:12px}
+.f-ic{width:56px;height:56px;border-radius:16px;background:#fff;border:1px solid #e3e7f0;display:flex;align-items:center;justify-content:center;color:#2847fc;position:relative;z-index:1}
+.f-ic svg{width:24px;height:24px}
+.f-it.first .f-ic{background:#2847fc;color:#fff;border-color:#2847fc}
+.f-it small{display:block;font-family:Outfit;font-size:11px;letter-spacing:.14em;color:#94a3b8;margin-top:22px}
+.f-it h3{font-size:16px;font-weight:700;margin-top:4px}
+.f-it p{font-size:12.5px;color:#64748b;line-height:1.7;margin-top:6px}
+.f-it .tag{margin-top:10px;font-size:11px;padding:4px 10px}
+/* G */
+.g-bd{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #e3e7f0;border-bottom:1px solid #e3e7f0}
+.g-it{position:relative;padding:36px 26px 34px;transition:.2s}
+.g-it+.g-it{border-left:1px solid #eef1f6}
+.g-it:after{content:"";position:absolute;right:-6px;top:52px;width:11px;height:11px;background:#fff;border-top:1px solid #c9d2ea;border-right:1px solid #c9d2ea;transform:rotate(45deg);z-index:1}
+.g-it:last-child:after{display:none}
+.g-top{display:flex;align-items:center;justify-content:space-between}
+.g-top .num{font-size:15px;font-weight:500;letter-spacing:.08em}
+.g-top svg{width:26px;height:26px;color:#2847fc}
+.g-it h3{font-size:18px;font-weight:700;margin-top:26px}
+.g-it p{font-size:12.5px;color:#64748b;line-height:1.75;margin-top:8px}
+.g-it.go{background:linear-gradient(180deg,#f3f5ff,#fff)}
+.g-it.go h3{color:#2847fc}
+.g-it .lnk{display:inline-flex;margin-top:14px;font-size:12.5px;font-weight:700;color:#2847fc}
+.g-ft{display:flex;align-items:center;justify-content:space-between;margin-top:28px}
+.g-ft .meta{display:flex;gap:36px;font-size:13px;color:#475569}
+.g-ft .meta span{display:flex;align-items:center;gap:8px}
+.g-ft .meta i{width:6px;height:6px;border-radius:50%;background:#2847fc}
+.g-ft a{font-size:13.5px;font-weight:700;color:#2847fc}
+.ghd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px}
+.ghd h2{font-size:32px;font-weight:700;letter-spacing:.04em;margin-top:12px}
+.ghd p{font-size:14px;color:#475569}
+
+/* H */
+.h-rail{position:relative;display:grid;grid-template-columns:repeat(5,1fr);margin-top:8px}
+.h-rail:before{content:"";position:absolute;left:0;right:0;top:6px;height:1px;background:#e3e7f0}
+.h-rail:after{content:"";position:absolute;left:0;width:20%;top:6px;height:1px;background:#2847fc}
+.h-it{position:relative;padding:40px 28px 0 0}
+.h-it:before{content:"";position:absolute;left:0;top:0;width:13px;height:13px;border-radius:50%;background:#fff;border:1px solid #c9d2ea;box-sizing:border-box}
+.h-it.on:before{background:#2847fc;border-color:#2847fc;box-shadow:0 0 0 5px rgba(40,71,252,.12)}
+.h-n{font-family:Outfit;font-size:44px;font-weight:300;line-height:1;color:#c3cbe0;letter-spacing:.02em}
+.h-it.on .h-n{color:#2847fc}
+.h-it h3{font-size:17px;font-weight:700;margin-top:18px;display:flex;align-items:center;gap:8px}
+.h-it h3 svg{width:18px;height:18px;color:#2847fc}
+.h-it p{font-size:12.5px;color:#64748b;line-height:1.75;margin-top:8px}
+.h-ft{margin-top:48px;padding-top:24px;border-top:1px solid #eef1f6;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#475569}
+.h-ft a{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 22px;border-radius:999px;border:1px solid #2847fc;color:#2847fc;font-weight:700;font-size:13.5px}
+/* I */
+.i-g{display:grid;grid-template-columns:340px 1fr;gap:72px;align-items:start}
+.i-l h2{font-size:32px;font-weight:700;letter-spacing:.04em;margin-top:12px;line-height:1.4}
+.i-l p{font-size:13.5px;color:#475569;line-height:1.9;margin-top:16px}
+.i-du{margin-top:28px;padding:18px 0;border-top:1px solid #e3e7f0;border-bottom:1px solid #e3e7f0;display:flex;justify-content:space-between;font-size:13px;color:#64748b}.i-du b{color:#0b1524;font-size:15px}
+.i-l .f-btn{margin-top:28px}
+.i-list{position:relative;border-top:1px solid #e3e7f0}
+.i-row{display:grid;grid-template-columns:72px 48px 140px 1fr auto;align-items:center;gap:20px;padding:22px 4px;border-bottom:1px solid #e3e7f0;position:relative}
+.i-row .n{white-space:nowrap;font-family:Outfit;font-size:14px;letter-spacing:.12em;color:#94a3b8}
+.i-row .ic{width:48px;height:48px;border-radius:50%;border:1px solid #e3e7f0;background:#fff;display:flex;align-items:center;justify-content:center;color:#2847fc;position:relative;z-index:1}
+.i-row .ic svg{width:20px;height:20px}
+.i-row h3{font-size:16px;font-weight:700}
+.i-row p{font-size:13px;color:#64748b}
+.i-row .tag{font-size:11px;padding:4px 10px}
+.i-row.on .n{color:#2847fc}.i-row.on .ic{background:#2847fc;border-color:#2847fc;color:#fff}
+.i-list:before{content:"";position:absolute;left:112px;top:46px;bottom:46px;width:1px;background:#dfe4f0}
+
+/* J */
+.j-wrap{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.j-wrap:before{content:"";position:absolute;left:40px;right:40px;top:40px;height:1px;background-image:linear-gradient(90deg,#c9d2ea 50%,transparent 50%);background-size:8px 1px}
+.j-it{position:relative;text-align:center;padding:0 8px}
+.j-ic{width:80px;height:80px;margin:0 auto;border-radius:50%;background:#fff;border:1px solid #e3e7f0;display:flex;align-items:center;justify-content:center;color:#2847fc;position:relative;z-index:1;box-shadow:0 10px 24px -14px rgba(45,43,155,.25)}
+.j-ic svg{width:30px;height:30px}
+.j-ic em{position:absolute;top:-4px;right:-4px;width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid #e3e7f0;font-style:normal;font-family:Outfit;font-size:11px;font-weight:600;color:#2847fc;display:flex;align-items:center;justify-content:center}
+.j-it.on .j-ic{background:#2847fc;border-color:#2847fc;color:#fff;box-shadow:0 0 0 8px rgba(40,71,252,.08),0 14px 28px -12px rgba(40,71,252,.5)}
+.j-it h3{font-size:17px;font-weight:700;margin-top:24px}
+.j-it p{font-size:12.5px;color:#64748b;line-height:1.7;margin-top:6px}
+.j-hd{text-align:center;margin-bottom:56px}.j-hd h2{font-size:32px;font-weight:700;letter-spacing:.04em;margin-top:12px}.j-hd p{font-size:14px;color:#475569;margin-top:12px}
+.j-ft{margin-top:56px;display:flex;justify-content:center}
+.j-ft a{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 28px;border-radius:999px;background:#2847fc;color:#fff;font-weight:700;font-size:14px}
+/* K */
+.k2-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px}
+.k2-hd h2{font-size:32px;font-weight:700;letter-spacing:.04em;margin-top:12px}
+.k2-hd p{font-size:14px;color:#475569}
+.k2-bar{position:relative;height:56px;border-radius:999px;background:#f3f5fb;display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden}
+.k2-bar:before{content:"";position:absolute;left:0;top:0;bottom:0;width:20%;border-radius:999px;background:linear-gradient(90deg,#2847fc,#5a69e0)}
+.k2-seg{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;font-weight:700;color:#0b1524}
+.k2-seg+.k2-seg:after{content:"";position:absolute;left:0;top:18px;bottom:18px;width:1px;background:#dfe4f0}
+.k2-seg span{font-family:Outfit;font-size:12px;font-weight:500;color:#94a3b8;letter-spacing:.08em}
+.k2-seg.on{color:#fff}.k2-seg.on span{color:rgba(255,255,255,.75)}
+.k2-ds{display:grid;grid-template-columns:repeat(5,1fr);margin-top:20px}
+.k2-ds div{padding:0 20px;font-size:12.5px;color:#64748b;line-height:1.7;text-align:center}
+.k2-ds svg{display:block;margin:0 auto 10px;width:22px;height:22px;color:#2847fc}
+.k2-ft{margin-top:44px;padding:22px 28px;border-radius:16px;background:#f7f8fb;display:flex;align-items:center;justify-content:space-between;font-size:13.5px;color:#475569}
+.k2-ft b{color:#0b1524}
+.k2-ft a{font-weight:700;color:#2847fc}
+</style></head><body><div id="cmp">
+<div><div class="lab">J<small>中央揃え＋大きな円アイコンを点線で結ぶ（番号は円の右上）</small></div><section class="sec"><div class="j-hd"><span class="eb">Process</span><h2>ご契約までの流れ</h2><p>通常〇〇週間程度で導入いただけます。</p></div><div class="j-wrap"><div class="j-it on"><div class="j-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><em>01</em></div><h3>お問い合わせ</h3><p>フォーム・お電話で受付</p></div><div class="j-it"><div class="j-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg><em>02</em></div><h3>ヒアリング</h3><p>規模・目的を伺います</p></div><div class="j-it"><div class="j-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg><em>03</em></div><h3>お見積り</h3><p>個別にご提示します</p></div><div class="j-it"><div class="j-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6v6l2 3H7l2-3z"/><path d="M5 15h14M7 19h10"/></svg><em>04</em></div><h3>社内稟議</h3><p>稟議資料をご用意します</p></div><div class="j-it"><div class="j-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><em>05</em></div><h3>ご契約</h3><p>導入をサポートします</p></div></div><div class="j-ft"><a>営業に相談する →</a></div></section></div>
+<div><div class="lab">K<small>ひと続きのステップバー（現在地＝最初の一歩が塗り）＋下に補足</small></div><section class="sec"><div class="k2-hd"><div><span class="eb">Process</span><h2>ご契約までの流れ</h2></div><p>通常〇〇週間程度で導入いただけます。</p></div><div class="k2-bar"><div class="k2-seg on"><span>01</span>お問い合わせ</div><div class="k2-seg"><span>02</span>ヒアリング</div><div class="k2-seg"><span>03</span>お見積り</div><div class="k2-seg"><span>04</span>社内稟議</div><div class="k2-seg"><span>05</span>ご契約</div></div><div class="k2-ds"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>フォーム・お電話で受付</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg>規模・目的を伺います</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg>個別にご提示します</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6v6l2 3H7l2-3z"/><path d="M5 15h14M7 19h10"/></svg>稟議資料をご用意します</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>導入をサポートします</div></div><div class="k2-ft"><span><b>まずはお問い合わせから。</b>担当者よりご連絡いたします。</span><a>営業に相談する →</a></div></section></div>
+
+<div><div class="lab">H<small>細いレール＋大きな細字ナンバー（区切り線なし・最も軽い）</small></div><section class="sec"><div class="ghd"><div><span class="eb">Process</span><h2>ご契約までの流れ</h2></div><p>通常〇〇週間程度で導入いただけます。</p></div><div class="h-rail"><div class="h-it on"><div class="h-n">01</div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>お問い合わせ</h3><p>フォーム・お電話で受付</p></div><div class="h-it"><div class="h-n">02</div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg>ヒアリング</h3><p>規模・目的を伺います</p></div><div class="h-it"><div class="h-n">03</div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg>お見積り</h3><p>個別にご提示します</p></div><div class="h-it"><div class="h-n">04</div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6v6l2 3H7l2-3z"/><path d="M5 15h14M7 19h10"/></svg>社内稟議</h3><p>稟議資料をご用意します</p></div><div class="h-it"><div class="h-n">05</div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>ご契約</h3><p>導入をサポートします</p></div></div><div class="h-ft"><span>お見積り・ご相談は無料です。まずはお気軽にお問い合わせください。</span><a>営業に相談する →</a></div></section></div>
+<div><div class="lab">I<small>左に見出し・CTA／右に縦の工程リスト（行ごとに罫線）</small></div><section class="sec"><div class="i-g"><div class="i-l"><span class="eb">Process</span><h2>ご契約までの流れ</h2><p>お問い合わせから導入まで、担当者が一貫してサポートします。</p><div class="i-du"><span>導入までの目安</span><b>通常〇〇週間程度</b></div><span class="f-btn">営業に相談する <span>→</span></span></div><div class="i-list"><div class="i-row on"><span class="n">STEP 01</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><h3>お問い合わせ</h3><p>フォーム・お電話で受付</p><span></span></div><div class="i-row"><span class="n">STEP 02</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg></span><h3>ヒアリング</h3><p>規模・目的を伺います</p><span></span></div><div class="i-row"><span class="n">STEP 03</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg></span><h3>お見積り</h3><p>個別にご提示します</p><span></span></div><div class="i-row"><span class="n">STEP 04</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6v6l2 3H7l2-3z"/><path d="M5 15h14M7 19h10"/></svg></span><h3>社内稟議</h3><p>稟議資料をご用意します</p><span class="tag">資料は当社でご用意</span></div><div class="i-row"><span class="n">STEP 05</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span><h3>ご契約</h3><p>導入をサポートします</p><span></span></div></div></div></section></div>
+
+<div><div class="lab">F<small>パネル＋左に見出し・CTA／右に工程（サイト共通の格子モチーフ）</small></div><section class="sec" style="padding:56px 60px"><div class="f-pn"><div class="f-l"><span class="eb">Process</span><h2>ご契約までの<br>流れ</h2><p>お問い合わせから導入まで、担当者が一貫してサポートします。</p><div class="f-du">導入までの目安<b>通常〇〇週間程度</b></div><span class="f-btn">営業に相談する <span>→</span></span></div><div class="f-r"><div class="f-row"><div class="f-it first"><div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><small>STEP 01</small><h3>お問い合わせ</h3><p>フォーム・お電話で受付</p></div><div class="f-it"><div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg></div><small>STEP 02</small><h3>ヒアリング</h3><p>規模・目的を伺います</p></div><div class="f-it"><div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg></div><small>STEP 03</small><h3>お見積り</h3><p>個別にご提示します</p></div><div class="f-it"><div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6v6l2 3H7l2-3z"/><path d="M5 15h14M7 19h10"/></svg></div><small>STEP 04</small><h3>社内稟議</h3><p>稟議資料をご用意します</p><span class="tag">資料は当社でご用意</span></div><div class="f-it"><div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></div><small>STEP 05</small><h3>ご契約</h3><p>導入をサポートします</p></div></div></div></div></section></div>
+<div><div class="lab">G<small>見出し左寄せ＋横帯の工程（区切り線と矢印、最初の一歩を強調）</small></div><section class="sec"><div class="ghd"><div><span class="eb">Process</span><h2>ご契約までの流れ</h2></div><p>通常〇〇週間程度で導入いただけます。</p></div><div class="g-bd"><div class="g-it go"><div class="g-top"><span class="num">01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3>お問い合わせ</h3><p>フォーム・お電話で受付</p><span class="lnk">フォームへ →</span></div><div class="g-it"><div class="g-top"><span class="num">02</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg></div><h3>ヒアリング</h3><p>規模・目的を伺います</p></div><div class="g-it"><div class="g-top"><span class="num">03</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg></div><h3>お見積り</h3><p>個別にご提示します</p></div><div class="g-it"><div class="g-top"><span class="num">04</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6v6l2 3H7l2-3z"/><path d="M5 15h14M7 19h10"/></svg></div><h3>社内稟議</h3><p>稟議資料をご用意します</p><span class="tag" style="font-size:11px;padding:4px 10px">資料は当社でご用意</span></div><div class="g-it"><div class="g-top"><span class="num">05</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></div><h3>ご契約</h3><p>導入をサポートします</p></div></div><div class="g-ft"><div class="meta"><span><i></i>ご相談・お見積りは無料</span><span><i></i>稟議用資料は当社でご用意</span></div><a>営業に相談する →</a></div></section></div>
+
+<div><div class="lab">D<small>矢羽根ストリップ（淡→濃で進行感）</small></div><section class="sec"><div class="hd"><span class="eb">Process</span><h2>ご契約までの流れ</h2></div><div class="d-strip"><div class="d-seg s1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><small>STEP 01</small><b>お問い合わせ</b></span></div><div class="d-seg s2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H9l-5 4z"/></svg></span><span><small>STEP 02</small><b>ヒアリング</b></span></div><div class="d-seg s3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg></span><span><small>STEP 03</small><b>お見積り</b></span></div><div class="d-seg s4"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6v6l2 3H7l2-3z"/><path d="M5 15h14M7 19h10"/></svg></span><span><small>STEP 04</small><b>社内稟議</b></span></div><div class="d-seg s5"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span><span><small>STEP 05</small><b>ご契約</b></span></div></div><div class="d-sub"><div>フォーム・お電話で。</div><div>規模・目的を伺います。</div><div>個別にご提示。</div><div>稟議に必要な資料をご用意します。</div><div>導入をサポート。</div></div><div class="a-ft note">通常<b>〇〇週間</b>程度で導入いただけます。</div></section></div>
+<div><div class="lab">E<small>アイコンノード＋進行ライン（ゴール強調）</small></div><section class="sec"><div class="hd"><span class="eb">Process</span><h2>ご契約までの流れ</h2></div><div class="e-wrap"><div class="e-track"></div><div class="e-row"><div class="e-it"><div class="e-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><i>01</i></div><h3>お問い合わせ</h3><p>フォーム・お電話で</p></div><div class="e-it"><div class="e-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H9l-5 4z"/></svg><i>02</i></div><h3>ヒアリング</h3><p>規模・目的を伺います</p></div><div class="e-it"><div class="e-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg><i>03</i></div><h3>お見積り</h3><p>個別にご提示</p></div><div class="e-it"><div class="e-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6v6l2 3H7l2-3z"/><path d="M5 15h14M7 19h10"/></svg><i>04</i></div><h3>社内稟議</h3><p>資料は当社でご用意</p></div><div class="e-it goal"><div class="e-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><i>05</i></div><h3>ご契約</h3><p>導入をサポート</p></div></div></div><div class="e-ft"><span>お問い合わせから導入まで <b>通常〇〇週間</b> 程度</span></div></section></div>
+
+
+<div><div class="lab">A<small>横並びカード（番号＋説明）</small></div>
+<section class="sec">
+<div class="hd"><span class="eb">Process</span><h2>ご契約までの流れ</h2></div>
+<div class="a-row">
+<div class="a-card"><span class="num">01</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><h3>お問い合わせ</h3><p>フォームまたはお電話でご連絡ください。</p></div>
+<div class="a-card"><span class="num">02</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg><h3>ヒアリング</h3><p>ご利用規模や目的を担当者が伺います。</p></div>
+<div class="a-card"><span class="num">03</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></svg><h3>お見積り</h3><p>内容に合わせて個別にお見積りします。</p></div>
+<div class="a-card hl"><span class="num">04</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6v6l2 3H7l2-3z"/><path d="M5 15h14M7 19h10"/></svg><h3>社内稟議</h3><p>稟議に必要な資料をご用意します。</p><span class="tag">資料は当社でご用意</span></div>
+<div class="a-card"><span class="num">05</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><h3>ご契約</h3><p>ご契約後、導入をサポートします。</p></div>
+</div>
+<div class="a-ft note">通常<b>〇〇週間</b>程度で導入いただけます。</div>
+</section></div>
+
+<div><div class="lab">B<small>タイムライン＋所要期間</small></div>
+<section class="sec">
+<div class="hd"><span class="eb">Process</span><h2>ご契約までの流れ</h2></div>
+<div class="b-line">
+<div class="b-it"><div class="sm">STEP 01</div><h3>お問い合わせ</h3><div class="b-dot"></div><div class="b-t">即日</div><p>フォームまたはお電話でご連絡ください。</p></div>
+<div class="b-it"><div class="sm">STEP 02</div><h3>ヒアリング</h3><div class="b-dot"></div><div class="b-t">〇営業日</div><p>ご利用規模や目的を伺います。</p></div>
+<div class="b-it"><div class="sm">STEP 03</div><h3>お見積り</h3><div class="b-dot"></div><div class="b-t">〇営業日</div><p>個別にお見積りをご提示します。</p></div>
+<div class="b-it"><div class="sm">STEP 04</div><h3>社内稟議</h3><div class="b-dot"></div><div class="b-t">〇週間</div><p>稟議用の資料は当社でご用意します。</p></div>
+<div class="b-it last"><div class="sm">STEP 05</div><h3>ご契約</h3><div class="b-dot"></div><div class="b-t">導入開始</div><p>ご契約後、導入をサポートします。</p></div>
+</div>
+<div class="b-sum note">お問い合わせから導入まで<span><span class="num" style="font-family:'Zen Kaku Gothic New';font-weight:500">〇〇</span> 週間</span>程度</div>
+</section></div>
+
+<div><div class="lab">C<small>左見出し＋右縦ステップ</small></div>
+<section class="sec">
+<div class="c-g">
+<div class="c-l"><span class="eb">Process</span><h2>ご契約までの流れ</h2><p>お問い合わせからご契約まで、担当者が一貫してサポートします。社内稟議に必要な資料も当社でご用意します。</p>
+<div class="c-du"><small>導入までの目安</small><div>通常 <span class="num" style="font-family:'Zen Kaku Gothic New';font-weight:500">〇〇</span>週間程度</div></div></div>
+<div class="c-r">
+<div class="c-it"><span class="num">01</span><h3>お問い合わせ</h3><p>フォームまたはお電話でご連絡ください。</p></div>
+<div class="c-it"><span class="num">02</span><h3>ヒアリング</h3><p>ご利用規模や目的を担当者が伺います。</p></div>
+<div class="c-it"><span class="num">03</span><h3>お見積り</h3><p>内容に合わせて個別にお見積りします。</p></div>
+<div class="c-it"><span class="num">04</span><h3>社内稟議</h3><p>稟議に必要な資料をご用意します。<span class="tag">資料は当社でご用意</span></p></div>
+<div class="c-it"><span class="num">05</span><h3>ご契約</h3><p>ご契約後、導入をサポートします。</p></div>
+</div></div>
+</section></div>
+
+</div></body></html>

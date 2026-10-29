@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>導入事例：チャネル統合で再訪率が向上 | Aurora Mobile 株式会社</title>
+  <meta name="description" content="分散していた App Push・メール・SMS の配信を EngageLab へ統合し、再訪率が35%向上した小売・EC の導入事例です。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style>
+.v2 .cc-kpis b.hl{color:var(--aurora-blue)}
+.v2 .cc-tag i{display:none}
+.ci-strip{padding:56px 0 48px}
+.ci{margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:64px}
+.ci>div:nth-child(-n+2){border-top:1px solid var(--line)}
+.ci>div{display:grid;grid-template-columns:112px minmax(0,1fr);gap:24px;padding:20px 4px;border-bottom:1px solid var(--line);align-items:center}
+.ci dt{font-size:13px;color:#8a909e;margin:0}
+.ci dd{margin:0;font-size:15px;font-weight:500;color:var(--ink-900);line-height:1.6;text-wrap:pretty}
+.ci .ci-svc,.ci .pdf2{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
+.ci .ci-svc:hover,.ci .pdf2:hover{color:var(--aurora-blue)}
+.ci .ci-svc .ic{width:26px;height:26px;border-radius:7px;background:var(--aurora-blue);display:inline-flex;align-items:center;justify-content:center}
+.ci .ci-svc .ic img{width:15px;height:15px}
+.ci .lk,.ci .pdf2 span{color:var(--aurora-blue)}
+.ci .pdf2{color:var(--aurora-blue)}
+.ci-strip .cc-note{margin:14px 0 0;font-size:12px;color:#9aa0ad}
+.v2 .bx{padding-bottom:64px}
+.res-wrap{background:#f6f7fa;padding:56px 0 104px}
+.v2 .next-head{align-items:flex-end;margin-bottom:40px}
+.v2 .next-head>div{display:flex;flex-direction:column;gap:12px}
+.v2 .next-head h2{font-size:32px;font-weight:700}
+.v2 .next-ov .sh{background:linear-gradient(180deg,rgba(10,19,36,0) 0%,rgba(10,19,36,0) 50%,rgba(10,19,36,.72) 100%)!important}
+.v2 .next-ov .c{align-self:flex-start;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:12px;font-weight:500}
+.v2 .cc-kpis .kar{display:inline-block;transition:clip-path .5s ease .7s,opacity .3s .7s;clip-path:inset(0 0 0 0)}
+.v2 .cc-kpis.pre .kar{clip-path:inset(0 100% 0 0);opacity:0}
+.v2 .next-ov .tx{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.v2 .next-ov .more{position:absolute;left:0;bottom:-30px;font-size:13px;font-weight:500;color:#fff;opacity:0;transition:opacity .3s}
+.v2 .next-ov .more i{display:inline-block;font-style:normal;margin-left:4px;transition:transform .3s}
+.v2 .next-ov a:hover .tx{transform:translateY(-26px)}
+.v2 .next-ov a:hover .more{opacity:1}
+.v2 .next-ov a:hover .more i{transform:translateX(4px)}
+.v2 .next-ov a:hover .sh{background:linear-gradient(180deg,rgba(10,19,36,0) 30%,rgba(10,19,36,.8) 100%)!important}
+.v2 .res-wrap .cc-res{margin:0 auto;max-width:1200px;border-radius:40px;padding:88px 0}
+.v2 .cc-res .rq{display:grid;grid-template-columns:300px minmax(0,1fr);gap:72px;padding:0 72px;max-width:none}
+.v2 .rq-l{display:flex;flex-direction:column;justify-content:space-between;gap:48px}
+.v2 .rq-p{display:flex;align-items:center;gap:16px}
+.v2 .rq-p .av{width:64px;height:64px;border-radius:50%;overflow:hidden;flex:none;border:2px solid rgba(149,222,253,.35)}
+.v2 .rq-p .av img{width:100%;height:100%;object-fit:cover;object-position:70% 25%}
+.v2 .rq-p b{display:block;font-size:16px;font-weight:600;color:#fff}
+.v2 .rq-p span{display:block;margin-top:6px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.6)}
+.v2 .rq-r{position:relative;padding-top:8px}
+.v2 .rq-r .q{display:block;font-family:'Poppins',sans-serif;font-size:72px;line-height:.6;height:36px;color:#95defd}
+.v2 .rq-r p{margin:0;font-size:28px;font-weight:500;line-height:1.8;letter-spacing:.02em;color:#fff;text-wrap:pretty}
+.v2 .rq-r em{font-style:normal;color:#95defd}
+.v2 .cc-nums .hide{display:none}
+.v2 .cc-nums{grid-template-columns:1fr}
+.v2 .cc-nums .big b{font-weight:400}
+.v2 .bx-win{border-color:#e2e7f0!important;box-shadow:none!important;opacity:1!important}
+.v2 .bx-win.w1{box-shadow:0 10px 24px rgba(40,60,110,.06)!important}
+.v2 .bx-win .bar{background:none;border-bottom:1px solid #eef1f6;height:16px}
+.v2 .bx-win .bar i{background:#d9dee8}
+.v2 .bx-win .ic{background:#eef3ff;color:#6f86c9;width:26px;border-radius:7px}
+.v2 .bx-win.w2 .ic{background:#f1efff;color:#8a7fd0}
+.v2 .bx-win.w3 .ic{background:#eaf6f7;color:#5fa3ad}
+.v2 .bx-win .nm{color:#6b7488;font-weight:500}
+.v2 .bx-win .sb{color:#9aa3b5;background:#f5f7fb;border:1px solid #e8ecf3;border-radius:999px;padding:2px 8px}
+.v2 .bx-win .ln{display:flex}
+.v2 .bx-win .ln i{background:#eef1f6;height:4px}
+.v2 .bx-win .ln i:first-child{background:#e3e9f7}
+.v2 .bx-win .row{height:52px}
+.v2 .bx-flow .sys{background:#fff;border-color:#dfe6f5;color:#34405a;box-shadow:0 2px 6px rgba(40,71,252,.04)}
+.v2 .bx-flow .sys .ic{width:22px;height:22px;border-radius:6px;background:#eef3ff;color:#2847fc;align-items:center;justify-content:center}
+.v2 .bx-flow .sys svg{width:13px;height:13px}
+.v2 .bx-flow .cap{color:#7f8aa3}
+.v2 .bx-flow .wire path{stroke-opacity:.7;stroke-width:1.6}
+.bxa .bx-win{transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .5s}
+.bxa .bx-win.w2{transition-delay:.1s}.bxa .bx-win.w1{transition-delay:.2s}
+.bxa:not(.play) .bx-win.w3{transform:translate(-34px,-20px) rotate(-7deg);opacity:0!important}
+.bxa:not(.play) .bx-win.w2{transform:translate(38px,-4px) rotate(6deg);opacity:0!important}
+.bxa:not(.play) .bx-win.w1{transform:translate(-18px,22px) rotate(-3deg);opacity:0!important}
+.bxa .bx-arrow{transition:translate .45s cubic-bezier(.2,.8,.2,1) .6s,opacity .3s .6s}
+.bxa:not(.play) .bx-arrow{translate:-14px 0;opacity:0}
+.bxa .wire path{stroke-dasharray:70;stroke-dashoffset:0;transition:stroke-dashoffset .6s ease .9s}
+.bxa:not(.play) .wire path{stroke-dashoffset:70}
+.bxa .wire>circle{transition:opacity .2s 1.45s}
+.bxa:not(.play) .wire>circle{opacity:0}
+.bxa .wire .pulse{fill:#2847fc;opacity:0}
+.bxa .st{transition:opacity .35s,transform .35s}
+.bxa .ch:nth-child(1) .st{transition-delay:1.6s}.bxa .ch:nth-child(2) .st{transition-delay:1.75s}.bxa .ch:nth-child(3) .st{transition-delay:1.9s}
+.bxa:not(.play) .st{opacity:0;transform:translateX(-6px)}
+.bxa .st i{box-shadow:0 0 0 0 rgba(45,194,138,.5)}
+.bxa.play .st i{animation:stPing .9s ease-out 1 both}
+.bxa.play .ch:nth-child(1) .st i{animation-delay:1.6s}.bxa.play .ch:nth-child(2) .st i{animation-delay:1.75s}.bxa.play .ch:nth-child(3) .st i{animation-delay:1.9s}
+@keyframes stPing{0%{box-shadow:0 0 0 0 rgba(45,194,138,.5)}100%{box-shadow:0 0 0 7px rgba(45,194,138,0)}}
+@media (prefers-reduced-motion:reduce){.bxa *{transition:none!important;animation:none!important}}
+.v2 .cc-hero{background:linear-gradient(180deg,rgba(248,250,255,0) 45%,#f8faff 100%),linear-gradient(115deg,#e6edff 0%,#f1f5ff 35%,#ffffff 72%);border-bottom:1px solid #e8edf7}
+.v2 .cc-hero::before{display:none}
+.v2 .cc-ph img{object-position:50% 35%}
+.v2 .cc-tag{background:#fff;border:1px solid #d6dcff;box-shadow:0 2px 8px rgba(40,71,252,.06)}
+
+
+.v2 .nc-wrap{position:relative;margin-top:-84px;z-index:2;padding-bottom:24px}
+.v2 .nc{display:grid;grid-template-columns:1.3fr 1fr 1fr;background:#fff;border:1px solid #e6eaf2;border-radius:20px;box-shadow:0 18px 48px -24px rgba(22,40,120,.18)}
+.v2 .nc>*{padding:32px 40px;display:flex;align-items:center}
+.v2 .nc>*+*{border-left:1px solid #edf0f5}
+.v2 .nc-id{gap:20px}
+.v2 .nc-logo{flex:none;width:64px;height:64px;border-radius:14px;background:#f3f6fc;border:1px solid #e6eaf2;display:grid;place-items:center;font-size:24px;font-weight:700;color:#94a3b8}
+.v2 .nc-name{margin:0 0 8px;font-size:22px;font-weight:700;color:#0b1524;line-height:1.4}
+.v2 .nc-tag{display:inline-block;font-size:13px;color:#2847fc;background:#f2f4ff;border-radius:999px;padding:3px 12px}
+.v2 .nc-meta{margin:0;gap:48px}
+.v2 .nc-meta dt{font-size:13px;color:#64748b;margin-bottom:8px}
+.v2 .nc-meta dd{margin:0;font-size:18px;font-weight:600;color:#0b1524}
+.v2 .nc-act{flex-direction:column;align-items:stretch!important;justify-content:center;gap:4px;padding:20px 28px!important}
+.v2 .nc-act a{display:flex;align-items:center;gap:12px;padding:12px 12px;border-radius:10px;font-size:15px;font-weight:600;color:#0b1524;text-decoration:none;transition:background .2s}
+.v2 .nc-act a:hover{background:#f5f7ff}
+.v2 .nc-act a b{margin-left:auto;color:#2847fc;font-weight:500}
+.v2 .nc-act .ic{width:26px;height:26px;border-radius:7px;background:#2847fc;color:#fff;display:grid;place-items:center;font-size:13px}
+.v2 .nc-act a:last-child{color:#2847fc}
+.v2 .nc-note{margin:14px 0 0;font-size:12px;color:#94a3b8}
+
+.v2 .co-sum{padding:72px 0 88px;background:#fff}
+.v2 .co-sum-row{display:grid;grid-template-columns:320px minmax(0,1fr);gap:40px}
+.v2 .co-sum-lb span{display:block;font-size:14px;color:#2847fc;letter-spacing:.08em;margin:14px 0 18px}
+.v2 .co-sum-lb h2{margin:0;font-size:26px;font-weight:700;color:#0b1524}
+.v2 .co-sum-dl{margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+.v2 .co-sum-dl>div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:18px 0;border-top:1px solid #e6eaf0}
+.v2 .co-sum-dl>div:nth-last-child(-n+2){border-bottom:1px solid #e6eaf0}
+.v2 .co-sum-dl dt{font-size:14px;color:#64748b}
+.v2 .co-sum-dl dd{margin:0;font-size:15px;color:#0b1524;line-height:1.6}
+.v2 .co-sum-dl a{color:#2847fc;text-decoration:none;font-weight:600}
+.v2 .co-sum-dl a:hover{text-decoration:underline}
+.v2 .co-sum-note{margin:16px 0 0;font-size:12px;color:#94a3b8}
+</style></head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo.svg" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="index.html#products">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="index.html#products">
+              <strong>プログラマティック広告</strong>
+              <span>高成長市場の成長機会を捉える</span>
+            </a>
+            <a href="index.html#products">
+              <strong>フィンテック</strong>
+              <span>スマートリスク管理とデジタル金融</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="index.html#resources" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    
+  <section class="cc-hero">
+    <div class="container">
+      
+      <div class="cc-top">
+        <div>
+          <span class="cc-tag"><i></i>小売・EC</span>
+          <h1>チャネルを統合し、<br />再訪率が<em>35%</em>向上しました。</h1>
+          <p class="lead">App Push・メール・SMS を別々のツールで運用していた大手小売グループ様が、EngageLab へ一本化。配信から効果測定までを一つの基盤にまとめました。</p>
+          <div class="cc-kpis">
+            <div><b class="hl">+35%</b><span>再訪率</span></div><i></i>
+            <div><b>−60%</b><span>配信運用の工数</span></div><i></i>
+            <div><b>3<span class="kar">→</span>1</b><span>利用ツール数</span></div>
+          </div>
+        </div>
+        <div class="cc-ph"><img src="img/case-05.png" alt="" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="co-sum" id="company">
+    <div class="container co-sum-row">
+      <div class="co-sum-lb"><span>01</span><h2>企業概要</h2></div>
+      <div>
+        <dl class="co-sum-dl">
+          <div><dt>企業名</dt><dd>株式会社〇〇〇〇</dd></div>
+          <div><dt>業種</dt><dd>小売・EC</dd></div>
+          <div><dt>従業員数</dt><dd>〇〇〇〇名</dd></div>
+          <div><dt>導入期間</dt><dd>6か月</dd></div>
+          <div><dt>利用サービス</dt><dd><a href="engagelab.html">EngageLab →</a></dd></div>
+          <div><dt>事例資料</dt><dd><a href="#">この事例をPDFで読む ↓</a></dd></div>
+        </dl>
+        <p class="co-sum-note">※ 掲載内容は許諾いただいた範囲で記載しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bx" id="challenge">
+    <div class="container">
+      <div class="bx-head reveal">
+        <div class="k"><span>01</span>課題と導入の決め手</div>
+        <h2>分散していたツールを、<em>既存システムのまま</em>一つに。</h2>
+        <p>チャネルごとに別々だった配信と効果測定を、会員基盤・購買データと API で連携し、運用を止めずに統合しました。</p>
+      </div>
+      <div class="bx-grid reveal">
+        <div class="bx-before">
+          <div class="lb">BEFORE</div>
+          <div class="t">ツールが分散し、施策の効果が見えなかった。</div>
+          <div class="bx-stage"><div class="bx-stack">
+            <div class="bx-win w3"><div class="bar"><i></i><i></i><i></i></div><div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><span class="nm">SMS</span><span class="sb">配信代行</span></div></div>
+            <div class="bx-win w2"><div class="bar"><i></i><i></i><i></i></div><div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="nm">メール</span><span class="sb">ツールB</span></div></div>
+            <div class="bx-win w1"><div class="bar"><i></i><i></i><i></i></div><div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="nm">App Push</span><span class="sb">ツールA</span></div><div class="ln"><i></i><i></i><i></i></div></div>
+          </div></div>
+        </div>
+        <div class="bx-after">
+          <div class="lb">AFTER</div>
+          <div class="t">既存システムを、そのまま活かせたこと。</div>
+          <div class="bx-stage"><div class="bx-flow">
+            <div class="src">
+              <div class="cap">既存システム</div>
+              <div class="sys"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></span>会員基盤</div>
+              <div class="sys"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4h2l2.4 11h11.2L21 8H7"/><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg></span>購買データ</div>
+            </div>
+            <svg class="wire" viewBox="0 0 48 120" aria-hidden="true"><path d="M0 41 C 26 41, 22 60, 48 60"/><path d="M0 95 C 26 95, 22 60, 48 60"/><circle cx="46" cy="60" r="3"/></svg>
+            <div class="panel">
+              <div class="hd"><span class="lg"><span class="sq"><i></i></span><b>EngageLab</b></span><span class="tg">配信・分析を一元化</span></div>
+              <div class="bd"><div class="ch"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="nm">App Push</span><span class="st"><i></i>配信中</span></div><div class="ch"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="nm">メール</span><span class="st"><i></i>配信中</span></div><div class="ch"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><span class="nm">SMS</span><span class="st"><i></i>配信中</span></div></div>
+            </div>
+          </div></div>
+        </div>
+        <span class="bx-arrow" aria-hidden="true">→</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="res-wrap"><section class="cc-res" id="results">
+    <div class="container rq">
+      <div class="rq-l">
+        <div class="cc-lb dk"><span class="n">02</span><h2>導入効果</h2></div>
+        <div class="rq-p"><span class="av"><img src="img/case-05.png" alt="" /></span><div><b>〇〇 〇〇 様</b><span>株式会社〇〇〇〇<br />CRM部 部長</span></div></div>
+      </div>
+      <div class="rq-r">
+        <span class="q">“</span>
+        <p>チャネルごとの数字を横並びで見られるようになり、施策の良し悪しを<em>週次で判断</em>できるようになりました。</p>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <section class="cc-sec line" id="next">
+    <div class="container">
+      <div class="next-head"><div><span class="n">03</span><h2>ほかの導入事例</h2></div><a class="all" href="cases.html">一覧を見る →</a></div>
+      <div class="next-ov">
+        <a href="case-detail.html"><img src="img/case-06.png" alt="" /><span class="sh"></span><span class="tx"><span class="c">ゲーム</span><span class="k"><b>+18%</b><i>継続率</i></span><span class="t">復帰施策の自動化で継続率が改善</span></span></a>
+        <a href="case-detail.html"><img src="img/case-03.png" alt="" style="object-position:50% 40%" /><span class="sh"></span><span class="tx"><span class="c">金融</span><span class="k"><b>99.9%</b><i>配信成功率</i></span><span class="t">OTP配信の安定性と監査対応を両立</span></span></a>
+        <a href="case-detail.html"><img src="img/case-04.png" alt="" /><span class="sh"></span><span class="tx"><span class="c">旅行・交通</span><span class="k"><b>−40%</b><i>通知遅延</i></span><span class="t">運行情報の通知遅延を大幅に削減</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding:0 max(24px, calc((100% - 1152px) / 2)) 144px;">
+    <div class="cta-deco" style="border-radius:24px; background:linear-gradient(120deg,#2847fc 0%,#3a5bff 60%,#4a7dff 100%); padding:80px; text-align:center; color:#fff;">
+      <div style="font-size:34px; font-weight:700; line-height:1.5; font-feature-settings:'palt';">日本市場での成長を、Auroraと共に。</div>
+      <div style="margin-top:16px; font-size:15px; line-height:1.95; color:rgba(255,255,255,.8);">導入のご相談・資料請求はお気軽にどうぞ。</div>
+      <div style="margin-top:36px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <a href="index.html#contact" style="height:52px; padding:0 32px; border-radius:40px; background:#fff; color:#2847fc; font-size:15px; font-weight:500; display:flex; align-items:center; text-decoration:none;">お問い合わせ</a>
+        <a href="index.html#resources" style="height:52px; padding:0 32px; border-radius:40px; border:1px solid rgba(255,255,255,.5); color:#fff; font-size:15px; font-weight:500; display:flex; align-items:center; text-decoration:none;">資料ダウンロード</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="index.html#products">GPTBots.ai</a>
+          <a href="index.html#products">プログラマティック広告</a>
+          <a href="index.html#products">フィンテック</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="news.html">ニュース</a>
+          <a href="careers.html">採用情報</a>
+          <a href="index.html#contact">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+  <script>
+  (function(){
+    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.next-ov .tx').forEach(function(t){var m=document.createElement('span');m.className='more';m.innerHTML='詳しく見る<i>→</i>';t.appendChild(m);});
+    var k=document.querySelector('.cc-kpis'); if(!k||reduce) return;
+    k.classList.add('pre');
+    var els=[].slice.call(k.querySelectorAll('b')).filter(function(b){return /\d+%/.test(b.textContent);});
+    var data=els.map(function(b){var m=b.textContent.match(/^(\D*)(\d+)(%)$/);return m?{b:b,p:m[1],n:+m[2],s:m[3]}:null;}).filter(Boolean);
+    data.forEach(function(d){d.b.textContent=d.p+'0'+d.s;});
+    requestAnimationFrame(function(){setTimeout(function(){
+      k.classList.remove('pre'); var t0=performance.now(),D=1100;
+      (function f(t){var x=Math.min(1,(t-t0)/D),e=1-Math.pow(1-x,3);data.forEach(function(d){d.b.textContent=d.p+Math.round(d.n*e)+d.s;});if(x<1)requestAnimationFrame(f);})(t0);
+    },250);});
+  })();
+  </script>
+  <script>
+  (function(){
+    var g=document.querySelector('.bx-grid'); if(!g) return;
+    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    g.classList.add('bxa'); if(reduce){g.classList.add('play');return;}
+    var svg=g.querySelector('.wire'), NS='http://www.w3.org/2000/svg', pulses=[];
+    if(svg){svg.querySelectorAll('path').forEach(function(p){
+      var c=document.createElementNS(NS,'circle'); c.setAttribute('r','2.6'); c.setAttribute('class','pulse');
+      var m=document.createElementNS(NS,'animateMotion'); m.setAttribute('dur','.6s'); m.setAttribute('begin','indefinite'); m.setAttribute('path',p.getAttribute('d')); m.setAttribute('fill','freeze');
+      c.appendChild(m); svg.appendChild(c); pulses.push([c,m]);
+    });}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting) return; io.disconnect(); g.classList.add('play');
+      setTimeout(function(){pulses.forEach(function(x){x[0].style.opacity=1;x[1].beginElement();setTimeout(function(){x[0].style.transition='opacity .25s';x[0].style.opacity=0;},600);});},1300);
+    });},{threshold:.35});
+    io.observe(g);
+  })();
+  </script>
+</body>
+</html>

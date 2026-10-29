@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Zen Kaku Gothic New",sans-serif;color:#0a1324;background:#e9ecf3;width:1440px}
+#cmp{display:flex;flex-direction:column;gap:56px;padding:56px 0}
+.lab{padding:0 40px 16px;display:flex;align-items:baseline;gap:14px}
+.lab b{font-size:22px;font-weight:900;color:#2847fc}.lab span{font-size:16px;color:#5b6172;font-weight:500}
+.frame{width:1440px;background:#fff}
+section{padding:112px 0}
+.wrap{width:1200px;margin:0 auto}
+.eb{font-size:12px;letter-spacing:.2em;font-weight:700;color:#2847fc;text-transform:uppercase}
+.hd{text-align:center;margin-bottom:64px}
+.hd h2{font-size:40px;font-weight:900;margin-top:16px;letter-spacing:.02em}
+.hd p{font-size:16px;color:#4a5165;margin-top:16px}
+.num{font-family:"Helvetica Neue",Arial,sans-serif}
+/* X1 gantt */
+.gt{position:relative}
+.ruler{display:grid;grid-template-columns:220px repeat(6,minmax(0,1fr));font-size:12px;color:#8a90a2;letter-spacing:.08em;padding-bottom:14px;border-bottom:1px solid #e3e7f0}
+.ruler span{padding-left:10px;border-left:1px solid #e3e7f0}
+.ruler span:first-child{border:0;padding:0}
+.rows{position:relative}
+.rows:before{content:"";position:absolute;left:220px;right:0;top:0;bottom:0;background:repeating-linear-gradient(90deg,#eef1f7 0 1px,transparent 1px calc(100%/6))}
+.row{position:relative;display:grid;grid-template-columns:220px minmax(0,1fr);align-items:center;height:76px;border-bottom:1px solid #f1f3f8}
+.row .nm{display:flex;gap:14px;align-items:baseline}
+.row .nm em{font-style:normal;font-size:13px;font-weight:700;color:#2847fc}
+.row .nm b{font-size:16px;font-weight:700}
+.tr{position:relative;height:100%}
+.bar{position:absolute;top:50%;transform:translateY(-50%);height:36px;border-radius:8px;display:flex;align-items:center;padding:0 14px;font-size:13px;font-weight:600;white-space:nowrap;gap:10px}
+.bar.a{background:#eef2ff;color:#2847fc}
+.bar.b{background:linear-gradient(90deg,#4f6bff,#2847fc);color:#fff;box-shadow:0 8px 20px rgba(40,71,252,.22)}
+.bar small{font-weight:500;opacity:.8}
+.ms{position:absolute;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:#2847fc;box-shadow:0 0 0 6px rgba(40,71,252,.14)}
+.ms+.mt{position:absolute;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:#2847fc;white-space:nowrap}
+.gfoot{display:flex;justify-content:space-between;align-items:center;margin-top:36px}
+.gfoot p{font-size:14px;color:#5b6172}.gfoot p b{color:#0a1324;font-size:22px;margin:0 4px}
+.lk{font-size:14px;font-weight:700;color:#2847fc}
+/* X2 big nav */
+.bn{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-bottom:1px solid #e3e7f0}
+.bn div{padding:0 0 26px;position:relative;color:#b4b9c6}
+.bn em{display:block;font-style:normal;font-size:13px;font-weight:700;margin-bottom:12px}
+.bn b{font-size:26px;font-weight:900;letter-spacing:.02em}
+.bn .on{color:#0a1324}.bn .on em{color:#2847fc}
+.bn .on:after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:3px;background:#2847fc;border-radius:2px}
+.bn .done:after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:3px;background:#c9d4ff}
+.dt{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:80px;padding-top:48px;align-items:start}
+.dt h3{font-size:28px;font-weight:900;line-height:1.5}
+.dt p{font-size:16px;line-height:2;color:#4a5165;margin-top:16px;max-width:560px}
+.dt .lk{display:inline-block;margin-top:24px}
+.meta{background:#f6f8fd;border-radius:14px;padding:28px 30px;display:flex;flex-direction:column;gap:20px}
+.meta div{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #e6eaf3;padding-bottom:16px}
+.meta div:last-child{border:0;padding:0}
+.meta span{font-size:13px;color:#7a8195}
+.meta b{font-size:16px;font-weight:700}
+.meta b.big{font-size:28px;color:#2847fc}
+.auto{display:flex;align-items:center;gap:10px;margin-top:40px;font-size:12px;color:#a3a9b8;letter-spacing:.1em}
+.auto i{width:120px;height:2px;background:#e3e7f0;position:relative}.auto i:after{content:"";position:absolute;left:0;top:0;height:2px;width:45%;background:#2847fc}
+/* X3 Q&A */
+.qa{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid #e3e7f0}
+.q{padding:48px 40px 8px 0;position:relative}
+.q+.q{padding-left:40px;border-left:1px solid #e3e7f0}
+.q .qn{font-size:13px;font-weight:700;color:#2847fc;letter-spacing:.14em}
+.q h3{font-size:26px;font-weight:900;line-height:1.5;margin:14px 0 28px}
+.q .ans{display:flex;align-items:baseline;gap:8px;margin-bottom:18px}
+.q .ans b{font-size:56px;font-weight:700;color:#2847fc;letter-spacing:-.02em;line-height:1}
+.q .ans span{font-size:18px;font-weight:700}
+.q p{font-size:15px;line-height:1.95;color:#4a5165}
+.mini{display:flex;flex-wrap:wrap;gap:6px 4px;margin-top:22px;font-size:12px;color:#5b6172;align-items:center}
+.mini span{background:#f1f4ff;color:#2847fc;padding:4px 10px;border-radius:999px;font-weight:600}
+.mini i{font-style:normal;color:#b4b9c6}
+.docs{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.docs div{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.docs div:before{content:"";width:18px;height:18px;border-radius:50%;background:#eef2ff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232847fc' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.q .lk{display:inline-block;margin-top:24px}
+</style></head><body>
+<div id="cmp">
+
+<div><div class="lab"><b>X1</b><span>时间轴刻度（Gantt 式）：色条长短 = 所需时间，一眼看出整体周期</span></div>
+<div class="frame"><section><div class="wrap">
+<div class="hd"><div class="eb">Process</div><h2>ご契約までの流れ</h2><p>お問い合わせから導入開始まで、最短 ◯週間。各ステップの目安期間です。</p></div>
+<div class="gt">
+<div class="ruler"><span></span><span>1週目</span><span>2週目</span><span>3週目</span><span>4週目</span><span>5週目</span><span>6週目</span></div>
+<div class="rows">
+<div class="row"><div class="nm"><em class="num">01</em><b>お問い合わせ</b></div><div class="tr"><i class="ms" style="left:2%"></i><span class="mt" style="left:4.5%">1営業日以内にご連絡</span></div></div>
+<div class="row"><div class="nm"><em class="num">02</em><b>ヒアリング</b></div><div class="tr"><div class="bar a" style="left:4%;width:14%">オンライン<small>約1時間</small></div></div></div>
+<div class="row"><div class="nm"><em class="num">03</em><b>お見積り・ご提案</b></div><div class="tr"><div class="bar a" style="left:16%;width:20%">プラン提示<small>◯営業日</small></div></div></div>
+<div class="row"><div class="nm"><em class="num">04</em><b>社内稟議</b></div><div class="tr"><div class="bar a" style="left:34%;width:30%">セキュリティ資料をご提供<small>貴社スケジュール</small></div></div></div>
+<div class="row"><div class="nm"><em class="num">05</em><b>ご契約・導入開始</b></div><div class="tr"><div class="bar b" style="left:64%;width:36%">専任担当がオンボーディング<small>◯週間</small></div></div></div>
+</div>
+<div class="gfoot"><p>お問い合わせから導入開始まで 最短<b class="num">◯</b>週間</p><a class="lk">稟議用のセキュリティ資料を見る →</a></div>
+</div>
+</div></section></div></div>
+
+<div><div class="lab"><b>X2</b><span>大字导航 + 共用详情区：悬停 / 自动轮播切换（图为第 3 步状态）</span></div>
+<div class="frame"><section><div class="wrap">
+<div class="hd"><div class="eb">Process</div><h2>ご契約までの流れ</h2></div>
+<div class="bn">
+<div class="done"><em class="num">01</em><b>お問い合わせ</b></div>
+<div class="done"><em class="num">02</em><b>ヒアリング</b></div>
+<div class="on"><em class="num">03</em><b>お見積り</b></div>
+<div><em class="num">04</em><b>社内稟議</b></div>
+<div><em class="num">05</em><b>導入開始</b></div>
+</div>
+<div class="dt">
+<div><h3>ご利用規模に合わせた<br>プランとお見積りをご提示します</h3><p>ヒアリング内容をもとに、配信量や必要な機能に応じたプランをご提案します。複数パターンでの比較も可能です。</p><a class="lk">料金の考え方を見る →</a></div>
+<div class="meta">
+<div><span>目安期間</span><b class="big num">◯<small style="font-size:16px;color:#0a1324"> 営業日</small></b></div>
+<div><span>形式</span><b>オンライン / 資料送付</b></div>
+<div><span>ご提供物</span><b>お見積書・提案書</b></div>
+</div>
+</div>
+<div class="auto">AUTO <i></i> 03 / 05</div>
+</div></section></div></div>
+
+<div><div class="lab"><b>X3</b><span>疑问解答式：回答问询前的三个顾虑，流程只作为第一个答案的辅助</span></div>
+<div class="frame"><section><div class="wrap">
+<div class="hd"><div class="eb">Before you contact</div><h2>ご検討中のよくあるご質問</h2></div>
+<div class="qa">
+<div class="q"><div class="qn">Q.01</div><h3>導入まで、どれくらい<br>かかりますか？</h3><div class="ans"><b class="num">◯</b><span>週間〜</span></div><p>お問い合わせから導入開始までの目安です。</p>
+<div class="mini"><span>お問い合わせ</span><i>→</i><span>ヒアリング</span><i>→</i><span>お見積り</span><i>→</i><span>稟議</span><i>→</i><span>導入</span></div></div>
+<div class="q"><div class="qn">Q.02</div><h3>事前に何を準備すれば<br>いいですか？</h3><div class="ans"><b class="num">0</b><span>件</span></div><p>特別な準備は不要です。現在の課題やご利用規模をお聞かせいただければ、担当者が整理します。</p><a class="lk">お問い合わせ →</a></div>
+<div class="q"><div class="qn">Q.03</div><h3>社内稟議は<br>通せますか？</h3><p style="margin-top:0">稟議に必要な資料を一式ご用意しています。</p>
+<div class="docs"><div>セキュリティチェックシート</div><div>SOC 2 Type II 報告書</div><div>ISO 27001 / 27701 認証</div></div><a class="lk">セキュリティ資料を見る →</a></div>
+</div>
+</div></section></div></div>
+
+</div></body></html>

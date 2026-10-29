@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>会社概要 | Aurora Mobile 株式会社</title>
+  <meta name="description" content="Aurora Mobile株式会社（NASDAQ: JG）の会社概要・沿革・日本拠点についてご紹介します。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style>
+.hs-item{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:40px;align-items:center}
+.hs-prog .cnt{white-space:nowrap}
+.hs-item .ph{--r:3deg;margin:0;width:200px;aspect-ratio:3/2;border-radius:10px;overflow:hidden;
+  opacity:0;transform:translateY(36px) rotate(calc(var(--r) * -3)) scale(.55);transform-origin:50% 100%;
+  box-shadow:0 18px 40px -18px rgba(0,0,0,.6);
+  transition:opacity .35s ease,transform .5s cubic-bezier(.5,0,.75,0)}
+.hs-item:nth-child(even) .ph{--r:-3deg}
+.hs-item.on .ph{opacity:1;transform:translateY(0) rotate(var(--r)) scale(1);
+  transition:opacity .3s ease .08s,transform .85s cubic-bezier(.34,1.8,.5,1) .08s}
+.hs-item .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.hs-item.on .ph:hover{transform:translateY(-4px) rotate(0deg) scale(1.04);transition:transform .45s cubic-bezier(.34,1.8,.5,1)}
+
+.cv-hero{padding:40px 0 0;background:#fff}
+.cv-hero .crumb{margin-bottom:32px}
+.cv-top{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;align-items:end;margin-bottom:56px}
+.cv-top h1{margin:20px 0 0;font-size:46px;line-height:1.45;font-weight:700;letter-spacing:.01em;color:var(--ink-900);word-break:keep-all}
+.cv-top h1 em{font-style:normal;color:var(--aurora-blue)}
+@media (max-width:1100px){.cv-top{grid-template-columns:minmax(0,1fr);gap:24px}.cv-top p{max-width:560px}.cv-top h1{font-size:clamp(30px,4.6vw,46px);word-break:normal}}
+.cv-top p{margin:0 0 10px;font-size:15px;line-height:2;color:var(--ink-500)}
+.cv-phw{padding:56px 24px 0}
+.cv-ph{height:520px;border-radius:32px;overflow:hidden}
+.cv-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;animation:cvZoom 1.6s cubic-bezier(.22,1,.36,1) both}
+@keyframes cvZoom{from{transform:scale(1.05)}to{transform:none}}
+.cv-top{animation:cvUp 1s cubic-bezier(.22,1,.36,1) .1s both}
+@keyframes cvUp{from{opacity:0;transform:translateY(24px)}}
+.cv-data{background:#fff;padding:128px 0 136px}
+.cv-wrap{display:grid;grid-template-columns:360px minmax(0,1fr);gap:80px;align-items:start}
+.cv-side{position:sticky;top:120px}
+.cv-side .sub{margin:20px 0 0;font-size:15px;line-height:2;color:var(--ink-500)}
+.cv-side .lk{margin-top:28px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--aurora-blue);text-decoration:none}
+.cv-side .lk svg{width:16px;height:16px;transition:transform .25s}
+.cv-side .lk:hover svg{transform:translateX(4px)}
+.cv-tbl{margin:14px 0 0;border-top:1px solid var(--ink-900)}
+.cv-tbl>div{display:grid;grid-template-columns:160px minmax(0,1fr);gap:32px;padding:28px 0;border-bottom:1px solid #e6eaf2}
+.cv-tbl dt{font-size:14px;line-height:1.9;color:var(--ink-500)}
+.cv-tbl dd{margin:0;font-size:17px;line-height:1.85;font-weight:500;color:var(--ink-900)}
+.cv-close{margin-top:56px;padding-top:0}
+.cv-close h3{margin:0;font-size:22px;line-height:1.6;font-weight:700;color:var(--ink-900)}
+.cv-close p{margin:14px 0 0;font-size:15px;line-height:2;color:var(--ink-500)}
+
+.co-jp.v7{position:relative;overflow:hidden;background:#fff;padding:136px 0 144px}
+.co-jp.v7 .container{position:relative;z-index:1}
+.lc-l{max-width:440px}
+.lc-l h2{margin:28px 0 56px}
+.lc-info{margin:0;border-top:1px solid #1f2a44}
+.lc-info>div{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid #e3e7ef}
+.lc-info dt{font-size:13px;color:#8a93a3;letter-spacing:.06em}
+.lc-info dd{margin:0;font-size:15px;line-height:1.8;color:#1f2a44;white-space:nowrap}
+.lc-info .ad dt{color:#1f2a44;font-weight:700}
+.lc-map{position:absolute;top:0;bottom:0;left:50%;margin-left:-40px;width:1000px;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 80%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 80%,transparent 100%)}
+.lc-map>img{position:absolute;width:2600px;max-width:none;left:-1560px;top:-90px;opacity:.75}
+.lp{position:absolute;width:0;height:0}
+.lp i{position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:#2847fc}
+.lp em{position:absolute;left:14px;top:-9px;font-style:normal;white-space:nowrap;font-size:10px;letter-spacing:.14em;color:#8a93a3;display:flex;align-items:baseline;gap:8px}
+.lp em b{font-size:13px;font-weight:500;letter-spacing:.04em;color:#1f2a44}
+.lp.sg em{left:auto;right:14px;flex-direction:row-reverse}
+.lp.tk i{left:-6px;top:-6px;width:12px;height:12px;box-shadow:0 0 0 8px rgba(40,71,252,.12),0 0 0 20px rgba(40,71,252,.05)}
+.lp.tk em{left:30px;top:-12px}
+.lp.tk em b{font-size:18px;font-weight:700;color:#2847fc}
+.lp.tk{left:603px;top:255px}
+.lp.hk{left:499px;top:333px}
+.lp.sg{left:452px;top:431px}
+.lp.jk{left:504px;top:518px}
+
+.v2 .co-hist.hs{background:#fff;padding:0 24px}
+.hs-panel{position:relative;background:var(--ink-900);border-radius:32px;padding:128px 0;overflow:clip}
+.hs-panel::before{content:"";position:absolute;right:0;top:0;width:58%;height:560px;pointer-events:none;
+  background-image:linear-gradient(rgba(149,222,253,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(149,222,253,.14) 1px,transparent 1px);
+  background-size:40px 40px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 100% 0%,#000 0%,transparent 82%);mask-image:radial-gradient(ellipse 70% 80% at 100% 0%,#000 0%,transparent 82%)}
+.hs-panel .container{position:relative;z-index:1}
+.hs-year{font-size:160px}
+.hs-list{position:relative;padding:40px 0 0 44px}
+.hs-list::before{content:"";position:absolute;left:4px;top:76px;bottom:76px;width:1px;background:rgba(255,255,255,.14)}
+.hs-item{position:relative;border:0 !important}
+.hs-item::before{content:"";position:absolute;left:-45px;top:41px;width:9px;height:9px;border-radius:50%;background:var(--ink-900);border:1px solid rgba(255,255,255,.35);box-sizing:border-box;transition:all .35s}
+.hs-item.on::before{background:#95defd;border-color:#95defd;box-shadow:0 0 0 6px rgba(149,222,253,.16)}
+.hs-item:last-child::before{width:13px;height:13px;left:-47px;top:39px;background:#2847fc;border-color:#2847fc}
+.hs-item:last-child.on::before{box-shadow:0 0 0 7px rgba(40,71,252,.28)}
+.hs-item:last-child .y{color:#95defd}
+
+html,body{width:1920px;min-width:1920px;overflow-x:visible}
+.cv-top{grid-template-columns:minmax(0,1fr) 380px;gap:80px;margin-bottom:0}
+.cv-top h1{font-size:52px}
+.cv-top p{margin:0 0 14px;font-size:15px;color:var(--ink-700,#3b4456)}
+.cv-phw{padding-top:56px}
+.cv-top,.cv-ph img,.reveal{animation:none!important;opacity:1!important;transform:none!important}
+</style></head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo.svg" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="index.html#products">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="index.html#products">
+              <strong>プログラマティック広告</strong>
+              <span>高成長市場の成長機会を捉える</span>
+            </a>
+            <a href="index.html#products">
+              <strong>フィンテック</strong>
+              <span>スマートリスク管理とデジタル金融</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="index.html#resources" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    
+  
+  <section class="cv-hero" id="top">
+    <div class="container">
+      <div class="crumb"><a href="index.html">ホーム</a><span>／</span><a href="company.html">会社情報</a><span>／</span><span>会社概要</span></div>
+      <div class="cv-top">
+        <div><span class="eyebrow">COMPANY</span>
+        <h1>15年以上にわたり、<br />データと<em>AI</em>に<br />向き合ってきました。</h1></div>
+        <p>Aurora Mobile株式会社は、AIとカスタマーエンゲージメントを軸としたグローバル・テクノロジーグループです。</p>
+      </div>
+      </div>
+    <div class="cv-phw"><div class="cv-ph"><img src="img/company-building.png" alt="Aurora Mobile のオフィス" /></div></div>
+  </section>
+
+  <section class="cv-data">
+    <div class="container">
+      <div class="cv-wrap">
+        <div class="cv-side">
+          <span class="eyebrow"><b>01</b>会社情報</span>
+          <h2 class="co-h2">会社概要</h2>
+          <a class="lk" href="index.html#contact">投資家情報（IR）へ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div>
+          <dl class="cv-tbl">
+            <div><dt>会社名</dt><dd>Aurora Mobile株式会社（極光）</dd></div>
+            <div><dt>代表者</dt><dd>代表取締役　◯◯ ◯◯</dd></div>
+            <div><dt>設立</dt><dd>2011年2月</dd></div>
+            <div><dt>日本法人設立</dt><dd>2026年</dd></div>
+            <div><dt>資本金</dt><dd>◯◯◯,◯◯◯,◯◯◯円</dd></div>
+            <div><dt>従業員数</dt><dd>◯◯◯名（グループ全体）</dd></div>
+            <div><dt>上場市場</dt><dd>NASDAQ（ティッカー: JG）</dd></div>
+            <div><dt>事業内容</dt><dd>顧客エンゲージメント・プラットフォームの提供<br />エンタープライズAIサービス<br />プログラマティック広告<br />フィンテックサービス</dd></div>
+            <div><dt>本社所在地</dt><dd>◯◯◯◯</dd></div>
+            <div><dt>主要取引銀行</dt><dd>◯◯銀行　◯◯支店</dd></div>
+          </dl>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="co-hist hs">
+   <div class="hs-panel">
+    <div class="container">
+      <div class="hs-grid">
+        <div class="hs-left">
+          <div class="hs-sticky">
+            <span class="eyebrow"><b>02</b>沿革</span>
+            <p class="sub">創業から日本法人設立まで、15年の歩み。</p>
+            <div class="hs-year" aria-hidden="true"><span class="a">20</span><span class="b">11</span></div>
+            <div class="hs-prog"><i class="bar"><i></i></i><span class="cnt"><em>01</em> / 06</span></div>
+          </div>
+        </div>
+        <ol class="hs-list">
+          <li class="hs-item on" data-y="2011"><div class="tx"><span class="y">2011</span><b>Aurora Mobile 創立。</b><p>開発者向けサービス「JPush」を開始。</p></div><figure class="ph"><img src="img/company-hero.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2018"><div class="tx"><span class="y">2018</span><b>NASDAQ市場へ上場。</b><p>ティッカー: JG。</p></div><figure class="ph"><img src="img/ph-4.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2022"><div class="tx"><span class="y">2022</span><b>EngageLabをグローバル提供開始。</b><p>シンガポール拠点を設立。</p></div><figure class="ph"><img src="img/case-saas.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2023"><div class="tx"><span class="y">2023</span><b>GPTBots.aiを提供開始。</b><p>香港拠点を設立。</p></div><figure class="ph"><img src="img/company-hero.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2025"><div class="tx"><span class="y">2025</span><b>MA・CAPTCHA・LiveDeskを提供開始。</b><p>インドネシア拠点を設立。</p></div><figure class="ph"><img src="img/ph-4.png" alt="" /></figure></li>
+          <li class="hs-item" data-y="2026"><div class="tx"><span class="y">2026</span><b>日本法人「Aurora Mobile株式会社」を設立。</b><p>Modellixを発表。</p></div><figure class="ph"><img src="img/case-saas.png" alt="" /></figure></li>
+        </ol>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <section class="co-jp">
+    <div class="jp-map">
+      <img src="img/map-blue.png" alt="" />
+      <span class="pt hk"><i></i><em>香港</em></span>
+      <span class="pt sg"><i></i><em>シンガポール</em></span>
+      <span class="pt jk"><i></i><em>ジャカルタ</em></span>
+      <span class="pt tk"><s></s><i></i><em>東京</em></span>
+    </div>
+    <div class="fade"></div>
+    <div class="container">
+      <div class="co-head solo">
+        <span class="eyebrow"><b>03</b>日本拠点</span>
+      </div>
+      <div class="jp-split">
+        <div class="jp-txt">
+          <h2>東京から、<br />日本企業を支援します。</h2>
+          <p>日本に子会社と国内サポート体制を設けており、導入前のご相談から導入後の運用支援まで、日本語で一貫して対応します。東京リージョンでの提供にも対応し、国内でのデータ処理が求められる企業にも安心してご利用いただける環境を提供します。</p>
+          <a href="index.html#contact" class="btn btn-primary">お問い合わせ
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="office-card">
+          <h3>東京オフィス</h3>
+          <p class="ad">東京都港区虎ノ門1丁目10番5号<br />KDX虎ノ門一丁目ビル11F</p>
+          <div class="rows">
+            <div><dt>受付時間</dt><dd>平日 9:30 – 18:00（土日祝を除く）</dd></div>
+            <div><dt>アクセス</dt><dd>東京メトロ 虎ノ門駅 徒歩◯分</dd></div>
+            <div><dt>海外拠点</dt><dd>シンガポール／香港／ジャカルタ</dd></div>
+          </div>
+        </div>
+      </div>
+      <div class="jp-tail"></div>
+    </div>
+  </section>
+
+  <section class="section-pad" style="padding-top:0" id="contact">
+    <div class="container">
+      <div class="cta-band std reveal cta-deco">
+        <span class="glow"></span>
+        <h2>事業に関するお問い合わせ</h2>
+        <p>サービスの導入検討、取材、協業のご相談などを承っています。<br />まずはお気軽にご連絡ください。</p>
+        <div class="cta-actions">
+          <a href="index.html#contact" class="btn btn-primary">お問い合わせ
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="index.html#resources" class="btn btn-ghost">資料ダウンロード</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="index.html#products">GPTBots.ai</a>
+          <a href="index.html#products">プログラマティック広告</a>
+          <a href="index.html#products">フィンテック</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="news.html">ニュース</a>
+          <a href="careers.html">採用情報</a>
+          <a href="index.html#contact">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+</body>
+</html>

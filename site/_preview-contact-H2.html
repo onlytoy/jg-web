@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja" data-variant="Q">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>お問い合わせ | Aurora Mobile 株式会社</title>
+  <meta name="description" content="Aurora Mobile のサービスをご活用いただいているお客様の導入事例をご紹介します。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style>
+main{position:relative;z-index:0}
+.cf-top{position:relative;padding:88px 0 120px}
+.cf-top:before{content:"";position:absolute;left:0;right:0;top:-80px;height:820px;z-index:-1;pointer-events:none;background-color:#f3f6ff;background-image:linear-gradient(245deg,rgba(214,225,255,.9) 0%,rgba(236,241,255,.6) 45%,rgba(251,252,255,0) 85%),linear-gradient(rgba(40,71,252,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(40,71,252,.045) 1px,transparent 1px);background-size:auto,48px 48px,48px 48px;-webkit-mask-image:linear-gradient(180deg,#000 50%,transparent 100%);mask-image:linear-gradient(180deg,#000 50%,transparent 100%)}
+.cf-top .container,.cf-acc .container{display:block;max-width:1200px}
+.cf-grid{display:grid;grid-template-columns:minmax(0,480px) minmax(0,640px);justify-content:space-between;align-items:start}
+.cf-side{position:sticky;top:112px;padding-top:24px}
+.cf-side h1{font-size:48px;font-weight:700;margin:16px 0 0;line-height:1.2;color:#0b1524;letter-spacing:.02em}
+.cf-lead{margin:20px 0 0;font-size:15px;line-height:1.95;color:#4a5568}
+.cf-h{margin:56px 0 0;font-size:14px;font-weight:700;color:#0b1524;letter-spacing:.04em;display:flex;align-items:center;gap:12px}
+.cf-h:after{content:"";flex:1;height:1px;background:#dfe5f3}
+.cf-topics{margin:20px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:18px}
+.cf-topics li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:center}
+.cf-ic{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid #e3e8f5;color:#2847fc;display:flex;align-items:center;justify-content:center}
+.cf-topics b{display:block;font-size:15px;color:#0b1524}
+.cf-topics small{display:block;margin-top:2px;font-size:13px;color:#6b7385;line-height:1.7}
+.cf-flow{margin:24px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:relative}
+.cf-flow:before{content:"";position:absolute;left:14px;right:calc(33.3% - 14px);top:13px;height:1px;background:#c9d2f2}
+.cf-flow div{position:relative;padding-right:12px}
+.cf-flow i{display:flex;width:28px;height:28px;border-radius:50%;background:#fff;border:1px solid #2847fc;color:#2847fc;font-style:normal;font-family:'Poppins',sans-serif;font-size:12px;font-weight:500;align-items:center;justify-content:center;position:relative}
+.cf-flow div:first-child i{background:#2847fc;color:#fff}
+.cf-flow b{display:block;margin-top:12px;font-size:14px;color:#0b1524}
+.cf-flow small{display:block;margin-top:4px;font-size:12px;line-height:1.7;color:#6b7385}
+.cf-tel{margin-top:48px;padding-top:28px;border-top:1px solid #dfe5f3;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.cf-tel span{font-size:13px;color:#6b7385}
+.cf-tel b{font-size:24px;font-weight:700;letter-spacing:.04em;font-variant-numeric:tabular-nums;color:#0b1524}
+.cf-card{background:#fff;border-radius:24px;border:1px solid #edf0f8;box-shadow:0 1px 0 rgba(20,40,100,.04),0 30px 70px rgba(30,50,120,.10)}
+.cf-prog{display:flex;align-items:center;gap:12px;padding:24px 56px;border-bottom:1px solid #edf0f7;font-size:13px;color:#8a93a6}
+.cf-prog span{display:flex;align-items:center;gap:8px}
+.cf-prog i{display:flex;width:22px;height:22px;border-radius:50%;border:1px solid #c9cfdd;font-style:normal;font-size:11px;font-family:'Poppins',sans-serif;align-items:center;justify-content:center}
+.cf-prog span.on{color:#2847fc;font-weight:700}.cf-prog span.on i{background:#2847fc;border-color:#2847fc;color:#fff}
+.cf-prog em{flex:1;height:1px;background:#e3e7f2}
+.ct-form{padding:44px 56px 52px}
+.ct-f{display:flex;flex-direction:column;gap:10px}
+.ct-f.full{grid-column:1/-1}
+.ct-f label{font-size:14px;font-weight:700;color:#0b1524;display:flex;align-items:center;gap:8px}
+.req{font-size:11px;font-weight:700;color:#fff;background:#2847fc;border-radius:4px;padding:1px 6px;line-height:1.6}
+.ct-seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ct-r{position:relative;display:flex;gap:10px;align-items:flex-start;padding:16px;border:1px solid #e3e7f2;border-radius:12px;background:#fff;cursor:pointer}
+.ct-r input{position:absolute;opacity:0;pointer-events:none}
+.ct-r i{flex:none;width:18px;height:18px;margin-top:2px;border-radius:50%;border:1.5px solid #c3c9d8;box-sizing:border-box}
+.ct-r span{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ct-r b{font-size:14px;color:#0b1524;white-space:nowrap}
+.ct-r small{font-size:12px;line-height:1.6;color:#6b7385}
+.ct-r:has(input:checked){border-color:#2847fc;background:#f6f8ff}
+.ct-r:has(input:checked) i{border:5px solid #2847fc}
+.ct-sep{height:1px;background:#edf0f7;margin:36px 0 0}
+.ct-grid{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}
+.ct-f input,.ct-f textarea{font:inherit;font-size:15px;color:#0b1524;height:52px;padding:0 16px;border:1px solid #dde3ef;border-radius:10px;background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.ct-f textarea{height:160px;padding:14px 16px;resize:vertical;line-height:1.8}
+.ct-f input::placeholder,.ct-f textarea::placeholder{color:#a8afbf}
+.ct-f input:focus,.ct-f textarea:focus{border-color:#2847fc;box-shadow:0 0 0 4px rgba(40,71,252,.10)}
+.ct-chips{display:flex;flex-wrap:wrap;gap:10px}
+.ct-chip{display:flex;align-items:center;gap:8px;height:42px;padding:0 18px;border:1px solid #dfe3ee;border-radius:999px;font-size:14px;color:#2b3446;background:#fff;cursor:pointer}
+.ct-chip i{width:14px;height:14px;border-radius:4px;border:1.5px solid #c4cbe0;box-sizing:border-box}
+.ct-chip.on{border-color:#2847fc;color:#2847fc;background:#f3f5ff}.ct-chip.on i{background:#2847fc;border-color:#2847fc;box-shadow:inset 0 0 0 2px #f3f5ff}
+.ct-foot{margin-top:40px;padding-top:32px;border-top:1px solid #edf0f7;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.ct-agree{display:flex;align-items:center;gap:10px;font-size:13px;color:#2b3446}
+.ct-agree i{width:18px;height:18px;border-radius:5px;border:1.5px solid #c4cbe0;box-sizing:border-box}
+.ct-agree a{color:#2847fc;text-decoration:none}
+.ct-note{margin-top:6px;font-size:12px;color:#8a93a6}
+.ct-submit{flex:none;white-space:nowrap;height:56px;padding:0 40px;border:0;border-radius:40px;background:#2847fc;color:#fff;font:inherit;font-size:16px;font-weight:500;display:flex;align-items:center;gap:12px;box-shadow:0 10px 24px rgba(40,71,252,.28);cursor:pointer}
+.cf-acc{padding:112px 0 128px;background:#f6f8fb}
+.cf-ag{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:64px;align-items:stretch}
+.cf-ag h2{font-size:32px;font-weight:700;margin:14px 0 0;color:#0b1524}
+.cf-dl{margin:32px 0 0;border-top:1px solid #e1e6ef}
+.cf-dl div{display:grid;grid-template-columns:104px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid #e1e6ef}
+.cf-dl dt{font-size:13px;color:#6b7385}
+.cf-dl dd{margin:0;font-size:15px;line-height:1.8;color:#0b1524}
+.cf-gm{display:inline-block;margin-top:24px;font-size:14px;font-weight:500;color:#2847fc;text-decoration:none}
+.cf-map{border-radius:20px;overflow:hidden;min-height:360px;background:#e9edf4;border:1px solid #e3e8f1}
+.cf-map iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:grayscale(.35) contrast(.95)}
+.ct-chips{gap:8px}.ct-chip{padding:0 14px;font-size:13.5px}.ct-r small{white-space:nowrap;font-size:11.5px}.ct-r{padding:16px 14px}.ct-seg{gap:10px}
+.cf-side h1{font-size:44px;font-weight:500;letter-spacing:.04em}
+.cf-lead{font-size:16px;margin-top:24px}
+.cf-info{margin:56px 0 0;border-top:1px solid #dfe5f3}
+.cf-info div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:22px 0;border-bottom:1px solid #dfe5f3;align-items:baseline}
+.cf-info dt{font-size:13px;color:#6b7385}
+.cf-info dd{margin:0;min-width:0}
+.cf-info b{display:block;font-size:18px;font-weight:500;color:#0b1524;letter-spacing:.02em}
+.cf-info b.num{font-size:22px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.cf-info small{display:block;margin-top:4px;font-size:13px;color:#6b7385}
+.ct-f label{font-weight:500}
+.ct-r b{font-weight:500;white-space:normal}
+.ct-r small{white-space:normal;font-size:12px}
+.ct-r{padding:16px}
+.ct-chip{white-space:nowrap}
+.cf-prog span.on{font-weight:500}
+.cf-ag h2{font-weight:500}
+.cf-dl dd{font-size:15px}
+.ct-agree{flex-wrap:wrap}
+
+.ct-r{display:block!important;position:relative;padding:18px 18px 18px 46px}
+.ct-r span{display:flex!important;flex-direction:column;gap:6px}
+.ct-r i{position:absolute;left:18px;top:20px;margin:0}
+.ct-r b{font-size:14px;line-height:1.4;white-space:nowrap}
+.ct-r small{font-size:12px;line-height:1.7}
+.cf-adr{font-size:15px;line-height:1.75;color:#0b1524;font-weight:400;display:block}
+.cf-smap{margin-top:28px;border-radius:16px;overflow:hidden;border:1px solid #e3e8f1;background:#e9edf4;position:relative}
+.cf-smap iframe{width:100%;height:240px;border:0;display:block;filter:grayscale(.35) contrast(.95)}
+.cf-smap a{display:block;padding:12px 16px;font-size:13.5px;font-weight:500;color:#2847fc;text-decoration:none;background:#fff;border-top:1px solid #e3e8f1}
+.cf-smap a:hover{color:#1a33d6}
+.ct-r small .nw{white-space:nowrap;display:inline-block}.ct-r small{font-size:11.5px}
+.ct-agree{white-space:nowrap;flex-wrap:nowrap}.ct-foot>div:first-child{min-width:0}.ct-agree i{flex:none}.ct-foot{flex-direction:column!important;align-items:stretch!important;gap:28px!important}.ct-foot>*:last-child{align-self:center;min-width:320px;justify-content:center}
+.cf-info b.num{font-size:18px;letter-spacing:.03em}
+.cf-side{padding-top:0}
+.cf-grid>.cf-card{margin-top:0}
+.ct-grid{margin-top:44px}
+.ct-note{color:#566074}
+</style><style id="h2fix">
+.cf-lead{font-size:15px!important;margin-top:20px!important;line-height:1.9}
+.cf-info{margin-top:56px!important}
+.cf-info>div{padding:18px 0!important;align-items:baseline!important}
+.cf-info dt{font-size:13px!important}
+.cf-info b,.cf-info b.num{display:inline!important;font-size:15px!important;font-weight:500!important;letter-spacing:.02em!important}
+.cf-info small{display:inline!important;margin:0 0 0 8px!important;font-size:13px!important}
+.cf-adr{font-size:15px!important;line-height:1.8;color:#0b1524}
+.cf-smap{margin-top:48px!important;border:0!important;background:none!important;padding:0!important;box-shadow:none!important}
+.cf-smap iframe{height:200px!important;min-height:0!important;border-radius:12px!important;display:block;border:0}
+.cf-smap a{display:inline-block;margin-top:12px;font-size:13px}
+</style><style id="gapfix">.cf-grid{grid-template-columns:minmax(0,1fr) minmax(0,640px)!important;column-gap:88px!important}</style><style id="clickcss">.ct-chip,.ct-agree{cursor:pointer;user-select:none}.ct-agree i{transition:background .15s,border-color .15s}.ct-agree.on i{background:#2a4bff;border-color:#2a4bff;position:relative}.ct-agree i{box-sizing:border-box!important;display:flex!important;align-items:center;justify-content:center;flex:none}.ct-agree.on i:after{content:""!important;position:static!important;display:block!important;width:5px!important;height:9px!important;margin:-2px 0 0 0!important;border:solid #fff!important;border-width:0 2px 2px 0!important;background:none!important;transform:rotate(45deg)!important;inset:auto!important}</style><style id="compfix">
+.cf-prog span{position:relative}
+.cf-prog span i{background:#fff!important;color:#8a93a6!important;border:1px solid #cfd5e3!important;box-shadow:none!important}
+.cf-prog span.on{color:#2847fc!important}
+.cf-prog span.on i{background:#2847fc!important;color:#fff!important;border-color:#2847fc!important;box-shadow:0 0 0 4px #e8ecff!important;font-weight:500}.cf-prog span{gap:10px}.cf-prog span.on{font-weight:500}
+.cf-prog span.on:after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:2px;background:#2847fc;border-radius:2px}
+.req{font-size:10.5px!important;font-weight:500!important;color:#2847fc!important;background:#f1f4ff!important;border:1px solid #c9d3ff!important;border-radius:3px!important;padding:0 5px!important;line-height:1.6!important;letter-spacing:.04em}
+.ct-f label{gap:8px!important}
+.ct-chips{grid-template-columns:repeat(4,max-content)!important;gap:10px!important}.ct-chip{gap:8px!important;padding:0 20px 0 16px!important;letter-spacing:.02em!important;font-size:14px!important;white-space:nowrap}.ct-chip i{width:15px!important;height:15px!important;flex:0 0 15px!important;border-radius:3px!important}.ct-chip.on i:after{width:3.5px!important;height:7px!important;border-width:0 1.6px 1.6px 0!important;margin-top:-1.5px!important}
+.req{background:#eef1ff!important;border:0!important;padding:1px 6px!important;border-radius:3px!important;color:#3d56e0!important;font-size:11px!important;font-weight:500!important;letter-spacing:.04em;line-height:1.6!important}
+.ct-r i{border:1.5px solid #c3c9d8!important;display:flex;align-items:center;justify-content:center;top:21px!important}
+.ct-r:has(input:checked) i{border:1.5px solid #2847fc!important;background:#fff}
+.ct-r:has(input:checked) i:after{content:"";width:8px;height:8px;border-radius:50%;background:#2847fc}
+.ct-chip{border-radius:8px!important;height:44px!important;padding:0 16px!important}
+.ct-chip i{width:16px!important;height:16px!important;border-radius:4px!important;border:1.5px solid #c4cbe0!important;box-shadow:none!important;display:flex;align-items:center;justify-content:center;background:#fff!important}
+.ct-chip.on{border-color:#2847fc!important;background:#f6f8ff!important;color:#2847fc!important}
+.ct-chip.on i{background:#2847fc!important;border-color:#2847fc!important}
+.ct-chip.on i:after{content:"";width:4px;height:8px;margin-top:-2px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ct-chips{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important}.ct-chip{justify-content:flex-start;padding:0 14px!important}.cf-info dd b.num{font-size:16.5px!important;font-weight:700!important;letter-spacing:.04em!important;color:#0b1524!important}.ct-chip i{flex-shrink:0!important}.ct-chip{white-space:nowrap}label .req{flex-shrink:0;margin-left:4px}.ct-seg .ct-r{padding:15px 18px 15px 46px!important}.ct-seg .ct-r small{line-height:1.5!important;margin-top:2px}.cf-smap a{border-top:0!important}.cf-smap a{padding-left:0!important;padding-right:0!important;margin-left:0!important;padding-top:14px!important}
+.ct-chips{grid-template-columns:repeat(4,auto)!important;gap:8px!important}.ct-f .ct-chip{padding:0 14px 0 13px!important;gap:8px!important}
+.ct-form{padding-top:64px!important}</style></head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo.svg" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="gptbots.html">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="modellix.html">
+              <strong>Modellix</strong>
+              <span>AIモデルをひとつのAPIで</span>
+            </a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+        <a class="nav-link" href="pricing.html">料金</a>
+      
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-cta">
+        <a href="news.html" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+<section class="cf-top"><div class="container"><div class="cf-grid">
+<aside class="cf-side">
+<span class="eyebrow">Contact</span><h1>お問い合わせ</h1>
+<p class="cf-lead">ご用件に合わせて、担当者よりご連絡いたします。</p>
+<dl class="cf-info">
+<div><dt>ご返信の目安</dt><dd><b>2営業日以内</b><small>担当者よりご連絡します</small></dd></div>
+<div><dt>受付時間</dt><dd><b>平日 9:30〜18:30</b><small>土日祝を除く</small></dd></div>
+<div><dt>お電話</dt><dd><b class="num">050-5898-7956</b></dd></div>
+<div><dt>所在地</dt><dd><span class="cf-adr">〒105-0001<br>東京都港区虎ノ門1-10-5<br>KDX虎ノ門一丁目ビル 11階</span></dd></div>
+</dl>
+<div class="cf-smap"><iframe loading="lazy" src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E8%99%8E%E3%83%8E%E9%96%801-10-5&z=16&hl=ja&output=embed"></iframe><a href="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E8%99%8E%E3%83%8E%E9%96%801-10-5" target="_blank" rel="noopener">Google マップで開く →</a></div>
+</aside>
+<div class="cf-card">
+
+<form class="ct-form" onsubmit="return false">
+<div class="ct-f ct-kind"><label>ご用件<span class="req">必須</span></label>
+<div class="ct-seg">
+<label class="ct-r"><input type="radio" name="kind"><i></i><span><b>資料請求</b><small><span class="nw">サービス資料を</span><span class="nw">ご覧になりたい方</span></small></span></label>
+<label class="ct-r"><input type="radio" name="kind" checked><i></i><span><b>導入のご相談</b><small><span class="nw">具体的な検討を</span><span class="nw">進めたい方</span></small></span></label>
+<label class="ct-r"><input type="radio" name="kind"><i></i><span><b>その他</b><small><span class="nw">取材・協業・採用に</span><span class="nw">関するご連絡</span></small></span></label>
+</div></div>
+
+<div class="ct-grid">
+<div class="ct-f"><label>会社名<span class="req">必須</span></label><input placeholder="例）Aurora Mobile株式会社"></div>
+<div class="ct-f"><label>部署名</label><input placeholder="例）マーケティング部"></div>
+<div class="ct-f"><label>お名前<span class="req">必須</span></label><input placeholder="例）山田 太郎"></div>
+<div class="ct-f"><label>役職</label><input placeholder="例）部長"></div>
+<div class="ct-f"><label>メールアドレス<span class="req">必須</span></label><input placeholder="例）taro.yamada@example.co.jp"></div>
+<div class="ct-f"><label>電話番号</label><input placeholder="例）03-1234-5678"></div>
+<div class="ct-f full"><label>ご興味のあるサービス</label><div class="ct-chips"><span class="ct-chip on"><i></i>EngageLab</span><span class="ct-chip"><i></i>GPTBots.ai</span><span class="ct-chip"><i></i>Modellix</span><span class="ct-chip"><i></i>その他・未定</span></div></div>
+<div class="ct-f full"><label>お問い合わせ内容<span class="req">必須</span></label><textarea placeholder="ご検討中の内容、現在の課題などをご記入ください。"></textarea></div>
+</div>
+<div class="ct-foot"><div><div class="ct-agree"><i></i><span><a href="#">プライバシーポリシー</a>に同意します</span><span class="req">必須</span></div><div class="ct-note">ご入力いただいた情報は、お問い合わせへの回答のために利用します。</div></div><button class="ct-submit" type="submit">送信する <span>→</span></button></div>
+</form>
+</div>
+</div></div></section>
+
+</main>
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="gptbots.html">GPTBots.ai</a>
+          <a href="modellix.html">Modellix</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="pricing.html">料金</a>
+          <a href="news.html">ニュース</a>
+          <a href="careers.html">採用情報</a>
+          <a href="index.html#contact">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+<script id="clickfix">document.addEventListener('click',function(e){var c=e.target.closest('.ct-chip');if(c){c.classList.toggle('on');return}var a=e.target.closest('.ct-agree');if(a&&!e.target.closest('a')){a.classList.toggle('on')}});</script></body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Hero visual 比較 A/B/C</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f5fa;font-family:"Zen Kaku Gothic New",sans-serif;color:#0f1623;padding:48px 40px}
+h1{font-size:20px;margin:0 0 28px;letter-spacing:.06em}
+.row{display:grid;grid-template-columns:repeat(3,460px);gap:24px}
+.lab{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.lab b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:#2f4bff;color:#fff;font-size:15px}
+.lab span{font-size:15px;font-weight:700;letter-spacing:.06em}
+.lab em{font-style:normal;font-size:13px;color:#5b6475}
+.pn{position:relative;height:520px;border-radius:20px;overflow:hidden;background:radial-gradient(ellipse 70% 70% at 55% 45%,rgba(64,96,255,.38),transparent 70%),linear-gradient(160deg,#152063 0%,#0e1748 55%,#0b1238 100%)}
+.pn:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+.st{position:absolute;z-index:1}
+.c{position:absolute;width:260px;border-radius:14px;background:#fff;padding:24px 24px 20px;display:flex;flex-direction:column;box-shadow:0 40px 80px -30px rgba(0,0,30,.7),0 10px 24px -12px rgba(30,60,200,.4)}
+.dk{font-size:10px;letter-spacing:.18em;color:#2f4bff;font-weight:700}
+.tt{margin-top:10px;font-size:19px;line-height:1.55;font-weight:700;letter-spacing:.04em}
+.yr{margin-top:8px;font-size:11px;color:#8a93a3;letter-spacing:.04em}
+.bar{position:absolute;left:0;top:0;right:0;height:4px;border-radius:14px 14px 0 0;background:linear-gradient(90deg,#2f4bff,#5ac8fa)}
+.toc{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:9px}
+.toc li{display:flex;gap:10px;font-size:12px;color:#3a4356;letter-spacing:.04em}
+.toc li i{font-style:normal;font-size:11px;font-weight:700;color:#2f4bff;letter-spacing:.06em}
+.ft{margin-top:auto;display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid #eef1f8;font-size:12px;color:#5b6475}
+.bd{font-size:10px;font-weight:700;letter-spacing:.1em;color:#fff;background:#2f4bff;border-radius:4px;padding:3px 7px}
+.bd.x{background:#1f9d6a}.bd.n{background:#6b7486}
+.dl{margin-left:auto;width:28px;height:28px;border-radius:50%;background:#eef2ff;color:#2f4bff;display:grid;place-items:center}
+.chip{position:absolute;z-index:5;display:flex;align-items:center;gap:10px;height:40px;padding:0 18px;border-radius:999px;background:#fff;font-size:13px;font-weight:700;letter-spacing:.06em;box-shadow:0 14px 30px -10px rgba(0,0,20,.55)}
+.chip i{width:8px;height:8px;border-radius:50%;background:#1fbf75;box-shadow:0 0 0 4px rgba(31,191,117,.18)}
+.mini .tt{font-size:14px;margin-top:6px;line-height:1.4}
+.mini{padding-top:18px}
+.note{margin-top:14px;font-size:13px;line-height:1.8;color:#3a4356}
+</style>
+</head>
+<body>
+<h1>右側ビジュアル 比較（A / B / C）</h1>
+<div class="row">
+
+<div>
+<div class="lab"><b>A</b><span>階段状に重ねる</span><em>推奨</em></div>
+<div class="pn">
+ <div class="st" style="left:56px;top:28px;width:380px;height:440px">
+  <div class="c mini" style="left:0;top:0;height:290px;background:#c9d3f0;box-shadow:0 30px 60px -30px rgba(0,0,30,.6)"><span class="dk">REPORT</span><div class="tt">SOC 2 Type II 保証報告書</div></div>
+  <div class="c mini" style="left:56px;top:64px;height:290px;background:#e4e9f8"><span class="dk">CHECK SHEET</span><div class="tt">チェックシート回答集</div></div>
+  <div class="c" style="left:112px;top:128px;height:290px"><div class="bar"></div><span class="dk">SECURITY WHITE PAPER</span><div class="tt">セキュリティ<br>ホワイトペーパー</div><span class="yr">2026年版 ／ Aurora Mobile 株式会社</span>
+   <ul class="toc"><li><i>01</i>データ保管・暗号化</li><li><i>02</i>アクセス管理</li><li><i>03</i>インシデント対応</li></ul>
+   <div class="ft"><span class="bd">PDF</span>32 ページ<span class="dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div></div>
+ </div>
+ <div class="chip" style="left:56px;bottom:22px"><i></i>東京リージョンで保管</div>
+</div>
+<p class="note">3 冊の名前がすべて読める。背面ほど暗く、前後関係が明快。</p>
+</div>
+
+<div>
+<div class="lab"><b>B</b><span>主カード＋資料リスト</span></div>
+<div class="pn">
+ <div class="st" style="left:20px;top:50px;width:440px;height:420px">
+  <div class="c" style="left:0;top:0;height:330px"><div class="bar"></div><span class="dk">SECURITY WHITE PAPER</span><div class="tt">セキュリティ<br>ホワイトペーパー</div><span class="yr">2026年版 ／ Aurora Mobile 株式会社</span>
+   <ul class="toc"><li><i>01</i>データ保管・暗号化</li><li><i>02</i>アクセス管理</li><li><i>03</i>インシデント対応</li></ul>
+   <div class="ft"><span class="bd">PDF</span>32 ページ<span class="dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div></div>
+  <div class="c" style="left:190px;top:170px;width:250px;padding:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff">
+   <span class="dk" style="color:#a9bbff">ダウンロードできる資料</span>
+   <div style="display:grid;gap:12px;margin-top:14px;font-size:12px;letter-spacing:.04em">
+    <div style="display:flex;align-items:center;gap:10px"><span class="bd">PDF</span>ホワイトペーパー</div>
+    <div style="display:flex;align-items:center;gap:10px"><span class="bd x">XLSX</span>チェックシート回答集</div>
+    <div style="display:flex;align-items:center;gap:10px"><span class="bd n">NDA</span>SOC 2 保証報告書</div>
+   </div></div>
+ </div>
+ <div class="chip" style="left:20px;bottom:30px"><i></i>東京リージョンで保管</div>
+</div>
+<p class="note">画面はすっきり。ただし「リスト」という別の形式が増える。</p>
+</div>
+
+<div>
+<div class="lab"><b>C</b><span>扇形に広げ、側面に縦書き</span></div>
+<div class="pn">
+ <div class="st" style="left:100px;top:60px;width:260px;height:380px">
+  <div class="c" style="left:0;top:0;height:330px;background:#c9d3f0;transform:rotate(-9deg) translateX(-60px);transform-origin:50% 100%"><div style="writing-mode:vertical-rl;display:flex;gap:10px;align-items:flex-start;align-self:flex-start"><span class="dk">REPORT</span><span style="font-size:15px;font-weight:700;letter-spacing:.12em">SOC 2 保証報告書</span></div></div>
+  <div class="c" style="left:0;top:0;height:330px;background:#e4e9f8;transform:rotate(9deg) translateX(60px);transform-origin:50% 100%;align-items:flex-end"><div style="writing-mode:vertical-rl;display:flex;gap:10px;align-items:flex-start;align-self:flex-end"><span class="dk">CHECK SHEET</span><span style="font-size:15px;font-weight:700;letter-spacing:.12em">チェックシート回答集</span></div></div>
+  <div class="c" style="left:0;top:0;height:330px"><div class="bar"></div><span class="dk">SECURITY WHITE PAPER</span><div class="tt">セキュリティ<br>ホワイトペーパー</div><span class="yr">2026年版 ／ Aurora Mobile 株式会社</span>
+   <ul class="toc"><li><i>01</i>データ保管・暗号化</li><li><i>02</i>アクセス管理</li><li><i>03</i>インシデント対応</li></ul>
+   <div class="ft"><span class="bd">PDF</span>32 ページ<span class="dl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div></div>
+ </div>
+ <div class="chip" style="left:60px;bottom:30px"><i></i>東京リージョンで保管</div>
+</div>
+<p class="note">立体感は最も強い。縦書き・大きな角度でやや演出的。</p>
+</div>
+
+</div>
+</body>
+</html>

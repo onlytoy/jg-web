@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja" data-variant="Q">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ニュース | Aurora Mobile 株式会社</title>
+  <meta name="description" content="Aurora Mobile のサービスをご活用いただいているお客様の導入事例をご紹介します。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style>
+
+.n2-hero{padding:16px 0 136px;background:linear-gradient(245deg,#e3eaff 0%,#eff3ff 40%,#fbfcff 78%)}
+.n2-hero{position:relative;background:none}
+.n2-hero:before{content:"";position:absolute;left:0;right:0;top:0;height:calc(100% + 420px);z-index:-1;pointer-events:none;background:linear-gradient(245deg,#e3eaff 0%,#eff3ff 40%,#fbfcff 78%);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 45%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 45%,transparent 100%)}
+main{position:relative;z-index:0}
+.n2-hero .crumb{font-size:13px;color:#8a93a6;display:flex;gap:10px}.n2-hero .crumb a{color:#8a93a6}
+.n2-hd{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:24px}
+.n2-hero .container{padding-top:0}
+.n2-hd h1{font-size:48px;font-weight:700;letter-spacing:0;margin:14px 0 0;line-height:1.2;color:#0b1524}
+.n2-hd p{margin:0;font-size:15px;line-height:1.9;color:#4a5568;text-align:right}
+.n2-feat{margin-top:-96px;position:relative}
+.fc{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);background:#fff;border-radius:24px;box-shadow:0 24px 60px rgba(30,50,110,.10);overflow:hidden;color:inherit;text-decoration:none}
+.fc .th{border-radius:0;aspect-ratio:auto;min-height:100%}
+.fx{padding:48px 52px;display:flex;flex-direction:column;justify-content:center}
+.fx h2{font-size:28px;line-height:1.55;font-weight:700;margin:18px 0 16px;color:#0b1524;text-wrap:pretty}
+.fx p{font-size:15px;line-height:1.9;color:#4a5568;margin:0}
+.fx .more{margin-top:28px;font-size:14px;font-weight:700;color:#2847fc;display:flex;gap:8px}
+.fx .more i{font-style:normal;transition:transform .25s}.fc:hover .more i{transform:translateX(4px)}
+.meta{display:flex;align-items:center;gap:12px;font-size:13px;color:#8a93a6}
+.meta time{font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.cat{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:#eef2ff;color:#2847fc}
+.cat-pu{background:#e8f6fd;color:#0c7fb0}.cat-ev{background:#fdf2e4;color:#b86a0c}
+.new{font-size:11px;font-weight:700;color:#2847fc;letter-spacing:.08em}
+.th{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between}
+.th .lg{height:11px;width:auto;max-width:42%;align-self:flex-start;opacity:.85}
+.th .tt b{display:block;font-size:20px;line-height:1.4;font-weight:700;letter-spacing:.01em}
+.th .tt span{display:block;font-size:13px;line-height:1.6;margin-top:6px;opacity:.8;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.th em{font-style:normal;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.th.big .lg{height:18px}.th.big .tt b{font-size:34px}.th.big .tt span{font-size:16px}.th.big em{font-size:12px}
+.th-pr{background:radial-gradient(120% 90% at 100% 0%,#cfdcff 0%,rgba(207,220,255,0) 60%),linear-gradient(135deg,#f4f7ff,#e6edff);color:#0b1524}
+.th-pr:after{content:"";position:absolute;right:8%;top:14%;width:34%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(40,71,252,.18);box-shadow:0 0 0 18px rgba(40,71,252,.04),0 0 0 40px rgba(40,71,252,.03)}
+.th-pu{background:radial-gradient(90% 90% at 90% 10%,rgba(90,200,250,.45) 0%,rgba(90,200,250,0) 55%),linear-gradient(135deg,#0f1c3d,#16295e);color:#fff}
+.th-pu .lg{filter:brightness(0) invert(1);opacity:.9}
+.th-pu:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px;-webkit-mask:radial-gradient(60% 70% at 85% 20%,#000,transparent);mask:radial-gradient(60% 70% at 85% 20%,#000,transparent)}
+.th-ev{background:radial-gradient(100% 90% at 100% 100%,#ffe2bd 0%,rgba(255,226,189,0) 60%),linear-gradient(135deg,#fffaf3,#fff1df);color:#3a2408}
+.th > *{position:relative;z-index:1}
+.th.ph{padding:0;background:#e9edf5}
+.th.ph img.p{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02)}
+.th.ph:after{content:"";position:absolute;inset:0;background:rgba(40,71,252,.04);pointer-events:none}
+.n2-body{padding:96px 0 120px}
+.n2-grid{display:grid;grid-template-columns:220px minmax(0,1fr);gap:64px;align-items:start}
+.n2-side{position:sticky;top:110px}
+.n2-side h4{font-size:12px;font-weight:700;letter-spacing:.14em;color:#8a93a6;margin:0 0 12px}
+.n2-side .cats{list-style:none;margin:0 0 36px;padding:0;display:flex;flex-direction:column;gap:2px}
+.n2-side button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border:0;background:none;border-radius:10px;font:inherit;font-size:14px;color:#334155;cursor:pointer;text-align:left}
+.n2-side button span{font-size:12px;color:#a0a8b8}
+.n2-side button:hover{background:#f5f7fb}
+.n2-side button.on{background:none;color:#2847fc;font-weight:700}.n2-side button.on span{color:#2847fc}
+.n2-side h4{margin-bottom:8px}
+.n2-side .cats{margin-bottom:32px;gap:0;border-left:1px solid #e6eaf2}
+.n2-side .cats button{padding:9px 14px;border-radius:0;margin-left:-1px;border-left:2px solid transparent;justify-content:flex-start;gap:10px}
+.n2-side .cats button span{margin-left:auto}
+.n2-side .cats button:hover{background:none;color:#2847fc}
+.n2-side .cats button.on{border-left-color:#2847fc}
+.n2-side .cats button:is([data-f="pr"],[data-c="pr"],[data-cat="pr"])::before,.n2-side .cats button:is([data-f="pu"],[data-c="pu"],[data-cat="pu"])::before,.n2-side .cats button:is([data-f="ev"],[data-c="ev"],[data-cat="ev"])::before{content:"";width:6px;height:6px;border-radius:50%;flex:none}
+.n2-side .cats button:is([data-f="pr"],[data-c="pr"],[data-cat="pr"])::before{background:#2847fc}
+.n2-side .cats button:is([data-f="pu"],[data-c="pu"],[data-cat="pu"])::before{background:#0ea5e9}
+.n2-side .cats button:is([data-f="ev"],[data-c="ev"],[data-cat="ev"])::before{background:#f08a24}
+.n2-side .cats.yrs{flex-direction:row;flex-wrap:wrap;gap:8px;border-left:0}
+.n2-side .cats.yrs li{flex:none}
+.n2-side .cats.yrs button{width:auto;margin:0;padding:6px 14px;border:1px solid #e3e8f1;border-radius:999px;font-size:13px}
+.n2-side .cats.yrs button:hover{border-color:#2847fc}
+.n2-side .cats.yrs button.on{border-color:#2847fc;background:#2847fc;color:#fff}
+.n2-count{font-size:14px;color:#4a5568;margin-bottom:28px}.n2-count b{font-size:20px;color:#0b1524}
+.n2-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 32px}
+.nc{color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:16px}
+.nc[hidden]{display:none}
+.nc .th{transition:transform .35s ease,box-shadow .35s ease}
+.nc:hover .th{transform:translateY(-4px);box-shadow:0 16px 36px rgba(30,50,110,.10)}
+.nc h3{font-size:17px;line-height:1.7;font-weight:700;margin:0;color:#0b1524;transition:color .2s;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.nc:hover h3{color:#2847fc}
+.n2-more{text-align:center;margin-top:64px}.n2-more button{font:inherit;font-size:14px;font-weight:700;padding:14px 40px;border-radius:999px;border:1px solid #d6dcea;background:#fff;color:#0b1524;cursor:pointer}
+.n2-more button:hover{border-color:#2847fc;color:#2847fc}
+
+
+.nw-hero{padding:44px 0 72px;background:linear-gradient(245deg,#e8eeff 0%,#f3f6ff 38%,#fff 75%);border-bottom:1px solid #e8edf7}
+.nw-hero .crumb{font-size:13px;color:var(--ink-400);margin-bottom:56px;display:flex;gap:8px}
+.nw-hero .crumb a{color:var(--ink-400)}
+.nw-hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:64px;align-items:end}
+.nw-hd h1{margin:18px 0 0;font-size:44px;font-weight:700;letter-spacing:.04em;line-height:1.3}
+.nw-hd p{margin:0;font-size:15px;line-height:2;color:var(--ink-500)}
+.nw-body{padding:96px 0 128px}
+.nw-grid{display:grid;grid-template-columns:220px minmax(0,1fr);gap:80px;align-items:start}
+.nw-side{position:sticky;top:120px}
+.nw-side h4{margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--ink-400)}
+.nw-side ul{list-style:none;margin:0 0 44px;padding:0;display:flex;flex-direction:column;gap:2px}
+.nw-side button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:10px;font-size:15px;color:var(--ink-700);transition:background .2s,color .2s}
+.nw-side button:hover{background:#f3f6ff}
+.nw-side button.on{background:#eef2ff;color:var(--aurora-blue);font-weight:700}
+.nw-side button span{margin-left:auto;font-size:12px;color:var(--ink-400);font-weight:400;font-variant-numeric:tabular-nums}
+.nw-side button.on span{color:var(--aurora-blue)}
+.nw-side .yrs{flex-direction:row;flex-wrap:wrap;gap:8px}
+.nw-side .yrs button{width:auto;padding:7px 16px;border:1px solid var(--line);border-radius:40px;font-size:14px;font-variant-numeric:tabular-nums}
+.nw-side .yrs button.on{border-color:var(--aurora-blue);background:#fff}
+.nw-yr{display:flex;align-items:baseline;gap:18px;margin:0 0 8px}
+.nw-yr b{font-size:64px;font-weight:300;line-height:1;letter-spacing:-.01em;color:#b8c2d4;font-variant-numeric:tabular-nums}
+.nw-yr span{font-size:13px;color:var(--ink-400)}
+.nw-group+.nw-group{margin-top:80px}
+.nw-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink-900)}
+.nw-row{display:grid;grid-template-columns:112px 168px minmax(0,1fr) 28px;gap:24px;align-items:center;padding:28px 16px;border-bottom:1px solid var(--line);color:var(--ink-900);text-decoration:none;transition:background .25s}
+.nw-row:hover{background:#f7f9ff}
+.nw-row time{font-size:14px;color:var(--ink-500);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.nw-cat{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-700)}
+.nw-cat i{width:7px;height:7px;border-radius:50%;background:var(--c)}
+.nw-row .t{font-size:17px;line-height:1.75;font-weight:500;transition:color .25s}
+.nw-row .t em{font-style:normal;margin-left:10px;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--aurora-blue);vertical-align:2px}
+.nw-row:hover .t{color:var(--aurora-blue)}
+.nw-row .ar{justify-self:end;color:var(--ink-400);transition:transform .25s,color .25s}
+.nw-row:hover .ar{transform:translateX(4px);color:var(--aurora-blue)}
+.nw-more{display:flex;justify-content:center;margin-top:56px}
+.nw-more button{all:unset;cursor:pointer;padding:14px 40px;border:1px solid var(--ink-900);border-radius:40px;font-size:15px;font-weight:500;transition:background .2s,color .2s}
+.nw-more button:hover{background:var(--ink-900);color:#fff}
+[hidden]{display:none!important}
+</style>
+<style id="deadlink">a[href="#"]:not(.v4a){cursor:default!important;pointer-events:none!important}</style>
+<link rel="stylesheet" href="mobile.css"><style id="mnw-mw">@media (max-width:640px){body{min-width:0!important}html,body{overflow-x:hidden!important}}</style><style id="mnw-css">
+.mhome .mn-hero{padding:32px 20px 28px;text-align:center;background:linear-gradient(180deg,#eef3ff 0%,#f7f9ff 70%,#fff 100%)}
+.mhome .mn-hero h1{margin:10px 0 12px}
+.mhome .mn-body{padding:8px 16px 56px}
+.mhome .mn-f{display:block;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #e6ebf7;box-shadow:0 16px 40px -22px rgba(30,40,90,.22);color:inherit;text-decoration:none}
+.mhome .mn-fi{aspect-ratio:16/9;overflow:hidden}.mhome .mn-fi img{width:100%;height:100%;object-fit:cover;display:block}
+.mhome .mn-fx{padding:18px 18px 20px}.mhome .mn-fx h2{margin:10px 0 8px;font-size:18px;line-height:1.5;font-weight:700}
+.mhome .mn-fx p{margin:0;font-size:13px;line-height:1.8;color:#5b6172}.mhome .more{display:inline-block;margin-top:12px;font-size:13px;font-weight:500;color:#2847fc}
+.mhome .mn-m{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.mhome .mn-m time{font:500 12px 'IBM Plex Sans';color:#8a92a6;letter-spacing:.04em}
+.mhome .cat{font-size:11px;padding:2px 8px;border-radius:999px;background:#eef1ff;color:#2847fc}.mhome .cat-pu{background:#e8f7f4;color:#0f9b8e}.mhome .cat-ev{background:#f1edff;color:#6a4ff0}
+.mhome .new{font:600 10px 'IBM Plex Sans';color:#e5484d;letter-spacing:.08em}
+.mhome .mn-tabs{display:flex;gap:8px;margin:32px -16px 8px;padding:0 16px 4px;overflow-x:auto;scrollbar-width:none}.mhome .mn-tabs::-webkit-scrollbar{display:none}
+.mhome .mn-tabs button{flex:none;height:36px;padding:0 16px;border-radius:999px;border:1px solid #e3e8f3;background:#fff;font:500 13px 'IBM Plex Sans JP';color:#5b6172}
+.mhome .mn-tabs button.on{background:#0b1524;border-color:#0b1524;color:#fff}
+.mhome .mn-list{display:flex;flex-direction:column}
+.mhome .mn-c{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid #eef1f7;color:inherit;text-decoration:none}
+.mhome .mn-c[hidden]{display:none}
+.mhome .mn-th{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#eef1ff}.mhome .mn-th img{width:100%;height:100%;object-fit:cover;display:block}
+.mhome .mn-th.pr{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eef3ff,#f6f4ff)}.mhome .mn-th.pr img{width:64%;height:auto;object-fit:contain}
+.mhome .mn-c h3{margin:6px 0 0;font-size:14px;line-height:1.6;font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mhome .mn-more{margin-top:28px;text-align:center}.mhome .mn-more button{height:44px;padding:0 32px;border-radius:999px;border:1px solid #d7deee;background:#fff;font:500 14px 'IBM Plex Sans JP';color:#0b1524}
+</style><style id="h2-40">@media (min-width:641px){main h2:not(:is(.nd-body,.lg-s,.rd-box,.rd-form,.kc,.md-body,.co-sum-lb,.v-dtop,.mn-fx,.cf-ag,.fx,.rv-fx,.rgh) h2),main .gb-h2,main .v-h2,main .s-h2,main .q-h2{font-size:40px!important;font-weight:700!important;font-feature-settings:'palt';line-height:1.45!important;letter-spacing:.01em!important}}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"></head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo-kk.png" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="gptbots.html">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="modellix.html">
+              <strong>Modellix</strong>
+              <span>AIモデルをひとつのAPIで</span>
+            </a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+        <a class="nav-link" href="pricing.html">料金</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-resources">
+            資料
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-resources">
+            <p class="nav-menu-title">資料</p>
+            <a href="resources.html">
+              <strong>資料一覧</strong>
+              <span>ホワイトペーパー・サービス資料</span>
+            </a>
+            <a href="javascript:void(0)" aria-disabled="true">
+              <strong>EngageLab 開発者ドキュメント ↗</strong>
+              <span>API・SDK リファレンス</span>
+            </a>
+            <a href="javascript:void(0)" aria-disabled="true">
+              <strong>GPTBots.ai 開発者ドキュメント ↗</strong>
+              <span>API・SDK リファレンス</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-cta">
+        <a href="resources.html" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+<section class="n2-hero"><div class="container">
+
+<div class="n2-hd"><div><span class="eyebrow">News</span><h1>ニュース</h1></div><p>プレスリリース、製品アップデート、イベント出展など、<br>Aurora Mobile の最新情報をお届けします。</p></div>
+</div></section>
+<section class="n2-feat"><div class="container"><a class="fc" href="news-detail.html"><div class="th ph big"><img class="p" src="img/news-1.png" alt=""></div><div class="fx"><div class="meta"><time>2026.07.28</time><span class="cat cat-pr">プレスリリース</span><span class="new">NEW</span></div><h2>日本市場向けサポート体制の拡充について</h2><p>日本国内のお客様により迅速かつきめ細かなサポートを提供するため、東京拠点のカスタマーサクセス体制を拡充いたしました。</p><span class="more">記事を読む <i>→</i></span></div></a></div></section>
+<section class="n2-body"><div class="container"><div class="n2-grid">
+<aside class="n2-side"><h4>カテゴリー</h4><ul class="cats">
+<li><button class="on" data-f="all">すべて<span>12</span></button></li>
+<li><button data-f="pr">プレスリリース<span>5</span></button></li>
+<li><button data-f="pu">製品アップデート<span>4</span></button></li>
+<li><button data-f="ev">イベント<span>3</span></button></li></ul>
+<h4>年</h4><ul class="cats yrs"><li><button class="on" data-y="all">すべて</button></li><li><button data-y="2026">2026</button></li><li><button data-y="2025">2025</button></li></ul></aside>
+<div><div class="n2-count">全 <b id="n2c">12</b> 件</div><div class="n2-cards">
+<a class="nc" href="news-detail.html" data-cat="pu" data-yr="2026"><div class="th ph"><img class="p" src="img/news-4.png" alt=""></div><div class="meta"><time>2026.07.10</time><span class="cat cat-pu">製品アップデート</span></div><h3>EngageLab、WhatsApp配信機能の提供を開始</h3></a>
+<a class="nc" href="news-detail.html" data-cat="ev" data-yr="2026"><div class="th ph"><img class="p" src="img/news-6.png" alt=""></div><div class="meta"><time>2026.06.22</time><span class="cat cat-ev">イベント</span></div><h3>NexTech Japan 2026 に出展します</h3></a>
+<a class="nc" href="news-detail.html" data-cat="pu" data-yr="2026"><div class="th ph"><img class="p" src="img/news-8.png" alt=""></div><div class="meta"><time>2026.06.05</time><span class="cat cat-pu">製品アップデート</span></div><h3>GPTBots.ai、日本語ナレッジ精度の改善を実施</h3></a>
+<a class="nc" href="news-detail.html" data-cat="pr" data-yr="2026"><div class="th th-pr"><img class="lg" src="icon/logo-kk.png" alt=""><em>プレスリリース</em></div><div class="meta"><time>2026.05.18</time><span class="cat cat-pr">プレスリリース</span></div><h3>2026年度 第1四半期 決算に関するお知らせ</h3></a>
+<a class="nc" href="news-detail.html" data-cat="pu" data-yr="2026"><div class="th ph"><img class="p" src="img/ph-2.png" alt=""></div><div class="meta"><time>2026.04.09</time><span class="cat cat-pu">製品アップデート</span></div><h3>EngageLab、配信レポートのダッシュボードを刷新</h3></a>
+<a class="nc" href="news-detail.html" data-cat="ev" data-yr="2026"><div class="th ph"><img class="p" src="img/news-3.png" alt=""></div><div class="meta"><time>2026.03.12</time><span class="cat cat-ev">イベント</span></div><h3>「AI活用セミナー 2026 春」を東京で開催</h3></a>
+<a class="nc" href="news-detail.html" data-cat="pr" data-yr="2026"><div class="th ph"><img class="p" src="img/news-7.png" alt=""></div><div class="meta"><time>2026.02.20</time><span class="cat cat-pr">プレスリリース</span></div><h3>Aurora Mobile株式会社、東京オフィスを移転</h3></a>
+<a class="nc" href="news-detail.html" data-cat="pu" data-yr="2025"><div class="th ph"><img class="p" src="img/company-hero.png" alt=""></div><div class="meta"><time>2025.12.15</time><span class="cat cat-pu">製品アップデート</span></div><h3>GPTBots.ai、社内ナレッジ連携の対応形式を拡大</h3></a>
+<a class="nc" href="news-detail.html" data-cat="pr" data-yr="2025"><div class="th th-pr"><img class="lg" src="icon/logo-kk.png" alt=""><em>プレスリリース</em></div><div class="meta"><time>2025.11.06</time><span class="cat cat-pr">プレスリリース</span></div><h3>2025年度 第3四半期 決算に関するお知らせ</h3></a>
+<a class="nc" href="news-detail.html" data-cat="ev" data-yr="2025"><div class="th ph"><img class="p" src="img/news-2.png" alt=""></div><div class="meta"><time>2025.10.01</time><span class="cat cat-ev">イベント</span></div><h3>Japan IT Week 秋 2025 に出展しました</h3></a>
+<a class="nc" href="news-detail.html" data-cat="pr" data-yr="2025"><div class="th ph"><img class="p" src="img/news-5.png" alt=""></div><div class="meta"><time>2025.09.03</time><span class="cat cat-pr">プレスリリース</span></div><h3>日本法人「Aurora Mobile株式会社」を設立</h3></a>
+</div><div class="n2-more"><button>もっと見る</button></div></div>
+</div></div></section>
+  <div id="contact" style="position:relative;height:480px;overflow:hidden;background:linear-gradient(120deg,#ffffff 0%,#f2f5ff 60%,#e8eeff 100%);border-top:1px solid #edf0f6">
+    
+    <div style="position:absolute;inset:0;pointer-events:none"><img src="img/cta-wave-logo.svg?v=31" alt="" style="position:absolute;left:calc(50% - 290px);top:-40px;width:1160px;opacity:.26;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%);mask-image:linear-gradient(90deg,transparent 0,#000 34%);pointer-events:none"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;box-sizing:border-box">
+      
+      <div style="position:relative">
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc"><i style="width:24px;height:1px;background:#2847fc"></i>Contact</div>
+        <div style="margin-top:24px;font-size:40px;font-weight:700;line-height:1.5;font-feature-settings:'palt';color:#0a1324">サービスについて、<br>お気軽にご相談ください。</div>
+        <div style="margin-top:20px;font-size:15px;line-height:2;color:#5b6172">導入のご相談・お見積りなど、専任の担当者がご対応します。</div>
+        <div style="margin-top:40px;display:flex;gap:14px">
+          <a href="contact.html" style="height:52px;padding:0 32px;border-radius:40px;background:#2847fc;color:#fff;font-size:15px;font-weight:500;display:flex;align-items:center;gap:12px;text-decoration:none">お問い合わせ<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+          <a href="news.html" style="height:52px;padding:0 32px;border-radius:40px;border:1px solid #c9cedb;background:#fff;color:#0a1324;font-size:15px;font-weight:500;display:flex;align-items:center;text-decoration:none">資料ダウンロード</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</main>
+<script>(function(){var f='all',y='all';function ap(){var n=0;document.querySelectorAll('.nc').forEach(function(c){var s=(f==='all'||c.dataset.cat===f)&&(y==='all'||c.dataset.yr===y);c.hidden=!s;if(s)n++});document.getElementById('n2c').textContent=n}
+document.querySelectorAll('.n2-side button').forEach(function(b){b.onclick=function(){var ul=b.closest('ul');ul.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');if(b.dataset.f)f=b.dataset.f;else y=b.dataset.y;ap()}})})();</script>
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="gptbots.html">GPTBots.ai</a>
+          <a href="modellix.html">Modellix</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="pricing.html">料金</a>
+          <a href="news.html">ニュース</a>
+          <a href="careers.html">採用情報</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span style="display:flex;align-items:center;gap:20px;flex-wrap:wrap"><span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span><i style="width:1px;height:12px;background:rgba(255,255,255,.18)"></i><a class="footer-legal" href="legal.html">プライバシーポリシー</a></span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+<template id="mmain">
+<section class="hero mn-hero"><div class="eb c">News</div><h1>ニュース</h1><p class="ld">プレスリリース、製品アップデート、<br>イベント出展など、Aurora Mobile の<br>最新情報をお届けします。</p></section>
+<section class="mn-body">
+<a class="mn-f" href="news-detail.html"><div class="mn-fi"><img src="img/news-1.png" alt=""></div><div class="mn-fx"><div class="mn-m"><time>2026.07.28</time><span class="cat cat-pr">プレスリリース</span><span class="new">NEW</span></div><h2>日本市場向けサポート体制の拡充について</h2><p>日本国内のお客様により迅速かつきめ細かなサポートを提供するため、東京拠点のカスタマーサクセス体制を拡充いたしました。</p><span class="more">記事を読む →</span></div></a>
+<div class="mn-tabs" id="mntabs"><button class="on" data-f="all">すべて</button><button data-f="pr">プレスリリース</button><button data-f="pu">製品アップデート</button><button data-f="ev">イベント</button></div>
+<div class="mn-list" id="mnlist"><a class="mn-c" href="news-detail.html" data-cat="pu"><div class="mn-th"><img src="img/news-4.png" alt=""></div><div><div class="mn-m"><time>2026.07.10</time><span class="cat cat-pu">製品アップデート</span></div><h3>EngageLab、WhatsApp配信機能の提供を開始</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="ev"><div class="mn-th"><img src="img/news-6.png" alt=""></div><div><div class="mn-m"><time>2026.06.22</time><span class="cat cat-ev">イベント</span></div><h3>NexTech Japan 2026 に出展します</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="pu"><div class="mn-th"><img src="img/news-8.png" alt=""></div><div><div class="mn-m"><time>2026.06.05</time><span class="cat cat-pu">製品アップデート</span></div><h3>GPTBots.ai、日本語ナレッジ精度の改善を実施</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="pr"><div class="mn-th pr"><img class="lg" src="icon/logo-kk.png" alt=""></div><div><div class="mn-m"><time>2026.05.18</time><span class="cat cat-pr">プレスリリース</span></div><h3>2026年度 第1四半期 決算に関するお知らせ</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="pu"><div class="mn-th"><img src="img/ph-2.png" alt=""></div><div><div class="mn-m"><time>2026.04.09</time><span class="cat cat-pu">製品アップデート</span></div><h3>EngageLab、配信レポートのダッシュボードを刷新</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="ev"><div class="mn-th"><img src="img/news-3.png" alt=""></div><div><div class="mn-m"><time>2026.03.12</time><span class="cat cat-ev">イベント</span></div><h3>「AI活用セミナー 2026 春」を東京で開催</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="pr"><div class="mn-th"><img src="img/news-7.png" alt=""></div><div><div class="mn-m"><time>2026.02.20</time><span class="cat cat-pr">プレスリリース</span></div><h3>Aurora Mobile株式会社、東京オフィスを移転</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="pu"><div class="mn-th"><img src="img/company-hero.png" alt=""></div><div><div class="mn-m"><time>2025.12.15</time><span class="cat cat-pu">製品アップデート</span></div><h3>GPTBots.ai、社内ナレッジ連携の対応形式を拡大</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="pr"><div class="mn-th pr"><img class="lg" src="icon/logo-kk.png" alt=""></div><div><div class="mn-m"><time>2025.11.06</time><span class="cat cat-pr">プレスリリース</span></div><h3>2025年度 第3四半期 決算に関するお知らせ</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="ev"><div class="mn-th"><img src="img/news-2.png" alt=""></div><div><div class="mn-m"><time>2025.10.01</time><span class="cat cat-ev">イベント</span></div><h3>Japan IT Week 秋 2025 に出展しました</h3></div></a><a class="mn-c" href="news-detail.html" data-cat="pr"><div class="mn-th"><img src="img/news-5.png" alt=""></div><div><div class="mn-m"><time>2025.09.03</time><span class="cat cat-pr">プレスリリース</span></div><h3>日本法人「Aurora Mobile株式会社」を設立</h3></div></a></div>
+<div class="mn-more"><button>もっと見る</button></div>
+</section></template><script src="mobile.js"></script><script>(function(){var R=document.getElementById('mhome');if(!R)return;var bs=[].slice.call(R.querySelectorAll('#mntabs button')),cs=[].slice.call(R.querySelectorAll('.mn-c'));bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.toggle('on',x===b)});var f=b.dataset.f;cs.forEach(function(c){c.hidden=!(f==='all'||c.dataset.cat===f)})})})})();</script></body>
+</html>

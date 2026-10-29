@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>導入事例：チャネル統合で再訪率が向上 | Aurora Mobile 株式会社</title>
+  <meta name="description" content="分散していた App Push・メール・SMS の配信を EngageLab へ統合し、再訪率が35%向上した小売・EC の導入事例です。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style>
+.v2 .cc-kpis b.hl{color:var(--aurora-blue)}
+.v2 .cc-tag i{display:none}
+.ci-strip{padding:56px 0 48px}
+.ci{margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:64px}
+.ci>div:nth-child(-n+2){border-top:1px solid var(--line)}
+.ci>div{display:grid;grid-template-columns:112px minmax(0,1fr);gap:24px;padding:20px 4px;border-bottom:1px solid var(--line);align-items:center}
+.ci dt{font-size:13px;color:#8a909e;margin:0}
+.ci dd{margin:0;font-size:15px;font-weight:500;color:var(--ink-900);line-height:1.6;text-wrap:pretty}
+.ci .ci-svc,.ci .pdf2{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
+.ci .ci-svc:hover,.ci .pdf2:hover{color:var(--aurora-blue)}
+.ci .ci-svc .ic{width:26px;height:26px;border-radius:7px;background:var(--aurora-blue);display:inline-flex;align-items:center;justify-content:center}
+.ci .ci-svc .ic img{width:15px;height:15px}
+.ci .lk,.ci .pdf2 span{color:var(--aurora-blue)}
+.ci .pdf2{color:var(--aurora-blue)}
+.ci-strip .cc-note{margin:14px 0 0;font-size:12px;color:#9aa0ad}
+.v2 .bx{padding-bottom:64px}
+.res-wrap{background:#f6f7fa;padding:56px 0 104px}
+.v2 .next-head{align-items:flex-end;margin-bottom:40px}
+.v2 .next-head>div{display:flex;flex-direction:column;gap:12px}
+.v2 .next-head h2{font-size:32px;font-weight:700}
+.v2 .next-ov .sh{background:linear-gradient(180deg,rgba(10,19,36,0) 0%,rgba(10,19,36,0) 50%,rgba(10,19,36,.72) 100%)!important}
+.v2 .next-ov .c{align-self:flex-start;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:12px;font-weight:500}
+.v2 .cc-kpis .kar{display:inline-block;transition:clip-path .5s ease .7s,opacity .3s .7s;clip-path:inset(0 0 0 0)}
+.v2 .cc-kpis.pre .kar{clip-path:inset(0 100% 0 0);opacity:0}
+.v2 .next-ov .tx{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.v2 .next-ov .more{position:absolute;left:0;bottom:-30px;font-size:13px;font-weight:500;color:#fff;opacity:0;transition:opacity .3s}
+.v2 .next-ov .more i{display:inline-block;font-style:normal;margin-left:4px;transition:transform .3s}
+.v2 .next-ov a:hover .tx{transform:translateY(-26px)}
+.v2 .next-ov a:hover .more{opacity:1}
+.v2 .next-ov a:hover .more i{transform:translateX(4px)}
+.v2 .next-ov a:hover .sh{background:linear-gradient(180deg,rgba(10,19,36,0) 30%,rgba(10,19,36,.8) 100%)!important}
+.v2 .res-wrap .cc-res{margin:0 auto;max-width:1200px;border-radius:40px;padding:88px 0}
+.v2 .cc-res .rq{display:grid;grid-template-columns:300px minmax(0,1fr);gap:72px;padding:0 72px;max-width:none}
+.v2 .rq-l{display:flex;flex-direction:column;justify-content:space-between;gap:48px}
+.v2 .rq-p{display:flex;align-items:center;gap:16px}
+.v2 .rq-p .av{width:64px;height:64px;border-radius:50%;overflow:hidden;flex:none;border:2px solid rgba(149,222,253,.35)}
+.v2 .rq-p .av img{width:100%;height:100%;object-fit:cover;object-position:70% 25%}
+.v2 .rq-p b{display:block;font-size:16px;font-weight:600;color:#fff}
+.v2 .rq-p span{display:block;margin-top:6px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.6)}
+.v2 .rq-r{position:relative;padding-top:8px}
+.v2 .rq-r .q{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:72px;line-height:.6;height:36px;color:#95defd}
+.v2 .rq-r p{margin:0;font-size:28px;font-weight:500;line-height:1.8;letter-spacing:.02em;color:#fff;text-wrap:pretty}
+.v2 .rq-r em{font-style:normal;color:#95defd}
+.v2 .cc-nums .hide{display:none}
+.v2 .cc-nums{grid-template-columns:1fr}
+.v2 .cc-nums .big b{font-weight:400}
+.v2 .bx-win{border-color:#e2e7f0!important;box-shadow:none!important;opacity:1!important}
+.v2 .bx-win.w1{box-shadow:0 10px 24px rgba(40,60,110,.06)!important}
+.v2 .bx-win .bar{background:none;border-bottom:1px solid #eef1f6;height:16px}
+.v2 .bx-win .bar i{background:#d9dee8}
+.v2 .bx-win .ic{background:#eef3ff;color:#6f86c9;width:26px;border-radius:7px}
+.v2 .bx-win.w2 .ic{background:#f1efff;color:#8a7fd0}
+.v2 .bx-win.w3 .ic{background:#eaf6f7;color:#5fa3ad}
+.v2 .bx-win .nm{color:#6b7488;font-weight:500}
+.v2 .bx-win .sb{color:#9aa3b5;background:#f5f7fb;border:1px solid #e8ecf3;border-radius:999px;padding:2px 8px}
+.v2 .bx-win .ln{display:flex}
+.v2 .bx-win .ln i{background:#eef1f6;height:4px}
+.v2 .bx-win .ln i:first-child{background:#e3e9f7}
+.v2 .bx-win .row{height:52px}
+.v2 .bx-flow .sys{background:#fff;border-color:#dfe6f5;color:#34405a;box-shadow:0 2px 6px rgba(40,71,252,.04)}
+.v2 .bx-flow .sys .ic{width:22px;height:22px;border-radius:6px;background:#eef3ff;color:#2847fc;align-items:center;justify-content:center}
+.v2 .bx-flow .sys svg{width:13px;height:13px}
+.v2 .bx-flow .cap{color:#7f8aa3}
+.v2 .bx-flow .wire path{stroke-opacity:.7;stroke-width:1.6}
+.bxa .bx-win{transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .5s}
+.bxa .bx-win.w2{transition-delay:.1s}.bxa .bx-win.w1{transition-delay:.2s}
+.bxa:not(.play) .bx-win.w3{transform:translate(-34px,-20px) rotate(-7deg);opacity:0!important}
+.bxa:not(.play) .bx-win.w2{transform:translate(38px,-4px) rotate(6deg);opacity:0!important}
+.bxa:not(.play) .bx-win.w1{transform:translate(-18px,22px) rotate(-3deg);opacity:0!important}
+.bxa .bx-arrow{transition:translate .45s cubic-bezier(.2,.8,.2,1) .6s,opacity .3s .6s}
+.bxa:not(.play) .bx-arrow{translate:-14px 0;opacity:0}
+.bxa .wire path{stroke-dasharray:70;stroke-dashoffset:0;transition:stroke-dashoffset .6s ease .9s}
+.bxa:not(.play) .wire path{stroke-dashoffset:70}
+.bxa .wire>circle{transition:opacity .2s 1.45s}
+.bxa:not(.play) .wire>circle{opacity:0}
+.bxa .wire .pulse{fill:#2847fc;opacity:0}
+.bxa .st{transition:opacity .35s,transform .35s}
+.bxa .ch:nth-child(1) .st{transition-delay:1.6s}.bxa .ch:nth-child(2) .st{transition-delay:1.75s}.bxa .ch:nth-child(3) .st{transition-delay:1.9s}
+.bxa:not(.play) .st{opacity:0;transform:translateX(-6px)}
+.bxa .st i{box-shadow:0 0 0 0 rgba(45,194,138,.5)}
+.bxa.play .st i{animation:stPing .9s ease-out 1 both}
+.bxa.play .ch:nth-child(1) .st i{animation-delay:1.6s}.bxa.play .ch:nth-child(2) .st i{animation-delay:1.75s}.bxa.play .ch:nth-child(3) .st i{animation-delay:1.9s}
+@keyframes stPing{0%{box-shadow:0 0 0 0 rgba(45,194,138,.5)}100%{box-shadow:0 0 0 7px rgba(45,194,138,0)}}
+@media (prefers-reduced-motion:reduce){.bxa *{transition:none!important;animation:none!important}}
+.v2 .cc-hero{background:linear-gradient(180deg,rgba(248,250,255,0) 45%,#f8faff 100%),linear-gradient(115deg,#e6edff 0%,#f1f5ff 35%,#ffffff 72%);border-bottom:1px solid #e8edf7}
+.v2 .cc-hero::before{display:none}
+.v2 .cc-ph img{object-position:50% 35%}
+.v2 .cc-tag{background:#fff;border:1px solid #d6dcff;box-shadow:0 2px 8px rgba(40,71,252,.06)}
+
+
+.v2 .nc-wrap{position:relative;margin-top:-84px;z-index:2;padding-bottom:24px}
+.v2 .nc{display:grid;grid-template-columns:1.3fr 1fr 1fr;background:#fff;border:1px solid #e6eaf2;border-radius:20px;box-shadow:0 18px 48px -24px rgba(22,40,120,.18)}
+.v2 .nc>*{padding:32px 40px;display:flex;align-items:center}
+.v2 .nc>*+*{border-left:1px solid #edf0f5}
+.v2 .nc-id{gap:20px}
+.v2 .nc-logo{flex:none;width:64px;height:64px;border-radius:14px;background:#f3f6fc;border:1px solid #e6eaf2;display:grid;place-items:center;font-size:24px;font-weight:700;color:#94a3b8}
+.v2 .nc-name{margin:0 0 8px;font-size:22px;font-weight:700;color:#0b1524;line-height:1.4}
+.v2 .nc-tag{display:inline-block;font-size:13px;color:#2847fc;background:#f2f4ff;border-radius:999px;padding:3px 12px}
+.v2 .nc-meta{margin:0;gap:48px}
+.v2 .nc-meta dt{font-size:13px;color:#64748b;margin-bottom:8px}
+.v2 .nc-meta dd{margin:0;font-size:18px;font-weight:600;color:#0b1524}
+.v2 .nc-act{flex-direction:column;align-items:stretch!important;justify-content:center;gap:4px;padding:20px 28px!important}
+.v2 .nc-act a{display:flex;align-items:center;gap:12px;padding:12px 12px;border-radius:10px;font-size:15px;font-weight:600;color:#0b1524;text-decoration:none;transition:background .2s}
+.v2 .nc-act a:hover{background:#f5f7ff}
+.v2 .nc-act a b{margin-left:auto;color:#2847fc;font-weight:500}
+.v2 .nc-act .ic{width:26px;height:26px;border-radius:7px;background:#2847fc;color:#fff;display:grid;place-items:center;font-size:13px}
+.v2 .nc-act a:last-child{color:#2847fc}
+.v2 .nc-note{margin:14px 0 0;font-size:12px;color:#94a3b8}
+
+.v2 .co-sum{padding:72px 0 88px;background:#fff}
+.v2 .co-sum-row{display:grid;grid-template-columns:320px minmax(0,1fr);gap:40px}
+.v2 .co-sum-lb span{display:block;font-size:14px;color:#2847fc;letter-spacing:.08em;margin:14px 0 18px}
+.v2 .co-sum-lb h2{margin:0;font-size:26px;font-weight:700;color:#0b1524}
+.v2 .co-sum-dl{margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+.v2 .co-sum-dl>div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:18px 0;border-top:1px solid #e6eaf0}
+.v2 .co-sum-dl>div:nth-last-child(-n+2){border-bottom:1px solid #e6eaf0}
+.v2 .co-sum-dl dt{font-size:14px;color:#64748b}
+.v2 .co-sum-dl dd{margin:0;font-size:15px;color:#0b1524;line-height:1.6}
+.v2 .co-sum-dl a{color:#2847fc;text-decoration:none;font-weight:600}
+.v2 .co-sum-dl a:hover{text-decoration:underline}
+.v2 .co-sum-note{margin:16px 0 0;font-size:12px;color:#94a3b8}
+</style><style id="deadlink">a[href="#"]:not(.v4a){cursor:default!important;pointer-events:none!important}</style>
+<link rel="stylesheet" href="mobile.css"><style id="mcd-css">
+.mhome .mel-flow{margin-top:28px;padding:18px;border-radius:18px;background:#fff;border:1px solid #e6ebf7;box-shadow:0 16px 40px -20px rgba(30,40,90,.18);text-align:left}
+.mhome .mel-flow>small{font-size:11px;color:#8a92a6;letter-spacing:.06em}.mhome .mel-flow>b{display:block;margin:4px 0 6px;font-size:13.5px}
+.mhome .mel-flow>div{display:flex;flex-direction:column;gap:4px;padding:10px 0 10px 14px;border-left:2px solid #e6ebf7;margin-left:4px}
+.mhome .mel-flow i{font:600 10.5px 'IBM Plex Sans';letter-spacing:.08em;color:var(--c);font-style:normal;display:flex;gap:8px}.mhome .mel-flow i em{font:400 10.5px 'IBM Plex Sans JP';color:#8a92a6;font-style:normal}
+.mhome .mel-flow p{margin:0;font-size:12.5px;color:#3a4356;line-height:1.6}
+.mhome .mel-iss{margin-top:28px;display:flex;flex-direction:column;text-align:left}
+.mhome .mel-iss>div{padding:20px 0;border-top:1px solid #eef1f7;display:grid;grid-template-columns:36px 1fr;column-gap:8px}.mhome .mel-iss>div:last-child{border-bottom:1px solid #eef1f7}
+.mhome .mel-iss em{grid-row:span 2;font:300 22px 'IBM Plex Sans';color:#2847fc;font-style:normal}.mhome .mel-iss b{font-size:16px}.mhome .mel-iss p{margin:6px 0 0;font-size:13px;line-height:1.8;color:#5b6172}
+.mhome .mel-sol{margin-top:24px;display:flex;flex-direction:column;gap:12px;text-align:left}
+.mhome .mel-sol>div{padding:18px 18px;border-radius:16px;background:#fff;border:1px solid #e6ebf7}
+.mhome .mel-sol small{font:500 11px 'IBM Plex Sans';color:#2847fc;letter-spacing:.06em}.mhome .mel-sol b{display:block;margin-top:4px;font-size:15px}.mhome .mel-sol p{margin:6px 0 0;font-size:12.5px;color:#5b6172;line-height:1.7}
+.mhome .mel-ind{margin:24px -20px 0;padding:0 20px 4px;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;scrollbar-width:none;text-align:left}.mhome .mel-ind::-webkit-scrollbar{display:none}
+.mhome .mel-ind>div{flex:0 0 80%;scroll-snap-align:start;padding:20px;border-radius:18px;background:linear-gradient(160deg,#eef1ff,#fff 70%);border:1px solid #e3e8f8;display:flex;flex-direction:column;gap:8px;min-height:220px}
+.mhome .mel-ind small{font-size:12px;color:#2847fc;font-weight:500}.mhome .mel-ind b{font-size:15.5px;line-height:1.55}.mhome .mel-ind span{font-size:12px;color:#3a4356;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid #e3e8f3;align-self:flex-start}.mhome .mel-ind p{margin:auto 0 0;font-size:11.5px;color:#8a92a6;line-height:1.7}
+.mhome .dots{margin-top:16px}
+.mhome .mel-dl{display:block;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #e6ebf7;box-shadow:0 16px 40px -22px rgba(30,40,90,.2);color:#0a1324}
+.mhome .mel-dl .cv{padding:26px 22px;background:linear-gradient(150deg,#2847fc,#5a69e0);color:#fff}.mhome .mel-dl .cv small{font:500 10px 'IBM Plex Sans';letter-spacing:.14em;opacity:.8}.mhome .mel-dl .cv b{display:block;margin-top:10px;font-size:19px;line-height:1.5}
+.mhome .mel-dl>div:last-child{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px}.mhome .mel-dl>div:last-child small{font-size:11.5px;color:#2847fc;font-weight:500}.mhome .mel-dl>div:last-child b{font-size:16px}.mhome .mel-dl p{margin:2px 0 0;font-size:12.5px;color:#5b6172;line-height:1.8}.mhome .mel-dl span{margin-top:8px;font-size:14px;font-weight:500;color:#2847fc}.mhome .mel-dl em{font-style:normal;font-size:11px;color:#8a92a6}
+.mhome .mel-case{margin-top:24px;display:block;border-radius:20px;overflow:hidden;background:#fff;text-align:left;color:#0a1324;border:1px solid #e6ebf7}.mhome .mel-case img{display:block;width:100%;height:190px;object-fit:cover}
+.mhome .mel-case>div{padding:20px 22px 22px}.mhome .mel-case small{font-size:12px;color:#2847fc}.mhome .mel-case b{display:block;margin-top:6px;font:300 40px 'IBM Plex Sans';line-height:1}.mhome .mel-case b em{font-size:24px;color:#2847fc;font-style:normal}.mhome .mel-case p{margin:10px 0 0;font-size:13px;line-height:1.8;color:#3a4356}.mhome .mel-case span{display:block;margin-top:12px;font-size:14px;color:#2847fc}
+.mhome .mel-cs{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mhome .mel-cs a{padding:16px 8px;border-radius:14px;background:#fff;border:1px solid #e6ebf7;color:#0a1324;display:flex;flex-direction:column;gap:6px}.mhome .mel-cs b{font:400 20px 'IBM Plex Sans'}.mhome .mel-cs small{font-size:10.5px;color:#5b6172;line-height:1.5}
+
+
+.mhome .el-flow{ position: relative; margin-top: 14px; padding-left: 26px; }
+.mhome .el-flow .rail{ position: absolute; left: 3px; top: 10px; bottom: 16px; width: 1px;
+  background: linear-gradient(180deg, rgba(40,71,252,.35), rgba(149,222,253,.35) 55%, rgba(129,239,198,.3)); }
+.mhome .el-flow .stack{ display: flex; flex-direction: column; gap: 14px; }
+.mhome .el-flow .ev{ position: relative; font-size: 12.5px; color: var(--ink-500); padding: 2px 0 2px 2px; }
+.mhome .el-flow .ev em{ font-style: normal; color: var(--ink-400); }
+.mhome .el-flow .d{ position: absolute; left: -26px; top: 7px; width: 7px; height: 7px; border-radius: 50%; }
+.mhome .el-card{ position: relative; background: #fff; border: 1px solid rgba(10,19,36,.08); border-radius: 14px;
+  padding: 14px 16px; box-shadow: 0 10px 26px rgba(16,42,94,.07); }
+.mhome .el-card.hi{ box-shadow: 0 18px 40px rgba(16,42,94,.12); }
+.mhome .el-card .hd{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.mhome .el-card .ch{ display: inline-flex; align-items: center; gap: 7px; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; color: var(--ink-700); }
+.mhome .el-card .ch i{ width: 7px; height: 7px; border-radius: 3px; display: inline-block; }
+.mhome .el-card .tm{ font-size: 11px; color: var(--ink-400); }
+.mhome .el-card .push{ display: flex; gap: 12px; align-items: flex-start; }
+.mhome .el-card .push .ic{ width: 30px; height: 30px; border-radius: 9px; background: var(--aurora-blue); flex: none;
+  display: flex; align-items: center; justify-content: center; }
+.mhome .el-card .t1{ font-size: 13px; font-weight: 700; }
+.mhome .el-card .t2{ font-size: 12px; color: var(--ink-500); margin-top: 4px; }
+.mhome .el-card .bd{ font-size: 13px; line-height: 1.7; color: var(--ink-700); }
+.mhome .el-card .bub{ display: inline-block; font-size: 12.5px; line-height: 1.6; padding: 9px 13px; border-radius: 12px; }
+.mhome .el-card .bub.l{ background: #f1f3f7; color: var(--ink-700); border-bottom-left-radius: 4px; }
+.mhome .el-card .bub.g{ background: #e7f8ee; color: #15603a; border-bottom-left-radius: 4px; }
+.mhome .el-flow{ margin-top: 14px; padding-left: 38px; }
+.mhome .el-flow .rail{ left: 4px; top: 10px; bottom: 34px; width: 2px; border-radius: 2px; opacity: .78;
+  background: linear-gradient(180deg,#7ce0ff 0%,#7ce0ff 24%,#a78bfa 47%,#ffd479 72%,#4ade80 100%); }
+.mhome .el-flow .stack{ gap: 12px; }
+.mhome .el-flow .ev{ padding: 0 0 2px; font-size: 14px; font-weight: 700; color: #2a3142; }
+.mhome .el-flow .ev em{ font-weight: 500; color: #98a0ae; }
+.mhome .el-flow .ev .d{ left: -38px; top: 5px; }
+.mhome .el-flow .d{ position: absolute; left: -38px; top: 18px; width: 10px; height: 10px; border-radius: 50%; }
+.mhome .el-card{ border-radius: 10px; padding: 15px 18px 16px;
+  background: rgba(255,255,255,.86); border: 1px solid rgba(40,71,252,.09); box-shadow: 0 12px 34px rgba(31,55,125,.08); }
+.mhome .el-card.hi{ background: linear-gradient(135deg,rgba(255,255,255,.94),rgba(238,243,255,.88));
+  border: 1px solid rgba(40,71,252,.20); box-shadow: 0 12px 34px rgba(31,55,125,.08); }
+.mhome .el-card .hd{ gap: 16px; margin-bottom: 0; }
+.mhome .el-card .ch{ gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #5b6172; }
+.mhome .el-card .ch i{ width: 6px; height: 6px; border-radius: 50%; }
+.mhome .el-card .tm{ font-size: 11px; color: #98a0ae; }
+.mhome .el-card .push{ margin-top: 9px; gap: 11px; align-items: center; }
+.mhome .el-card .push .ic{ width: 31px; height: 31px; border-radius: 9px;
+  background: linear-gradient(135deg,#2847fc,#6a7fff); box-shadow: 0 6px 14px rgba(40,71,252,.20); }
+.mhome .el-card .t1{ font-size: 13px; font-weight: 500; line-height: 1.55; color: #2a3142; }
+.mhome .el-card .t2{ margin-top: 1px; font-size: 11px; line-height: 1.5; color: #98a0ae; }
+.mhome .el-card .bd{ margin-top: 9px; font-size: 13px; font-weight: 700; line-height: 1.55; color: #2a3142; }
+.mhome .el-card .bub{ margin-top: 9px; padding: 7px 12px; font-size: 12px; line-height: 1.6; }
+.mhome .el-card .bub.l{ border-radius: 11px 11px 11px 4px; background: #f4f5f8; color: #5b6172; }
+.mhome .el-card .bub.g{ border-radius: 11px 11px 4px 11px; background: #edf9f3; color: #39745a; }
+.mhome .mel-hv{margin-top:28px;width:100%;text-align:left;zoom:.86}
+.mhome .mel-st{grid-template-columns:1fr 1fr!important}.mhome .mel-st div{text-align:center}.mhome .mel-st div:nth-child(-n+4){border-bottom:1px solid #eef1f7}.mhome .mel-st div:last-child{grid-column:1/-1;border-right:0!important}
+.mhome .mel-fd{margin-top:24px;padding:20px 16px;border-radius:18px;background:#fff;border:1px solid #e6ebf7;display:flex;flex-direction:column;align-items:center;gap:10px}
+.mhome .mel-fd small{font-size:11px;color:#8a92a6;letter-spacing:.06em}
+.mhome .mel-fd .g4,.mhome .mel-fd .g3{width:100%;display:grid;gap:6px}.mhome .mel-fd .g4{grid-template-columns:repeat(4,1fr)}.mhome .mel-fd .g3{grid-template-columns:repeat(3,1fr)}
+.mhome .mel-fd .g4 span,.mhome .mel-fd .g3 span{padding:8px 2px;border-radius:9px;background:#f5f7fc;font-size:11px;color:#3a4356;white-space:nowrap}
+.mhome .mel-fd .ln{width:1.5px;height:22px;background:linear-gradient(#95defd,#2847fc)}.mhome .mel-fd .ln.g{background:linear-gradient(#2847fc,#81efc6)}
+.mhome .mel-fd .pl{display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:#0a1324;color:#fff;font-size:14px}.mhome .mel-fd .pl span{width:30px;height:30px;border-radius:9px;background:#2847fc;display:grid;place-items:center}
+.mhome .mel-ind>div{padding:0 0 18px!important;overflow:hidden;background:#fff!important}.mhome .mel-ind img{width:100%;height:150px;object-fit:cover;display:block;margin-bottom:6px}
+.mhome .mel-ind>div>*:not(img){margin-left:18px;margin-right:18px}
+
+
+.mhome .mel-top{padding:28px 20px 22px;text-align:center;border-top:1px solid #eef1f7}
+.mhome .mel-top b{font:300 44px/1 'IBM Plex Sans'}.mhome .mel-top b em{font-size:26px;color:#2847fc;font-style:normal}.mhome .mel-top small{display:block;margin-top:10px;font-size:12px;color:#5b6172}
+.mhome .mel-st div:nth-child(-n+4){border-bottom:0}.mhome .mel-st div:nth-child(-n+2){border-bottom:1px solid #eef1f7!important}
+.mhome .mel-dk{background:radial-gradient(120% 70% at 50% 0%,#0c2a7a 0%,#071a4e 45%,#050d24 100%)!important;color:#fff}
+.mhome .mel-dk h2{color:#fff}.mhome .mel-dk .ld{color:rgba(255,255,255,.72)!important}.mhome .mel-dk .eb{color:#95defd}
+.mhome .mel-dk .mel-fd{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14)}
+.mhome .mel-dk .mel-fd small{color:rgba(255,255,255,.55)}
+.mhome .mel-dk .mel-fd .g4 span,.mhome .mel-dk .mel-fd .g3 span{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.88)}
+.mhome .mel-dk .mel-fd .ln{background:linear-gradient(rgba(149,222,253,.7),#2847fc)}.mhome .mel-dk .mel-fd .ln.g{background:linear-gradient(#2847fc,rgba(129,239,198,.8))}
+.mhome .mel-dk .mel-fd .pl{background:#2847fc;box-shadow:0 0 0 6px rgba(40,71,252,.18),0 12px 30px rgba(40,71,252,.4)}.mhome .mel-dk .mel-fd .pl span{background:rgba(255,255,255,.16)}
+.mhome .mel-dk .mel-sol>div{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14)}
+.mhome .mel-dk .mel-sol small{color:#95defd}.mhome .mel-dk .mel-sol b{color:#fff}.mhome .mel-dk .mel-sol p{color:rgba(255,255,255,.65)}
+
+
+.mhome .mel-st5 div{border-bottom:0!important}
+.mhome .mel-st5 div:nth-child(-n+4){border-bottom:1px solid #eef1f7!important}
+.mhome .mel-st5 div:last-child{grid-column:auto!important;border-right:1px solid #eef1f7!important}
+
+.mhome .gb-win{position:relative;margin:24px 30px 24px 0;background:#fff;border:1px solid #e3e8f2;border-radius:14px;box-shadow:0 30px 60px -30px #1b2a6b33;overflow:hidden}
+.mhome .gb-win .bar{height:38px;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid #eef1f6;background:#fafbfd}
+.mhome .gb-win .bar i{width:9px;height:9px;border-radius:50%;background:#dfe3ec}
+.mhome .gb-win .bar span{margin-left:12px;font-size:11px;color:#98a0ae;letter-spacing:.04em}
+.mhome .gb-win .bd{display:grid;grid-template-columns:150px 1fr;height:330px}
+.mhome .gb-side{border-right:1px solid #eef1f6;padding:16px 10px;background:#fbfcfe}
+.mhome .gb-side .w{display:flex;align-items:center;gap:8px;padding:0 6px 14px;font-size:12px;font-weight:700;color:#0a1324}
+.mhome .gb-side .w img{width:16px;height:16px}
+.mhome .gb-side div.it{display:flex;align-items:center;gap:8px;height:30px;padding:0 8px;border-radius:7px;font-size:12px;color:#5b6172}
+.mhome .gb-side div.it.on{background:#f1f3f6;color:#0a1324;font-weight:600}
+.mhome .gb-side div.it.on svg{color:#17654f;stroke:#17654f}
+.mhome .gb-chat{padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+.mhome .gb-chat .u{align-self:flex-end;max-width:78%;background:#e3f5ec;color:#0f3d31;border:1px solid #cdebdc;font-size:12.5px;line-height:1.7;padding:10px 14px;border-radius:12px 12px 2px 12px}
+.mhome .gb-chat .ai{display:flex;gap:10px;max-width:90%}
+.mhome .gb-chat .ai .av{flex:none;width:26px;height:26px;border-radius:8px;background:#0f3d31;display:flex;align-items:center;justify-content:center}
+.mhome .gb-chat .ai .av img{width:14px;filter:brightness(0) saturate(100%) invert(86%) sepia(18%) saturate(640%) hue-rotate(95deg)}
+.mhome .gb-chat .ai .tx{font-size:12.5px;line-height:1.8;color:#0a1324;background:#f5f7fb;padding:10px 14px;border-radius:2px 12px 12px 12px}
+.mhome .gb-chat .src{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.mhome .gb-chat .src span{font-size:10.5px;color:#17654f;background:#fff;border:1px solid #cdebdc;border-radius:20px;padding:2px 8px}
+.mhome .gb-chat .inp{margin-top:auto;height:36px;border:1px solid #e3e8f2;border-radius:9px;display:flex;align-items:center;justify-content:space-between;padding:0 6px 0 12px;font-size:11.5px;color:#a8afbc}
+.mhome .gb-chat .inp i{width:24px;height:24px;border-radius:6px;background:#0f4a3a;display:flex;align-items:center;justify-content:center;color:#fff}
+.mhome .gb-node{position:absolute;background:#fff;border:1px solid #e3e8f2;border-radius:12px;box-shadow:0 18px 40px -20px #1b2a6b40;padding:12px 14px;display:flex;gap:10px;align-items:center;font-size:12px;color:#0a1324;white-space:nowrap}
+.mhome .gb-node .i{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.mhome .gb-node small{display:block;font-size:10.5px;color:#98a0ae;margin-top:2px}
+.mhome .gb-node.n1{right:-6px;top:-6px}
+.mhome .gb-node.n2{left:-26px;bottom:-4px}
+.mhome .gb-node.n3{right:-6px;bottom:72px}
+.mhome .gb-sec{padding:120px 0}
+.mhome .gb-k{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc}
+.mhome .gb-k:before{content:"";width:24px;height:1px;background:#2847fc}
+.mhome .gb-h2{margin:20px 0 0;font-size:32px;line-height:1.55;font-weight:700;color:#0a1324;font-feature-settings:'palt'}
+.mhome .gb-prob{display:grid;grid-template-columns:360px minmax(0,1fr);gap:80px}
+.mhome .gb-prob .l p{margin:20px 0 0;font-size:15px;line-height:2;color:#5b6172}
+.mhome .gb-rows{position:relative;padding-left:40px}
+.mhome .gb-rows:before{content:"";position:absolute;left:7px;top:14px;bottom:44px;width:1px;background:linear-gradient(#d6dcea,#2847fc)}
+.mhome .gb-row{position:relative;display:grid;grid-template-columns:56px 240px minmax(0,1fr);align-items:baseline;padding:26px 0;border-bottom:1px solid #eef1f6}
+.mhome .gb-row:before{content:"";position:absolute;left:-38px;top:34px;width:11px;height:11px;border-radius:50%;background:#fff;border:1.5px solid #c3cbe0}
+.mhome .gb-row .n{font-size:13px;font-weight:700;color:#98a0ae;font-feature-settings:'tnum'}
+.mhome .gb-row h3{margin:0;font-size:18px;font-weight:700;color:#0a1324}
+.mhome .gb-row p{margin:0;font-size:14px;line-height:1.9;color:#5b6172}
+.mhome .gb-con{position:relative;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 30px;border-radius:14px;background:linear-gradient(100deg,#2847fc,#4a6bff);color:#fff}
+.mhome .gb-con:before{content:"";position:absolute;left:-40px;top:50%;width:11px;height:11px;margin-top:-6px;border-radius:50%;background:#2847fc;box-shadow:0 0 0 5px #2847fc22}
+.mhome .gb-con b{font-size:19px;font-weight:700}
+.mhome .gb-con span{font-size:13px;opacity:.85}
+.mhome .gb-plat{background:#f6f9fd}
+.mhome .gb-ph{text-align:center}
+.mhome .gb-ph .gb-k{justify-content:center}
+.mhome .gb-ph p{margin:18px auto 0;max-width:720px;font-size:15px;line-height:2;color:#5b6172}
+.mhome .gb-steps{margin-top:56px;display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);align-items:stretch}
+.mhome .gb-step{background:#fff;border:1px solid #e6eaf2;border-radius:16px;padding:32px 32px 30px}
+.mhome .gb-step .t{display:flex;align-items:center;justify-content:space-between}
+.mhome .gb-step .t em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.12em;color:#2847fc}
+.mhome .gb-step .t span{font-size:11px;color:#98a0ae;border:1px solid #e6eaf2;border-radius:20px;padding:3px 10px}
+.mhome .gb-step h3{margin:14px 0 0;font-size:22px;font-weight:700;color:#0a1324}
+.mhome .gb-step .s{margin:6px 0 0;font-size:14px;color:#5b6172}
+.mhome .gb-step .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.mhome .gb-step .chips span{font-size:12.5px;color:#0a1324;background:#f5f7fb;border-radius:6px;padding:6px 10px}
+.mhome .gb-step.s2{border-color:#cdd7ff;box-shadow:0 24px 50px -30px #2847fc55}
+.mhome .gb-step.s2 .chips span{background:#eef2ff;color:#2847fc}
+.mhome .gb-arr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:11px;color:#2847fc;writing-mode:horizontal-tb}
+.mhome .gb-arr i{display:block;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #cdd7ff;display:flex;align-items:center;justify-content:center}
+.mhome .gb-arch{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.1fr) 120px minmax(0,1fr);align-items:center;padding:30px 32px;background:#fff;border:1px solid #e6eaf2;border-radius:16px}
+.mhome .gb-arch .gb-ac .c{font-size:11px;font-weight:700;letter-spacing:.12em;color:#98a0ae;margin-bottom:12px}
+.mhome .gb-arch .gb-ac .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mhome .gb-arch .gb-ac .g span{font-size:12.5px;color:#0a1324;border:1px solid #e6eaf2;border-radius:8px;padding:8px 10px;text-align:center}
+.mhome .gb-arch .gb-core{text-align:center;padding:22px 16px;border-radius:12px;background:linear-gradient(135deg,#2847fc,#5a7dff);color:#fff}
+.mhome .gb-arch .gb-core img{width:26px;filter:brightness(0) invert(1)}
+.mhome .gb-arch .gb-core b{display:block;margin-top:8px;font-size:15px}
+.mhome .gb-arch .gb-core small{font-size:11.5px;opacity:.85}
+.mhome .gb-arch .gb-ln{height:1px;background:repeating-linear-gradient(90deg,#9fb0ff 0 4px,transparent 4px 8px);position:relative;margin:0 10px}
+.mhome .gb-arch .gb-ln:after{content:"";position:absolute;right:-2px;top:-3px;border-left:6px solid #9fb0ff;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
+.mhome .gb-scn{display:grid;grid-template-columns:400px minmax(0,1fr);gap:64px;margin-top:56px;align-items:stretch}
+.mhome .gb-tabs{display:flex;flex-direction:column}
+.mhome .gb-tab{position:relative;text-align:left;background:none;border:0;border-bottom:1px solid #eef1f6;padding:24px 0 24px 24px;cursor:pointer;font-family:inherit}
+.mhome .gb-tab:before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:2px;background:#eef1f6;transition:background .3s}
+.mhome .gb-tab .n{font-size:12px;font-weight:700;color:#98a0ae}
+.mhome .gb-tab b{display:block;margin-top:6px;font-size:19px;font-weight:700;color:#98a0ae;transition:color .3s}
+.mhome .gb-tab p{margin:0;max-height:0;overflow:hidden;opacity:0;font-size:14px;line-height:1.9;color:#5b6172;transition:all .4s}
+.mhome .gb-tab.on:before{background:#2847fc}
+.mhome .gb-tab.on b{color:#0a1324}
+.mhome .gb-tab.on .n{color:#2847fc}
+.mhome .gb-tab.on p{max-height:80px;opacity:1;margin-top:8px}
+.mhome .gb-pic{position:relative;border-radius:16px;overflow:hidden;min-height:400px;background:#eef1f6}
+.mhome .gb-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.03);transition:opacity .6s,transform 1.2s}
+.mhome .gb-pic img.on{opacity:1;transform:none}
+.mhome .gb-pic .tg{position:absolute;left:20px;bottom:20px;font-size:13px;font-weight:500;color:#0a1324;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:20px;padding:6px 14px}
+.mhome .gb-case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#fff;border:1px solid #e6eaf2;border-radius:16px;overflow:hidden;text-decoration:none;margin-top:48px}
+.mhome .gb-case .im{position:relative;min-height:340px}
+.mhome .gb-case .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mhome .gb-case .tx{padding:48px 52px;display:flex;flex-direction:column}
+.mhome .gb-case .k{font-size:12px;font-weight:500;color:#2847fc}
+.mhome .gb-case .v{margin-top:18px;font-size:72px;font-weight:700;line-height:1;color:#0a1324;font-feature-settings:'tnum'}
+.mhome .gb-case h3{margin:20px 0 0;font-size:19px;line-height:1.7;font-weight:700;color:#0a1324}
+.mhome .gb-case .m{margin-top:14px;font-size:13px;line-height:1.9;color:#5b6172}
+.mhome .gb-case .lk{margin-top:auto;padding-top:24px;font-size:14px;font-weight:500;color:#2847fc}
+.mhome .gb-inds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:0;margin-top:20px;border-top:1px solid #e6eaf2}
+.mhome .gb-inds a{display:flex;align-items:baseline;gap:14px;padding:20px 24px 20px 0;text-decoration:none;color:#0a1324;font-size:14px}
+.mhome .gb-inds a b{font-size:13px;color:#2847fc;font-weight:700}
+.mhome .gb-inds a.more{color:#2847fc;font-weight:500;justify-content:flex-end;padding-right:0}
+.mhome .hv-scale{margin-top:0}
+.mhome .mgp-hv,.mhome .mgp-dv{margin-top:28px;width:100%;overflow:hidden;text-align:left}
+.mhome .mgp-in{width:560px;zoom:.62}.mhome .mgp-hv .mgp-in{width:500px;zoom:.58;padding:0 34px;box-sizing:content-box}.mhome .mgp-hv .gb-win .src span{white-space:nowrap}.mhome .hero .ld{overflow-wrap:anywhere}
+.mhome .mgp-in .hv-scale{transform:none!important}
+.mhome .mgp-st div:last-child{grid-column:1/-1;border-right:0!important}
+.mhome .mgp-st div:nth-child(-n+2){border-bottom:1px solid #eef1f7}
+.mhome .mgp-cs b{font:600 15px 'IBM Plex Sans JP'!important}
+.mhome .mgp-cs small{text-align:left}
+
+
+.mhome .mgp-st3{grid-template-columns:repeat(3,1fr)!important}
+.mhome .mgp-st3 div{padding:24px 6px!important;text-align:center;border-bottom:0!important;border-right:1px solid #eef1f7!important}
+.mhome .mgp-st3 div:last-child{border-right:0!important}
+.mhome .mgp-st3 b{font-size:26px!important}.mhome .mgp-st3 b em{font-size:17px!important}
+.mhome .mgp-st3 small{font-size:10.5px!important;line-height:1.5;word-break:keep-all}
+
+
+.mhome .mcs-th{margin-top:24px;display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:84px 84px;gap:8px}
+.mhome .mcs-th img{width:100%;height:100%;object-fit:cover;border-radius:14px;display:block}.mhome .mcs-th img:first-child{grid-row:span 2}
+.mhome .mcs-fl{position:sticky;top:60px;z-index:4;background:#fff;display:flex;gap:8px;overflow-x:auto;padding:12px 20px;border-bottom:1px solid #eef1f7;scrollbar-width:none}.mhome .mcs-fl::-webkit-scrollbar{display:none}
+.mhome .mcs-fl span{flex:none;height:34px;padding:0 14px;border-radius:999px;border:1px solid #e3e8f3;display:flex;align-items:center;font-size:12.5px;color:#3a4356;cursor:pointer}
+.mhome .mcs-fl span.on{background:#0a1324;border-color:#0a1324;color:#fff}
+.mhome .mcs-cnt{font-size:12.5px;color:#5b6172}.mhome .mcs-cnt b{font:500 15px 'IBM Plex Sans';color:#0a1324}
+.mhome .mel-case i{display:block;margin-top:4px;font-style:normal;font-size:12px;color:#5b6172}.mhome .mel-case strong{font-weight:700;color:#0a1324}
+.mhome .mcs-ls{margin-top:12px;display:flex;flex-direction:column;gap:12px}
+.mhome .mcs-ls a{display:grid;grid-template-columns:112px 1fr;border-radius:16px;overflow:hidden;background:#fff;border:1px solid #e6ebf7;color:#0a1324}
+.mhome .mcs-ls img{width:112px;height:100%;min-height:132px;object-fit:cover;display:block}
+.mhome .mcs-ls a>div{padding:14px 14px 14px 16px;display:flex;flex-direction:column}
+.mhome .mcs-ls small{font-size:11px;color:#2847fc}.mhome .mcs-ls b{margin-top:4px;font:400 24px/1 'IBM Plex Sans'}.mhome .mcs-ls i{margin-top:4px;font-style:normal;font-size:11px;color:#5b6172}
+.mhome .mcs-ls p{margin:8px 0 0;font-size:13px;font-weight:500;line-height:1.6}.mhome .mcs-ls em{margin-top:6px;font-style:normal;font-size:11px;color:#8a92a6}
+.mhome .mcs-pg{margin-top:28px;display:flex;justify-content:center;gap:8px}.mhome .mcs-pg a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid #e3e8f3;font:400 14px 'IBM Plex Sans';color:#3a4356}.mhome .mcs-pg a.on{background:#0a1324;border-color:#0a1324;color:#fff}
+.mhome .mcs-it.hide{display:none!important}
+
+
+.mhome .mcs-ls{display:grid!important;grid-template-columns:1fr 1fr;gap:12px!important}
+.mhome .mcs-ls a{display:flex!important;flex-direction:column;border-radius:14px!important}
+.mhome .mcs-ls img{width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:4/3}
+.mhome .mcs-ls a>div{padding:12px 12px 14px!important;flex:1}
+.mhome .mcs-ls b{font-size:22px!important;margin-top:4px}
+.mhome .mcs-ls p{font-size:12.5px!important;line-height:1.55!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:3.1em}
+.mhome .mcs-ls em{margin-top:auto!important;padding-top:8px;font-size:10.5px!important}
+
+
+.mhome .mcs-ls .kp{display:flex;align-items:baseline;flex-wrap:wrap;gap:2px 6px;margin-top:6px}
+.mhome .mcs-ls .kp b{margin:0!important;font:700 24px/1 'IBM Plex Sans'!important;color:#2847fc}
+.mhome .mcs-ls .kp i{margin:0!important;font-size:10.5px!important}
+.mhome .mcs-ls p{font-size:13.5px!important;margin-top:8px!important}
+.mhome .mel-case b{color:#2847fc;font-weight:700!important}
+
+
+.mhome .mcd-st b{font-weight:400!important}
+.mhome .mcd-h{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#0a1324;letter-spacing:.04em}.mhome .mcd-h em{font:500 13px 'IBM Plex Sans';color:#2847fc;font-style:normal}
+.mhome .mcd-dl{margin:16px 0 0;border-top:1px solid #eef1f7}.mhome .mcd-dl>div{display:grid;grid-template-columns:96px 1fr;padding:14px 0;border-bottom:1px solid #eef1f7;font-size:13.5px}.mhome .mcd-dl dt{color:#8a92a6}.mhome .mcd-dl dd{margin:0;color:#0a1324}
+.mhome .mcd-ba{margin-top:22px;padding:18px;border-radius:16px;background:#fff;border:1px solid #e6ebf7;display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
+.mhome .mcd-ba>small{font:600 10.5px 'IBM Plex Sans';letter-spacing:.14em;padding:3px 10px;border-radius:999px}.mhome .mcd-ba small.b{color:#8a92a6;background:#f1f3f7}.mhome .mcd-ba small.a{color:#2847fc;background:#eef1ff}
+.mhome .mcd-ba>b{font-size:14px}.mhome .mcd-ba .g3{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.mhome .mcd-ba .g3 span{padding:10px 4px;border-radius:10px;background:#f5f7fc;font-size:11px;color:#5b6172;display:flex;flex-direction:column;gap:2px}.mhome .mcd-ba .g3 i{font-style:normal;font-weight:600;font-size:11.5px;color:#0a1324}
+.mhome .mcd-ba.af .g3 span{background:#eef8f3;color:#14966e}
+.mhome .mcd-ba .src{display:flex;gap:6px}.mhome .mcd-ba .src span{padding:6px 12px;border-radius:999px;border:1px solid #e3e8f3;font-size:11.5px}
+.mhome .mcd-ba .ln{width:1.5px;height:16px;background:linear-gradient(#95defd,#2847fc)}
+.mhome .mcd-ba .pl{padding:10px 20px;border-radius:12px;background:#2847fc;color:#fff;font:600 14px 'IBM Plex Sans';display:flex;flex-direction:column}.mhome .mcd-ba .pl small{font:400 10.5px 'IBM Plex Sans JP';opacity:.8}
+.mhome .mcd-ar{text-align:center;margin:8px 0 -12px;color:#2847fc;font-size:18px}
+.mhome .mcd-q{margin-top:18px;padding:24px 20px;border-radius:18px;background:linear-gradient(160deg,#eef1ff,#fff 70%);border:1px solid #e3e8f8;position:relative}
+.mhome .mcd-q>span{font:300 56px/1 'IBM Plex Sans';color:#2847fc;opacity:.35;position:absolute;top:8px;left:16px}
+.mhome .mcd-q p{margin:18px 0 0;font-size:15px;line-height:1.9;font-weight:500}.mhome .mcd-q p b{color:#2847fc}
+.mhome .mcd-q .who{margin-top:18px;display:flex;gap:12px;align-items:center}.mhome .mcd-q .who img{width:44px;height:44px;border-radius:50%;object-fit:cover}.mhome .mcd-q .who b{font-size:13.5px;display:block}.mhome .mcd-q .who small{font-size:11px;color:#5b6172}
+.mhome .mel-ind>a{flex:0 0 72%;scroll-snap-align:start;border-radius:16px;overflow:hidden;background:#fff;border:1px solid #e6ebf7;color:#0a1324;display:flex;flex-direction:column;padding-bottom:16px}
+.mhome .mel-ind>a img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;height:auto!important;margin:0!important}
+.mhome .mel-ind>a>*:not(img){margin:0 14px}.mhome .mel-ind>a small{margin-top:12px!important;font-size:11px;color:#2847fc}
+.mhome .mel-ind .kp{display:flex;align-items:baseline;gap:6px;margin-top:4px!important}.mhome .mel-ind .kp b{font:700 22px/1 'IBM Plex Sans';color:#2847fc}.mhome .mel-ind .kp i{font-style:normal;font-size:10.5px;color:#5b6172}
+.mhome .mel-ind>a p{margin-top:6px!important;font-size:13px;font-weight:500;line-height:1.55}
+
+
+.mhome .mcd-q{background:radial-gradient(120% 80% at 0% 0%,#0c2a7a 0%,#071a4e 50%,#050d24 100%)!important;border:0!important;border-radius:22px!important;padding:28px 22px 24px!important;color:#fff}
+.mhome .mcd-q>span{position:static!important;display:block;font:400 56px/.6 'IBM Plex Sans'!important;height:28px;color:#95defd!important;opacity:1!important}
+.mhome .mcd-q p{margin:6px 0 0!important;font-size:17px!important;line-height:1.85!important;color:#fff}
+.mhome .mcd-q p b{color:#95defd!important;font-weight:500}
+.mhome .mcd-q .who{margin-top:22px!important;padding-top:18px;border-top:1px solid rgba(255,255,255,.12)}
+.mhome .mcd-q .who img{border:2px solid rgba(149,222,253,.35);object-position:70% 25%}
+.mhome .mcd-q .who b{color:#fff}.mhome .mcd-q .who small{color:rgba(255,255,255,.6)!important}
+</style><style id="h2-40">@media (min-width:641px){main h2:not(:is(.nd-body,.lg-s,.rd-box,.rd-form,.kc,.md-body,.co-sum-lb,.v-dtop,.mn-fx,.cf-ag,.fx,.rv-fx,.rgh) h2),main .gb-h2,main .v-h2,main .s-h2,main .q-h2{font-size:40px!important;font-weight:700!important;font-feature-settings:'palt';line-height:1.45!important;letter-spacing:.01em!important}}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"></head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo-kk.png" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="gptbots.html">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="modellix.html">
+              <strong>Modellix</strong>
+              <span>AIモデルをひとつのAPIで</span>
+            </a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+        <a class="nav-link" href="pricing.html">料金</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-resources">
+            資料
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-resources">
+            <p class="nav-menu-title">資料</p>
+            <a href="resources.html">
+              <strong>資料一覧</strong>
+              <span>ホワイトペーパー・サービス資料</span>
+            </a>
+            <a href="javascript:void(0)" aria-disabled="true">
+              <strong>EngageLab 開発者ドキュメント ↗</strong>
+              <span>API・SDK リファレンス</span>
+            </a>
+            <a href="javascript:void(0)" aria-disabled="true">
+              <strong>GPTBots.ai 開発者ドキュメント ↗</strong>
+              <span>API・SDK リファレンス</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-cta">
+        <a href="resources.html" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    
+  <section class="cc-hero">
+    <div class="container">
+      
+      <div class="cc-top">
+        <div>
+          <span class="cc-tag"><i></i>小売・EC</span>
+          <h1>チャネルを統合し、<br />再訪率が<em>35%</em>向上しました。</h1>
+          <p class="lead">App Push・メール・SMS を別々のツールで運用していた大手小売グループ様が、EngageLab へ一本化。配信から効果測定までを一つの基盤にまとめました。</p>
+          <div class="cc-kpis">
+            <div><b class="hl">+35%</b><span>再訪率</span></div><i></i>
+            <div><b>−60%</b><span>配信運用の工数</span></div><i></i>
+            <div><b>3<span class="kar">→</span>1</b><span>利用ツール数</span></div>
+          </div>
+        </div>
+        <div class="cc-ph"><img src="img/case-05.png" alt="" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="co-sum" id="company">
+    <div class="container co-sum-row">
+      <div class="co-sum-lb"><span>01</span><h2>企業概要</h2></div>
+      <div>
+        <dl class="co-sum-dl">
+          <div><dt>企業名</dt><dd>株式会社〇〇〇〇</dd></div>
+          <div><dt>業種</dt><dd>小売・EC</dd></div>
+          <div><dt>従業員数</dt><dd>〇〇〇〇名</dd></div>
+          <div><dt>導入期間</dt><dd>6か月</dd></div>
+          <div><dt>利用サービス</dt><dd><a href="engagelab.html">EngageLab →</a></dd></div>
+          <div><dt>事例資料</dt><dd><a href="#">この事例をPDFで読む ↓</a></dd></div>
+        </dl>
+        <p class="co-sum-note">※ 掲載内容は許諾いただいた範囲で記載しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bx" id="challenge">
+    <div class="container">
+      <div class="bx-head reveal">
+        <div class="k"><span>01</span>課題と導入の決め手</div>
+        <h2>分散していたツールを、<em>既存システムのまま</em>一つに。</h2>
+        <p>チャネルごとに別々だった配信と効果測定を、会員基盤・購買データと API で連携し、運用を止めずに統合しました。</p>
+      </div>
+      <div class="bx-grid reveal">
+        <div class="bx-before">
+          <div class="lb">BEFORE</div>
+          <div class="t">ツールが分散し、施策の効果が見えなかった。</div>
+          <div class="bx-stage"><div class="bx-stack">
+            <div class="bx-win w3"><div class="bar"><i></i><i></i><i></i></div><div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><span class="nm">SMS</span><span class="sb">配信代行</span></div></div>
+            <div class="bx-win w2"><div class="bar"><i></i><i></i><i></i></div><div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="nm">メール</span><span class="sb">ツールB</span></div></div>
+            <div class="bx-win w1"><div class="bar"><i></i><i></i><i></i></div><div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="nm">App Push</span><span class="sb">ツールA</span></div><div class="ln"><i></i><i></i><i></i></div></div>
+          </div></div>
+        </div>
+        <div class="bx-after">
+          <div class="lb">AFTER</div>
+          <div class="t">既存システムを、そのまま活かせたこと。</div>
+          <div class="bx-stage"><div class="bx-flow">
+            <div class="src">
+              <div class="cap">既存システム</div>
+              <div class="sys"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></span>会員基盤</div>
+              <div class="sys"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 4h2l2.4 11h11.2L21 8H7"/><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg></span>購買データ</div>
+            </div>
+            <svg class="wire" viewBox="0 0 48 120" aria-hidden="true"><path d="M0 41 C 26 41, 22 60, 48 60"/><path d="M0 95 C 26 95, 22 60, 48 60"/><circle cx="46" cy="60" r="3"/></svg>
+            <div class="panel">
+              <div class="hd"><span class="lg"><span class="sq"><i></i></span><b>EngageLab</b></span><span class="tg">配信・分析を一元化</span></div>
+              <div class="bd"><div class="ch"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><span class="nm">App Push</span><span class="st"><i></i>配信中</span></div><div class="ch"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="nm">メール</span><span class="st"><i></i>配信中</span></div><div class="ch"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><span class="nm">SMS</span><span class="st"><i></i>配信中</span></div></div>
+            </div>
+          </div></div>
+        </div>
+        <span class="bx-arrow" aria-hidden="true">→</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="res-wrap"><section class="cc-res" id="results">
+    <div class="container rq">
+      <div class="rq-l">
+        <div class="cc-lb dk"><span class="n">02</span><h2>導入効果</h2></div>
+        <div class="rq-p"><span class="av"><img src="img/case-05.png" alt="" /></span><div><b>〇〇 〇〇 様</b><span>株式会社〇〇〇〇<br />CRM部 部長</span></div></div>
+      </div>
+      <div class="rq-r">
+        <span class="q">“</span>
+        <p>チャネルごとの数字を横並びで見られるようになり、施策の良し悪しを<em>週次で判断</em>できるようになりました。</p>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <section class="cc-sec line" id="next">
+    <div class="container">
+      <div class="next-head"><div><span class="n">03</span><h2>ほかの導入事例</h2></div><a class="all" href="cases.html">一覧を見る →</a></div>
+      <div class="next-ov">
+        <a href="case-detail.html" target="_blank" rel="noopener"><img src="img/case-06.png" alt="" /><span class="sh"></span><span class="tx"><span class="c">ゲーム</span><span class="k"><b>+18%</b><i>継続率</i></span><span class="t">復帰施策の自動化で継続率が改善</span></span></a>
+        <a href="case-detail.html" target="_blank" rel="noopener"><img src="img/case-03.png" alt="" style="object-position:50% 40%" /><span class="sh"></span><span class="tx"><span class="c">金融</span><span class="k"><b>99.9%</b><i>配信成功率</i></span><span class="t">OTP配信の安定性と監査対応を両立</span></span></a>
+        <a href="case-detail.html" target="_blank" rel="noopener"><img src="img/case-04.png" alt="" /><span class="sh"></span><span class="tx"><span class="c">旅行・交通</span><span class="k"><b>−40%</b><i>通知遅延</i></span><span class="t">運行情報の通知遅延を大幅に削減</span></span></a>
+      </div>
+    </div>
+  </section>
+
+    <div id="contact" style="position:relative;height:480px;overflow:hidden;background:linear-gradient(120deg,#ffffff 0%,#f2f5ff 60%,#e8eeff 100%);border-top:1px solid #edf0f6">
+    
+    <div style="position:absolute;inset:0;pointer-events:none"><img src="img/cta-wave-logo.svg?v=31" alt="" style="position:absolute;left:calc(50% - 290px);top:-40px;width:1160px;opacity:.26;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%);mask-image:linear-gradient(90deg,transparent 0,#000 34%);pointer-events:none"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;box-sizing:border-box">
+      
+      <div style="position:relative">
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc"><i style="width:24px;height:1px;background:#2847fc"></i>Contact</div>
+        <div style="margin-top:24px;font-size:40px;font-weight:700;line-height:1.5;font-feature-settings:'palt';color:#0a1324">日本市場での成長を、<br>Auroraと共に。</div>
+        <div style="margin-top:20px;font-size:15px;line-height:2;color:#5b6172">導入のご相談・資料請求はお気軽にどうぞ。</div>
+        <div style="margin-top:40px;display:flex;gap:14px">
+          <a href="contact.html" style="height:52px;padding:0 32px;border-radius:40px;background:#2847fc;color:#fff;font-size:15px;font-weight:500;display:flex;align-items:center;gap:12px;text-decoration:none">お問い合わせ<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+          <a href="resources.html" style="height:52px;padding:0 32px;border-radius:40px;border:1px solid #c9cedb;background:#fff;color:#0a1324;font-size:15px;font-weight:500;display:flex;align-items:center;text-decoration:none">資料ダウンロード</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="gptbots.html">GPTBots.ai</a>
+          <a href="modellix.html">Modellix</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="pricing.html">料金</a>
+          <a href="news.html">ニュース</a>
+          <a href="careers.html">採用情報</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span style="display:flex;align-items:center;gap:20px;flex-wrap:wrap"><span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span><i style="width:1px;height:12px;background:rgba(255,255,255,.18)"></i><a class="footer-legal" href="legal.html">プライバシーポリシー</a></span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+  <script>
+  (function(){
+    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.next-ov .tx').forEach(function(t){var m=document.createElement('span');m.className='more';m.innerHTML='詳しく見る<i>→</i>';t.appendChild(m);});
+    var k=document.querySelector('.cc-kpis'); if(!k||reduce) return;
+    k.classList.add('pre');
+    var els=[].slice.call(k.querySelectorAll('b')).filter(function(b){return /\d+%/.test(b.textContent);});
+    var data=els.map(function(b){var m=b.textContent.match(/^(\D*)(\d+)(%)$/);return m?{b:b,p:m[1],n:+m[2],s:m[3]}:null;}).filter(Boolean);
+    data.forEach(function(d){d.b.textContent=d.p+'0'+d.s;});
+    requestAnimationFrame(function(){setTimeout(function(){
+      k.classList.remove('pre'); var t0=performance.now(),D=1100;
+      (function f(t){var x=Math.min(1,(t-t0)/D),e=1-Math.pow(1-x,3);data.forEach(function(d){d.b.textContent=d.p+Math.round(d.n*e)+d.s;});if(x<1)requestAnimationFrame(f);})(t0);
+    },250);});
+  })();
+  </script>
+  <script>
+  (function(){
+    var g=document.querySelector('.bx-grid'); if(!g) return;
+    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    g.classList.add('bxa'); if(reduce){g.classList.add('play');return;}
+    var svg=g.querySelector('.wire'), NS='http://www.w3.org/2000/svg', pulses=[];
+    if(svg){svg.querySelectorAll('path').forEach(function(p){
+      var c=document.createElementNS(NS,'circle'); c.setAttribute('r','2.6'); c.setAttribute('class','pulse');
+      var m=document.createElementNS(NS,'animateMotion'); m.setAttribute('dur','.6s'); m.setAttribute('begin','indefinite'); m.setAttribute('path',p.getAttribute('d')); m.setAttribute('fill','freeze');
+      c.appendChild(m); svg.appendChild(c); pulses.push([c,m]);
+    });}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting) return; io.disconnect(); g.classList.add('play');
+      setTimeout(function(){pulses.forEach(function(x){x[0].style.opacity=1;x[1].beginElement();setTimeout(function(){x[0].style.transition='opacity .25s';x[0].style.opacity=0;},600);});},1300);
+    });},{threshold:.35});
+    io.observe(g);
+  })();
+  </script>
+<template id="mmain">
+<section class="hero" style="padding:28px 20px 32px">
+<span class="tag" style="color:#2847fc">小売・EC</span>
+<h1 style="margin-top:14px;font-size:24px;line-height:1.55">チャネルを統合し、<br>再訪率が<span style="color:#2847fc;font:700 34px 'IBM Plex Sans';margin:0 4px">35%</span>向上しました。</h1>
+<p class="ld">App Push・メール・SMS を別々のツールで運用していた大手小売グループ様が、EngageLab へ一本化。配信から効果測定までを一つの基盤にまとめました。</p>
+<img src="img/case-05.png" alt="" style="margin-top:22px;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block">
+</section>
+<div class="stats mgp-st3 mcd-st"><div><b>+35<em>%</em></b><small>再訪率</small></div><div><b>−60<em>%</em></b><small>配信運用の工数</small></div><div><b>3<em>→</em>1</b><small>利用ツール数</small></div></div>
+<section class="sec"><div class="mcd-h"><em>01</em>企業概要</div>
+<dl class="mcd-dl"><div><dt>企業名</dt><dd>株式会社〇〇〇〇</dd></div><div><dt>業種</dt><dd>小売・EC</dd></div><div><dt>従業員数</dt><dd>〇〇〇〇名</dd></div><div><dt>導入期間</dt><dd>6か月</dd></div><div><dt>利用サービス</dt><dd><a href="engagelab.html" style="color:#2847fc">EngageLab →</a></dd></div><div><dt>事例資料</dt><dd><a href="#" style="color:#2847fc">この事例をPDFで読む ↓</a></dd></div></dl>
+<p style="margin:12px 0 0;font-size:11px;color:#8a92a6">※ 掲載内容は許諾いただいた範囲で記載しています。</p></section>
+<section class="sec" style="background:#f7f9ff"><div class="mcd-h"><em>02</em>課題と導入の決め手</div>
+<h2 style="margin-top:14px">分散していたツールを、<br>既存システムのまま一つに。</h2>
+<p class="ld">チャネルごとに別々だった配信と効果測定を、会員基盤・購買データと API で連携し、運用を止めずに統合しました。</p>
+<div class="mcd-ba"><small class="b">BEFORE</small><b>ツールが分散し、施策の効果が見えなかった。</b>
+<div class="g3"><span><i>SMS</i>配信代行</span><span><i>メール</i>ツールB</span><span><i>App Push</i>ツールA</span></div></div>
+<div class="mcd-ar">↓</div>
+<div class="mcd-ba af"><small class="a">AFTER</small><b>既存システムを、そのまま活かせたこと。</b>
+<div class="src"><span>会員基盤</span><span>購買データ</span></div><i class="ln"></i>
+<div class="pl">EngageLab<small>配信・分析を一元化</small></div><i class="ln"></i>
+<div class="g3"><span><i>App Push</i>配信中</span><span><i>メール</i>配信中</span><span><i>SMS</i>配信中</span></div></div></section>
+<section class="sec"><div class="mcd-h"><em>03</em>導入効果</div>
+<div class="mcd-q"><span>“</span><p>チャネルごとの数字を横並びで見られるようになり、施策の良し悪しを<b>週次で判断</b>できるようになりました。</p>
+<div class="who"><img src="img/case-05.png" alt=""><div><b>〇〇 〇〇 様</b><small>株式会社〇〇〇〇　CRM部 部長</small></div></div></div></section>
+<section class="sec" style="background:#f7f9ff;padding-bottom:48px"><div style="display:flex;justify-content:space-between;align-items:baseline"><div class="mcd-h" style="margin:0"><em>04</em>ほかの導入事例</div><a href="cases.html" style="font-size:13px;color:#2847fc">一覧を見る →</a></div>
+<div class="mel-ind" data-msc style="margin-top:18px">
+<a href="case-detail.html"><img src="img/case-06.png" alt=""><small>ゲーム</small><span class="kp"><b>+18%</b><i>継続率</i></span><p>復帰施策の自動化で継続率が改善</p></a>
+<a href="case-detail.html"><img src="img/case-03.png" alt=""><small>金融</small><span class="kp"><b>99.9%</b><i>配信成功率</i></span><p>OTP配信の安定性と監査対応を両立</p></a>
+<a href="case-detail.html"><img src="img/case-04.png" alt=""><small>旅行・交通</small><span class="kp"><b>−40%</b><i>通知遅延</i></span><p>運行情報の通知遅延を大幅に削減</p></a></div>
+<div class="dots"><i class="on"></i><i></i><i></i></div></section><div class="cta" data-mcta><small>CONTACT</small><h2>日本市場での成長を、<br>Auroraと共に。</h2><p>導入のご相談・資料請求はお気軽にどうぞ。</p><div class="bt"><a class="btn w" href="contact.html">お問い合わせ</a><a class="btn o" href="resources.html">資料ダウンロード</a></div></div></template><script src="mobile.js"></script></body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja" data-variant="Q">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ニュース | Aurora Mobile 株式会社</title>
+  <meta name="description" content="Aurora Mobile のサービスをご活用いただいているお客様の導入事例をご紹介します。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style>
+.nw-hero{padding:44px 0 72px;background:linear-gradient(245deg,#e8eeff 0%,#f3f6ff 38%,#fff 75%);border-bottom:1px solid #e8edf7}
+.nw-hero .crumb{font-size:13px;color:var(--ink-400);margin-bottom:56px;display:flex;gap:8px}
+.nw-hero .crumb a{color:var(--ink-400)}
+.nw-hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:64px;align-items:end}
+.nw-hd h1{margin:18px 0 0;font-size:44px;font-weight:700;letter-spacing:.04em;line-height:1.3}
+.nw-hd p{margin:0;font-size:15px;line-height:2;color:var(--ink-500)}
+.nw-body{padding:96px 0 128px}
+.nw-grid{display:grid;grid-template-columns:220px minmax(0,1fr);gap:80px;align-items:start}
+.nw-side{position:sticky;top:120px}
+.nw-side h4{margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--ink-400)}
+.nw-side ul{list-style:none;margin:0 0 44px;padding:0;display:flex;flex-direction:column;gap:2px}
+.nw-side button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:10px;font-size:15px;color:var(--ink-700);transition:background .2s,color .2s}
+.nw-side button:hover{background:#f3f6ff}
+.nw-side button.on{background:#eef2ff;color:var(--aurora-blue);font-weight:700}
+.nw-side button span{margin-left:auto;font-size:12px;color:var(--ink-400);font-weight:400;font-variant-numeric:tabular-nums}
+.nw-side button.on span{color:var(--aurora-blue)}
+.nw-side .yrs{flex-direction:row;flex-wrap:wrap;gap:8px}
+.nw-side .yrs button{width:auto;padding:7px 16px;border:1px solid var(--line);border-radius:40px;font-size:14px;font-variant-numeric:tabular-nums}
+.nw-side .yrs button.on{border-color:var(--aurora-blue);background:#fff}
+.nw-yr{display:flex;align-items:baseline;gap:18px;margin:0 0 8px}
+.nw-yr b{font-size:64px;font-weight:300;line-height:1;letter-spacing:-.01em;color:#b8c2d4;font-variant-numeric:tabular-nums}
+.nw-yr span{font-size:13px;color:var(--ink-400)}
+.nw-group+.nw-group{margin-top:80px}
+.nw-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink-900)}
+.nw-row{display:grid;grid-template-columns:112px 168px minmax(0,1fr) 28px;gap:24px;align-items:center;padding:28px 16px;border-bottom:1px solid var(--line);color:var(--ink-900);text-decoration:none;transition:background .25s}
+.nw-row:hover{background:#f7f9ff}
+.nw-row time{font-size:14px;color:var(--ink-500);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.nw-cat{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-700)}
+.nw-cat i{width:7px;height:7px;border-radius:50%;background:var(--c)}
+.nw-row .t{font-size:17px;line-height:1.75;font-weight:500;transition:color .25s}
+.nw-row .t em{font-style:normal;margin-left:10px;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--aurora-blue);vertical-align:2px}
+.nw-row:hover .t{color:var(--aurora-blue)}
+.nw-row .ar{justify-self:end;color:var(--ink-400);transition:transform .25s,color .25s}
+.nw-row:hover .ar{transform:translateX(4px);color:var(--aurora-blue)}
+.nw-more{display:flex;justify-content:center;margin-top:56px}
+.nw-more button{all:unset;cursor:pointer;padding:14px 40px;border:1px solid var(--ink-900);border-radius:40px;font-size:15px;font-weight:500;transition:background .2s,color .2s}
+.nw-more button:hover{background:var(--ink-900);color:#fff}
+[hidden]{display:none!important}
+</style>
+</head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo.svg" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="index.html#products">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="index.html#products">
+              <strong>プログラマティック広告</strong>
+              <span>高成長市場の成長機会を捉える</span>
+            </a>
+            <a href="index.html#products">
+              <strong>フィンテック</strong>
+              <span>スマートリスク管理とデジタル金融</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="index.html#resources"><strong>ニュース</strong></a>
+            <a href="index.html#contact"><strong>お問い合わせ</strong></a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="index.html#resources" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+<section class="nw-hero"><div class="container">
+<div class="crumb"><a href="index.html">ホーム</a><span>／</span><a href="company.html">会社情報</a><span>／</span><span>ニュース</span></div>
+<div class="nw-hd"><div><span class="eyebrow">News</span><h1>ニュース</h1></div><p>プレスリリース、製品アップデート、イベント出展など、Aurora Mobile の最新情報をお届けします。</p></div>
+</div></section>
+<section class="nw-body"><div class="container"><div class="nw-grid">
+<aside class="nw-side">
+<h4>カテゴリー</h4><ul class="cats">
+<li><button class="on" data-f="all">すべて<span>12</span></button></li>
+<li><button data-f="pr">プレスリリース<span>5</span></button></li>
+<li><button data-f="pu">製品アップデート<span>4</span></button></li>
+<li><button data-f="ev">イベント<span>3</span></button></li></ul>
+<h4>年</h4><ul class="yrs"><li><button class="on" data-y="all">すべて</button></li><li><button data-y="2026">2026</button></li><li><button data-y="2025">2025</button></li></ul>
+</aside>
+<div><div class="nw-group" data-yr="2026"><div class="nw-yr"><b>2026</b><span>8 件</span></div><ul class="nw-list"><li data-cat="pr" data-yr="2026"><a class="nw-row" href="news-detail.html"><time>2026.07.28</time><span class="nw-cat" style="--c:#2847fc"><i></i>プレスリリース</span><span class="t">日本市場向けサポート体制の拡充について<em>NEW</em></span><span class="ar">→</span></a></li><li data-cat="pu" data-yr="2026"><a class="nw-row" href="news-detail.html"><time>2026.07.10</time><span class="nw-cat" style="--c:#33bcf4"><i></i>製品アップデート</span><span class="t">EngageLab、WhatsApp配信機能の提供を開始</span><span class="ar">→</span></a></li><li data-cat="ev" data-yr="2026"><a class="nw-row" href="news-detail.html"><time>2026.06.22</time><span class="nw-cat" style="--c:#f2a33a"><i></i>イベント</span><span class="t">NexTech Japan 2026 に出展します</span><span class="ar">→</span></a></li><li data-cat="pu" data-yr="2026"><a class="nw-row" href="news-detail.html"><time>2026.06.05</time><span class="nw-cat" style="--c:#33bcf4"><i></i>製品アップデート</span><span class="t">GPTBots.ai、日本語ナレッジ精度の改善を実施</span><span class="ar">→</span></a></li><li data-cat="pr" data-yr="2026"><a class="nw-row" href="news-detail.html"><time>2026.05.18</time><span class="nw-cat" style="--c:#2847fc"><i></i>プレスリリース</span><span class="t">2026年度 第1四半期 決算に関するお知らせ</span><span class="ar">→</span></a></li><li data-cat="pu" data-yr="2026"><a class="nw-row" href="news-detail.html"><time>2026.04.09</time><span class="nw-cat" style="--c:#33bcf4"><i></i>製品アップデート</span><span class="t">EngageLab、配信レポートのダッシュボードを刷新</span><span class="ar">→</span></a></li><li data-cat="ev" data-yr="2026"><a class="nw-row" href="news-detail.html"><time>2026.03.12</time><span class="nw-cat" style="--c:#f2a33a"><i></i>イベント</span><span class="t">「AI活用セミナー 2026 春」を東京で開催</span><span class="ar">→</span></a></li><li data-cat="pr" data-yr="2026"><a class="nw-row" href="news-detail.html"><time>2026.02.20</time><span class="nw-cat" style="--c:#2847fc"><i></i>プレスリリース</span><span class="t">Aurora Mobile株式会社、東京オフィスを移転</span><span class="ar">→</span></a></li></ul></div><div class="nw-group" data-yr="2025"><div class="nw-yr"><b>2025</b><span>4 件</span></div><ul class="nw-list"><li data-cat="pu" data-yr="2025"><a class="nw-row" href="news-detail.html"><time>2025.12.15</time><span class="nw-cat" style="--c:#33bcf4"><i></i>製品アップデート</span><span class="t">GPTBots.ai、社内ナレッジ連携の対応形式を拡大</span><span class="ar">→</span></a></li><li data-cat="pr" data-yr="2025"><a class="nw-row" href="news-detail.html"><time>2025.11.06</time><span class="nw-cat" style="--c:#2847fc"><i></i>プレスリリース</span><span class="t">2025年度 第3四半期 決算に関するお知らせ</span><span class="ar">→</span></a></li><li data-cat="ev" data-yr="2025"><a class="nw-row" href="news-detail.html"><time>2025.10.01</time><span class="nw-cat" style="--c:#f2a33a"><i></i>イベント</span><span class="t">Japan IT Week 秋 2025 に出展しました</span><span class="ar">→</span></a></li><li data-cat="pr" data-yr="2025"><a class="nw-row" href="news-detail.html"><time>2025.09.03</time><span class="nw-cat" style="--c:#2847fc"><i></i>プレスリリース</span><span class="t">日本法人「Aurora Mobile株式会社」を設立</span><span class="ar">→</span></a></li></ul></div><div class="nw-more"><button type="button">さらに表示する</button></div></div>
+</div></div></section>
+<section class="section-pad" style="padding-top:0" id="contact"><div class="container"><div class="cta-band std cta-deco"><span class="glow"></span><h2>サービスについて、<br />お気軽にご相談ください。</h2><p>導入のご相談・お見積りなど、専任の担当者がご対応します。</p><div class="cta-actions"><a href="index.html#contact" class="btn btn-on-dark">お問い合わせ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="index.html#resources" class="btn btn-outline-light">資料ダウンロード</a></div></div></div></section>
+</main>
+<script>
+(function(){var f='all',y='all';function ap(){document.querySelectorAll('.nw-list li').forEach(function(li){li.hidden=!((f==='all'||li.dataset.cat===f)&&(y==='all'||li.dataset.yr===y))});document.querySelectorAll('.nw-group').forEach(function(g){var n=g.querySelectorAll('li:not([hidden])').length;g.hidden=!n;g.querySelector('.nw-yr span').textContent=n+' 件'})}
+document.querySelectorAll('.cats button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.cats button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');f=b.dataset.f;ap()}});
+document.querySelectorAll('.yrs button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.yrs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');y=b.dataset.y;ap()}});})();
+</script>
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="index.html#products">GPTBots.ai</a>
+          <a href="index.html#products">プログラマティック広告</a>
+          <a href="index.html#products">フィンテック</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="index.html#resources">ニュース</a>
+          <a href="index.html#contact">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+</body>
+</html>

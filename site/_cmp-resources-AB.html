@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:"Zen Kaku Gothic New",sans-serif;color:#0b1524;background:#e9ecf2}
+a{color:#2f46f0;text-decoration:none}
+#cmp{display:grid;grid-template-columns:1440px 1440px;gap:48px;padding:48px;width:max-content}
+.lab{font:500 22px/1 "JetBrains Mono";color:#2f46f0;margin-bottom:14px}.lab small{font:400 15px "Zen Kaku Gothic New";color:#64748b;margin-left:12px}
+.pg{background:#fff;width:1440px;overflow:hidden}
+.ct{width:1200px;margin:0 auto}
+.eb{font:500 12px/1 "JetBrains Mono";letter-spacing:.14em;color:#2f46f0;text-transform:uppercase}
+h1{font-size:44px;font-weight:500;letter-spacing:.02em;margin-top:14px}
+.lead{font-size:15px;line-height:2;color:#475569}
+/* book */
+.bk{position:relative;width:var(--w,150px);aspect-ratio:210/297;transform:perspective(900px) rotateY(-16deg);transform-style:preserve-3d;filter:drop-shadow(14px 18px 18px rgba(15,23,42,.18))}
+.bk .sp{position:absolute;left:-9px;top:0;bottom:0;width:10px;background:var(--d);transform:rotateY(-70deg);transform-origin:right;border-radius:2px 0 0 2px}
+.bk .fc{position:absolute;inset:0;border-radius:2px 4px 4px 2px;overflow:hidden;background:var(--bg);color:#fff;display:flex;flex-direction:column;padding:9% 9% 8%}
+.bk .fc:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,.18),transparent 30%,transparent 80%,rgba(0,0,0,.08))}
+.bk .k{font-size:calc(var(--w,150px)*.055);font-weight:700;letter-spacing:.08em;opacity:.85}
+.bk .tt{font-size:calc(var(--w,150px)*.105);font-weight:700;line-height:1.35;margin-top:6%;letter-spacing:.02em}
+.bk .gr{flex:1;position:relative;margin:8% 0 6%}
+.bk .lg{font-size:calc(var(--w,150px)*.05);font-weight:700;letter-spacing:.1em;opacity:.9}
+/* cover graphics */
+.ui{position:absolute;inset:0;background:rgba(255,255,255,.95);border-radius:4px;padding:8%;display:flex;flex-direction:column;gap:7%}
+.ui i{display:block;height:7%;border-radius:2px;background:var(--l)}
+.bars{display:flex;align-items:flex-end;gap:7%;flex:1}.bars b{flex:1;background:var(--m);border-radius:2px 2px 0 0}
+.bars b:nth-child(2n){background:var(--l)}
+.ring{position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,.55)}
+.dot{position:absolute;border-radius:50%;background:rgba(255,255,255,.22)}
+.stat{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:4px;padding:8%;color:var(--d)}
+.stat b{display:block;font:700 calc(var(--w,150px)*.16)/1 "JetBrains Mono"}.stat span{font-size:calc(var(--w,150px)*.05);color:#475569}
+/* themes */
+.t-el{--bg:linear-gradient(160deg,#3b56f5,#2433c9);--d:#1a26a8;--m:#3b56f5;--l:#cfd7ff}
+.t-gb{--bg:linear-gradient(160deg,#16b38a,#0d8b6c);--d:#0a6f56;--m:#16b38a;--l:#c5efe2}
+.t-cs{--bg:linear-gradient(160deg,#0f2a4f,#0a1d38);--d:#071427;--m:#3b56f5;--l:#cfd7ff}
+.t-wp{--bg:linear-gradient(160deg,#7a5cf0,#5a3fd6);--d:#4730b3;--m:#7a5cf0;--l:#e0d8ff}
+.t-wp2{--bg:linear-gradient(160deg,#f2f4f8,#e3e7ef);--d:#c9cfdb;--m:#3b56f5;--l:#cfd7ff}
+.t-wp2 .fc{color:#0b1524}.t-wp2 .ring{border-color:rgba(59,86,245,.35)}
+/* video thumb */
+.vd{position:relative;width:100%;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#ff9a4d,#f2672a);color:#fff;padding:7%}
+.vd .tt{font-size:17px;font-weight:700;line-height:1.45}.vd .k{font-size:10px;font-weight:700;letter-spacing:.1em;opacity:.9}
+.vd .pl{position:absolute;right:7%;bottom:9%;width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.vd .pl:after{content:"";border-left:13px solid #f2672a;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.vd .tm{position:absolute;left:7%;bottom:9%;font:500 11px "JetBrains Mono";background:rgba(0,0,0,.25);padding:4px 8px;border-radius:3px}
+/* card */
+.cd{display:flex;flex-direction:column}
+.cd .st{height:260px;border-radius:14px;display:grid;place-items:center;background:#f4f6fa;position:relative;overflow:hidden}
+.cd .st.e{background:#eef1ff}.cd .st.g{background:#e8f7f1}.cd .st.c{background:#e9edf4}.cd .st.w{background:#f1eeff}.cd .st.o{background:#fff1e8}
+.cd .cat{font-size:12px;font-weight:500;color:#2f46f0;margin-top:20px;letter-spacing:.04em}
+.cd h3{font-size:17px;font-weight:500;line-height:1.6;margin-top:8px}
+.cd .mt{font-size:12px;color:#64748b;margin-top:10px;display:flex;gap:14px}
+.cd .dl{font-size:13px;font-weight:500;color:#2f46f0;margin-top:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.grp{padding:72px 0;border-top:1px solid #e6e9f0}
+.gh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px}
+.gh .n{font:500 13px "JetBrains Mono";color:#2f46f0;letter-spacing:.1em}
+.gh h2{font-size:26px;font-weight:500;margin-top:10px}.gh p{font-size:14px;color:#64748b;margin-top:8px}
+.cta{background:linear-gradient(180deg,#f3f5ff,#e9edff);padding:80px 0;text-align:center}
+.cta h2{font-size:28px;font-weight:500}.cta p{font-size:14px;color:#475569;margin-top:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 32px;border-radius:999px;background:#2f46f0;color:#fff;font-size:15px;font-weight:500;margin-top:28px}
+.chips{display:flex;gap:10px}.chips span{height:38px;padding:0 18px;border-radius:999px;border:1px solid #dfe3eb;display:grid;place-items:center;font-size:13px;color:#334155}
+.chips span.on{background:#0b1524;color:#fff;border-color:#0b1524}
+</style></head><body>
+<div id="cmp">
+
+<!-- ===== A ===== -->
+<div><div class="lab">A<small>目的別に3グループ（筛选标签をやめる）</small></div>
+<div class="pg">
+<section style="padding:88px 0 64px;background:linear-gradient(180deg,#f5f7ff,#fff)"><div class="ct" style="display:flex;justify-content:space-between;align-items:flex-end">
+<div><span class="eb">Resources</span><h1>資料ダウンロード</h1></div>
+<p class="lead" style="width:420px">サービス紹介資料・導入事例集・ホワイトペーパーを<br>無料でご覧いただけます。</p></div>
+<div class="ct" style="display:flex;gap:12px;margin-top:40px">
+<a class="chips" href="#"><span>01 まずは知りたい</span><span>02 事例を見たい</span><span>03 深く学びたい</span></a></div></section>
+
+<section class="grp"><div class="ct">
+<div class="gh"><div><div class="n">01 — まずは知りたい</div><h2>サービス紹介資料</h2><p>各サービスの機能・料金・導入の流れをまとめた資料です。</p></div></div>
+<div class="grid3">
+<div class="cd"><div class="st e"><div class="bk t-el" style="--w:150px"><div class="sp"></div><div class="fc"><div class="k">SERVICE GUIDE</div><div class="tt">EngageLab<br>サービス紹介</div><div class="gr"><div class="ui"><i style="width:60%"></i><i style="width:85%"></i><div class="bars"><b style="height:40%"></b><b style="height:65%"></b><b style="height:50%"></b><b style="height:90%"></b></div></div></div><div class="lg">AURORA MOBILE</div></div></div></div>
+<div class="cat">サービス資料</div><h3>EngageLab サービス紹介資料</h3><div class="mt"><span>PDF</span><span>18ページ</span></div></div>
+<div class="cd"><div class="st g"><div class="bk t-gb" style="--w:150px"><div class="sp"></div><div class="fc"><div class="k">SERVICE GUIDE</div><div class="tt">GPTBots.ai<br>サービス紹介</div><div class="gr"><div class="ring" style="width:70%;aspect-ratio:1;left:15%;top:6%"></div><div class="ring" style="width:42%;aspect-ratio:1;left:29%;top:20%"></div><div class="dot" style="width:16%;aspect-ratio:1;left:42%;top:33%;background:#fff"></div></div><div class="lg">AURORA MOBILE</div></div></div></div>
+<div class="cat">サービス資料</div><h3>GPTBots.ai サービス紹介資料</h3><div class="mt"><span>PDF</span><span>16ページ</span></div></div>
+<div class="cd"><div class="st w"><div class="bk t-wp" style="--w:150px"><div class="sp"></div><div class="fc"><div class="k">SERVICE GUIDE</div><div class="tt">Modellix<br>サービス紹介</div><div class="gr"><div class="dot" style="width:18%;aspect-ratio:1;left:10%;top:10%"></div><div class="dot" style="width:18%;aspect-ratio:1;left:41%;top:10%"></div><div class="dot" style="width:18%;aspect-ratio:1;left:72%;top:10%"></div><div class="dot" style="width:18%;aspect-ratio:1;left:10%;top:45%"></div><div class="dot" style="width:18%;aspect-ratio:1;left:41%;top:45%;background:#fff"></div><div class="dot" style="width:18%;aspect-ratio:1;left:72%;top:45%"></div></div><div class="lg">AURORA MOBILE</div></div></div></div>
+<div class="cat">サービス資料</div><h3>Modellix サービス紹介資料</h3><div class="mt"><span>PDF</span><span>12ページ</span></div></div>
+</div></div></section>
+
+<section class="grp" style="background:#f7f8fb"><div class="ct" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+<div><div class="n" style="font:500 13px 'JetBrains Mono';color:#2f46f0;letter-spacing:.1em">02 — 事例を見たい</div><h2 style="font-size:26px;font-weight:500;margin-top:10px">業種別導入事例集2026</h2>
+<p class="lead" style="margin-top:16px">小売・ゲーム・金融・SaaSなど、業種別の導入事例を一冊にまとめました。課題・施策・成果をご確認いただけます。</p>
+<div class="mt" style="font-size:13px;color:#64748b;margin-top:16px;display:flex;gap:16px"><span>PDF</span><span>32ページ</span><span>無料</span></div>
+<a class="btn" href="#">資料をダウンロード →</a></div>
+<div style="height:340px;border-radius:16px;background:#e9edf4;display:grid;place-items:center;position:relative">
+<div class="bk t-cs" style="--w:190px"><div class="sp"></div><div class="fc"><div class="k">CASE STUDIES 2026</div><div class="tt">業種別<br>導入事例集</div><div class="gr"><div class="stat"><b>+35%</b><span>リテンション改善</span></div></div><div class="lg">AURORA MOBILE</div></div></div></div>
+</div></section>
+
+<section class="grp"><div class="ct">
+<div class="gh"><div><div class="n">03 — 深く学びたい</div><h2>ホワイトペーパー・ウェビナー</h2><p>施策の進め方や最新動向を解説したコンテンツです。</p></div></div>
+<div class="grid3">
+<div class="cd"><div class="st w"><div class="bk t-wp2" style="--w:150px"><div class="sp"></div><div class="fc"><div class="k" style="color:#3b56f5">WHITE PAPER</div><div class="tt">到達率を<br>改善する方法</div><div class="gr"><div class="ring" style="width:60%;aspect-ratio:1;right:-10%;bottom:-10%"></div><div style="position:absolute;left:0;bottom:0;font:700 34px 'JetBrains Mono';color:#3b56f5">05</div></div><div class="lg" style="color:#334155">AURORA MOBILE</div></div></div></div>
+<div class="cat">ホワイトペーパー</div><h3>プッシュ通知の到達率を改善する5つの方法</h3><div class="mt"><span>PDF</span><span>14ページ</span></div></div>
+<div class="cd"><div class="st w"><div class="bk t-wp" style="--w:150px"><div class="sp"></div><div class="fc"><div class="k">WHITE PAPER</div><div class="tt">AI導入の<br>進め方</div><div class="gr"><div class="ui" style="background:rgba(255,255,255,.12);padding:0;gap:0"><div style="position:absolute;left:8%;right:8%;top:50%;height:1.5px;background:rgba(255,255,255,.6)"></div><div class="dot" style="width:14%;aspect-ratio:1;left:8%;top:43%;background:#fff"></div><div class="dot" style="width:14%;aspect-ratio:1;left:43%;top:43%;background:rgba(255,255,255,.7)"></div><div class="dot" style="width:14%;aspect-ratio:1;left:78%;top:43%;background:rgba(255,255,255,.4)"></div></div></div><div class="lg">AURORA MOBILE</div></div></div></div>
+<div class="cat">ホワイトペーパー</div><h3>エンタープライズAI導入の進め方</h3><div class="mt"><span>PDF</span><span>20ページ</span></div></div>
+<div class="cd"><div class="st o" style="padding:0 40px"><div class="vd"><div class="k">WEBINAR ARCHIVE</div><div class="tt" style="margin-top:8px">海外ユーザー獲得の<br>最新動向</div><div class="tm">45:00</div><div class="pl"></div></div></div>
+<div class="cat">ウェビナー</div><h3>海外ユーザー獲得の最新動向（録画）</h3><div class="mt"><span>動画</span><span>45分</span></div></div>
+</div></div></section>
+<section class="cta"><h2>お探しの資料が見つからない場合は</h2><p>ご用件に合わせて、担当者よりご案内いたします。</p><a class="btn" href="#">お問い合わせ →</a></section>
+</div></div>
+
+<!-- ===== B ===== -->
+<div><div class="lab">B<small>ヘッダーに資料を並べる → 下はシンプルな一覧</small></div>
+<div class="pg">
+<section style="padding:72px 0 80px;background:linear-gradient(180deg,#f5f7ff,#eef1ff)"><div class="ct" style="display:grid;grid-template-columns:480px 1fr;gap:40px;align-items:center">
+<div><span class="eb">Resources</span><h1>資料ダウンロード</h1><p class="lead" style="margin-top:20px">サービス紹介資料・導入事例集・ホワイトペーパーを<br>無料でご覧いただけます。</p>
+<div style="display:flex;gap:28px;margin-top:32px;font-size:13px;color:#475569"><span><b style="font:500 22px 'JetBrains Mono';color:#0b1524;margin-right:6px">6</b>資料</span><span>すべて無料</span><span>フォーム入力 約1分</span></div></div>
+<div style="position:relative;height:380px">
+<div class="bk t-wp" style="--w:170px;position:absolute;left:40px;top:70px;transform:perspective(900px) rotateY(-18deg) rotate(-6deg)"><div class="sp"></div><div class="fc"><div class="k">WHITE PAPER</div><div class="tt">AI導入の<br>進め方</div><div class="gr"></div><div class="lg">AURORA MOBILE</div></div></div>
+<div class="bk t-cs" style="--w:200px;position:absolute;left:220px;top:20px;z-index:2"><div class="sp"></div><div class="fc"><div class="k">CASE STUDIES 2026</div><div class="tt">業種別<br>導入事例集</div><div class="gr"><div class="stat"><b>+35%</b><span>リテンション改善</span></div></div><div class="lg">AURORA MOBILE</div></div></div>
+<div class="bk t-el" style="--w:170px;position:absolute;left:440px;top:80px;transform:perspective(900px) rotateY(-14deg) rotate(5deg)"><div class="sp"></div><div class="fc"><div class="k">SERVICE GUIDE</div><div class="tt">EngageLab<br>サービス紹介</div><div class="gr"><div class="ui"><i style="width:60%"></i><div class="bars"><b style="height:40%"></b><b style="height:70%"></b><b style="height:55%"></b><b style="height:90%"></b></div></div></div><div class="lg">AURORA MOBILE</div></div></div>
+</div></div></section>
+
+<section style="padding:80px 0 96px"><div class="ct">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:40px"><h2 style="font-size:26px;font-weight:500">資料一覧</h2><div class="chips"><span class="on">すべて</span><span>サービス資料</span><span>導入事例集</span><span>ホワイトペーパー</span><span>ウェビナー</span></div></div>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px 32px">
+<!-- row cards -->
+<div style="display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center;padding:24px;border:1px solid #e6e9f0;border-radius:14px"><div style="height:170px;border-radius:10px;background:#eef1ff;display:grid;place-items:center"><div class="bk t-el" style="--w:96px"><div class="sp"></div><div class="fc"><div class="k">SERVICE</div><div class="tt">EngageLab</div><div class="gr"></div><div class="lg">AURORA</div></div></div></div><div><div class="cat" style="font-size:12px;color:#2f46f0">サービス資料</div><h3 style="font-size:17px;font-weight:500;margin-top:8px">EngageLab サービス紹介資料</h3><p style="font-size:13px;color:#64748b;line-height:1.8;margin-top:8px">機能・料金・導入の流れをまとめた資料です。</p><div style="font-size:12px;color:#64748b;margin-top:10px">PDF・18ページ</div></div></div>
+<div style="display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center;padding:24px;border:1px solid #e6e9f0;border-radius:14px"><div style="height:170px;border-radius:10px;background:#e8f7f1;display:grid;place-items:center"><div class="bk t-gb" style="--w:96px"><div class="sp"></div><div class="fc"><div class="k">SERVICE</div><div class="tt">GPTBots.ai</div><div class="gr"></div><div class="lg">AURORA</div></div></div></div><div><div class="cat" style="font-size:12px;color:#2f46f0">サービス資料</div><h3 style="font-size:17px;font-weight:500;margin-top:8px">GPTBots.ai サービス紹介資料</h3><p style="font-size:13px;color:#64748b;line-height:1.8;margin-top:8px">AIエージェントの構築と活用方法を紹介します。</p><div style="font-size:12px;color:#64748b;margin-top:10px">PDF・16ページ</div></div></div>
+<div style="display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center;padding:24px;border:1px solid #e6e9f0;border-radius:14px"><div style="height:170px;border-radius:10px;background:#e9edf4;display:grid;place-items:center"><div class="bk t-cs" style="--w:96px"><div class="sp"></div><div class="fc"><div class="k">CASES</div><div class="tt">導入事例集</div><div class="gr"></div><div class="lg">AURORA</div></div></div></div><div><div class="cat" style="font-size:12px;color:#2f46f0">導入事例集</div><h3 style="font-size:17px;font-weight:500;margin-top:8px">業種別導入事例集2026</h3><p style="font-size:13px;color:#64748b;line-height:1.8;margin-top:8px">業種別の課題・施策・成果をまとめました。</p><div style="font-size:12px;color:#64748b;margin-top:10px">PDF・32ページ</div></div></div>
+<div style="display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center;padding:24px;border:1px solid #e6e9f0;border-radius:14px"><div style="height:170px;border-radius:10px;background:#f1eeff;display:grid;place-items:center"><div class="bk t-wp2" style="--w:96px"><div class="sp"></div><div class="fc"><div class="k" style="color:#3b56f5">WHITE PAPER</div><div class="tt">到達率改善</div><div class="gr"></div><div class="lg" style="color:#334155">AURORA</div></div></div></div><div><div class="cat" style="font-size:12px;color:#2f46f0">ホワイトペーパー</div><h3 style="font-size:17px;font-weight:500;margin-top:8px">プッシュ通知の到達率を改善する5つの方法</h3><p style="font-size:13px;color:#64748b;line-height:1.8;margin-top:8px">配信設計から計測まで実践的に解説します。</p><div style="font-size:12px;color:#64748b;margin-top:10px">PDF・14ページ</div></div></div>
+</div>
+</div></section>
+<section class="cta"><h2>お探しの資料が見つからない場合は</h2><p>ご用件に合わせて、担当者よりご案内いたします。</p><a class="btn" href="#">お問い合わせ →</a></section>
+</div></div>
+
+</div></body></html>

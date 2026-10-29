@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Zen Kaku Gothic New",sans-serif;color:#0b1524;background:#fff;width:1440px}
+a{color:#2f4bf0;text-decoration:none}
+.opt{position:relative;padding:56px 0 64px;background:linear-gradient(180deg,#F4F7FF 0%,#FAFBFF 70%,#fff 100%);border-bottom:1px solid #e6eaf2}
+.badge{position:absolute;left:32px;top:24px;font-size:14px;font-weight:700;background:#0b1524;color:#fff;padding:6px 12px;border-radius:6px}
+.badge span{font-weight:400;opacity:.7;margin-left:8px}
+.wrap{width:1200px;margin:0 auto;display:grid;grid-template-columns:540px 1fr;gap:20px;align-items:center;min-height:500px}
+.logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:700;margin-bottom:28px}
+.logo i{width:32px;height:32px;border-radius:8px;background:#6A4CF5;color:#fff;font-style:normal;display:grid;place-items:center;font-size:18px}
+h1{font-size:34px;line-height:1.45;font-weight:900;letter-spacing:.02em}
+h1 em{font-style:normal;color:#2f4bf0}
+.lead{margin-top:20px;font-size:15px;line-height:1.9;color:#4a5568}
+.btns{display:flex;gap:12px;margin-top:32px}
+.b{height:52px;padding:0 26px;border-radius:26px;display:inline-flex;align-items:center;font-weight:700;font-size:15px}
+.b.p{background:#2f4bf0;color:#fff;box-shadow:0 10px 24px rgba(47,75,240,.25)}
+.b.s{background:#fff;border:1px solid #dfe4ee;color:#2f4bf0}
+/* shared card */
+.card{background:#fff;border:1px solid #e6eaf2;border-radius:14px;box-shadow:0 12px 32px rgba(15,30,70,.06)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.lbl{font-size:11px;letter-spacing:.12em;color:#8a94a6}
+/* ===== A ===== */
+.A{position:relative;height:460px}
+.A .req{position:absolute;left:0;top:162px;width:250px;padding:18px 18px 16px}
+.A .req .m{display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:12px}
+.A .req .m b{font-size:11px;background:#EEEAFE;color:#6A4CF5;padding:3px 7px;border-radius:4px}
+.A .req pre{font-size:12px;line-height:1.85;color:#334155}
+.A .req pre .k{color:#8a94a6}.A .req pre .v{color:#6A4CF5}
+.A .req .chip{margin-top:12px;display:flex;align-items:center;gap:6px;font-size:11px;color:#5b6475;border-top:1px dashed #e6eaf2;padding-top:10px}
+.A .req .chip i{width:6px;height:6px;border-radius:50%;background:#22c55e}
+.A svg.ln{position:absolute;left:250px;top:0;width:90px;height:460px;overflow:visible}
+.A .outs{position:absolute;left:340px;top:36px;width:300px;display:grid;gap:12px}
+.A .o{height:88px;padding:0 16px;display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center}
+.A .o .t{font-size:13px;font-weight:700;display:flex;justify-content:space-between}
+.A .o .t span{font-weight:400;font-size:11px;color:#8a94a6}
+.A .o .s{font-size:11px;color:#8a94a6;margin-top:4px}
+.A .th{height:56px;border-radius:8px;background:#F3F5FA;border:1px solid #eceff5;position:relative;overflow:hidden}
+.A .o.on{border-color:#cfc6fb;box-shadow:0 14px 34px rgba(106,76,245,.12)}
+.A .o.on .th{background:#F4F1FF;border-color:#e3dcfd}
+.th.img:before{content:"";position:absolute;left:10px;right:10px;bottom:10px;height:18px;clip-path:polygon(0 100%,30% 30%,50% 70%,72% 10%,100% 100%);background:#c9bdfb}
+.th.img:after{content:"";position:absolute;right:14px;top:9px;width:9px;height:9px;border-radius:50%;background:#c9bdfb}
+.th.vid:before{content:"";position:absolute;left:50%;top:40%;transform:translate(-40%,-50%);border-left:12px solid #9aa4b8;border-top:8px solid transparent;border-bottom:8px solid transparent}
+.th.vid:after{content:"";position:absolute;left:8px;right:8px;bottom:8px;height:3px;border-radius:2px;background:linear-gradient(90deg,#9aa4b8 40%,#dde2ec 40%)}
+.th .wave{position:absolute;inset:14px 8px;display:flex;align-items:center;gap:3px}
+.th .wave i{flex:1;background:#9aa4b8;border-radius:2px}
+.th .txt{position:absolute;inset:12px 10px;display:grid;gap:6px;align-content:start}
+.th .txt i{height:4px;border-radius:2px;background:#c3cad8}
+/* ===== B ===== */
+.B{position:relative;height:460px}
+.B .code{position:absolute;left:0;top:40px;width:330px;background:#0f1a33;border-radius:14px;padding:0 0 20px;box-shadow:0 20px 44px rgba(15,26,51,.18);color:#cbd5e6}
+.B .code .bar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);font-size:11px;color:#7d8aa5}
+.B .code .bar i{width:8px;height:8px;border-radius:50%;background:#2a3654}
+.B .code .bar span{margin-left:8px}
+.B .code pre{font-size:12.5px;line-height:2;padding:16px 20px 0}
+.B .code .k{color:#7d8aa5}.B .code .s{color:#a5f3c4}.B .code .f{color:#93b4ff}
+.B .code .hl{display:block;margin:0 -20px;padding:0 20px;background:rgba(106,76,245,.22);border-left:2px solid #8f78ff}
+.B .code .hl .s{color:#fff}
+.B .code .hint{margin:14px 20px 0;font-size:11px;color:#7d8aa5;display:flex;gap:8px;flex-wrap:wrap}
+.B .code .hint b{font-weight:400;border:1px solid rgba(255,255,255,.14);padding:2px 8px;border-radius:10px}
+.B .code .hint b.on{border-color:#8f78ff;color:#fff}
+.B .res{position:absolute;left:360px;top:0;width:280px;height:460px}
+.B .r{position:absolute;width:260px;padding:16px}
+.B .r.r3{left:20px;top:10px;opacity:.55;transform:scale(.92);transform-origin:top center}
+.B .r.r2{left:10px;top:38px;opacity:.8;transform:scale(.96);transform-origin:top center}
+.B .r.r1{left:0;top:72px}
+.B .r .hd{display:flex;justify-content:space-between;font-size:12px;margin-bottom:12px}
+.B .r .hd b{font-size:13px}
+.B .r .hd span{color:#8a94a6}
+.B .r .pic{height:180px;border-radius:10px;background:#F4F1FF;border:1px solid #e3dcfd;position:relative;overflow:hidden}
+.B .r .pic:before{content:"";position:absolute;left:24px;right:24px;bottom:24px;height:60px;clip-path:polygon(0 100%,30% 30%,50% 70%,72% 10%,100% 100%);background:#c9bdfb}
+.B .r .pic:after{content:"";position:absolute;right:34px;top:28px;width:22px;height:22px;border-radius:50%;background:#c9bdfb}
+.B .r .ft{white-space:nowrap;display:flex;justify-content:space-between;margin-top:12px;font-size:11px;color:#8a94a6}
+.B .r .ft b{color:#0b1524}
+.B .tag{position:absolute;left:-70px;top:380px;background:#fff;border:1px solid #e6eaf2;border-radius:10px;padding:10px 14px;font-size:12px;box-shadow:0 10px 24px rgba(15,30,70,.06);display:flex;gap:8px;align-items:center}
+.B .tag i{width:6px;height:6px;border-radius:50%;background:#22c55e}
+.note{width:1200px;margin:18px auto 0;font-size:13px;color:#5b6475}
+</style></head><body>
+<div id="cmp">
+
+<section class="opt">
+<div class="badge">A<span>一つのリクエスト → 4種のメディア</span></div>
+<div class="wrap">
+<div>
+<div class="logo"><i>M</i>Modellix</div>
+<h1>すべてのAIメディア生成を、<br><em>ひとつのプラットフォームで。</em></h1>
+<p class="lead">画像・動画・音声・テキストを、ひとつのAPIで。世界水準のAIモデルを、統合されたゲートウェイから利用できます。</p>
+<div class="btns"><a class="b p">無料で始める →</a><a class="b s">ドキュメントを見る</a></div>
+</div>
+<div class="A">
+<div class="card req">
+<div class="m"><b>POST</b><span class="mono">/v1/generate</span></div>
+<pre class="mono"><span class="k">model</span>  <span class="v">"seedream-4.0"</span>
+<span class="k">type</span>   <span class="v">"image"</span>
+<span class="k">prompt</span> "春の新作バッグ…"</pre>
+<div class="chip"><i></i>Unified API・172+ models</div>
+</div>
+<svg class="ln" viewBox="0 0 90 460" fill="none">
+<path d="M0 230 C45 230 45 80 90 80" stroke="#6A4CF5" stroke-width="1.5"/>
+<path d="M0 230 C45 230 45 180 90 180" stroke="#d5dbe6" stroke-width="1.2"/>
+<path d="M0 230 C45 230 45 280 90 280" stroke="#d5dbe6" stroke-width="1.2"/>
+<path d="M0 230 C45 230 45 380 90 380" stroke="#d5dbe6" stroke-width="1.2"/>
+<circle cx="0" cy="230" r="4" fill="#6A4CF5"/>
+</svg>
+<div class="outs">
+<div class="card o on"><div class="th img"></div><div><div class="t">画像<span>Seedream 4.0</span></div><div class="s">1024×1024・6.2s</div></div></div>
+<div class="card o"><div class="th vid"></div><div><div class="t">動画<span>Kling</span></div><div class="s">1080p・5s</div></div></div>
+<div class="card o"><div class="th"><div class="wave"><i style="height:30%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:90%"></i><i style="height:55%"></i><i style="height:80%"></i><i style="height:35%"></i><i style="height:60%"></i><i style="height:25%"></i></div></div><div><div class="t">音声<span>TTS</span></div><div class="s">日本語・0:12</div></div></div>
+<div class="card o"><div class="th"><div class="txt"><i style="width:90%"></i><i style="width:70%"></i><i style="width:82%"></i><i style="width:50%"></i></div></div><div><div class="t">テキスト<span>LLM</span></div><div class="s">商品説明文・320字</div></div></div>
+</div>
+</div>
+</div>
+<p class="note">構図：窓＋浮きカードをやめ、「1本のリクエストから4種のメディアへ分岐」を図式化。動効案：model値が順に切り替わり、該当カードが順番に点灯。</p>
+</section>
+
+<section class="opt">
+<div class="badge">B<span>コード1行で、結果が変わる</span></div>
+<div class="wrap">
+<div>
+<div class="logo"><i>M</i>Modellix</div>
+<h1>すべてのAIメディア生成を、<br><em>ひとつのプラットフォームで。</em></h1>
+<p class="lead">画像・動画・音声・テキストを、ひとつのAPIで。世界水準のAIモデルを、統合されたゲートウェイから利用できます。</p>
+<div class="btns"><a class="b p">無料で始める →</a><a class="b s">ドキュメントを見る</a></div>
+</div>
+<div class="B">
+<div class="code">
+<div class="bar"><i></i><i></i><i></i><span class="mono">generate.ts</span></div>
+<pre class="mono"><span class="k">const</span> res = <span class="k">await</span> modellix.<span class="f">generate</span>({
+<span class="hl">  model:  <span class="s">"seedream-4.0"</span>,</span>  type:   <span class="s">"image"</span>,
+  prompt: <span class="s">"春の新作バッグ…"</span>,
+});</pre>
+<div class="hint"><b class="on">seedream-4.0</b><b>imagen-4</b><b>qwen-image</b><b>+169</b></div>
+</div>
+<div class="res">
+<div class="card r r3"><div class="hd"><b>Qwen-Image</b><span>Alibaba</span></div><div class="pic"></div></div>
+<div class="card r r2"><div class="hd"><b>Imagen 4</b><span>Google</span></div><div class="pic"></div></div>
+<div class="card r r1"><div class="hd"><b>Seedream 4.0</b><span>ByteDance</span></div><div class="pic"></div><div class="ft"><span>生成時間 <b>6.2s</b></span><span>利用料 <b>$0.06</b></span></div></div>
+<div class="tag"><i></i>コード変更は1行だけ</div>
+</div>
+</div>
+</div>
+<p class="note">構図：左にコード、右に結果の重なり。動効案：model行だけが書き換わり、右の結果カードが1枚ずつ入れ替わる。</p>
+</section>
+
+</div>
+</body></html>

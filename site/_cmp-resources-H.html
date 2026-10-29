@@ -1,0 +1,73 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}body{font-family:"Zen Kaku Gothic New",sans-serif;color:#0b1524;background:#fff}
+#cmp{width:1280px;padding:56px 40px 72px;margin:0 auto}
+.h{font-size:28px;font-weight:700;margin-bottom:6px}.sub{color:#64748b;font-size:14px;margin-bottom:28px}
+.tabs{display:flex;justify-content:center;gap:32px;border-bottom:1px solid #e5e8ef;margin:0 auto 36px;width:1200px}
+.tabs span{padding:0 4px 14px;font-size:15px;color:#64748b}.tabs .on{color:#2f44f0;font-weight:700;border-bottom:2px solid #2f44f0;margin-bottom:-1px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 28px;width:1200px;margin:0 auto}
+.card{display:flex;flex-direction:column;gap:14px}
+.cv{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;box-shadow:0 1px 0 rgba(15,23,42,.04),0 8px 24px -12px rgba(15,23,42,.18);border:1px solid #e9ecf3}
+.cv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lg{font-family:Outfit;font-weight:700;font-size:10px;letter-spacing:.12em}
+.tag{display:inline-flex;align-items:center;height:20px;padding:0 8px;font-size:10px;font-weight:700;border-radius:3px}
+.btn{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 12px;border-radius:999px;font-size:10.5px;font-weight:700;color:#fff}
+.meta{display:flex;align-items:center;gap:8px;font-size:12px;color:#64748b}
+.meta b{font-weight:700;font-size:11px}
+.ttl{font-size:15.5px;font-weight:700;line-height:1.55}
+/* A service */
+.a{background:linear-gradient(115deg,#1f33e0 0%,#3550ff 52%,#6c8bff 100%)}
+.a .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:24px 24px;-webkit-mask:linear-gradient(90deg,transparent 30%,#000 75%);mask:linear-gradient(90deg,transparent 30%,#000 75%)}
+.a .tx{position:absolute;left:22px;top:20px;bottom:18px;width:56%;display:flex;flex-direction:column;color:#fff}
+.a h4{font-size:21px;font-weight:900;line-height:1.3;margin-top:auto;letter-spacing:.01em}
+.a .ph{position:absolute;right:-14px;bottom:-22px;width:40%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:4px solid rgba(255,255,255,.9);transform:rotate(-4deg);box-shadow:0 18px 30px -10px rgba(5,10,60,.45)}
+.a .ring{position:absolute;right:30px;top:-60px;width:180px;height:180px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35)}
+/* B case */
+.b{background:#fff}
+.b .ph{position:absolute;left:0;top:0;bottom:0;width:46%}
+.b .ph:after{display:none;content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,#fff 100%)}
+.b .tx{position:absolute;left:44%;right:18px;top:18px;bottom:16px;display:flex;flex-direction:column}
+.b h4{font-size:19px;font-weight:900;line-height:1.38;margin-top:10px;color:#0b1524}
+.b h4 em{font-style:normal;color:#0f9b8e}
+.b .who{margin-top:auto;font-size:9.5px;color:#475569;line-height:1.5}
+.b .bar{position:absolute;left:0;top:0;right:0;height:5px;background:#12b3a3}
+/* C whitepaper */
+.c{background:#f6f4ff}
+.c .tx{position:absolute;left:22px;top:20px;bottom:18px;width:58%;display:flex;flex-direction:column}
+.c h4{font-size:19px;font-weight:900;line-height:1.35;margin-top:auto;color:#2b1a7a}
+.c .big{position:absolute;right:-6px;bottom:-30px;font-family:Outfit;font-weight:700;font-size:150px;line-height:1;color:#ebe6ff}
+.c .shape{position:absolute;right:28px;top:22px;width:96px;height:96px}
+.c .s1{position:absolute;inset:0;border-radius:0 0 0 100%;background:#7b5cf0}
+.c .s2{position:absolute;left:-30px;top:8px;width:44px;height:44px;border-radius:50%;background:#c9bcff}
+.c .s3{display:none;position:absolute;right:0;bottom:-46px;width:96px;height:46px;border-radius:96px 96px 0 0;background:#fff;border:1.5px solid #c9bcff;border-bottom:0}
+/* D webinar */
+.d{background:#0b1524}
+.d .ph{position:absolute;right:0;top:0;bottom:0;width:52%}
+.d .ph:after{display:none;content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff8f1 0%,rgba(255,248,241,0) 45%)}
+.d{background:#fff8f1}
+.d .tx{position:absolute;left:22px;top:18px;bottom:16px;width:58%;display:flex;flex-direction:column}
+.d h4{font-size:20px;font-weight:900;line-height:1.38;margin-top:10px}
+.d .rec{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:#e8590c}
+.d .rec i{width:7px;height:7px;border-radius:50%;background:#e8590c}
+.d .date{margin-top:auto;font-size:10px;color:#475569}
+.gx{position:absolute;right:0;top:0;bottom:0;width:50%}.gx svg{position:absolute;inset:0;width:100%;height:100%}
+.note{width:1200px;margin:40px auto 0;font-size:12.5px;color:#64748b;line-height:1.9}
+</style></head><body>
+<div id="cmp">
+<div class="h">資料一覧 — 横長カバー（16:9）案</div>
+<div class="sub">6冊を同一テンプレートに統一：左上ロゴ＋分類／左下タイトル／右半分に資料タイプ別の幾何図形。淡色地＋タイプ色。</div>
+<div class="tabs"><span class="on">すべて</span><span>サービス資料</span><span>導入事例集</span><span>ホワイトペーパー</span><span>ウェビナー</span></div>
+<style>
+.u{background:var(--t);border:1px solid var(--b)}
+.u .gr{position:absolute;inset:0;background-image:linear-gradient(var(--g) 1px,transparent 1px),linear-gradient(90deg,var(--g) 1px,transparent 1px);background-size:22px 22px;-webkit-mask:linear-gradient(90deg,transparent 30%,#000 75%);mask:linear-gradient(90deg,transparent 30%,#000 75%)}
+.u .ux{position:absolute;left:24px;top:22px;bottom:22px;width:54%;display:flex;flex-direction:column;z-index:2}
+.u .ux .lg{color:var(--c)}
+.u .ux .tg{align-self:flex-start;margin-top:10px;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:4px;background:#fff;color:var(--c);border:1px solid var(--b)}
+.u .ux h4{margin-top:auto;font-size:21px;font-weight:900;line-height:1.32;color:#0b1524;letter-spacing:.01em}
+.u .ux h4 em{font-style:normal;color:var(--c)}
+.u .ux .ln{width:28px;height:3px;border-radius:2px;background:var(--c);margin-top:12px}
+.u .ug{position:absolute;right:0;top:0;bottom:0;width:52%}.u .ug svg{width:100%;height:100%;display:block}
+</style><div class="grid"><div class="card"><div class="cv u" style="--c:#2f44f0;--t:#f2f4ff;--b:#e1e5fb;--g:#2f44f014"><div class="gr"></div><div class="ug"><svg viewBox="0 0 320 360" fill="none" stroke="#2f44f0" stroke-width="1.6"><circle cx="230" cy="190" r="150" stroke-opacity=".18"/><circle cx="230" cy="190" r="108" stroke-opacity=".3"/><circle cx="230" cy="190" r="66" stroke-opacity=".5"/><circle cx="230" cy="190" r="26" fill="#2f44f0" stroke="none"/><circle cx="230" cy="190" r="8" fill="#fff" stroke="none"/><path d="M98 290L176 238" stroke-dasharray="3 6"/><rect x="74" y="280" width="34" height="34" rx="3" fill="#fff"/></svg></div><div class="ux"><span class="lg">AURORA MOBILE</span><span class="tg">サービス資料</span><h4><em>EngageLab</em><br>サービス紹介資料</h4><span class="ln"></span></div></div><div class="meta"><b style="color:#2f44f0">サービス資料</b>PDF・18ページ</div><div class="ttl">EngageLab サービス紹介資料</div></div><div class="card"><div class="cv u" style="--c:#0f9b8e;--t:#eefaf8;--b:#d6f1ec;--g:#0f9b8e14"><div class="gr"></div><div class="ug"><svg viewBox="0 0 320 360" fill="none" stroke="#0f9b8e" stroke-width="1.6"><rect x="92" y="66" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="144" y="66" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="196" y="66" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="248" y="66" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="92" y="118" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="144" y="118" width="40" height="40" rx="3" fill="#0f9b8e" stroke-opacity=".45"/><rect x="196" y="118" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="248" y="118" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="92" y="170" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="144" y="170" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="196" y="170" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="248" y="170" width="40" height="40" rx="3" fill="#0f9b8e" fill-opacity=".28" stroke-opacity=".45"/><rect x="92" y="222" width="40" height="40" rx="3" fill="#0f9b8e" fill-opacity=".28" stroke-opacity=".45"/><rect x="144" y="222" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="196" y="222" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><rect x="248" y="222" width="40" height="40" rx="3" fill="#fff" stroke-opacity=".45"/><path d="M80 318L150 296 200 306 290 254" stroke-width="2.2"/><circle cx="290" cy="254" r="5" fill="#0f9b8e" stroke="none"/></svg></div><div class="ux"><span class="lg">AURORA MOBILE</span><span class="tg">導入事例集</span><h4>業界別<br><em>導入事例集</em> 2026</h4><span class="ln"></span></div></div><div class="meta"><b style="color:#0f9b8e">導入事例集</b>PDF・24ページ</div><div class="ttl">業界別 導入事例集 2026</div></div><div class="card"><div class="cv u" style="--c:#6a4fe0;--t:#f5f2ff;--b:#e6e0fb;--g:#6a4fe014"><div class="gr"></div><div class="ug"><svg viewBox="0 0 320 360" fill="none" stroke="#6a4fe0" stroke-width="1.6"><path d="M320 40H170a130 130 0 00150 150z" fill="#6a4fe0" stroke="none"/><circle cx="140" cy="80" r="34" fill="#6a4fe0" fill-opacity=".28" stroke="none"/><path d="M110 330l60-150 60 150M132 276h76" stroke-width="2.4" stroke-opacity=".55"/><path d="M270 330V180" stroke-width="2.4" stroke-opacity=".55"/></svg></div><div class="ux"><span class="lg">AURORA MOBILE</span><span class="tg">ホワイトペーパー</span><h4>はじめての<br><em>AI導入</em>ガイド</h4><span class="ln"></span></div></div><div class="meta"><b style="color:#6a4fe0">ホワイトペーパー</b>PDF・16ページ</div><div class="ttl">はじめてのAI導入ガイド</div></div><div class="card"><div class="cv u" style="--c:#e8590c;--t:#fff6ef;--b:#fbe3d2;--g:#e8590c14"><div class="gr"></div><div class="ug"><svg viewBox="0 0 320 360" fill="none" stroke="#e8590c" stroke-width="1.6"><circle cx="200" cy="160" r="110" stroke-opacity=".2"/><circle cx="200" cy="160" r="72" fill="#fff" stroke-opacity=".5"/><path d="M186 136l40 24-40 24z" fill="#e8590c" stroke="none"/><path d="M70 300h220" stroke-opacity=".35"/><path d="M70 300h120" stroke-width="3"/><circle cx="190" cy="300" r="6" fill="#e8590c" stroke="none"/><path d="M70 322v-10" stroke-opacity=".35"/><path d="M90 322v-5" stroke-opacity=".35"/><path d="M110 322v-5" stroke-opacity=".35"/><path d="M130 322v-10" stroke-opacity=".35"/><path d="M150 322v-5" stroke-opacity=".35"/><path d="M170 322v-5" stroke-opacity=".35"/><path d="M190 322v-10" stroke-opacity=".35"/><path d="M210 322v-5" stroke-opacity=".35"/><path d="M230 322v-5" stroke-opacity=".35"/><path d="M250 322v-10" stroke-opacity=".35"/><path d="M270 322v-5" stroke-opacity=".35"/><path d="M290 322v-5" stroke-opacity=".35"/></svg></div><div class="ux"><span class="lg">AURORA MOBILE</span><span class="tg">ウェビナー</span><h4>メッセージ配信<br><em>最適化</em>の実践</h4><span class="ln"></span></div></div><div class="meta"><b style="color:#e8590c">ウェビナー</b>動画・45分</div><div class="ttl">メッセージ配信最適化の実践</div></div><div class="card"><div class="cv u" style="--c:#0d8a5b;--t:#eff9f4;--b:#d5efe2;--g:#0d8a5b14"><div class="gr"></div><div class="ug"><svg viewBox="0 0 320 360" fill="none" stroke="#0d8a5b" stroke-width="1.6"><path d="M120,110L250,90L290,220L180,290L90,230Z" stroke-opacity=".4"/><path d="M195 190L120,110" stroke-opacity=".3"/><circle cx="120" cy="110" r="9" fill="#fff"/><path d="M195 190L250,90" stroke-opacity=".3"/><circle cx="250" cy="90" r="9" fill="#fff"/><path d="M195 190L290,220" stroke-opacity=".3"/><circle cx="290" cy="220" r="9" fill="#fff"/><path d="M195 190L180,290" stroke-opacity=".3"/><circle cx="180" cy="290" r="9" fill="#fff"/><path d="M195 190L90,230" stroke-opacity=".3"/><circle cx="90" cy="230" r="9" fill="#fff"/><circle cx="195" cy="190" r="56" stroke-opacity=".25"/><circle cx="195" cy="190" r="28" fill="#0d8a5b" stroke="none"/><circle cx="195" cy="190" r="9" fill="#fff" stroke="none"/></svg></div><div class="ux"><span class="lg">AURORA MOBILE</span><span class="tg">サービス資料</span><h4><em>GPTBots</em><br>サービス紹介資料</h4><span class="ln"></span></div></div><div class="meta"><b style="color:#0d8a5b">サービス資料</b>PDF・20ページ</div><div class="ttl">GPTBots サービス紹介資料</div></div><div class="card"><div class="cv u" style="--c:#6a4fe0;--t:#f5f2ff;--b:#e6e0fb;--g:#6a4fe014"><div class="gr"></div><div class="ug"><svg viewBox="0 0 320 360" fill="none" stroke="#6a4fe0" stroke-width="1.6"><circle cx="230" cy="130" r="92" fill="#6a4fe0" stroke="none"/><circle cx="130" cy="96" r="34" fill="#6a4fe0" fill-opacity=".28" stroke="none"/><rect x="110" y="290" width="24" height="40" rx="2" fill="#fff" stroke-opacity=".55"/><rect x="150" y="268" width="24" height="62" rx="2" fill="#fff" stroke-opacity=".55"/><rect x="190" y="246" width="24" height="84" rx="2" fill="#fff" stroke-opacity=".55"/><rect x="230" y="224" width="24" height="106" rx="2" fill="#fff" stroke-opacity=".55"/><rect x="270" y="202" width="24" height="128" rx="2" fill="#fff" stroke-opacity=".55"/></svg></div><div class="ux"><span class="lg">AURORA MOBILE</span><span class="tg">ホワイトペーパー</span><h4><em>顧客エンゲージ</em><br>メント白書 2026</h4><span class="ln"></span></div></div><div class="meta"><b style="color:#6a4fe0">ホワイトペーパー</b>PDF・28ページ</div><div class="ttl">顧客エンゲージメント白書 2026</div></div></div>
+<div class="note"></div>
+</div></body></html>

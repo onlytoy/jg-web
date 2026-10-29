@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;color:#0a1324;background:#e9ecf3}
+#cmp{width:1440px;padding:40px;display:flex;flex-direction:column;gap:40px}
+.opt{background:#f7f8fc;border-radius:8px;overflow:hidden;position:relative}
+.badge{position:absolute;left:24px;top:20px;font:700 13px/1 "Helvetica Neue",Arial;letter-spacing:.1em;color:#fff;background:#2847fc;padding:7px 12px;border-radius:4px;z-index:2}
+.sec{width:1200px;margin:0 auto;padding:104px 0}
+.num{font-family:"Helvetica Neue",Arial,sans-serif}
+.eb{display:flex;align-items:center;gap:14px;font:500 13px/1 "Helvetica Neue",Arial;letter-spacing:.2em;color:#2847fc}
+.eb i{width:22px;height:2px;background:linear-gradient(90deg,#2847fc,#34d3ff)}
+h2{font-size:36px;font-weight:700;letter-spacing:.06em;margin-top:18px;line-height:1.4}
+.lead{font-size:15px;line-height:2;color:#5b6172;margin-top:20px}
+.btns{display:flex;flex-direction:column;gap:12px;margin-top:36px}
+.btn{display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 24px;border-radius:999px;font-size:15px;font-weight:700;text-decoration:none;letter-spacing:.04em}
+.btn.p{background:#2847fc;color:#fff;box-shadow:0 10px 24px rgba(40,71,252,.22)}
+.btn.s{background:#fff;color:#0a1324;border:1px solid #dfe4f1}
+.tag{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#eaf0ff;color:#2847fc;font-size:12px;font-weight:700;letter-spacing:.06em}
+a.lk{color:#2847fc;font-size:13px;font-weight:600;text-decoration:none}
+.note{font-size:12px;color:#8a91a5;margin-top:20px;letter-spacing:.04em}
+
+/* 1 */
+.o1 .g{display:grid;grid-template-columns:400px minmax(0,1fr);gap:96px;align-items:start}
+.o1 ol{list-style:none;border-top:1px solid #dfe4f1}
+.o1 li{display:grid;grid-template-columns:72px minmax(0,1fr) 168px;gap:24px;padding:32px 0;border-bottom:1px solid #dfe4f1;align-items:start}
+.o1 .n{font-size:15px;font-weight:500;color:#2847fc;letter-spacing:.08em;padding-top:5px}
+.o1 .t{font-size:20px;font-weight:700;letter-spacing:.04em}
+.o1 .d{font-size:14px;line-height:1.9;color:#5b6172;margin-top:8px}
+.o1 .ex{display:flex;align-items:center;gap:16px;margin-top:14px}
+.o1 .dur{text-align:right;padding-top:5px}
+.o1 .dur small{display:block;font-size:11px;color:#8a91a5;letter-spacing:.12em}
+.o1 .dur b{display:block;font-size:16px;margin-top:6px;letter-spacing:.04em}
+.o1 li.k{position:relative}
+.o1 li.k:before{content:"";position:absolute;left:0;top:-1px;width:72px;height:2px;background:#2847fc}
+
+/* 2 */
+.o2 .hd{display:flex;justify-content:space-between;align-items:flex-end}
+.o2 .hd .lead{margin-top:16px}
+.o2 .tabs{margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid #dfe4f1}
+.o2 .tab{padding:0 0 22px;position:relative;display:flex;align-items:baseline;gap:12px;color:#8a91a5}
+.o2 .tab .n{font-size:13px;letter-spacing:.1em}
+.o2 .tab .t{font-size:17px;font-weight:700}
+.o2 .tab.on{color:#0a1324}.o2 .tab.on .n{color:#2847fc}
+.o2 .tab.on:after{content:"";position:absolute;left:0;right:24px;bottom:-1px;height:2px;background:#2847fc}
+.o2 .pn{margin-top:40px;background:#fff;border-radius:16px;border:1px solid #edf0f6;box-shadow:0 14px 40px rgba(20,32,90,.06);display:grid;grid-template-columns:minmax(0,1fr) 360px}
+.o2 .pl{padding:48px 56px}
+.o2 .pl .n{font-size:13px;color:#2847fc;letter-spacing:.14em}
+.o2 .pl h3{font-size:26px;font-weight:700;margin-top:12px;letter-spacing:.04em}
+.o2 .pl .d{font-size:15px;line-height:2;color:#5b6172;margin-top:16px}
+.o2 .pl ul{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.o2 .pl li{font-size:14px;display:flex;gap:10px;align-items:center}
+.o2 .pl li:before{content:"";width:16px;height:16px;border-radius:50%;background:#eaf0ff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.2 4.7-4.8' fill='none' stroke='%232847fc' stroke-width='1.6'/%3E%3C/svg%3E") center/16px no-repeat;flex:none}
+.o2 .pl .ex{margin-top:28px;display:flex;gap:20px;align-items:center}
+.o2 .pr{border-left:1px solid #edf0f6;padding:48px 40px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,#fafbff,#fff)}
+.o2 .pr small{font-size:11px;color:#8a91a5;letter-spacing:.14em}
+.o2 .pr b{display:block;font-size:30px;margin-top:10px;letter-spacing:.02em}
+.o2 .prog{display:flex;gap:6px;margin-top:20px}.o2 .prog i{flex:1;height:4px;border-radius:2px;background:#e3e7f2}.o2 .prog i.on{background:#2847fc}
+.o2 .pr .nx{font-size:13px;color:#5b6172;border-top:1px solid #edf0f6;padding-top:20px}
+.o2 .pr .nx b{font-size:15px;margin-top:6px;color:#0a1324}
+</style></head><body>
+<div id="cmp">
+
+<section class="opt o1"><span class="badge">① 左右分栏 + 縦リスト</span>
+<div class="sec"><div class="g">
+ <div>
+  <div class="eb"><i></i>PROCESS</div>
+  <h2>ご契約までの流れ</h2>
+  <p class="lead">お問い合わせからご契約まで、目安は◯〜◯週間です。稟議に必要な資料は当社でご用意します。</p>
+  <div class="btns"><a class="btn p">お問い合わせ <span>→</span></a><a class="btn s">資料ダウンロード <span>↓</span></a></div>
+ </div>
+ <ol>
+  <li><div class="n num">01</div><div><div class="t">お問い合わせ</div><div class="d">フォームまたはお電話でご連絡ください。</div></div><div class="dur"><small>所要期間</small><b>即日</b></div></li>
+  <li><div class="n num">02</div><div><div class="t">ヒアリング</div><div class="d">課題と現在の運用をお伺いします。</div></div><div class="dur"><small>所要期間</small><b>◯日程度</b></div></li>
+  <li><div class="n num">03</div><div><div class="t">お見積り</div><div class="d">ご利用規模に合わせてご提示します。</div></div><div class="dur"><small>所要期間</small><b>◯日程度</b></div></li>
+  <li class="k"><div class="n num">04</div><div><div class="t">社内稟議</div><div class="d">稟議に必要な資料は、当社でご用意します。</div><div class="ex"><span class="tag">資料は当社でご用意</span><a class="lk">セキュリティ資料を見る →</a></div></div><div class="dur"><small>所要期間</small><b>通常◯◯週間</b></div></li>
+  <li><div class="n num">05</div><div><div class="t">ご契約</div><div class="d">契約締結後、導入を開始します。</div></div><div class="dur"><small>所要期間</small><b>◯日</b></div></li>
+ </ol>
+</div></div></section>
+
+<section class="opt o2"><span class="badge">② タブ切替 + 詳細パネル</span>
+<div class="sec">
+ <div class="hd"><div><div class="eb"><i></i>PROCESS</div><h2>ご契約までの流れ</h2><p class="lead">お問い合わせからご契約まで、目安は◯〜◯週間です。</p></div><a class="lk">お問い合わせ →</a></div>
+ <div class="tabs">
+  <div class="tab"><span class="n num">01</span><span class="t">お問い合わせ</span></div>
+  <div class="tab"><span class="n num">02</span><span class="t">ヒアリング</span></div>
+  <div class="tab"><span class="n num">03</span><span class="t">お見積り</span></div>
+  <div class="tab on"><span class="n num">04</span><span class="t">社内稟議</span></div>
+  <div class="tab"><span class="n num">05</span><span class="t">ご契約</span></div>
+ </div>
+ <div class="pn">
+  <div class="pl"><div class="n num">STEP 04</div><h3>社内稟議</h3><p class="d">稟議に必要な資料は、当社でご用意します。</p>
+   <ul><li>セキュリティチェックシート</li><li>ISO 27001 / SOC 2 Type II 報告書</li><li>お見積書・サービス仕様書</li></ul>
+   <div class="ex"><span class="tag">資料は当社でご用意</span><a class="lk">セキュリティ資料を見る →</a></div></div>
+  <div class="pr"><div><small>所要期間</small><b>通常◯◯週間</b><div class="prog"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+   <div class="nx">次のステップ<b>05　ご契約</b></div></div>
+ </div>
+</div></section>
+
+</div></body></html>

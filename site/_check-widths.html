@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><style>body{margin:0}iframe{border:0;display:block}</style></head><body><div id="w"></div>
+<script>
+const P=['index','engagelab','gptbots','modellix','cases','case-detail','pricing','company','security','news','news-detail','careers','contact','resources','resource-detail','legal'];
+window.check=async function(page,W){
+  const w=document.getElementById('w');w.innerHTML='';const f=document.createElement('iframe');f.style.width=W+'px';f.style.height='900px';f.src=page+'.html';w.appendChild(f);
+  await new Promise(r=>f.onload=r);await new Promise(r=>setTimeout(r,1500));
+  const d=f.contentDocument;if(!d)return {page,W,err:'nodoc'};
+  d.querySelectorAll('.reveal,[class*="reveal"]').forEach(e=>e.classList.add('in','is-in','visible'));
+  const vw=d.documentElement.clientWidth,sw=d.documentElement.scrollWidth;
+  const bad=[];
+  d.querySelectorAll('main *').forEach(e=>{const cs=getComputedStyle(e);if(cs.position==='fixed'||cs.display==='none')return;const r=e.getBoundingClientRect();if(r.width<4||r.height<4)return;
+    let p=e.parentElement,clip=false;while(p&&p!==d.body){const s=getComputedStyle(p);if(s.overflow!=='visible'||s.overflowX!=='visible'){clip=true;break}p=p.parentElement}
+    if(!clip&&(r.right>vw+1||r.left<-1))bad.push((e.className&&typeof e.className==='string'?'.'+e.className.split(' ')[0]:e.tagName)+' '+Math.round(r.left)+'→'+Math.round(r.right));
+    if(e.children.length===0&&e.textContent.trim()&&e.scrollWidth>e.clientWidth+2&&cs.overflow==='hidden'&&cs.textOverflow!=='ellipsis')bad.push('TXT-CLIP '+e.textContent.trim().slice(0,20));
+  });
+  return {page,W,hscroll:sw>vw,bad:[...new Set(bad)].slice(0,8)};
+};
+</script></body></html>

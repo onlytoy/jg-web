@@ -1,0 +1,409 @@
+/* =========================================================
+   Aurora Mobile Japan — AI アシスタント（方案一：右下・3 段階）
+   色・角丸・影・書体は styles.css のトークンだけで組む。
+   クラスはすべて aia- で始め、既存のクラスと衝突させない。
+   ========================================================= */
+
+.aia-card,
+.aia-launcher,
+.aia-panel {
+  position: fixed;
+  /* ナビ（z-index:100）より下。スマートフォンでメニューを開くと、その下に隠れる */
+  z-index: 90;
+  font-family: var(--font);
+  letter-spacing: 0.02em;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* 隠すときは、フェードが終わってから visibility を切る */
+  transition: opacity 0.24s ease, transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0.24s, box-shadow 0.18s ease;
+}
+.aia-card.is-shown,
+.aia-launcher.is-shown,
+.aia-panel.is-shown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  /* 出すときは即座に visible にする。遅らせると、その瞬間の focus() が効かない */
+  transition-delay: 0s;
+}
+/* :where() で詳細度を 0 にする。
+   .aia-panel button のままだと .aia-chip や .aia-input の font-size・font-weight を打ち消してしまう */
+:where(.aia-card, .aia-panel) :where(button, input) {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.aia-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.aia-card :focus-visible,
+.aia-panel :focus-visible,
+.aia-launcher:focus-visible {
+  outline: 2px solid var(--aurora-blue);
+  outline-offset: 2px;
+}
+.aia-input:focus-visible { outline: none; }
+
+/* ---------- 共通パーツ ---------- */
+.aia-avatar {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  /* トップの生態系図の中心円（.core）と同じ配合 */
+  background: radial-gradient(circle at 32% 28%, #ffffff, var(--aurora-blue-050) 60%, #d3e6ff);
+  border: 1px solid #fff;
+  box-shadow: 0 6px 16px rgba(40, 71, 252, 0.18);
+}
+.aia-avatar img { width: 20px; height: auto; display: block; }
+
+.aia-icon-btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink-400);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.aia-icon-btn svg { width: 18px; height: 18px; display: block; }
+.aia-icon-btn:hover { background: var(--bg-soft); color: var(--ink-700); }
+
+.aia-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  gap: 8px;
+  margin: 0;
+}
+.aia-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg-soft);
+  color: var(--ink-900);
+  font-size: 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.aia-input::placeholder { color: var(--ink-400); }
+.aia-input:focus {
+  outline: none;
+  border-color: var(--aurora-blue);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(40, 71, 252, 0.14);
+}
+.aia-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: var(--aurora-blue);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(40, 71, 252, 0.28);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.aia-send:hover { background: var(--aurora-blue-600); transform: translateY(-1px); }
+.aia-send svg { width: 18px; height: 18px; display: block; }
+
+.aia-powered {
+  margin: 10px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: var(--ink-400);
+}
+
+/* =========================================================
+   ① 案内カード
+   ========================================================= */
+.aia-card {
+  right: 24px;
+  bottom: 24px;
+  /* 見出し 1 行に 338px 要る。アバターと ✕ の分を足して 468px */
+  width: min(468px, calc(100vw - 32px));
+  padding: 18px 18px 12px 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  /* ナビのドロップダウン（.nav-menu）と同じ影 */
+  box-shadow: 0 24px 60px rgba(16, 42, 94, 0.16);
+  transform: translateY(16px) scale(0.98);
+  transform-origin: bottom right;
+}
+.aia-card.is-shown { transform: none; }
+
+.aia-card-top { display: flex; align-items: flex-start; gap: 12px; }
+.aia-card-resume {
+  flex: 1;
+  min-width: 0;
+  padding: 1px 0 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.aia-card-title,
+.aia-card-sub,
+.aia-msg {
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
+/* Chrome の文節区切りは「どう／ぞ」の間でも折り返すので、ここだけ固定する */
+.aia-nobr { white-space: nowrap; }
+.aia-card-title {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--ink-900);
+  transition: color 0.15s ease;
+}
+.aia-card-resume:hover .aia-card-title { color: var(--aurora-blue); }
+.aia-card-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--ink-500);
+}
+.aia-card-close { margin: -6px -6px 0 0; }
+.aia-card .aia-form { margin-top: 14px; }
+
+/* =========================================================
+   ② 閉じたあとのアイコン
+   ========================================================= */
+.aia-launcher {
+  right: 24px;
+  bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  /* 締めの CTA 帯（.cta-band）と同じ青 */
+  background: linear-gradient(135deg, var(--aurora-blue), var(--aurora-blue-600));
+  box-shadow: 0 12px 28px rgba(40, 71, 252, 0.34);
+  cursor: pointer;
+  transform: scale(0.6);
+}
+.aia-launcher.is-shown { transform: none; }
+.aia-launcher.is-shown:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(40, 71, 252, 0.4);
+}
+.aia-launcher svg { width: 26px; height: 26px; display: block; }
+
+/* =========================================================
+   ③ チャット
+   ========================================================= */
+.aia-panel {
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  width: min(384px, calc(100vw - 32px));
+  height: min(600px, calc(100vh - var(--nav-h) - 48px));
+  height: min(600px, calc(100dvh - var(--nav-h) - 48px));
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 30px 70px rgba(16, 42, 94, 0.2);
+  transform: translateY(16px) scale(0.96);
+  transform-origin: bottom right;
+}
+.aia-panel.is-shown { transform: none; }
+
+/* 見出し帯は「技術と信頼性」（.tech）の紺をそのまま使う */
+.aia-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 8px 12px 14px;
+  color: #fff;
+  background:
+    radial-gradient(360px 160px at 100% 0%, rgba(124, 224, 255, 0.18), transparent 62%),
+    linear-gradient(160deg, #131c4d, #0d1235);
+}
+.aia-panel-head .aia-avatar { width: 32px; height: 32px; border-radius: 10px; box-shadow: none; }
+.aia-panel-head .aia-avatar img { width: 18px; }
+.aia-panel-titles { flex: 1; min-width: 0; }
+.aia-panel-titles h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.aia-panel-titles p {
+  margin: 1px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.62);
+}
+.aia-panel-head .aia-icon-btn { color: rgba(255, 255, 255, 0.72); }
+.aia-panel-head .aia-icon-btn:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.aia-panel-head .aia-icon-btn:focus-visible { outline-color: #7ce0ff; }
+
+.aia-log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 18px 14px 8px;
+  background: var(--bg-soft);
+  overscroll-behavior: contain;
+}
+.aia-msg {
+  max-width: 88%;
+  margin: 0 0 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+}
+.aia-msg.is-bot {
+  color: var(--ink-700);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px 16px 16px 16px;
+  box-shadow: var(--shadow-sm);
+}
+.aia-msg.is-user {
+  margin-left: auto;
+  color: #fff;
+  background: linear-gradient(135deg, var(--aurora-blue), var(--aurora-blue-600));
+  border-radius: 16px 4px 16px 16px;
+  box-shadow: 0 6px 14px rgba(40, 71, 252, 0.2);
+}
+.aia-msg.is-new { animation: aia-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+.aia-link-row { display: block; margin-top: 6px; }
+.aia-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--aurora-blue);
+}
+.aia-link:hover { color: var(--aurora-blue-600); text-decoration: underline; text-underline-offset: 3px; }
+
+.aia-quick { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 10px; }
+.aia-chip {
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--aurora-blue);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.aia-chip:hover { border-color: var(--aurora-blue); background: var(--aurora-blue-050); }
+
+.aia-typing { display: inline-flex; align-items: center; gap: 4px; height: 24px; }
+.aia-typing i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-400);
+  animation: aia-dot 1s infinite ease-in-out;
+}
+.aia-typing i:nth-child(2) { animation-delay: 0.12s; }
+.aia-typing i:nth-child(3) { animation-delay: 0.24s; }
+
+.aia-panel .aia-form {
+  grid-template-columns: minmax(0, 1fr) 42px;
+  padding: 12px 12px 0;
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+.aia-panel .aia-input,
+.aia-panel .aia-send { height: 42px; }
+.aia-panel .aia-send { width: 42px; }
+.aia-panel .aia-powered { margin: 0; padding: 8px 14px 10px; background: #fff; }
+
+@keyframes aia-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes aia-dot {
+  0%, 60%, 100% { opacity: 0.35; transform: none; }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* =========================================================
+   スマートフォン：カードは画面の下端に貼り付ける
+   ========================================================= */
+@media (max-width: 620px) {
+  .aia-card {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    padding: 16px 14px 10px 16px;
+  }
+  .aia-card-title { font-size: 14px; }
+  .aia-card-sub { font-size: 12px; }
+  /* iOS は 16px 未満の入力欄にフォーカスすると画面を拡大してしまう */
+  .aia-input { font-size: 16px; }
+  .aia-launcher { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+  .aia-panel {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    width: auto;
+    height: calc(100vh - var(--nav-h) - 16px);
+    height: calc(100dvh - var(--nav-h) - 16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aia-card,
+  .aia-launcher,
+  .aia-panel { transition-duration: 0.01ms; }
+  .aia-msg.is-new,
+  .aia-typing i { animation: none; }
+}
+
+@media print {
+  .aia-card,
+  .aia-launcher,
+  .aia-panel { display: none !important; }
+}

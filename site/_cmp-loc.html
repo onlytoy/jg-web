@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="pilot.css" />
+<style>
+body{margin:0;background:#e9ecf2;font-family:'Zen Kaku Gothic New',sans-serif}
+#cmp{width:1440px;display:flex;flex-direction:column;gap:48px;padding:48px 0;background:#e9ecf2}
+.opt{background:#fff;position:relative}
+.tag{position:absolute;left:24px;top:20px;z-index:5;background:#0b1524;color:#fff;font-size:14px;font-weight:700;padding:6px 14px;border-radius:999px;letter-spacing:.06em}
+.in{width:1200px;margin:0 auto;position:relative}
+.sec{padding:120px 0}
+h2.t{font-size:40px;line-height:1.5;font-weight:700;color:#0b1524;margin:24px 0 0;letter-spacing:.04em}
+.map{position:relative;overflow:hidden}
+.map>img{position:absolute;max-width:none;opacity:.75}
+.fade{-webkit-mask-image:radial-gradient(closest-side,#000 70%,transparent 100%);mask-image:radial-gradient(closest-side,#000 70%,transparent 100%)}
+.fadex{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(transparent,#000 12%,#000 88%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(transparent,#000 12%,#000 88%,transparent);mask-composite:intersect}
+.lp{position:absolute;width:0;height:0;z-index:2}
+.lp i{position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:#2847fc}
+.lp em{position:absolute;left:14px;top:-9px;font-style:normal;white-space:nowrap;font-size:10px;letter-spacing:.14em;color:#8a93a3;display:flex;align-items:baseline;gap:8px}
+.lp em b{font-size:13px;font-weight:500;letter-spacing:.04em;color:#1f2a44}
+.lp.l em{left:auto;right:14px;flex-direction:row-reverse}
+.lp.tk i{left:-6px;top:-6px;width:12px;height:12px;box-shadow:0 0 0 8px rgba(40,71,252,.12),0 0 0 20px rgba(40,71,252,.05)}
+.lp.tk em{left:30px;top:-12px}
+.lp.tk em b{font-size:18px;font-weight:700;color:#2847fc}
+.kv dt{font-size:12px;color:#8a93a3;letter-spacing:.1em;margin-bottom:10px}
+.kv dd{margin:0;font-size:15px;line-height:1.85;color:#1f2a44}
+.over{font-size:13px;color:#8a93a3;letter-spacing:.06em}
+.over b{color:#1f2a44;font-weight:500;margin-left:16px}
+/* A */
+.A{height:780px;position:relative;overflow:hidden}
+.A .map{position:absolute;inset:0}
+.A .in{padding-top:120px;z-index:3}
+.A .pin-panel{position:absolute;z-index:3;width:300px;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);border:1px solid #e3e7ef;border-radius:16px;padding:28px 28px 24px;box-shadow:0 20px 50px -24px rgba(11,21,36,.18)}
+.A .pin-panel h3{margin:0 0 16px;font-size:17px;color:#0b1524}
+.A .pin-panel dl{margin:0;display:grid;gap:14px}
+.A .pin-panel dd{font-size:14px}
+.A .ln{position:absolute;height:1px;background:#2847fc;z-index:2;transform-origin:0 0;opacity:.5}
+/* B */
+.B .hd{text-align:center}
+.B .hd .eyebrow{justify-content:center}
+.B .map{height:500px;margin:56px 0 0}
+.B .row{display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:48px;align-items:start;margin-top:40px;padding-top:32px;border-top:1px solid #e3e7ef}
+/* C */
+.C .in{display:grid;grid-template-columns:640px 1fr;gap:80px;align-items:center}
+.C .map{height:520px}
+.C .kv{display:grid;gap:28px;margin-top:48px}
+</style></head><body>
+<div id="cmp">
+
+<div class="opt" id="optA"><span class="tag">A　信息挂在地图上</span>
+  <section class="A">
+    <div class="map fadex" data-x0=".56" data-y0=".14" data-span=".42"><img src="img/map-blue.png" alt="" /></div>
+    <div class="in"><span class="eyebrow"><b>03</b>拠点</span><h2 class="t">東京オフィスと、<br />アジアの拠点。</h2>
+      <p class="over" style="margin-top:28px">海外拠点<b>シンガポール</b><b>香港</b><b>ジャカルタ</b></p></div>
+    <div class="pin-panel" id="pp"><h3>東京オフィス</h3><dl class="kv">
+      <div><dt>所在地</dt><dd>東京都港区虎ノ門1丁目10番5号<br />KDX虎ノ門一丁目ビル11F</dd></div>
+      <div><dt>受付時間</dt><dd>平日 9:30 – 18:00（土日祝を除く）</dd></div>
+      <div><dt>アクセス</dt><dd>東京メトロ 虎ノ門駅 徒歩◯分</dd></div></dl></div>
+  </section>
+</div>
+
+<div class="opt" id="optB"><span class="tag">B　上下结构（推荐）</span>
+  <section class="B sec"><div class="in">
+    <div class="hd"><span class="eyebrow"><b>03</b>拠点</span><h2 class="t">東京オフィスと、アジアの拠点。</h2></div>
+    <div class="map fadex" data-x0=".62" data-y0=".24" data-span=".36"><img src="img/map-blue.png" alt="" /></div>
+    <dl class="row kv">
+      <div><dt>東京オフィス</dt><dd>東京都港区虎ノ門1丁目10番5号<br />KDX虎ノ門一丁目ビル11F</dd></div>
+      <div><dt>受付時間</dt><dd>平日 9:30 – 18:00<br />（土日祝を除く）</dd></div>
+      <div><dt>アクセス</dt><dd>東京メトロ<br />虎ノ門駅 徒歩◯分</dd></div>
+      <div><dt>海外拠点</dt><dd>シンガポール・香港<br />ジャカルタ</dd></div>
+    </dl>
+  </div></section>
+</div>
+
+<div class="opt" id="optC"><span class="tag">C　地图左、文字右</span>
+  <section class="C sec"><div class="in">
+    <div class="map fade" data-x0=".69" data-y0=".25" data-span=".22"><img src="img/map-blue.png" alt="" /></div>
+    <div><span class="eyebrow"><b>03</b>拠点</span><h2 class="t">東京オフィスと、<br />アジアの拠点。</h2>
+      <dl class="kv">
+        <div><dt>東京オフィス</dt><dd>東京都港区虎ノ門1丁目10番5号<br />KDX虎ノ門一丁目ビル11F</dd></div>
+        <div><dt>受付時間</dt><dd>平日 9:30 – 18:00（土日祝を除く）</dd></div>
+        <div><dt>アクセス</dt><dd>東京メトロ 虎ノ門駅 徒歩◯分</dd></div>
+      </dl>
+      <p class="over" style="margin-top:36px">海外拠点<b>シンガポール</b><b>香港</b><b>ジャカルタ</b></p></div>
+  </div></section>
+</div>
+
+</div>
+<script>
+const P=[['tk','東京','TOKYO',.832,.355],['hk','香港','HONG KONG',.792,.435],['sg','シンガポール','SINGAPORE',.774,.535,1],['jk','ジャカルタ','JAKARTA',.794,.625]];
+document.querySelectorAll('.map').forEach(m=>{
+  const cw=m.clientWidth,W=cw/+m.dataset.span,H=W*524/1400,x0=+m.dataset.x0*W,y0=+m.dataset.y0*H;
+  const img=m.querySelector('img');img.style.width=W+'px';img.style.left=-x0+'px';img.style.top=-y0+'px';
+  const host=m.parentElement;
+  P.forEach(([k,j,e,fx,fy,l])=>{const s=document.createElement('span');s.className='lp '+k+(l?' l':'');
+    const x=fx*W-x0+m.offsetLeft,y=fy*H-y0+m.offsetTop;s.style.left=x+'px';s.style.top=y+'px';s.dataset.k=k;
+    s.innerHTML=`<i></i><em><b>${j}</b>${k==='tk'?'TOKYO / JAPAN':e}</em>`;(m.classList.contains('fadex')&&host.classList.contains('A')?host:m.parentElement).appendChild(s);});
+});
+const A=document.querySelector('.A'),tk=A.querySelector('.lp.tk'),pp=document.getElementById('pp');
+const tx=parseFloat(tk.style.left),ty=parseFloat(tk.style.top);
+pp.style.left=(tx+120)+'px';pp.style.top=(ty+90)+'px';
+const ln=document.createElement('span');ln.className='ln';const dx=120,dy=90,len=Math.hypot(dx,dy);
+ln.style.cssText+=`left:${tx}px;top:${ty}px;width:${len}px;transform:rotate(${Math.atan2(dy,dx)}rad)`;A.appendChild(ln);
+tk.querySelector('em').style.cssText='left:30px;top:-40px';
+</script>
+</body></html>

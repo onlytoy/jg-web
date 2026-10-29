@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja" data-variant="Q">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>導入事例 | Aurora Mobile 株式会社</title>
+  <meta name="description" content="Aurora Mobile のサービスをご活用いただいているお客様の導入事例をご紹介します。" />
+  <link rel="icon" href="icon/icon1.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ai-assistant.css" />
+  <link rel="stylesheet" href="pilot.css" />
+<style id="lt-motion">
+.lt-thumbs{cursor:default}
+.lt-thumbs .t{box-shadow:none!important}
+.lt-thumbs .t{position:relative;transition:transform .5s cubic-bezier(.22,1,.36,1);animation:ltIn .9s cubic-bezier(.22,1,.36,1) both}
+.lt-thumbs .t1{--r:-4deg;--x:0px;animation-delay:.15s;z-index:1}
+.lt-thumbs .t2{--r:2deg;--x:0px;animation-delay:.27s;z-index:2}
+.lt-thumbs .t3{--r:-2deg;--x:0px;animation-delay:.39s;z-index:3}
+@keyframes ltIn{0%{opacity:0;transform:translateX(var(--from,0px)) translateY(14px) rotate(0deg)}100%{opacity:1;transform:translateX(0) rotate(var(--r))}}
+.lt-thumbs .t1{--from:40px}.lt-thumbs .t3{--from:-40px}
+.lt-thumbs:hover .t1{transform:translateX(-10px) rotate(-6deg)}
+.lt-thumbs:hover .t2{transform:rotate(2deg)}
+.lt-thumbs:hover .t3{transform:translateX(10px) rotate(-1deg)}
+.lt-thumbs .t:hover{transform:translateY(-8px) rotate(0deg)!important;z-index:4}
+.lt-thumbs:hover .t1:hover{transform:translate(-10px,-8px) rotate(0deg)!important}
+.lt-thumbs:hover .t3:hover{transform:translate(10px,-8px) rotate(0deg)!important}
+.lt-thumbs .t.done{animation:none}
+@media (prefers-reduced-motion:reduce){.lt-thumbs .t{animation:none;transition:none}}
+</style>
+<script>addEventListener('load',function(){setTimeout(function(){document.querySelectorAll('.lt-thumbs .t').forEach(function(t){t.classList.add('done')})},1400)})</script>
+<style id="deadlink">a[href="#"]:not(.v4a){cursor:default!important;pointer-events:none!important}</style>
+</head>
+<body class="v2">
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+        <img class="brand-logo" src="icon/logo.svg" alt="Aurora Mobile 株式会社" />
+        <img class="brand-logo-mark" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">ホーム</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solutions">
+            事業
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-solutions">
+            <p class="nav-menu-title">事業</p>
+            <a href="engagelab.html">
+              <strong>EngageLab</strong>
+              <span>AI 時代の顧客関係を再定義</span>
+            </a>
+            <a href="gptbots.html">
+              <strong>GPTBots.ai</strong>
+              <span>効率を高め、コストを削減</span>
+            </a>
+            <a href="modellix.html">
+              <strong>Modellix</strong>
+              <span>AIモデルをひとつのAPIで</span>
+            </a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="cases.html">導入事例</a>
+        <a class="nav-link" href="pricing.html">料金</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-resources">
+            資料
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu" id="menu-resources">
+            <p class="nav-menu-title">資料</p>
+            <a href="resources.html">
+              <strong>資料一覧</strong>
+              <span>ホワイトペーパー・サービス資料</span>
+            </a>
+            <a href="javascript:void(0)" aria-disabled="true">
+              <strong>EngageLab 開発者ドキュメント ↗</strong>
+              <span>API・SDK リファレンス</span>
+            </a>
+            <a href="javascript:void(0)" aria-disabled="true">
+              <strong>GPTBots.ai 開発者ドキュメント ↗</strong>
+              <span>API・SDK リファレンス</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-enterprise">
+            会社情報
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-menu compact" id="menu-enterprise">
+            <p class="nav-menu-title">会社情報</p>
+            <a href="company.html"><strong>会社概要</strong></a>
+            <a href="security.html"><strong>セキュリティ・信頼性</strong></a>
+            <a href="news.html"><strong>ニュース</strong></a>
+            <a href="careers.html"><strong>採用情報</strong></a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-cta">
+        <a href="resources.html" class="btn btn-ghost btn-sm">資料ダウンロード</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    
+  <section class="list-top" id="top">
+    <div class="container">
+      
+      <div class="lt-head">
+        <div>
+          <span class="eyebrow">導入事例</span>
+          <h1>お客様の成果を、数字で。</h1>
+          <p>18 社の導入事例を、業種別にご覧いただけます。</p>
+        </div>
+        <div class="lt-thumbs">
+          <span class="t t1"><img src="img/case-02.png" alt="" /></span>
+          <span class="t t2"><img src="img/case-04.png" alt="" /></span>
+          <span class="t t3"><img src="img/case-03.png" alt="" /></span>
+        </div>
+      </div>
+      <div class="lt-bar">
+        <div class="chips-row">
+          <button class="chip on" type="button">すべて</button>
+          <button class="chip" type="button">小売・EC</button>
+          <button class="chip" type="button">ゲーム</button>
+          <button class="chip" type="button">金融</button>
+          <button class="chip" type="button">旅行・交通</button>
+          <button class="chip" type="button">製造</button>
+          <button class="chip" type="button">AI・SaaS</button>
+        </div>
+        <span class="total">全 <b>18</b> 件</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad case-list">
+    <div class="container">
+      <div class="mix">
+
+        <a class="mx-lead" href="case-detail.html" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/case-01.png" alt="" style="object-position:82% 30%" /></div>
+          <div class="tx">
+            <span class="tg">小売・EC</span>
+            <div class="kpi"><b>+35%</b><span>再訪率</span></div>
+            <h3>チャネルを統合し、再訪率が向上しました。</h3>
+            <p>分散していた配信を EngageLab へ統合。運用工数を削減しながら成果を改善しました。</p>
+            <span class="more">事例を読む →</span>
+          </div>
+        </a>
+
+        <a class="mx-tall" href="case-detail.html" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/case-06.png" alt="" /><span class="tg">ゲーム</span></div>
+          <div class="kpi"><b>+18%</b><span>継続率</span></div>
+          <h3>復帰施策の自動化で継続率が改善</h3>
+          <div class="foot"><span>EngageLab</span><span class="more">事例を読む →</span></div>
+        </a>
+
+      </div>
+
+      <div class="mx-row3">
+        <a class="mx-tall reveal" href="case-detail.html" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/case-03.png" alt="" style="object-position:50% 40%" /><span class="tg">金融</span></div>
+          <div class="kpi"><b>99.9%</b><span>配信成功率</span></div>
+          <h3>OTP配信の安定性と監査対応を両立</h3>
+          <div class="foot"><span>EngageLab ／ フィンテック</span><span class="more">事例を読む →</span></div>
+        </a>
+        <a class="mx-tall reveal" href="case-detail.html" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/case-04.png" alt="" /><span class="tg">旅行・交通</span></div>
+          <div class="kpi"><b>−40%</b><span>通知遅延</span></div>
+          <h3>運行情報の通知遅延を大幅に削減</h3>
+          <div class="foot"><span>EngageLab</span><span class="more">事例を読む →</span></div>
+        </a>
+        <a class="mx-tall reveal" href="case-detail.html" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/case-05.png" alt="" /><span class="tg">製造</span></div>
+          <div class="kpi"><b>−52%</b><span>技術文書の検索時間</span></div>
+          <h3>社内ナレッジをAIで横断検索</h3>
+          <div class="foot"><span>GPTBots.ai</span><span class="more">事例を読む →</span></div>
+        </a>
+        <a class="mx-tall reveal" href="case-detail.html" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/case-02.png" alt="" /><span class="tg">小売・EC</span></div>
+          <div class="kpi"><b>−28%</b><span>獲得単価</span></div>
+          <h3>海外広告の獲得単価を改善</h3>
+          <div class="foot"><span>プログラマティック広告</span><span class="more">事例を読む →</span></div>
+        </a>
+        <a class="mx-tall reveal" href="case-detail.html" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/case-01.png" alt="" style="object-position:20% 50%" /><span class="tg">AI・SaaS</span></div>
+          <div class="kpi"><b>−42%</b><span>一次対応</span></div>
+          <h3>問い合わせの一次対応を自動化</h3>
+          <div class="foot"><span>GPTBots.ai</span><span class="more">事例を読む →</span></div>
+        </a>
+        <a class="mx-tall reveal" href="case-detail.html" target="_blank" rel="noopener">
+          <div class="ph"><img src="img/case-06.png" alt="" /><span class="tg">ゲーム</span></div>
+          <div class="kpi"><b>+22%</b><span>課金ユーザー率</span></div>
+          <h3>セグメント配信で課金転換を向上</h3>
+          <div class="foot"><span>EngageLab</span><span class="more">事例を読む →</span></div>
+        </a>
+      </div>
+      <div class="pager">
+        <a href="#top">←</a><span class="on">1</span><a href="#top">2</a><a href="#top">3</a><a href="#top">→</a>
+      </div>
+    </div>
+  </section>
+
+    <div id="contact" style="position:relative;height:480px;overflow:hidden;background:linear-gradient(120deg,#ffffff 0%,#f2f5ff 60%,#e8eeff 100%);border-top:1px solid #edf0f6">
+    
+    <div style="position:absolute;inset:0;pointer-events:none"><svg style="position:absolute;left:calc(50% - 310px);top:-30px" width="900" height="608" viewBox="0 0 1784 1206" fill="none"><defs><linearGradient id="cta-rb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a7dff"/><stop offset=".6" stop-color="#3d63ff"/><stop offset="1" stop-color="#3fb6d8"/></linearGradient><linearGradient id="cta-fm" x1="0" y1="0" x2="1" y2="0"><stop offset=".12" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".25"/><stop offset=".48" stop-color="#fff" stop-opacity=".7"/><stop offset=".62" stop-color="#fff"/><stop offset=".8" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="cta-fv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".1" stop-color="#fff"/><stop offset=".5" stop-color="#fff"/><stop offset=".72" stop-color="#fff" stop-opacity=".45"/><stop offset=".9" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="cta-mk"><rect width="1784" height="1206" fill="url(#cta-fm)"/></mask><mask id="cta-mv"><rect width="1784" height="1206" fill="url(#cta-fv)"/></mask></defs><g mask="url(#cta-mv)"><g mask="url(#cta-mk)" stroke="url(#cta-rb)" stroke-width="2"><path d="M300.0,1300.0 C380.0,600.0 760.0,140.0 1100.0,140.0 C1440.0,140.0 1700.0,700.0 1800.0,1300.0" stroke-opacity="0.110"/><path d="M343.5,1300.0 C410.7,619.8 769.4,164.7 1100.5,162.8 C1433.1,160.8 1695.1,707.9 1796.0,1300.0" stroke-opacity="0.111"/><path d="M386.2,1300.0 C440.7,639.2 778.6,189.0 1101.0,185.0 C1426.3,181.1 1690.2,715.7 1792.2,1300.0" stroke-opacity="0.115"/><path d="M427.9,1300.0 C470.1,658.1 787.6,212.7 1101.5,206.8 C1419.7,201.0 1685.5,723.3 1788.4,1300.0" stroke-opacity="0.121"/><path d="M468.7,1300.0 C498.8,676.7 796.4,235.8 1101.9,228.2 C1413.2,220.5 1680.8,730.7 1784.7,1300.0" stroke-opacity="0.129"/><path d="M508.5,1300.0 C526.9,694.8 805.0,258.5 1102.4,249.0 C1406.8,239.5 1676.3,737.9 1781.0,1300.0" stroke-opacity="0.139"/><path d="M547.4,1300.0 C554.3,712.4 813.4,280.6 1102.8,269.3 C1400.6,258.1 1671.9,745.0 1777.5,1300.0" stroke-opacity="0.151"/><path d="M585.3,1300.0 C581.0,729.7 821.6,302.1 1103.2,289.1 C1394.6,276.2 1667.6,751.9 1774.1,1300.0" stroke-opacity="0.165"/><path d="M622.3,1300.0 C607.1,746.5 829.6,323.1 1103.7,308.5 C1388.7,293.8 1663.4,758.6 1770.7,1300.0" stroke-opacity="0.180"/><path d="M658.2,1300.0 C632.4,762.8 837.3,343.5 1104.1,327.3 C1383.0,311.0 1659.3,765.1 1767.4,1300.0" stroke-opacity="0.197"/><path d="M693.2,1300.0 C657.0,778.7 844.9,363.4 1104.5,345.5 C1377.4,327.7 1655.3,771.5 1764.3,1300.0" stroke-opacity="0.214"/><path d="M727.2,1300.0 C681.0,794.2 852.2,382.7 1104.9,363.3 C1372.0,343.9 1651.5,777.7 1761.2,1300.0" stroke-opacity="0.233"/><path d="M760.2,1300.0 C704.2,809.2 859.4,401.5 1105.2,380.5 C1366.8,359.6 1647.7,783.7 1758.2,1300.0" stroke-opacity="0.253"/><path d="M792.1,1300.0 C726.7,823.7 866.2,419.6 1105.6,397.2 C1361.7,374.9 1644.1,789.5 1755.3,1300.0" stroke-opacity="0.273"/><path d="M823.0,1300.0 C748.4,837.7 872.9,437.1 1105.9,413.4 C1356.8,389.6 1640.6,795.1 1752.5,1300.0" stroke-opacity="0.295"/><path d="M852.8,1300.0 C769.5,851.3 879.3,454.1 1106.3,428.9 C1352.1,403.8 1637.2,800.5 1749.7,1300.0" stroke-opacity="0.316"/><path d="M881.5,1300.0 C789.7,864.3 885.6,470.4 1106.6,444.0 C1347.5,417.5 1633.9,805.7 1747.1,1300.0" stroke-opacity="0.338"/><path d="M909.1,1300.0 C809.2,876.9 891.5,486.1 1106.9,458.4 C1343.1,430.7 1630.8,810.8 1744.6,1300.0" stroke-opacity="0.360"/><path d="M935.7,1300.0 C827.9,888.9 897.2,501.2 1107.2,472.3 C1338.9,443.4 1627.8,815.6 1742.2,1300.0" stroke-opacity="0.382"/><path d="M961.1,1300.0 C845.7,900.5 902.7,515.6 1107.5,485.6 C1334.8,455.5 1624.9,820.2 1739.9,1300.0" stroke-opacity="0.404"/><path d="M985.3,1300.0 C862.8,911.5 908.0,529.4 1107.8,498.2 C1331.0,467.1 1622.1,824.6 1737.7,1300.0" stroke-opacity="0.425"/><path d="M1008.3,1300.0 C879.1,922.0 912.9,542.5 1108.0,510.3 C1327.3,478.1 1619.5,828.8 1735.6,1300.0" stroke-opacity="0.447"/><path d="M1030.2,1300.0 C894.4,931.9 917.7,554.9 1108.3,521.7 C1323.8,488.5 1617.0,832.8 1733.6,1300.0" stroke-opacity="0.467"/><path d="M1050.8,1300.0 C909.0,941.3 922.1,566.6 1108.5,532.5 C1320.6,498.3 1614.7,836.5 1731.7,1300.0" stroke-opacity="0.487"/><path d="M1070.1,1300.0 C922.6,950.0 926.3,577.6 1108.8,542.6 C1317.5,507.6 1612.5,840.0 1730.0,1300.0" stroke-opacity="0.506"/><path d="M1088.1,1300.0 C935.3,958.2 930.2,587.8 1109.0,552.0 C1314.6,516.2 1610.4,843.3 1728.4,1300.0" stroke-opacity="0.523"/><path d="M1104.8,1300.0 C947.0,965.8 933.8,597.3 1109.1,560.7 C1312.0,524.1 1608.5,846.3 1726.8,1300.0" stroke-opacity="0.540"/><path d="M1120.1,1300.0 C957.8,972.8 937.1,605.9 1109.3,568.7 C1309.5,531.4 1606.8,849.1 1725.4,1300.0" stroke-opacity="0.555"/><path d="M1133.9,1300.0 C967.5,979.0 940.0,613.8 1109.5,575.9 C1307.3,538.0 1605.2,851.6 1724.2,1300.0" stroke-opacity="0.569"/><path d="M1146.2,1300.0 C976.2,984.6 942.7,620.8 1109.6,582.3 C1305.4,543.9 1603.8,853.9 1723.1,1300.0" stroke-opacity="0.581"/><path d="M1156.9,1300.0 C983.7,989.5 945.0,626.8 1109.7,587.9 C1303.7,549.0 1602.6,855.8 1722.1,1300.0" stroke-opacity="0.591"/><path d="M1165.8,1300.0 C990.0,993.5 946.9,631.9 1109.8,592.6 C1302.3,553.2 1601.6,857.4 1721.3,1300.0" stroke-opacity="0.599"/><path d="M1172.9,1300.0 C995.0,996.8 948.5,636.0 1109.9,596.3 C1301.1,556.6 1600.8,858.7 1720.6,1300.0" stroke-opacity="0.600"/><path d="M1177.8,1300.0 C998.5,999.0 949.5,638.8 1110.0,598.9 C1300.3,559.0 1600.2,859.6 1720.2,1300.0" stroke-opacity="0.600"/><path d="M1180.0,1300.0 C1000.0,1000.0 950.0,640.0 1110.0,600.0 C1300.0,560.0 1600.0,860.0 1720.0,1300.0" stroke-opacity="0.600"/></g></g></svg></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;box-sizing:border-box">
+      
+      <div style="position:relative">
+        <div style="display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:#2847fc"><i style="width:24px;height:1px;background:#2847fc"></i>Contact</div>
+        <div style="margin-top:24px;font-size:40px;font-weight:700;line-height:1.5;font-feature-settings:'palt';color:#0a1324">導入事例集をまとめて<br>ご覧いただけます。</div>
+        <div style="margin-top:20px;font-size:15px;line-height:2;color:#5b6172">業種別の導入事例をまとめた資料を無料でお送りします。</div>
+        <div style="margin-top:40px;display:flex;gap:14px">
+          <a href="resources.html" style="height:52px;padding:0 32px;border-radius:40px;background:#2847fc;color:#fff;font-size:15px;font-weight:500;display:flex;align-items:center;gap:12px;text-decoration:none">導入事例集をダウンロード<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+          <a href="contact.html" style="height:52px;padding:0 32px;border-radius:40px;border:1px solid #c9cedb;background:#fff;color:#0a1324;font-size:15px;font-weight:500;display:flex;align-items:center;text-decoration:none">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aurora Mobile 株式会社">
+            <img class="brand-icon" src="icon/icon1.svg" alt="Aurora Mobile 株式会社" />
+          </a>
+          <p class="footer-desc">AI・カスタマーエンゲージメント・広告・フィンテックで、企業のデジタル成長を支援するグローバル・テクノロジーグループ。</p>
+          <div class="footer-contact">
+            <strong>Aurora Mobile株式会社</strong>
+            <p>東京都港区虎ノ門１丁目１０番５号<br />ＫＤＸ虎ノ門一丁目ビル１１Ｆ</p>
+            <a href="mailto:support@aurora-mobile.com">Email: support@aurora-mobile.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>事業</h5>
+          <a href="engagelab.html">EngageLab</a>
+          <a href="gptbots.html">GPTBots.ai</a>
+          <a href="modellix.html">Modellix</a>
+        </div>
+        <div class="footer-col">
+          <h5>会社情報</h5>
+          <a href="company.html">会社概要</a>
+          <a href="security.html">セキュリティ・信頼性</a>
+          <a href="cases.html">導入事例</a>
+          <a href="pricing.html">料金</a>
+          <a href="news.html">ニュース</a>
+          <a href="careers.html">採用情報</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+        <div class="footer-col">
+          <h5>ソーシャルメディア</h5>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span style="display:flex;align-items:center;gap:20px;flex-wrap:wrap"><span>© 2026 Aurora Mobile株式会社. 無断転載を禁じます。</span><i style="width:1px;height:12px;background:rgba(255,255,255,.18)"></i><a class="footer-legal" href="legal.html">プライバシーポリシー</a></span>
+        <span class="nasdaq"><b>NASDAQ: JG</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pilot.js"></script>
+  <script src="ai-assistant.js"></script>
+</body>
+</html>
