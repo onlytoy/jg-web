@@ -2232,3 +2232,6 @@ section { position: relative; }
 .nav-links .nav-link:hover,.nav-links .nav-link.is-current{color:var(--aurora-blue)}
 
 .doc-band .btn, .doc-band a[class*="btn"] { box-shadow: 0 8px 18px -10px rgba(40,71,252,.45); }
+
+/* tablet landscape 901-1279: fluid container */
+@media (min-width:901px) and (max-width:1279px){.container,.v-wrap{width:auto!important;max-width:100%!important;padding-left:40px!important;padding-right:40px!important;box-sizing:border-box!important}}

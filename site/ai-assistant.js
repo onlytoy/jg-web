@@ -110,7 +110,7 @@
   const ICON = {
     close: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
     minimize: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
-    send: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 3.5 10 14M20.5 3.5 14 20.5l-4-6.5-6.5-4 17-6.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg>',
+    send: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>',
     chat: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.8c-4.9 0-8.8 3.3-8.8 7.4 0 2.2 1.1 4.1 2.9 5.5l-.8 3.6 3.9-2c.9.2 1.8.3 2.8.3 4.9 0 8.8-3.3 8.8-7.4S16.9 3.8 12 3.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m12 7.4.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9.9-2.3Z" fill="currentColor"/></svg>',
   };
   const AVATAR = '<span class="aia-avatar" aria-hidden="true"><img src="icon/icon1.svg" alt="" /></span>';
@@ -122,42 +122,49 @@
       <div class="aia-card-top">
         ${AVATAR}
         <button class="aia-card-resume" type="button" aria-label="AIアシスタントを開く">
-          <span class="aia-card-title">Aurora Japanについて、AIに聞いてみませんか？</span>
-          <span class="aia-card-sub">会社情報や事業内容、サービス、導入事例など、<span class="aia-nobr">どうぞお気軽に</span>ご質問ください。</span>
+          <span class="aia-card-title">こんにちは。</span>
+          <span class="aia-card-sub">ご質問に24時間お答えします</span>
         </button>
         <button class="aia-icon-btn aia-card-close" type="button" aria-label="案内を閉じる">${ICON.close}</button>
       </div>
+      <div class="aia-card-list">
+        <button type="button" data-aia-cq="導入事例を一覧で見たい">導入事例を見る<i aria-hidden="true">→</i></button>
+        <button type="button" data-aia-cq="料金について知りたい">料金について知りたい<i aria-hidden="true">→</i></button>
+        <button type="button" data-aia-cq="">AIに直接質問する<i aria-hidden="true">→</i></button>
+      </div>
       <form class="aia-form" data-aia-form="card">
         <label class="aia-sr" for="aia-card-input">質問を入力してください</label>
-        <input class="aia-input" id="aia-card-input" type="text" autocomplete="off" enterkeyhint="send" placeholder="質問を入力してください…" />
+        <input class="aia-input" id="aia-card-input" type="text" autocomplete="off" enterkeyhint="send" placeholder="質問を入力…" />
         <button class="aia-send" type="submit" aria-label="質問を送信">${ICON.send}</button>
       </form>
-      <p class="aia-powered">Powered by GPTBots.ai</p>
     </aside>
 
-    <button class="aia-launcher" type="button" aria-label="AIアシスタントを開く" aria-expanded="false">${ICON.chat}</button>
+    <button class="aia-launcher" type="button" aria-label="AIアシスタントを開く" aria-expanded="false"><img src="icon/icon1.svg" alt="" /></button>
 
     <div class="aia-panel" role="dialog" aria-modal="false" aria-labelledby="aia-panel-title">
       <div class="aia-panel-head">
         ${AVATAR}
         <div class="aia-panel-titles">
           <h2 id="aia-panel-title">Aurora Japan AIアシスタント</h2>
-          <p>AIが自動でお答えします</p>
+          <p>24時間・日本語で対応</p>
         </div>
         <button class="aia-icon-btn" type="button" data-aia="minimize" aria-label="チャットを最小化" title="最小化">${ICON.minimize}</button>
         <button class="aia-icon-btn" type="button" data-aia="close" aria-label="チャットを閉じる" title="閉じる">${ICON.close}</button>
       </div>
       <div class="aia-log" role="log" aria-live="polite">
-        <div class="aia-msg is-bot">お手伝いできることはありますか？</div>
-        <div class="aia-msg is-bot">製品情報、導入事例、料金、サポートについてご案内します。知りたいことを入力するか、下の候補から選んでください。</div>
+        <div class="aia-row is-bot">${AVATAR}<div class="aia-msg is-bot"><b>こんにちは。</b>何をお探しですか？</div></div>
         <div class="aia-quick">
-          <button class="aia-chip" type="button" data-aia-q="導入事例を一覧で見たい">導入事例を一覧で見る →</button>
-          <button class="aia-chip" type="button" data-aia-q="製品について相談したい">製品について相談する</button>
+          <div class="aia-list">
+            <button type="button" data-aia-q="導入事例を一覧で見たい"><i>1</i>導入事例を見る<em aria-hidden="true">›</em></button>
+            <button type="button" data-aia-q="料金について知りたい"><i>2</i>料金について知りたい<em aria-hidden="true">›</em></button>
+            <button type="button" data-aia-q="製品の違いを比較したい"><i>3</i>製品の違いを比較したい<em aria-hidden="true">›</em></button>
+          </div>
+          <div class="aia-human">担当者と直接話したい<a href="contact.html">相談する →</a></div>
         </div>
       </div>
       <form class="aia-form" data-aia-form="panel">
         <label class="aia-sr" for="aia-panel-input">チャットに質問を入力</label>
-        <input class="aia-input" id="aia-panel-input" type="text" autocomplete="off" enterkeyhint="send" placeholder="質問を入力してください…" />
+        <input class="aia-input" id="aia-panel-input" type="text" autocomplete="off" enterkeyhint="send" placeholder="質問を入力…" />
         <button class="aia-send" type="submit" aria-label="質問を送信">${ICON.send}</button>
       </form>
       <p class="aia-powered">Powered by GPTBots.ai</p>
@@ -236,9 +243,13 @@
   };
 
   const addMessage = (role) => {
+    const row = document.createElement("div");
+    row.className = `aia-row ${role} is-new`;
+    if (role === "is-bot") row.innerHTML = AVATAR;
     const node = document.createElement("div");
-    node.className = `aia-msg ${role} is-new`;
-    log.insertBefore(node, quick);
+    node.className = `aia-msg ${role}`;
+    row.appendChild(node);
+    log.insertBefore(row, quick);
     return node;
   };
 
@@ -262,6 +273,7 @@
   const send = (raw) => {
     const question = raw.trim();
     if (!question) return;
+    quick.hidden = true;
     addMessage("is-user").textContent = question;
     panelInput.value = "";
     const pending = addMessage("is-bot");
@@ -279,6 +291,7 @@
   // ---------------------------------------------------------
   root.querySelector(".aia-card-close").addEventListener("click", collapseCard);
   cardResume.addEventListener("click", () => openChat());
+  root.querySelectorAll("[data-aia-cq]").forEach((b) => b.addEventListener("click", () => openChat(b.dataset.aiaCq)));
   launcher.addEventListener("click", () => openChat());
   panel.querySelector('[data-aia="minimize"]').addEventListener("click", minimizeChat);
   panel.querySelector('[data-aia="close"]').addEventListener("click", () => closeChat());
